@@ -4,6 +4,7 @@
     {"name":"Objects","order":3,"path":"folders/Objects.yy",},
     {"name":"abstract","order":1,"path":"folders/Objects/abstract.yy",},
     {"name":"blocks","order":6,"path":"folders/Objects/blocks.yy",},
+    {"name":"items","order":7,"path":"folders/Objects/items.yy",},
     {"name":"npcs","order":3,"path":"folders/Objects/npcs.yy",},
     {"name":"Rooms","order":2,"path":"folders/Rooms.yy",},
     {"name":"Scripts","order":4,"path":"folders/Scripts.yy",},

@@ -9,7 +9,6 @@ doll_initialize(_doll.faceIndex, _doll.hairIndex, _doll.shirtIndex, _doll.pantsI
 
 //Initialize inventory.
 inventory = inventory_initialize();
-equip = inventory_equip_initialize();
 equipIndex = 0;
 
 //Doll movement control things.

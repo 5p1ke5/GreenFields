@@ -4,12 +4,12 @@
 /// @function Item(_itemName,  _inventory, _icon, _amount, _description, _value, _ai) constructor
 /// @description Constructor for an item struct.
 /// @param _itemName <String> item's name.
-/// @param _inventory Inventory list the item is inside of.
+/// @param _inventory Inventory array the item is inside of.
 /// @param _icon <sprite> Sprite representation of item.
-/// @param _amount  quantity of item in stack.
+/// @param _amount quantity of item in stack.
 /// @param _description <String> string description of item.
 /// @param _value Value of item when buying or selling.
-/// @param _ai What AI type to use. Should be enum
+/// @param _ai enum that tells an NPC how to behave when they have the item.
 function Item(_itemName,  _inventory, _icon, _amount, _description, _value, _ai) constructor
 {
 		itemName = _itemName;
@@ -106,7 +106,7 @@ function ItemConsumable(_itemName,  _inventory, _icon, _amount, _description, _v
 /// @description function ItemMelee(_itemName,  _inventory, _icon, _amount, _description, _value, _ai, _sprite, _altSprite, _damage, _knockback, _spd, _arc, _lunge) constructor
 /// @description Constructor for an item struct that creates a n object. May fire in the mouse direction (see _spd)
 /// @param _itemName <String> item's name.
-/// @param _inventory Inventory list the item is inside of.
+/// @param _inventory Inventory array the item is inside of.
 /// @param _icon <sprite> Sprite representation of item.
 /// @param _amount  quantity of item in stack.
 /// @param _description <String> string description of item.
@@ -275,6 +275,54 @@ function ItemConsumableInstancerColored(_itemName,  _inventory, _icon, _amount, 
 		{
 			return GetName() + string(color);
 		}
+}
+
+
+/// @function ItemFirearm(_itemName, _inventory, _icon, _amount, _description, _value, _sprite, _damage, _cooldown, _rounds, _object = obj_bullet)
+/// @description Constructor for an item struct that creates a firearm object using passed parameters and binds it to myHeld.
+/// @param _itemName <String> item's name.
+/// @param _inventory Inventory list the item is inside of.
+/// @param _icon <sprite> Sprite representation of item.
+/// @param _amount  quantity of item in stack.
+/// @param _description <String> string description of item.
+/// @param _value Value of item when buying or selling.
+/// @param _sprite Sprite for the weapon object.
+/// @param _damage Damage each round does.
+/// @param _cooldown number of frames to wait between firing rounds. Once all rounds are fired despawns.
+/// @param _rounds number of rounds to fire off. After each round waits _cooldown frames and once all rounds are fired despawns.
+/// @param _projectile object the spawned gun object will fire. By default is normal bullets but could be set to a grenade or something.
+function ItemFirearm(_itemName, _inventory, _icon, _amount, _description, _value, _sprite, _damage, _cooldown, _rounds, _projectile = obj_round) : Item(_itemName,  _inventory, _icon, _amount, _description, _value)  constructor
+{
+	sprite = _sprite;
+	
+	// _damage, _cooldown, _rounds, _projectile = obj_round 
+	// can these just be properties of the object??
+	damage = _damage;
+	cooldown = _cooldown;
+	rounds = _rounds;
+	projectile = _projectile;
+	
+	static Use  = function(_user)
+	{
+		var _firearm = doll_instance_create(_user, FIREARM, 0);
+		
+		var _sprite = sprite;
+		var _damage = damage;
+		var _cooldown = cooldown;
+		var _rounds = rounds;
+		var _angle = _user.handAngle;
+		var _projectile = projectile;
+		
+		with (_firearm)
+		{
+			doll_firearmInstance_initialize(_user, _sprite, _damage, _cooldown, _rounds, _angle, _projectile);
+		}
+		
+		with (_user)
+		{
+			myHeld = _firearm;
+		}
+	}
 }
 
 

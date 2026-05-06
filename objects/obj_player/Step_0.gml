@@ -71,7 +71,7 @@ doll_animate();
 
 
 
-//update alert
+//update alert. TODO: once interactables are added add a thing that sets 'interact' to 'true'
 alert = "";
 
 if (interact)

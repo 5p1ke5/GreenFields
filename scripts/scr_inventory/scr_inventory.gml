@@ -8,28 +8,26 @@
 /// @param _icon <sprite> Sprite representation of item.
 /// @param _amount quantity of item in stack.
 /// @param _description <String> string description of item.
-/// @param _value Value of item when buying or selling.
 /// @param _ai enum that tells an NPC how to behave when they have the item.
-function Item(_itemName,  _inventory, _icon, _amount, _description, _value, _ai) constructor
+function Item(_itemName,  _inventory, _icon, _amount, _description, _ai) constructor
 {
 		itemName = _itemName;
 		icon = _icon;
 		inventory = _inventory;
 		amount = _amount;
 		description = _description;
-		value = _value;
 		ai = _ai;
 		
 		/// @description Uses the item. Called when owner tries to use an item in the inventory.
 		static Use = function(_user)
 		{
-			print("Item used!" + string(self) + "by " + string(_user));
+			show_debug_message("Item used!" + string(self) + "by " + string(_user));
 		}
 		
 		/// @description Alternate use for the item. Usually called by right clicking.
 		static AltUse = function(_user)
 		{
-			print("Item alt used!" + string(self) + "by " + string(_user));
+			show_debug_message("Item alt used!" + string(self) + "by " + string(_user));
 		}
 		
 		static GetAmount = function()
@@ -75,16 +73,15 @@ function Item(_itemName,  _inventory, _icon, _amount, _description, _value, _ai)
 		}
 }
 
-/// @function ItemConsumable(_itemName, _icon, _inventory, _icon, _amount, _description, _value, _ai) constructor 
+/// @function ItemConsumable(_itemName, _icon, _inventory, _icon, _amount, _description, _ai) constructor 
 /// @description Constructor for an item struct that consumes itself on use.
 /// @param _itemName <String> item's name.
 /// @param _inventory Inventory list the item is inside of.
 /// @param _icon <sprite> Sprite representation of item.
 /// @param _amount  quantity of item in stack.
 /// @param _description <String> string description of item.
-/// @param _value Value of item when buying or selling.
 /// @param _ai enum for _ai state to use.
-function ItemConsumable(_itemName,  _inventory, _icon, _amount, _description, _value, _ai)  : Item(_itemName,  _inventory, _icon, _amount, _description, _value, _ai) constructor
+function ItemConsumable(_itemName,  _inventory, _icon, _amount, _description, _ai)  : Item(_itemName,  _inventory, _icon, _amount, _description, _ai) constructor
 {
 		static Use = function(_user)
 		{
@@ -94,7 +91,7 @@ function ItemConsumable(_itemName,  _inventory, _icon, _amount, _description, _v
 		//Consumes the item, removing it from the inventory.
 		static Consume = function(_user)
 		{
-			print("Consumable Item used!"  + string(self));
+			show_debug_message("Consumable Item used!"  + string(self));
 			
 			if (inventory != noone)
 			{
@@ -103,14 +100,13 @@ function ItemConsumable(_itemName,  _inventory, _icon, _amount, _description, _v
 		}
 }
 
-/// @description function ItemMelee(_itemName,  _inventory, _icon, _amount, _description, _value, _ai, _sprite, _altSprite, _damage, _knockback, _spd, _arc, _lunge) constructor
+/// @description function ItemMelee(_itemName,  _inventory, _icon, _amount, _description, _ai, _sprite, _altSprite, _damage, _knockback, _spd, _arc, _lunge) constructor
 /// @description Constructor for an item struct that creates a n object. May fire in the mouse direction (see _spd)
 /// @param _itemName <String> item's name.
 /// @param _inventory Inventory array the item is inside of.
 /// @param _icon <sprite> Sprite representation of item.
 /// @param _amount  quantity of item in stack.
 /// @param _description <String> string description of item.
-/// @param _value Value of item when buying or selling.
 /// @param _ai enum for _ai state to use.
 /// @param _sprite Sprite the melee weapon takes the appearance of.
 /// @param _altSprite Sprite for alt use (usually guard)
@@ -119,7 +115,7 @@ function ItemConsumable(_itemName,  _inventory, _icon, _amount, _description, _v
 /// @param _spd How fast the weapon is swung.
 /// @param _arc How many degress the weapon is swung.
 /// @param _lunge How far swinging the weapon sends the user.
-function ItemMelee(_itemName,  _inventory, _icon, _amount, _description, _value, _ai, _sprite, _altSprite, _damage, _knockback, _spd, _arc, _lunge)  : Item(_itemName,  _inventory, _icon, _amount, _description, _value, _ai) constructor
+function ItemMelee(_itemName,  _inventory, _icon, _amount, _description, _ai, _sprite, _altSprite, _damage, _knockback, _spd, _arc, _lunge)  : Item(_itemName,  _inventory, _icon, _amount, _description, _ai) constructor
 {
 	sprite = _sprite;
 	altSprite = _altSprite;
@@ -327,11 +323,21 @@ function ItemFirearm(_itemName, _inventory, _icon, _amount, _description, _value
 
 
 ///@function inventory_initialize()
-///@description Initializes the inventory. Returns he ds_list for the inventory. This should usually be set to a variable (eg inventory = inventory_initialize();
+///@description Initializes the inventory. Returns an array for an inventory. This should usually be set to a variable (eg inventory = inventory_initialize();
 function inventory_initialize()
 {
-	return ds_list_create();
+	return array_create(1, noone);
 }
+
+
+
+///@function inventory_equip_initialize()
+///@description Initializes gear, which are the equipped items
+function inventory_equip_initialize()
+{
+	return array_create(1, noone);
+}
+
 
 /// @function inventory_find(_inventory, _Item)
 /// @description returns the first index of the given item in the given inventory. If none is found, returns -1.
@@ -339,18 +345,7 @@ function inventory_initialize()
 /// @param _Item Item struct to search for.
 function inventory_find(_inventory, _Item)
 {
-	//Tries to find an item with the same id in the inventory.
-	for (var _i = 0; _i < ds_list_size(_inventory); _i++)
-	{
-		var _ItemB = ds_list_find_value(_inventory, _i)
-		
-		if ( _Item.GetId() == _ItemB.GetId())
-		{
-			return _i;
-		}
-	}
-
-	return -1;
+	return array_get_index(_inventory, _Item)
 }
 
 ///@function inventory_add(_inventory, _Item)
@@ -369,13 +364,12 @@ function inventory_add(_inventory, _Item)
 		{
 			inventory = _inventory;
 		}
-		
-		ds_list_add(_inventory, _Item);	
+		array_push(_inventory, _Item);	
 	}
 	//Otherwise, gets the found Item and adds 1 to amount.
 	else
 	{
-		var _foundItem = ds_list_find_value(_inventory, _index);
+		var _foundItem = array_get(_inventory, _index);
 		
 		with (_foundItem)
 		{
@@ -393,13 +387,13 @@ function inventory_remove(_inventory, _Item, _user = noone)
 {
 	_Item.SetAmount(_Item.GetAmount() - 1);
 	
-	print("New amount: " + string(_Item.GetAmount()));
+	show_debug_message("New amount: " + string(_Item.GetAmount()));
 	
 	if (_Item.GetAmount() <= 0)
 	{
 			var _index = ds_list_find_index(_inventory, _Item);
 			ds_list_delete(_inventory, _index);
-			print("item removed");
+			show_debug_message("item removed");
 	}
 	
 	//If a reference to a user instance was passed, attempts to set the inventoryIndex for them.
@@ -411,7 +405,7 @@ function inventory_remove(_inventory, _Item, _user = noone)
 			//Makes sure it has an inventoryIndex variable and if so caps it at ds_list_size - 1, but not below 0.
  			if (variable_instance_exists(_user, "inventoryIndex"))
 			{
-				print("index resiezed" + string(ds_list_size(_inventory) ));
+				show_debug_message("index resiezed" + string(ds_list_size(_inventory) ));
 				inventoryIndex = min(ds_list_size(_inventory) - 1, inventoryIndex);
 				inventoryIndex = max(inventoryIndex, 0);
 			}

@@ -12,6 +12,10 @@
     {"name":"clothes","order":2,"path":"folders/Sprites/dolls/clothes.yy",},
     {"name":"pants","order":1,"path":"folders/Sprites/dolls/clothes/pants.yy",},
     {"name":"shoes","order":2,"path":"folders/Sprites/dolls/clothes/shoes.yy",},
+    {"name":"inventory","order":5,"path":"folders/Sprites/inventory.yy",},
+    {"name":"created","order":3,"path":"folders/Sprites/inventory/created.yy",},
+    {"name":"held","order":2,"path":"folders/Sprites/inventory/held.yy",},
+    {"name":"icons","order":1,"path":"folders/Sprites/inventory/icons.yy",},
     {"name":"UI","order":4,"path":"folders/Sprites/UI.yy",},
   ],
   "ResourceOrderSettings":[

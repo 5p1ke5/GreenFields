@@ -46,14 +46,16 @@ if (hDir != 0)
 if (MOUSE_LEFT_BUTTON)
 {
 	handAngle = point_direction(x, y, mouse_x, mouse_y);
+	if (equip[equipIndex])
+	{
+		equip[equipIndex].Use(id);
+	}
 }
 else
 {
 	handAngle = DEFAULT_ANGLE;
 }
-
 #endregion
-
 
 
 #region ///Collision

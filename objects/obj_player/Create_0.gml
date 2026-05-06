@@ -1,12 +1,16 @@
 /// @description Initializes variables, position at spawn.
 
-phys_initialize(0.2, 0.2);
-
 hitbox = new Hitbox([], FLICKER_MAX); 
 
+phys_initialize(0.2, 0.2);
+
 var _doll = global.playerDoll;
-doll_initialize(_doll.faceIndex, _doll.hairIndex, _doll.shirtIndex, _doll.pantsIndex, _doll.shoeIndex, 
-			_doll.skinColor, _doll.hairColor, _doll.shirtColor, _doll.pantsColor, _doll.shoeColor);
+doll_initialize(_doll.faceIndex, _doll.hairIndex, _doll.shirtIndex, _doll.pantsIndex, _doll.shoeIndex, _doll.skinColor, _doll.hairColor, _doll.shirtColor, _doll.pantsColor, _doll.shoeColor);
+
+//Initialize inventory.
+inventory = inventory_initialize();
+equip = inventory_equip_initialize();
+equipIndex = 0;
 
 //Doll movement control things.
 hDir = 0; //Horizontal movement direction.
@@ -25,7 +29,6 @@ handAngle = DEFAULT_ANGLE;
 
 //The target for interaction.
 interact = undefined;
-
 
 //The alert being displayed.
 alert = "";

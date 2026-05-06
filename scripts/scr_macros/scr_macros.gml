@@ -4,6 +4,11 @@
 #macro GROUND abs_ground
 #endregion
 
+
+#region
+#macro ITEM_PISTOL ItemFirearm("Pistol", noone, , 1, "A basic but useful handgun.", 20, )
+#endregion
+
 #region rooms
 #macro ROOM_TITLE room_test
 #endregion

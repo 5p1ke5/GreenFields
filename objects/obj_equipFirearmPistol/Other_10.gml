@@ -11,7 +11,7 @@ var _yOffset = lengthdir_y(6, angle);
 var _bullet = instance_create_depth(x + _xOffset, y + _yOffset, depth + 1, projectile);
 
 var _angle = angle;
-var _speed = 6;
+var _speed = 32;
 with (_bullet)
 {
 	hsp = lengthdir_x(_speed, _angle);
@@ -20,3 +20,6 @@ with (_bullet)
 
 //Resets timer
 cooldown = maxCooldown;
+
+//Play sound effect
+audio_play_sound(sfx_fire, 0, false);

@@ -1,8 +1,6 @@
 /// @description Initializes variables, position at spawn.
 
 hitbox_initialize([], game_get_speed(gamespeed_fps) * 3);
-
-
 phys_initialize(0.2, 0.2);
 
 var _doll = global.playerDoll;

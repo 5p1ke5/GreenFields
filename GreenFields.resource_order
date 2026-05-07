@@ -1,6 +1,7 @@
 {
   "FolderOrderSettings":[
     {"name":"Fonts","order":5,"path":"folders/Fonts.yy",},
+    {"name":"Sounds","order":6,"path":"folders/Sounds.yy",},
     {"name":"Objects","order":3,"path":"folders/Objects.yy",},
     {"name":"abstract","order":1,"path":"folders/Objects/abstract.yy",},
     {"name":"blocks","order":6,"path":"folders/Objects/blocks.yy",},

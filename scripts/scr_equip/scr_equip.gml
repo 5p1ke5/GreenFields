@@ -2,9 +2,8 @@
 /// @description Initializes variables for an equipped item.
 /// @param _owner Object that the equipped object is linked to.
 function equip_initialize(_owner)
-{
-	//TODO: Should this also set myHeld up in Owner? Or maybe just make the owner do that itself...
-	owner = _owner;
+{	
+	owner = _owner;	
 	angle = 0;
 }
 

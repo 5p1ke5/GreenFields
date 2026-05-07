@@ -1,0 +1,1 @@
+/// @desc Skips draw step, this should be done by the player.

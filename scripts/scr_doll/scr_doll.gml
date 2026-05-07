@@ -117,14 +117,10 @@ function doll_draw()
 	draw_sprite_ext(shirtSprite, shirtIndex, x, y, image_xscale, image_yscale, image_angle, shirtColor, 1);
 	draw_sprite_ext(shoeSprite, image_index, x, y, image_xscale, image_yscale, image_angle, shoeColor, 1);
 	
-	
-	//This will let the player draw a held object's sprite in the correct order. Will need to blank out abs_equip_Draw if I do this.
-	/*
 	if (myHeld)
 	{
-		draw_sprite_ext(myHeld.image_index, myHeld.image_number, x, y, image_xscale, image_yscale, handAngle, c_white1, 1);	
+		draw_sprite_ext(myHeld.sprite_index, myHeld.image_index, x, y, 1, image_xscale, handAngle, c_white1, 1);	
 	}
-	*/
 	
 	draw_sprite_ext(armSpriteA, 0, x, y, 1, image_yscale, handAngle, skinColor, 1);
 }

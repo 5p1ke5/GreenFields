@@ -110,6 +110,13 @@ function ItemEquip(_itemName, _inventory, _icon, _amount, _description, _ai, _eq
 	/// @description Script that gets called when an item is equipped. Can be used to spawn equipped items.
 	static Equip = function(_user)
 	{
+		
+		var _equip = instance_create_depth(_user.x, _user.y, _user.depth, equipObj);
+		with (_equip)
+		{
+			equip_initialize(_user);
+		}
+		
 		with (_user)
 		{
 			if (myHeld)
@@ -117,14 +124,7 @@ function ItemEquip(_itemName, _inventory, _icon, _amount, _description, _ai, _eq
 				instance_destroy(myHeld);	
 			}
 			
-			myHeld = noone;
-		}
-		
-		var _firearm = instance_create_depth(_user.x, _user.y, _user.depth, equipObj);
-		
-		with (_firearm)
-		{
-			equip_initialize(_user);
+			myHeld = _equip;
 		}
 	}
 }

@@ -44,6 +44,30 @@ if (hDir != 0)
 
 #region //mouse controls
 handAngle = point_direction(x, y, mouse_x, mouse_y);
+
+if (myHeld)
+{
+	//TODO: put these event_user(#) indices into an enum
+	if (MOUSE_LEFT_BUTTON)
+	{
+		with (myHeld) { event_user(0);}
+	}
+	
+	if (MOUSE_RIGHT_BUTTON)
+	{
+		with (myHeld) { event_user(1);}
+	}
+	if (MOUSE_LEFT_BUTTON_RELEASED)
+	{
+		with (myHeld) { event_user(2);}
+	}
+	
+	if (MOUSE_RIGHT_BUTTON_RELEASED)
+	{
+		with (myHeld) { event_user(3);}
+	}
+}
+
 #endregion
 
 

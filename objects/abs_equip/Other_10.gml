@@ -1,0 +1,1 @@
+/// @desc Activates on left mouse button click. Should be called by the player object.

@@ -5,7 +5,7 @@
 /// @param _hsp Horizontal speed.
 /// @param _vsp vertical speed
 /// @param _isSolid Whether the object stops when it collides with blocks.
-function phys_initialize(_grav, _frict, _hsp = 0, _vsp = 0, _isSolid = true) 
+function phys_initialize(_grav = 0, _frict = 0, _hsp = 0, _vsp = 0, _isSolid = true) 
 {
 
 	//Initializes instance variables.

@@ -1,0 +1,1 @@
+/// @desc Activates on right mouse button click. Should be called and filtered by the player object.

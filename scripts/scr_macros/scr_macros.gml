@@ -6,7 +6,7 @@
 
 
 #region
-#macro ITEM_PISTOL ItemFirearm("Pistol", noone, , 1, "A basic but useful handgun.", 20, )
+#macro ITEM_PISTOL ItemEquip("Pistol", noone, spr_pistol, 100, "A basic but useful handgun.", 0, obj_pistol)
 #endregion
 
 #region rooms

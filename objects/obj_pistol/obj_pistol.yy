@@ -1,18 +1,18 @@
 {
   "$GMObject":"",
-  "%Name":"obj_firearm",
-  "eventList":[
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-  ],
+  "%Name":"obj_pistol",
+  "eventList":[],
   "managed":true,
-  "name":"obj_firearm",
+  "name":"obj_pistol",
   "overriddenProperties":[],
   "parent":{
     "name":"items",
     "path":"folders/Objects/items.yy",
   },
-  "parentObjectId":null,
+  "parentObjectId":{
+    "name":"abs_equip",
+    "path":"objects/abs_equip/abs_equip.yy",
+  },
   "persistent":false,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,
@@ -30,7 +30,10 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":null,
+  "spriteId":{
+    "name":"spr_pistol",
+    "path":"sprites/spr_pistol/spr_pistol.yy",
+  },
   "spriteMaskId":null,
   "visible":true,
 }

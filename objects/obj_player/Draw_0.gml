@@ -1,6 +1,6 @@
 /// @description Draws arms, body. Flickers if taken damage. 
 
-if (hitbox.flicker % 5 != 0)
+if (flicker % 5 != 0)
 {
 	doll_draw();
 }

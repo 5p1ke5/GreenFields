@@ -1,7 +1,7 @@
 ///Inventory functions. inventory_* functions and Item* constructors.
 ///Structs for item types
 
-/// @function Item(_itemName,  _inventory, _icon, _amount, _description, _value, _ai) constructor
+/// @function Item(_itemName,  _inventory, _icon, _amount, _description, _ai) constructor
 /// @description Constructor for an item struct.
 /// @param _itemName <String> item's name.
 /// @param _inventory Inventory array the item is inside of.
@@ -28,6 +28,22 @@ function Item(_itemName,  _inventory, _icon, _amount, _description, _ai) constru
 		static AltUse = function(_user)
 		{
 			show_debug_message("Item alt used!" + string(self) + "by " + string(_user));
+		}
+		
+		/// @description Script that gets called when an item is equipped. Can be used to spawn equipped items.
+		static Equip = function(_user)
+		{
+			//If left blank just destroys the current held item and unbinds it from the user's myHeld.
+			//TODO: maybe make this a function? Could put it in equip_initialize, maybe, but if equip_initialize isn't called the player still keeps the equipped instance..
+			with (_user)
+			{
+				if (myHeld)
+				{
+					instance_destroy(myHeld);	
+				}
+				
+				myHeld = noone;	
+			}
 		}
 		
 		static GetAmount = function()
@@ -73,250 +89,72 @@ function Item(_itemName,  _inventory, _icon, _amount, _description, _ai) constru
 		}
 }
 
-/// @function ItemConsumable(_itemName, _icon, _inventory, _icon, _amount, _description, _ai) constructor 
-/// @description Constructor for an item struct that consumes itself on use.
+/// @function ItemEquip(_itemName, _inventory, _icon, _amount, _description, _ai, _equipObj)
+/// @description Constructor for an item struct that creates an equipped item.
 /// @param _itemName <String> item's name.
 /// @param _inventory Inventory list the item is inside of.
 /// @param _icon <sprite> Sprite representation of item.
 /// @param _amount  quantity of item in stack.
-/// @param _description <String> string description of item.
-/// @param _ai enum for _ai state to use.
-function ItemConsumable(_itemName,  _inventory, _icon, _amount, _description, _ai)  : Item(_itemName,  _inventory, _icon, _amount, _description, _ai) constructor
-{
-		static Use = function(_user)
-		{
-			Consume(_user);
-		}
-		
-		//Consumes the item, removing it from the inventory.
-		static Consume = function(_user)
-		{
-			show_debug_message("Consumable Item used!"  + string(self));
-			
-			if (inventory != noone)
-			{
-				inventory_remove(inventory, self, _user);
-			}
-		}
-}
-
-/// @description function ItemMelee(_itemName,  _inventory, _icon, _amount, _description, _ai, _sprite, _altSprite, _damage, _knockback, _spd, _arc, _lunge) constructor
-/// @description Constructor for an item struct that creates a n object. May fire in the mouse direction (see _spd)
-/// @param _itemName <String> item's name.
-/// @param _inventory Inventory array the item is inside of.
-/// @param _icon <sprite> Sprite representation of item.
-/// @param _amount  quantity of item in stack.
-/// @param _description <String> string description of item.
-/// @param _ai enum for _ai state to use.
-/// @param _sprite Sprite the melee weapon takes the appearance of.
-/// @param _altSprite Sprite for alt use (usually guard)
-/// @param _dmg how much damage the weapon does.
-/// @param _knockback how far targets are knocked back.
-/// @param _spd How fast the weapon is swung.
-/// @param _arc How many degress the weapon is swung.
-/// @param _lunge How far swinging the weapon sends the user.
-function ItemMelee(_itemName,  _inventory, _icon, _amount, _description, _ai, _sprite, _altSprite, _damage, _knockback, _spd, _arc, _lunge)  : Item(_itemName,  _inventory, _icon, _amount, _description, _ai) constructor
-{
-	sprite = _sprite;
-	altSprite = _altSprite;
-	damage = _damage;
-	knockback = _knockback;
-	spd = _spd;
-	arc = _arc;
-	lunge = _lunge;
-	
-	static Use = function(_user)
+/// @param _descrtiption A description of the item.
+/// @param _ai enum that tells an NPC how to behave when they have the item.
+/// @param _equipObj Object to spawn an instance equipped to the player.
+function ItemEquip(_itemName, _inventory, _icon, _amount, _description, _ai, _equipObj) : Item(_itemName,  _inventory, _icon, _amount, _description, _ai)  constructor
+{	
+	equipObj = _equipObj;
+	static Use  = function(_user)
 	{
-		var _melee =  instance_create_at_doll(_user, MELEE, undefined);
+
+	}
+	
 		
-		var _name = itemName;
-		var _sprite = sprite;
-		var _damage = damage;
-		var _knockback = knockback;
-		var _arc = arc;
-		var _spd = spd;
-		var _angle = _user.angle ;
-		var _lunge = lunge;
-		
-		
-		with (_melee)
-		{
-			inventory_meleeInstance_initialize(_name, _user, _sprite, _damage, _knockback, _arc, _spd, _angle);
-		}
-		
+	/// @description Script that gets called when an item is equipped. Can be used to spawn equipped items.
+	static Equip = function(_user)
+	{
 		with (_user)
 		{
-			myHeld = _melee;
-			hsp = dsin(_angle + 90) * _lunge;
-			vsp = dcos(_angle + 90) * _lunge;
-			
-			hDir = sign(hsp);
-			if (hDir != 0) 
+			if (myHeld)
 			{
-				hFacing = hDir;
+				instance_destroy(myHeld);	
 			}
-
-			vDir = sign(vsp);
-			if (vDir != 0) 
-			{
-				vFacing = vDir;
-			}
-		}
-	}
-	
-	
-	//Makes a guard object every step while right button is being held down.
-	static AltUse = function(_user)
-	{
-		var _parry = instance_create_at_doll(_user, GUARD, undefined);
-		var _sprite = altSprite;
-		var _angle = _user.angle;
-		var _knockback = knockback;
-		
-		with (_parry)
-		{
-			owner = _user;
-			sprite_index = _sprite;
-			image_angle = _angle;
-			knockback = _knockback;
 			
-			depth -= 1;
+			myHeld = noone;
 		}
 		
-		with (_user)
+		var _firearm = instance_create_depth(_user.x, _user.y, _user.depth, equipObj);
+		
+		with (_firearm)
 		{
-			myHeld = _parry;
+			equip_initialize(_user);
 		}
 	}
 }
 
 
-
-/// @function ItemInstancer(_itemName,  _inventory, _icon, _amount, _description, _value, _ai, _object, _spd = 0)  
-/// @description Constructor for an item struct that creates a n object. May fire in the mouse direction (see _spd)
-/// @param _itemName <String> item's name.
-/// @param _inventory Inventory list the item is inside of.
-/// @param _icon <sprite> Sprite representation of item.
-/// @param _amount  quantity of item in stack.
-/// @param _description <String> string description of item.
-/// @param _value Value of item when buying or selling.
-/// @param _ai aiType
-/// @param _object Object to create an instance of.
-/// @param [_spd] Optionally specifies a speed for the object to be set to.
-function ItemInstancer(_itemName,  _inventory, _icon, _amount, _description, _value, _ai, _object, _spd = 0)  : Item(_itemName,  _inventory, _icon, _amount, _description, _value, _ai)  constructor
-{
-	object = _object;
-	spd = _spd;
-	
-	static Use = function(_user)
-	{
-		instance_create_at_doll(_user, object, spd);
-	}
-}
-
-/// @function ItemConsumableInstancer(_itemName,  _inventory, _icon, _amount, _description, _value, _ai, _object, _spd = 0)
-/// @description Constructor for an item struct that creates a n object it and then consumes itself. May fire in the mouse direction (see _spd)
-/// @param _itemName <String> item's name.
-/// @param _inventory Inventory list the item is inside of.
-/// @param _icon <sprite> Sprite representation of item.
-/// @param _amount  quantity of item in stack.
-/// @param _description <String> string description of item.
-/// @param _value Value of item when buying or selling.
-/// @param _ai aiType
-/// @param _object Object to create an instance of.
-/// @param [_spd] Optionally specifies a speed for the object to be set to.
-/// @param [_color] Color for object to be set to. If not set defaults to c_white.
-function ItemConsumableInstancer(_itemName,  _inventory, _icon, _amount, _description, _value, _ai, _object, _spd = 0)  :  ItemConsumable(_itemName,  _inventory, _icon, _amount, _description, _value) constructor
-{
-	object = _object;
-	spd = _spd;
-	
-	static Use = function(_user)
-	{
-		instance_create_at_doll(_user, object, spd);
-		Consume(_user);
-	}
-}
-
-/// @function ItemConsumableInstancerColored(_itemName, _icon, _inventory, _object, _spd = 0, _color = c_red)
-/// @description Constructor for an item struct that creates a colored object and then consumes itself. May fire in the mouse direction (see _spd)
-/// @param _itemName <String> item's name.
-/// @param _inventory Inventory list the item is inside of.
-/// @param _icon <sprite> Sprite representation of item.
-/// @param _amount  quantity of item in stack.
-/// @param _description <String> string description of item.
-/// @param _value Value of item when buying or selling.
-/// @param _ai aiType
-/// @param _object Object to create an instance of.
-/// @param [_spd] Optionally specifies a speed for the object to be set to.
-/// @param [_color] Sets color of created balloon.
-function ItemConsumableInstancerColored(_itemName,  _inventory, _icon, _amount, _description, _value, _ai, _object, _spd = 0, _color = c_white)  : ItemConsumableInstancer(_itemName,  _inventory, _icon, _amount, _description, _value, _object, _spd = 0) constructor
-{
-	color = _color;
-	
-	static Use = function(_user)
-	{
-		var _object = instance_create_at_doll(_user, object, spd);
-		var _blendColor = color;
-		
-		with (_object)
-		{
-			image_blend = _blendColor;
-		}
-		
-		Consume(_user);
-	}
-		
-		static GetId = function()
-		{
-			return GetName() + string(color);
-		}
-}
-
-
-/// @function ItemFirearm(_itemName, _inventory, _icon, _amount, _description, _value, _sprite, _damage, _cooldown, _rounds, _object = obj_bullet)
+/// @function ItemFirearm(_itemName, _inventory, _icon, _amount, _description, _ai, _equipObj)
 /// @description Constructor for an item struct that creates a firearm object using passed parameters and binds it to myHeld.
 /// @param _itemName <String> item's name.
 /// @param _inventory Inventory list the item is inside of.
 /// @param _icon <sprite> Sprite representation of item.
 /// @param _amount  quantity of item in stack.
-/// @param _description <String> string description of item.
-/// @param _value Value of item when buying or selling.
-/// @param _sprite Sprite for the weapon object.
-/// @param _damage Damage each round does.
-/// @param _cooldown number of frames to wait between firing rounds. Once all rounds are fired despawns.
-/// @param _rounds number of rounds to fire off. After each round waits _cooldown frames and once all rounds are fired despawns.
-/// @param _projectile object the spawned gun object will fire. By default is normal bullets but could be set to a grenade or something.
-function ItemFirearm(_itemName, _inventory, _icon, _amount, _description, _value, _sprite, _damage, _cooldown, _rounds, _projectile = obj_round) : Item(_itemName,  _inventory, _icon, _amount, _description, _value)  constructor
-{
-	sprite = _sprite;
-	
-	// _damage, _cooldown, _rounds, _projectile = obj_round 
-	// can these just be properties of the object??
-	damage = _damage;
-	cooldown = _cooldown;
-	rounds = _rounds;
-	projectile = _projectile;
-	
+/// @param _ai enum that tells an NPC how to behave when they have the item.
+/// @param _equipObj Object to spawn an instance equipped to the player.
+function ItemFirearm(_itemName, _inventory, _icon, _amount, _description, _ai, _equipObj) : Item(_itemName,  _inventory, _icon, _amount, _description, _ai)  constructor
+{	
+	equipObj = _equipObj;
 	static Use  = function(_user)
 	{
-		var _firearm = doll_instance_create(_user, FIREARM, 0);
+
+	}
+	
 		
-		var _sprite = sprite;
-		var _damage = damage;
-		var _cooldown = cooldown;
-		var _rounds = rounds;
-		var _angle = _user.handAngle;
-		var _projectile = projectile;
+	/// @description Script that gets called when an item is equipped. Can be used to spawn equipped items.
+	static Equip = function(_user)
+	{
+		var _firearm = instance_create_depth(_user.x, _user.y, _user.depth, equipObj);
 		
 		with (_firearm)
 		{
-			doll_firearmInstance_initialize(_user, _sprite, _damage, _cooldown, _rounds, _angle, _projectile);
-		}
-		
-		with (_user)
-		{
-			myHeld = _firearm;
+			owner = _user;
 		}
 	}
 }
@@ -445,11 +283,4 @@ function inventory_meleeInstance_initialize(_name, _owner, _sprite, _damage, _kn
 	
 	//checks if attack is being parried as it's created.
 	parryCheck();
-}
-
-/// @function parryCheck()
-/// @description checks if a hurtbox is being parried.
-function parryCheck()
-{
-	return 0;	
 }

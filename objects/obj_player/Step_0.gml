@@ -48,7 +48,7 @@ handAngle = point_direction(x, y, mouse_x, mouse_y);
 
 
 #region ///Collision
-var _collisions = hitbox.Step(x, y);
+var _collisions = hitbox_step();
 
 //Goes through all the collisions and processes each one.
 for (var _i = 0; _i < array_length(_collisions); _i++) 

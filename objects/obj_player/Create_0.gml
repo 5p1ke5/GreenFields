@@ -1,15 +1,17 @@
 /// @description Initializes variables, position at spawn.
 
-hitbox = new Hitbox([], FLICKER_MAX); 
+hitbox_initialize([], game_get_speed(gamespeed_fps) * 3);
+
 
 phys_initialize(0.2, 0.2);
 
 var _doll = global.playerDoll;
 doll_initialize(_doll.faceIndex, _doll.hairIndex, _doll.shirtIndex, _doll.pantsIndex, _doll.shoeIndex, _doll.skinColor, _doll.hairColor, _doll.shirtColor, _doll.pantsColor, _doll.shoeColor);
 
-//Initialize inventory.
-inventory = inventory_initialize();
-equipIndex = 0;
+
+//Initialize equipped item.
+//inventory[equipIndex].Equip();
+
 
 //Doll movement control things.
 hDir = 0; //Horizontal movement direction.
@@ -25,6 +27,15 @@ animSpeedRun = 0.5; //How fast the player animates while running
 image_speed = animSpeed;
 
 handAngle = DEFAULT_ANGLE;
+
+myHeld = noone;
+
+//Initialize inventory.
+inventory = [new ITEM_PISTOL];
+equipIndex = 0;
+
+inventory[equipIndex].Equip(self);
+
 
 //The target for interaction.
 interact = undefined;

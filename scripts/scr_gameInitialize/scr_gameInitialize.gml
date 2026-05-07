@@ -5,7 +5,7 @@ function game_initialize()
 	randomise();
 	game_set_speed(60, gamespeed_fps);
 	globals_initialize();
-	//draw_set_font(fnt_default);
+	draw_set_font(fnt_default);
 	room_goto(ROOM_TITLE);
 	show_debug_message("Game initialized.");
 }

@@ -1,1 +1,2 @@
-/// @desc Will display a tooltipp...When I have tooltips
+/// @desc Toggles tooltip on
+tooltipOn = true;

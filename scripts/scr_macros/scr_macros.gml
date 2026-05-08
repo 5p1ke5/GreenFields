@@ -13,6 +13,7 @@
 #macro ROOM_TITLE room_menuTitle
 #macro ROOM_SINGLEPLAYER room_test
 #macro ROOM_MULTIPLAYER room_menuClient
+#macro ROOM_SERVER room_menuServer
 #endregion
 
 

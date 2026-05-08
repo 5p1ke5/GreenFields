@@ -1,26 +1,28 @@
-#region //Object references
+#region Object references
 #macro BLOCK obj_block
 #macro ONEWAY obj_oneWay
 #macro GROUND abs_ground
 #endregion
 
 
-#region
+#region items
 #macro ITEM_PISTOL ItemEquip("Pistol", noone, spr_pistol, 100, "A basic but useful handgun.", 0, obj_equipFirearmPistol)
 #endregion
 
 #region rooms
-#macro ROOM_TITLE room_titleMenu
+#macro ROOM_TITLE room_menuTitle
+#macro ROOM_SINGLEPLAYER room_test
+#macro ROOM_MULTIPLAYER room_menuClient
 #endregion
 
 
-#region //Sprite references
+#region Sprite references
 #macro PANTS_ARRAY [spr_dollPants0, spr_dollPants1]
 #macro SHOES_ARRAY [spr_dollShoes0, spr_dollShoes1]
 #endregion
 
 
-#region //Constant numbers
+#region Constant numbers
 #macro STARTING_HP 3
 #macro TERMINAL_VELOCITY 20
 #macro MAX_ACCEL 3
@@ -32,7 +34,7 @@
 #macro TEXT_BALLOON_MAXW 150
 #endregion
 
-#region	//Controls.
+#region	Controls.
 #macro ANY_BUTTON (keyboard_check(vk_anykey))
 #macro RIGHT_BUTTON (keyboard_check(vk_right)	 || keyboard_check(ord("D")) || gamepad_button_check(0, gp_padr))
 #macro DOWN_BUTTON (keyboard_check(vk_down)		 || keyboard_check(ord("S")) || gamepad_button_check(0, gp_padd))
@@ -85,8 +87,8 @@
 #endregion
 
 
-//extra colors
-#region
+
+#region extra colors
 //Human skin colors
 #macro c_black1 make_color_rgb(120, 65, 35)
 #macro c_black2 make_color_rgb(160, 65, 35)

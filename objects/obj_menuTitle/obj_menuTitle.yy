@@ -10,8 +10,8 @@
   "name":"obj_menuTitle",
   "overriddenProperties":[],
   "parent":{
-    "name":"menus",
-    "path":"folders/Objects/menus.yy",
+    "name":"UI",
+    "path":"folders/Objects/UI.yy",
   },
   "parentObjectId":{
     "name":"abs_menu",

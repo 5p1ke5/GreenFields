@@ -19,7 +19,7 @@ show_debug_message("Socket: " + string(_socket));
 
 if (_type == network_type_data)
 {
-	show_debug_message("!!! Data Data Data! " + string(serverSocket));
+	show_debug_message("!!! Data Data Data! " + string(_socket));
 	
 	var _buffer = ds_map_find_value(async_load, "buffer"); 
 	var _read = buffer_read(_buffer, buffer_u16 )

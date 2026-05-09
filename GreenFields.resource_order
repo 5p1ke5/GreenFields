@@ -28,6 +28,7 @@
     {"name":"UI","order":4,"path":"folders/Sprites/UI.yy",},
   ],
   "ResourceOrderSettings":[
+    {"name":"fnt_gothic","order":2,"path":"fonts/fnt_gothic/fnt_gothic.yy",},
     {"name":"fnt_speech","order":1,"path":"fonts/fnt_speech/fnt_speech.yy",},
     {"name":"abs_equip","order":3,"path":"objects/abs_equip/abs_equip.yy",},
     {"name":"abs_ground","order":2,"path":"objects/abs_ground/abs_ground.yy",},

@@ -11,20 +11,21 @@ var _ip = ds_map_find_value(async_load, "ip"); //IP address of the socket.
 var _port = ds_map_find_value(async_load, "port"); //Port number of the socket.
 var _socket = ds_map_find_value(async_load, "socket");  //Socket number on the list
 
-show_debug_message("Type: " + string(_type));
-show_debug_message("ID: " + string(_id));
-show_debug_message("IP: " + string(_ip));
-show_debug_message("Port: " + string(_port));
-show_debug_message("Socket: " + string(_socket));
+var _asyncString =	"Type: "	+ string(_type)	+
+					" ID: "		+ string(_id)	+
+					" IP: "		+ string(_ip)	+
+					" Port: "	+ string(_port) +
+					" Socket: " + string(_socket);
+
+array_push(global.messageLog, "!!! Connection: " + string(_asyncString))
+
 
 if (_type == network_type_data)
 {
-	show_debug_message("!!! Data Data Data! " + string(_socket));
+	array_push(global.messageLog, "!!! Data Data Data! " + string(_socket))
 	
 	var _buffer = ds_map_find_value(async_load, "buffer"); 
 	var _read = buffer_read(_buffer, buffer_u16 )
 	
-	show_debug_message("!!! Epoch: " + string(_read));
-	
-	
+	array_push(global.messageLog, "!!! Server Epoch: " + string(_read));
 }

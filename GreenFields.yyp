@@ -48,6 +48,7 @@
   "name":"GreenFields",
   "resources":[
     {"id":{"name":"fnt_default","path":"fonts/fnt_default/fnt_default.yy",},},
+    {"id":{"name":"fnt_gothic","path":"fonts/fnt_gothic/fnt_gothic.yy",},},
     {"id":{"name":"fnt_speech","path":"fonts/fnt_speech/fnt_speech.yy",},},
     {"id":{"name":"abs_equip","path":"objects/abs_equip/abs_equip.yy",},},
     {"id":{"name":"abs_ground","path":"objects/abs_ground/abs_ground.yy",},},

@@ -4,8 +4,8 @@ timer--;
 if (timer < 0)
 {
 	//Measures epoch.
-	show_debug_message("Epoch: " + string(epoch) + " Time: " + string(current_time));
 	epoch++;
+	array_push(global.messageLog, "New Epoch: " + string(epoch) + " Time: " + string(current_time))
 	
 	//Writes epoch to a buffer and sends it from server out to all clients.
 	var _buffer = buffer_create(256, buffer_grow, 1);
@@ -19,7 +19,6 @@ if (timer < 0)
 	
 	buffer_delete(_buffer);
 
-	
 	
 	timer = timerCD;	
 }

@@ -22,7 +22,7 @@ array_push(global.messageLog, "!!! Connection: " + string(_asyncString))
 
 if (_type == network_type_data)
 {
-	array_push(global.messageLog, "!!! Data Data Data! " + string(_socket))
+	array_push(global.messageLog, "!!! Data Acquired: " + string(_socket))
 	
 	var _buffer = ds_map_find_value(async_load, "buffer"); 
 	var _read = buffer_read(_buffer, buffer_u16 )

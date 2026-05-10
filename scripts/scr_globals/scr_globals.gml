@@ -18,7 +18,7 @@ function globals_initialize()
 	
 	global.roomPausedFrom = noone;
 	
-	global.messageLog = messageLog_initialize();
+	global.messageLog = [];
 	
 	
 	//global.playerDoll = doll_struct(0, 0, 0,0, 0, c_white1, c_darkBrunette, c_red, c_aqua, c_red);

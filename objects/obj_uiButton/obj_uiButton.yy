@@ -1,6 +1,6 @@
 {
   "$GMObject":"",
-  "%Name":"obj_button",
+  "%Name":"obj_uiButton",
   "eventList":[
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":10,"eventType":7,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
@@ -11,7 +11,7 @@
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":8,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"obj_button",
+  "name":"obj_uiButton",
   "overriddenProperties":[],
   "parent":{
     "name":"UI",
@@ -36,12 +36,12 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_button",
-    "path":"sprites/spr_button/spr_button.yy",
+    "name":"spr_uiButton",
+    "path":"sprites/spr_uiButton/spr_uiButton.yy",
   },
   "spriteMaskId":{
-    "name":"spr_button",
-    "path":"sprites/spr_button/spr_button.yy",
+    "name":"spr_uiButton",
+    "path":"sprites/spr_uiButton/spr_uiButton.yy",
   },
   "visible":true,
 }

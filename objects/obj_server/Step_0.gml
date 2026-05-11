@@ -14,9 +14,9 @@ if (timer < 0)
 	
 	for (var _i = 0; _i < array_length(sockets); _i++) 
 	{
-		//network_send_packet(sockets[_i], _buffer, buffer_tell(_buffer))
+		network_send_packet(sockets[_i], _buffer, buffer_tell(_buffer))
 		//This miiiight broadcast a packet to all listening clients. Maybe. I will try tomorrow.
-		network_send_broadcast(serverSocket, port, _buffer, buffer_tell(_buffer)) 
+		//network_send_broadcast(serverSocket, port, _buffer, buffer_tell(_buffer)) 
 	}
 	
 	buffer_delete(_buffer);

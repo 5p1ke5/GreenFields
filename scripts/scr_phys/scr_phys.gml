@@ -41,7 +41,8 @@ function phys_force_add(_force, _accel, _max)
 function phys_floor_collision(_vsp) 
 {
 	//Checks every pixel in the player's path for collision.
-	for (var _i = 0; (abs(_i) < abs(_vsp)) || (place_meeting(x, y + _i, BLOCK)) || (grounded && _vsp > 0); _i += sign(_vsp))
+	//for (var _i = 0; (abs(_i) < abs(_vsp)) || (place_meeting(x, y + _i, BLOCK)) || collision_point(x, bbox_bottom + 1 + _i, ONEWAY, true, true)/* || (grounded && _vsp > 0)*/; _i += sign(_vsp))
+	for (var _i = 0; (abs(_i) < abs(_vsp)) || (place_meeting(x, y + _i, BLOCK)) || (vsp > 0 && collision_point(x, bbox_bottom + 1 + _i, ONEWAY, true, true))/* || (grounded && _vsp > 0)*/; _i += sign(_vsp))
 	{
 	    //If there is a collision, it will move the player as close to the object as possible and then stop. 
 		var _collision = instance_place(x, y + _i, BLOCK)
@@ -54,16 +55,15 @@ function phys_floor_collision(_vsp)
 		//Having issues with collision mask scaling
 		//what if I just have oneWay blocks spawn a oneway platform for themselves
 		
-		var _collision = instance_place(x, y + _i, ONEWAY)
+		var _collision = collision_point(x, bbox_bottom + 1 + _i, ONEWAY, true, true);
 		if (_collision)
 		{
-		    if (sign(_vsp) >= 0)// && ((bbox_bottom - 1) <= (_collision.bbox_top))
+		    if (sign(_vsp) >= 0) && ((bbox_bottom ) < (_collision.bbox_top))
 			{
 				y += _i - sign(_vsp);
 				return 0;
 			}
 		}
-		
 	}
 
 	return _vsp;
@@ -139,7 +139,7 @@ function phys_gravity(_vsp, _grav, _terminalVelocity)
 /// @description Place in the step event to activate physics.
 function phys_step() 
 {
-
+	
 	//grav increases the object's downwards speed by raising vsp. Does not do so past the terminal velocity.
 	vsp = phys_gravity(vsp, grav, TERMINAL_VELOCITY);
 
@@ -153,12 +153,16 @@ function phys_step()
 	    hsp = phys_wall_collision(hsp);
 	}
 
-	y += vsp;
-	x += hsp;
+	y += round(vsp);
+	x += round(hsp);
+
+	//Checks if the object is on the ground.
+	//grounded = place_meeting(x, y + 1, GROUND)
+	//this doesn't always pick up oneway platforms, weird.
+	grounded = collision_point(x, bbox_bottom + 1 + vsp, GROUND, true, true);
+	//grounded = collision_rectangle(bbox_left, bbox_bottom, bbox_right, bbox_bottom + 3, GROUND, true, true);
+	show_debug_message(grounded)
 	
 	x = round(x);
 	y = round(y);
-
-	//Checks if the object is on the ground.
-	grounded = place_meeting(x, y + 1, GROUND);
 }

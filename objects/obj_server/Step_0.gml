@@ -15,18 +15,16 @@ if (timer < 0)
 	for (var _i = 0; _i < array_length(sockets); _i++) 
 	{
 		network_send_packet(sockets[_i], _buffer, buffer_tell(_buffer))
-		//This miiiight broadcast a packet to all listening clients. Maybe. I will try tomorrow.
-		//network_send_broadcast(serverSocket, port, _buffer, buffer_tell(_buffer)) 
 	}
 	
 	buffer_delete(_buffer);
-	
 	//Next it sends out a broadcast periodically
+	/*
 	var _buffer = buffer_create(256, buffer_grow, 1);
 	buffer_seek(_buffer, buffer_seek_start, 0);
 	buffer_write(_buffer, buffer_u16, current_time);
 	network_send_broadcast(serverSocket, port, _buffer, buffer_tell(_buffer)) 
 	buffer_delete(_buffer);
-	
+	*/
 	timer = timerCD;	
 }

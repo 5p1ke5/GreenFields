@@ -4,8 +4,9 @@
 clientSocket = network_create_socket(network_socket_tcp);
 array_push(global.messageLog, "!!! client socket: " + string(clientSocket))
 
+
 //TODO: Make a way for the user to enter this.
-var _connect = network_connect(clientSocket, "192.168.1.2", 6510);
+var _connect = network_connect(clientSocket, "127.0.0.1", 6510);
 if (_connect < 0)
 {
 	array_push(global.messageLog, "!!! connection error! " + string(_connect))

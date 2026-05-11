@@ -20,7 +20,13 @@ if (timer < 0)
 	}
 	
 	buffer_delete(_buffer);
-
+	
+	//Next it sends out a broadcast periodically
+	var _buffer = buffer_create(256, buffer_grow, 1);
+	buffer_seek(_buffer, buffer_seek_start, 0);
+	buffer_write(_buffer, buffer_u16, current_time);
+	network_send_broadcast(serverSocket, port, _buffer, buffer_tell(_buffer)) 
+	buffer_delete(_buffer);
 	
 	timer = timerCD;	
 }

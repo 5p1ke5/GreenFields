@@ -41,24 +41,29 @@ function phys_force_add(_force, _accel, _max)
 function phys_floor_collision(_vsp) 
 {
 	//Checks every pixel in the player's path for collision.
-	for (var _i = 0; (abs(_i) < abs(_vsp)) || (place_meeting(x, y + _i, BLOCK)); _i += sign(_vsp))
+	for (var _i = 0; (abs(_i) < abs(_vsp)) || (place_meeting(x, y + _i, BLOCK)) || (grounded && _vsp > 0); _i += sign(_vsp))
 	{
-	    //If there is a collision, it will move the player as close to the object as possible and then stop.
-	    if (place_meeting(x, y + _i, BLOCK))
-	    {
-	        y += _i - sign(_vsp);
-	        return 0;
-	    }
+	    //If there is a collision, it will move the player as close to the object as possible and then stop. 
+		var _collision = instance_place(x, y + _i, BLOCK)
+		if (_collision)
+		{
+			y += _i - sign(_vsp);
+			return 0;
+		}
 		
-	    //This is the collision for one-way platforms.
-	    if (sign(_vsp) >= 0)
-	    {	
-	        if (place_meeting(x, y + _i + 1, ONEWAY))
-	        {
-				y += _i;
+		//Having issues with collision mask scaling
+		//what if I just have oneWay blocks spawn a oneway platform for themselves
+		
+		var _collision = instance_place(x, y + _i, ONEWAY)
+		if (_collision)
+		{
+		    if (sign(_vsp) >= 0)// && ((bbox_bottom - 1) <= (_collision.bbox_top))
+			{
+				y += _i - sign(_vsp);
 				return 0;
-	        }
-	    }
+			}
+		}
+		
 	}
 
 	return _vsp;
@@ -74,12 +79,13 @@ function phys_wall_collision(_hsp)
 	//Checks every pixel in the object's path for collision.
 	for (var _i = 0; (abs(_i) < abs(_hsp)) || (place_meeting(x + _i, y, BLOCK)); _i += sign(_hsp))
 	{
-	    //If there is a collision, it will move the player as close to the object as possible and then stop. Bas a tiny upwards margin for now.4
-	    if (place_meeting(x + _i, y, BLOCK))
-	    {
+	    //If there is a collision, it will move the player as close to the object as possible and then stop. 
+		var _collision = instance_place(x + _i, y, BLOCK);
+		if (_collision)
+		{
 	        x += _i - sign(_hsp);
 	        return 0;
-	    }
+		}
 	}
 	
 	return _hsp;
@@ -125,8 +131,6 @@ function phys_gravity(_vsp, _grav, _terminalVelocity)
 	_vsp = min(_vsp + _grav, _terminalVelocity) 
 
 	return _vsp;
-
-
 }
 
 
@@ -156,5 +160,5 @@ function phys_step()
 	y = round(y);
 
 	//Checks if the object is on the ground.
-	grounded = (place_meeting(x, y + 1, GROUND));
+	grounded = place_meeting(x, y + 1, GROUND);
 }

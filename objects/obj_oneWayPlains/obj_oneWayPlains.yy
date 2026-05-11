@@ -34,9 +34,6 @@
     "name":"spr_oneWayPlains",
     "path":"sprites/spr_oneWayPlains/spr_oneWayPlains.yy",
   },
-  "spriteMaskId":{
-    "name":"spr_oneWay",
-    "path":"sprites/spr_oneWay/spr_oneWay.yy",
-  },
+  "spriteMaskId":null,
   "visible":true,
 }

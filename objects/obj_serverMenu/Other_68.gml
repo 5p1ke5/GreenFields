@@ -18,20 +18,20 @@ var _asyncString =	"Type: "	+ string(_type)	+
 					" Port: "	+ string(_port) +
 					" Socket: " + string(_socket);
 
-array_push(global.messageLog, "!!! async received: " + string(_asyncString))
+show_debug_message("!!! async received: " + string(_asyncString))
 
-if (_id == serverSocket)
+if (_id == global.socketServer)
 {
 	switch (_type) 
 	{    
 		case network_type_connect:
-			array_push(sockets, _socket);
-			array_push(global.messageLog, "!!! Socket connected! " + string(sockets))
-			// send player to the deathmatch room...
+			global.socketClient = _socket;
+			show_debug_message("!!! Socket connected! " + string(global.socketClient))
+			room_goto(room_deathmatchServer);
 	        break;
 		case network_type_disconnect:
-			array_delete(sockets, array_get_index(sockets, _socket), 1);
-			array_push(global.messageLog, "!!! Socket disconnected! " + string(sockets))
+			global.socketClient = noone;
+			show_debug_message("!!! Socket disconnected! " + string(global.socketClient))
 	        break;
 	}
 }

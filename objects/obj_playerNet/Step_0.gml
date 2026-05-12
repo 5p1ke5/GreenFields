@@ -16,12 +16,12 @@ buffer_write(_buffer, buffer_bool, MOUSE_RIGHT_BUTTON_RELEASED);
 buffer_write(_buffer, buffer_bool, MOUSE_RIGHT_BUTTON_RELEASED);
 buffer_write(_buffer, buffer_s16, mouse_x);
 buffer_write(_buffer, buffer_s16, mouse_y);
+network_send_packet(global.socketClient, _buffer, buffer_tell(_buffer))
 
 
 /*	
 for (var _i = 0; _i < array_length(sockets); _i++) 
 {
-	network_send_packet(sockets[_i], _buffer, buffer_tell(_buffer))
 }
 */
 

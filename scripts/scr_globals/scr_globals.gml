@@ -15,6 +15,8 @@ function globals_initialize()
 	global.spawnHsp = undefined;
 	global.spawnVsp = undefined;
 	
+	global.socketClient = noone;
+	global.socketServer = noone;
 	
 	global.roomPausedFrom = noone;
 	

@@ -161,7 +161,7 @@ function phys_step()
 	//this doesn't always pick up oneway platforms, weird.
 	grounded = collision_point(x, bbox_bottom + 1 + vsp, GROUND, true, true);
 	//grounded = collision_rectangle(bbox_left, bbox_bottom, bbox_right, bbox_bottom + 3, GROUND, true, true);
-	show_debug_message(grounded)
+
 	
 	x = round(x);
 	y = round(y);

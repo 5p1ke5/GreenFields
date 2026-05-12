@@ -29,8 +29,8 @@
   ],
   "name":"room_deathmatch",
   "parent":{
-    "name":"levels",
-    "path":"folders/Rooms/levels.yy",
+    "name":"multiplayer",
+    "path":"folders/Rooms/levels/multiplayer.yy",
   },
   "parentRoom":null,
   "physicsSettings":{

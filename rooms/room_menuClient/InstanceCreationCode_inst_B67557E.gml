@@ -19,7 +19,7 @@ var _clickFunction = function()
 	else
 	{
 		array_push(global.messageLog, "!!! Connection: " + string(_connect))
-		//Go to X room to be created...
+		room_goto(room_deathmatchClient);
 	}
 }
 

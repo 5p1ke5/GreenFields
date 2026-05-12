@@ -1,1 +1,0 @@
-npc_initialize("Error", "Hello World!");

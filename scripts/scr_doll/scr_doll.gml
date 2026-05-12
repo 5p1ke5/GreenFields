@@ -137,6 +137,8 @@ function doll_input_jump(_jump, _jumpOffset)
 	if (grounded)
 	{
 		jumps = maxJumps;
+		flipSpeed = 0;
+		image_angle = 0;
 	}
 	if (_jump) //Jumps
 	{
@@ -144,8 +146,15 @@ function doll_input_jump(_jump, _jumpOffset)
 		{
 			jumps--;
 			vsp = -jumpHeight;
+			
+			if (!grounded)
+			{
+				flipSpeed = -facing * 10;	
+			}
 		}
 	} 
+	
+	image_angle += flipSpeed;
 
 	//Offsets gravity to allow for jump cancelling
 	if (_jumpOffset) 

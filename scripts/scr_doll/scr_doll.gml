@@ -124,3 +124,69 @@ function doll_draw()
 	
 	draw_sprite_ext(armSpriteA, 0, x, y, 1, image_yscale, handAngle, skinColor, 1);
 }
+
+//These function take input to issue commands to the doll. The function vets the commands, and if the conditions are met performs the action.
+
+/// @function doll_input_jump(_jump, _jumpOffset)
+/// @desc Makes the doll attempt to jump. Height can be varied with _jumpOffset
+/// @param _jump If the doll should attempt to jump.
+/// @param _jumpOffset if the doll should offset their jump to jump higher.
+function doll_input_jump(_jump, _jumpOffset)
+{
+	if (_jump) //Jumps
+	{
+		if (grounded)
+		{
+			vsp = -jumpHeight;
+		}
+	} 
+
+	//Offsets gravity to allow for jump cancelling
+	if (_jumpOffset) 
+	{
+		vsp -= jumpOffset;
+	}
+}
+
+
+/// @function doll_input_move(_right, _left, _run)
+/// @descr Commands the doll to move left or right. _run raises the maximum speed by 50%.
+/// @param _right Moves right.
+/// @param _left Move left.
+/// @param _run Raises the maximum speed that can be accelerated  to.
+function doll_input_move(_right, _left, _run)
+{
+	image_speed = _run ? animSpeedRun : animSpeed;
+	
+	hDir = _right - _left;
+	
+	if (hDir != 0)
+	{
+		hsp = phys_force_add(hsp, accel * hDir, maxSpeed + (0.5 * maxSpeed * _run));
+		facing = hDir;
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

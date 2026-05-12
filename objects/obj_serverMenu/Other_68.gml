@@ -27,6 +27,7 @@ if (_id == serverSocket)
 		case network_type_connect:
 			array_push(sockets, _socket);
 			array_push(global.messageLog, "!!! Socket connected! " + string(sockets))
+			// send player to the deathmatch room...
 	        break;
 		case network_type_disconnect:
 			array_delete(sockets, array_get_index(sockets, _socket), 1);

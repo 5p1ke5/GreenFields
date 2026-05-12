@@ -17,8 +17,8 @@ var _asyncString =	"Type: "	+ string(_type)	+
 					" Port: "	+ string(_port) +
 					" Socket: " + string(_socket);
 
-array_push(global.messageLog, "!!! Connection: " + string(_asyncString))
 
+array_push(global.messageLog, "!!! Connection: " + string(_asyncString))
 
 if (_type == network_type_data)
 {

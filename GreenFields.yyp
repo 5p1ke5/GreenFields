@@ -61,6 +61,7 @@
     {"id":{"name":"obj_bullet","path":"objects/obj_bullet/obj_bullet.yy",},},
     {"id":{"name":"obj_client","path":"objects/obj_client/obj_client.yy",},},
     {"id":{"name":"obj_equipFirearmPistol","path":"objects/obj_equipFirearmPistol/obj_equipFirearmPistol.yy",},},
+    {"id":{"name":"obj_label","path":"objects/obj_label/obj_label.yy",},},
     {"id":{"name":"obj_menuTitle","path":"objects/obj_menuTitle/obj_menuTitle.yy",},},
     {"id":{"name":"obj_messageLog","path":"objects/obj_messageLog/obj_messageLog.yy",},},
     {"id":{"name":"obj_npcDoll","path":"objects/obj_npcDoll/obj_npcDoll.yy",},},
@@ -74,6 +75,7 @@
     {"id":{"name":"room_deathmatch","path":"rooms/room_deathmatch/room_deathmatch.yy",},},
     {"id":{"name":"room_initialize","path":"rooms/room_initialize/room_initialize.yy",},},
     {"id":{"name":"room_menuClient","path":"rooms/room_menuClient/room_menuClient.yy",},},
+    {"id":{"name":"room_menuMultiplayer","path":"rooms/room_menuMultiplayer/room_menuMultiplayer.yy",},},
     {"id":{"name":"room_menuServer","path":"rooms/room_menuServer/room_menuServer.yy",},},
     {"id":{"name":"room_menuTitle","path":"rooms/room_menuTitle/room_menuTitle.yy",},},
     {"id":{"name":"room_plains","path":"rooms/room_plains/room_plains.yy",},},
@@ -132,6 +134,7 @@
     {"roomId":{"name":"room_menuClient","path":"rooms/room_menuClient/room_menuClient.yy",},},
     {"roomId":{"name":"room_menuServer","path":"rooms/room_menuServer/room_menuServer.yy",},},
     {"roomId":{"name":"room_test","path":"rooms/room_test/room_test.yy",},},
+    {"roomId":{"name":"room_menuMultiplayer","path":"rooms/room_menuMultiplayer/room_menuMultiplayer.yy",},},
   ],
   "templateType":"game",
   "TextureGroups":[

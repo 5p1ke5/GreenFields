@@ -16,6 +16,9 @@ hDir = 0; //Horizontal movement direction.
 facing = 1; //Direction facing. Should always be 1 or -1.
 maxSpeed = 3; 
 accel = 0.5;
+
+jumps = 2;
+maxJumps = 2;
 jumpHeight = 4;
 jumpOffset = 0.1; //This is applied to gravity to let the player jump higher while holding the jump button.
 

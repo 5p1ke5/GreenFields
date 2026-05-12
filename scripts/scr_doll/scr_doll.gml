@@ -133,10 +133,16 @@ function doll_draw()
 /// @param _jumpOffset if the doll should offset their jump to jump higher.
 function doll_input_jump(_jump, _jumpOffset)
 {
+	
+	if (grounded)
+	{
+		jumps = maxJumps;
+	}
 	if (_jump) //Jumps
 	{
-		if (grounded)
+		if (jumps > 0)
 		{
+			jumps--;
 			vsp = -jumpHeight;
 		}
 	} 
@@ -169,8 +175,41 @@ function doll_input_move(_right, _left, _run)
 
 
 
-
-
+/// @function doll_input_aim(_angle, _myHeld, _fireDown, _altFireDown, _fireUp, _altFireUp)
+/// @descr Aims the player's weapon, controls fire and alt fire.
+/// @param _angle The angle the player is pointing the weapon at.
+/// @param _myHeld A reference to the held object that will be controlled.
+/// @param _fireDown if the main fire button (left button) is being held. 
+/// @param _altFireDown if the alt fire button (right button) is being held.
+/// @param _fireUp if the main fire button (left button) is being released. 
+/// @param _altFireUp if the alt fire button (right button) is being released.
+function doll_input_aim(_angle, _myHeld, _fireDown, _altFireDown, _fireUp, _altFireUp)
+{
+	handAngle = _angle;
+	
+	if (_myHeld)
+	{
+		//TODO: put these event_user(#) indices into an enum
+		if (_fireDown)
+		{
+			with (_myHeld) { event_user(0);}
+		}
+	
+		if (_altFireDown)
+		{
+			with (_myHeld) { event_user(1);}
+		}
+		if (_fireUp)
+		{
+			with (_myHeld) { event_user(2);}
+		}
+	
+		if (_altFireUp)
+		{
+			with (_myHeld) { event_user(3);}
+		}
+	}
+}
 
 
 

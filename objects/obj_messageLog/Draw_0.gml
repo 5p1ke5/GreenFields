@@ -1,4 +1,10 @@
 var _array = global.messageLog;
+
+if (array_length(_array) < 1)
+{
+	exit;	
+}
+
 var _string = "";
 
 var _start = min(scroll, array_length(_array));

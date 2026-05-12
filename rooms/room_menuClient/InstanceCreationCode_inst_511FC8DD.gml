@@ -1,0 +1,1 @@
+label_initialize("Enter Host IP Address", , , 1, 1, 0, c_white, c_white, c_white, c_white, 1, fa_center, , fnt_default);

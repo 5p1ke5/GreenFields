@@ -136,25 +136,20 @@ function doll_input_jump(_jump, _jumpOffset)
 	
 	if (grounded)
 	{
-		jumps = maxJumps;
-		flipSpeed = 0;
-		image_angle = 0;
+		multiJumps = maxMultiJumps;
 	}
+	
 	if (_jump) //Jumps
 	{
-		if (jumps > 0)
+		if (multiJumps > 0)
 		{
-			jumps--;
-			vsp = -jumpHeight;
-			
 			if (!grounded)
 			{
-				flipSpeed = -facing * 10;	
+				multiJumps--;
 			}
+			vsp = -jumpHeight;
 		}
 	} 
-	
-	image_angle += flipSpeed;
 
 	//Offsets gravity to allow for jump cancelling
 	if (_jumpOffset) 

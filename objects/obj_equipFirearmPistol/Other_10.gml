@@ -12,7 +12,7 @@ var _bullet = instance_create_depth(x + _xOffset, y + _yOffset, depth + 1, proje
 
 var _angle = angle;
 var _speed = 32;
-var _owner = self;
+var _owner = owner;
 with (_bullet)
 {
 	hsp = lengthdir_x(_speed, _angle);

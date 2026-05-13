@@ -10,15 +10,17 @@ var _xOffset = lengthdir_x(6, angle);
 var _yOffset = lengthdir_y(6, angle);
 var _bullet = instance_create_depth(x + _xOffset, y + _yOffset, depth + 1, projectile);
 
+var _speed = 16;
 var _angle = angle;
-var _speed = 32;
+var _damage = damage;
 var _owner = owner;
 with (_bullet)
 {
 	hsp = lengthdir_x(_speed, _angle);
 	vsp = lengthdir_y(_speed, _angle);
+	image_angle = _angle;
 	
-	hurtbox_initialize(1, _owner);
+	hurtbox_initialize(_damage, _owner);
 }
 
 //Resets timer

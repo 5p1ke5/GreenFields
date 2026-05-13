@@ -1,5 +1,5 @@
 /// @description Initializes firearm variables.
-var _damage = 2;
+var _damage = 10;
 var _cooldown = game_get_speed(gamespeed_fps) / 4;
 var _bullet = obj_bullet;
 

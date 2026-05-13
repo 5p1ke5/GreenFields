@@ -42,25 +42,25 @@ function phys_floor_collision(_vsp)
 {
 	//Checks every pixel in the player's path for collision.
 	//for (var _i = 0; (abs(_i) < abs(_vsp)) || (place_meeting(x, y + _i, BLOCK)) || collision_point(x, bbox_bottom + 1 + _i, ONEWAY, true, true)/* || (grounded && _vsp > 0)*/; _i += sign(_vsp))
-	for (var _i = 0; (abs(_i) < abs(_vsp)) || (place_meeting(x, y + _i, BLOCK)) || (vsp > 0 && collision_point(x, bbox_bottom + 1 + _i, ONEWAY, true, true))/* || (grounded && _vsp > 0)*/; _i += sign(_vsp))
+	for (var _i = 0; (abs(_i) < abs(_vsp)); _i += sign(_vsp))
 	{
 	    //If there is a collision, it will move the player as close to the object as possible and then stop. 
-		var _collision = instance_place(x, y + _i, BLOCK)
+		var _collision = instance_place(x, y + _i + sign(_vsp), BLOCK)
 		if (_collision)
 		{
-			y += _i - sign(_vsp);
+			y += _i;
 			return 0;
 		}
 		
 		//Having issues with collision mask scaling
 		//what if I just have oneWay blocks spawn a oneway platform for themselves
 		
-		var _collision = collision_point(x, bbox_bottom + 1 + _i, ONEWAY, true, true);
+		var _collision = instance_place(x, y + 1 + _i, ONEWAY);
 		if (_collision)
 		{
-		    if (sign(_vsp) >= 0) && ((bbox_bottom ) < (_collision.bbox_top))
+		    if (_vsp >= 0) && ((bbox_bottom <= _collision.bbox_top))
 			{
-				y += _i - sign(_vsp);
+				y += _i;
 				return 0;
 			}
 		}
@@ -159,8 +159,8 @@ function phys_step()
 	//Checks if the object is on the ground.
 	//grounded = place_meeting(x, y + 1, GROUND)
 	//this doesn't always pick up oneway platforms, weird.
-	grounded = collision_point(x, bbox_bottom + 1 + vsp, GROUND, true, true);
-	//grounded = collision_rectangle(bbox_left, bbox_bottom, bbox_right, bbox_bottom + 3, GROUND, true, true);
+	//grounded = collision_point(x, bbox_bottom + 1, GROUND, true, true);
+	grounded = collision_rectangle(bbox_left, bbox_bottom, bbox_right, bbox_bottom + 1, GROUND, true, true);
 
 	
 	x = round(x);

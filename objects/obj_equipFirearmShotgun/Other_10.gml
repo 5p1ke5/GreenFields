@@ -12,7 +12,7 @@ var _damage = damage;
 var _xOffset = lengthdir_x(6, angle);
 var _yOffset = lengthdir_y(6, angle);
 var _owner = owner;
-var _bulletNum = 8;
+var _bulletNum = 10;
 
 for (var _i = 0; _i < _bulletNum; _i++) 
 {    

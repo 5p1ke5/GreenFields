@@ -26,4 +26,3 @@ myHeld = noone;
 //Initialize inventory.
 inventory = [];
 equipIndex = 0;
-inventory[equipIndex].Equip(self);

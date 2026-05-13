@@ -1,4 +1,4 @@
-/// @description does player things, inherits physics
+/// @description inherits physics, senses collision.
 event_inherited();
 
 var _collisions = hitbox_step();

@@ -14,7 +14,10 @@
     "name":"abstract",
     "path":"folders/Objects/abstract.yy",
   },
-  "parentObjectId":null,
+  "parentObjectId":{
+    "name":"abs_physics",
+    "path":"objects/abs_physics/abs_physics.yy",
+  },
   "persistent":false,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,

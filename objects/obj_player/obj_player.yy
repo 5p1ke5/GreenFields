@@ -17,8 +17,8 @@
     "path":"folders/Objects.yy",
   },
   "parentObjectId":{
-    "name":"abs_physics",
-    "path":"objects/abs_physics/abs_physics.yy",
+    "name":"abs_doll",
+    "path":"objects/abs_doll/abs_doll.yy",
   },
   "persistent":false,
   "physicsAngularDamping":0.1,

@@ -14,7 +14,6 @@ buffer_write(_buffer, buffer_bool, MOUSE_LEFT_BUTTON);
 buffer_write(_buffer, buffer_bool, MOUSE_RIGHT_BUTTON);
 buffer_write(_buffer, buffer_bool, MOUSE_LEFT_BUTTON_RELEASED);
 buffer_write(_buffer, buffer_bool, MOUSE_RIGHT_BUTTON_RELEASED);
-buffer_write(_buffer, buffer_bool, MOUSE_RIGHT_BUTTON_RELEASED);
 buffer_write(_buffer, buffer_s16, mouse_x);
 buffer_write(_buffer, buffer_s16, mouse_y);
 

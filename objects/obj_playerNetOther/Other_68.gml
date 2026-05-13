@@ -18,11 +18,11 @@ var _asyncString =	"Type: "	+ string(_type)	+
 					" Socket: " + string(_socket);
 
 
-show_debug_message("!!! Connection: " + string(_asyncString))
+// show_debug_message("!!! Connection: " + string(_asyncString))
 
 if (_type == network_type_data) //Receives packet with input data.
 {
-	show_debug_message("!!! Data Acquired: " + string(_socket))
+	//show_debug_message("!!! Data Acquired: " + string(_socket))
 	
 	var _buffer = ds_map_find_value(async_load, "buffer"); 
 	aButtonPressed = buffer_read(_buffer, buffer_bool);

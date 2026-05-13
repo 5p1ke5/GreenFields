@@ -7,14 +7,14 @@ function living_initialize(_hpMax = 1, _flicker = FLICKER_MAX)
 	hpMax = _hpMax;
 	hp = hpMax;
 	flickerMax = _flicker;
-	flicker = 0;
+	flicker = -1;
 }
 
 /// @function living_step()
 /// @desc Step event for living things. Decrements flicker.
 function living_step()
 {
-	if (flicker > 0)
+	if (flicker >= 0)
 	{
 		flicker--;	
 	}

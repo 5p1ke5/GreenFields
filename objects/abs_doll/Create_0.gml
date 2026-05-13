@@ -1,7 +1,8 @@
 /// @description Initializes variables, position at spawn.
 
-hitbox_initialize([HURTBOX], game_get_speed(gamespeed_fps) * 3);
+hitbox_initialize([HURTBOX]);
 phys_initialize(0.2, 0.2);
+living_initialize(100, FLICKER_MAX);
 
 //Doll movement control things.
 hDir = 0; //Horizontal movement direction.

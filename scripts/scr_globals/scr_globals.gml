@@ -2,9 +2,6 @@
 /// @description Initializes the game's global variabls.
 function globals_initialize()
 {
-	global.maxHP = STARTING_HP;
-	global.hp = global.maxHP;
-	
 	global.money = 0;
 	
 	

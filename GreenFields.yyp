@@ -95,6 +95,7 @@
     {"id":{"name":"scr_instancePlace","path":"scripts/scr_instancePlace/scr_instancePlace.yy",},},
     {"id":{"name":"scr_inventory","path":"scripts/scr_inventory/scr_inventory.yy",},},
     {"id":{"name":"scr_label","path":"scripts/scr_label/scr_label.yy",},},
+    {"id":{"name":"scr_living","path":"scripts/scr_living/scr_living.yy",},},
     {"id":{"name":"scr_macros","path":"scripts/scr_macros/scr_macros.yy",},},
     {"id":{"name":"scr_menu","path":"scripts/scr_menu/scr_menu.yy",},},
     {"id":{"name":"scr_messageLog","path":"scripts/scr_messageLog/scr_messageLog.yy",},},

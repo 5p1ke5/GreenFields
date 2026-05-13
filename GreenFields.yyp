@@ -91,6 +91,7 @@
     {"id":{"name":"scr_gameInitialize","path":"scripts/scr_gameInitialize/scr_gameInitialize.yy",},},
     {"id":{"name":"scr_globals","path":"scripts/scr_globals/scr_globals.yy",},},
     {"id":{"name":"scr_hitbox","path":"scripts/scr_hitbox/scr_hitbox.yy",},},
+    {"id":{"name":"scr_hurtbox","path":"scripts/scr_hurtbox/scr_hurtbox.yy",},},
     {"id":{"name":"scr_instancePlace","path":"scripts/scr_instancePlace/scr_instancePlace.yy",},},
     {"id":{"name":"scr_inventory","path":"scripts/scr_inventory/scr_inventory.yy",},},
     {"id":{"name":"scr_label","path":"scripts/scr_label/scr_label.yy",},},

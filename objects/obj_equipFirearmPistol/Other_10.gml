@@ -12,10 +12,13 @@ var _bullet = instance_create_depth(x + _xOffset, y + _yOffset, depth + 1, proje
 
 var _angle = angle;
 var _speed = 32;
+var _owner = self;
 with (_bullet)
 {
 	hsp = lengthdir_x(_speed, _angle);
 	vsp = lengthdir_y(_speed, _angle);
+	
+	hurtbox_initialize(1, _owner);
 }
 
 //Resets timer

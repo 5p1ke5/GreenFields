@@ -64,6 +64,7 @@
     {"name":"scr_gameInitialize","order":4,"path":"scripts/scr_gameInitialize/scr_gameInitialize.yy",},
     {"name":"scr_globals","order":3,"path":"scripts/scr_globals/scr_globals.yy",},
     {"name":"scr_hitbox","order":7,"path":"scripts/scr_hitbox/scr_hitbox.yy",},
+    {"name":"scr_hurtbox","order":14,"path":"scripts/scr_hurtbox/scr_hurtbox.yy",},
     {"name":"scr_instancePlace","order":8,"path":"scripts/scr_instancePlace/scr_instancePlace.yy",},
     {"name":"scr_inventory","order":6,"path":"scripts/scr_inventory/scr_inventory.yy",},
     {"name":"scr_label","order":13,"path":"scripts/scr_label/scr_label.yy",},

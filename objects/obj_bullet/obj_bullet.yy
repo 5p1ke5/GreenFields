@@ -4,6 +4,7 @@
   "eventList":[
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"v1","%Name":"","collisionObjectId":{"name":"obj_block","path":"objects/obj_block/obj_block.yy",},"eventNum":0,"eventType":4,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
   "name":"obj_bullet",
@@ -13,8 +14,8 @@
     "path":"folders/Objects/items/equip/bullets.yy",
   },
   "parentObjectId":{
-    "name":"abs_physics",
-    "path":"objects/abs_physics/abs_physics.yy",
+    "name":"abs_hurtbox",
+    "path":"objects/abs_hurtbox/abs_hurtbox.yy",
   },
   "persistent":false,
   "physicsAngularDamping":0.1,

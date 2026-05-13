@@ -1,10 +1,5 @@
-/// @description Draws arms, body. Flickers if taken damage. 
-
-if (flicker % 5 != 0)
-{
-	doll_draw();
-}
-
+/// @desc Inherits, draws alert.
+event_inherited();
 
 draw_set_halign(fa_center);
 draw_text_color(x, bbox_top - string_height(alert), alert, c_black, c_black, c_black, c_black, 1);

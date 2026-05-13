@@ -25,20 +25,16 @@ if (_type == network_type_data) //Receives packet with input data.
 	show_debug_message("!!! Data Acquired: " + string(_socket))
 	
 	var _buffer = ds_map_find_value(async_load, "buffer"); 
-	var _aButtonPressed = buffer_read(_buffer, buffer_bool);
-	var _aButton = buffer_read(_buffer, buffer_bool);
-	var _rightButton = buffer_read(_buffer, buffer_bool);
-	var _leftButton = buffer_read(_buffer, buffer_bool);
-	var _runButton = buffer_read(_buffer, buffer_bool);
-	var _mLeftButton = buffer_read(_buffer, buffer_bool);
-	var _mRightButton = buffer_read(_buffer, buffer_bool);
-	var _mLeftButtonReleased = buffer_read(_buffer, buffer_bool);
-	var _mRightButtonReleased = buffer_read(_buffer, buffer_bool);
-	var _mouseX = buffer_read(_buffer, buffer_s16);
-	var _mouseY = buffer_read(_buffer, buffer_s16);
+	aButtonPressed = buffer_read(_buffer, buffer_bool);
+	aButton = buffer_read(_buffer, buffer_bool);
+	rightButton = buffer_read(_buffer, buffer_bool);
+	leftButton = buffer_read(_buffer, buffer_bool);
+	runButton = buffer_read(_buffer, buffer_bool);
+	mLeftButton = buffer_read(_buffer, buffer_bool);
+	mRightButton = buffer_read(_buffer, buffer_bool);
+	mLeftButtonReleased = buffer_read(_buffer, buffer_bool);
+	mRightButtonReleased = buffer_read(_buffer, buffer_bool);
+	mouseX = buffer_read(_buffer, buffer_s16);
+	mouseY = buffer_read(_buffer, buffer_s16);
 	buffer_delete(_buffer);
-	show_debug_message("!!! Controller Data - A Pressed " + string(_aButtonPressed) + 
-						"A Button " + string(_aButton) + 
-						"Right " + string(_rightButton) + 
-						"Left " + string(_leftButton));
 }

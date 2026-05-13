@@ -15,7 +15,6 @@ function globals_initialize()
 	global.spawnHsp = undefined;
 	global.spawnVsp = undefined;
 	
-	//todo: Make these global.socketOther and global.socketSelf
 	global.socketOther = noone;
 	global.socketSelf = noone;
 	

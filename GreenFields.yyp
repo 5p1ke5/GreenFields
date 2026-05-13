@@ -59,7 +59,7 @@
     {"id":{"name":"abs_menu","path":"objects/abs_menu/abs_menu.yy",},},
     {"id":{"name":"abs_physics","path":"objects/abs_physics/abs_physics.yy",},},
     {"id":{"name":"obj_block","path":"objects/obj_block/obj_block.yy",},},
-    {"id":{"name":"obj_blockArena","path":"objects/obj_blockArena/obj_blockArena.yy",},},
+    {"id":{"name":"obj_blockCheckers","path":"objects/obj_blockCheckers/obj_blockCheckers.yy",},},
     {"id":{"name":"obj_blockPlains","path":"objects/obj_blockPlains/obj_blockPlains.yy",},},
     {"id":{"name":"obj_bullet","path":"objects/obj_bullet/obj_bullet.yy",},},
     {"id":{"name":"obj_equipFirearmPistol","path":"objects/obj_equipFirearmPistol/obj_equipFirearmPistol.yy",},},

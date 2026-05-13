@@ -17,7 +17,7 @@ function phys_initialize(_grav = 0, _frict = 0, _hsp = 0, _vsp = 0, _isSolid = t
 	isSolid = _isSolid;
 	
 	//The object is considered grounded if they are directly above a block.
-	grounded = place_meeting(x, y + 1, GROUND)
+	grounded = collision_rectangle(bbox_left, bbox_bottom, bbox_right, bbox_bottom + 1, GROUND, false, true);
 }
 
 /// @function phys_force_add(_force, _accel, _max)
@@ -157,10 +157,7 @@ function phys_step()
 	x += round(hsp);
 
 	//Checks if the object is on the ground.
-	//grounded = place_meeting(x, y + 1, GROUND)
-	//this doesn't always pick up oneway platforms, weird.
-	//grounded = collision_point(x, bbox_bottom + 1, GROUND, true, true);
-	grounded = collision_rectangle(bbox_left, bbox_bottom, bbox_right, bbox_bottom + 1, GROUND, true, true);
+	grounded = collision_rectangle(bbox_left, bbox_bottom, bbox_right, bbox_bottom + 1, GROUND, false, true);
 
 	
 	x = round(x);

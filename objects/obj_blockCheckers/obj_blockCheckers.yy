@@ -1,9 +1,9 @@
 {
   "$GMObject":"",
-  "%Name":"obj_blockArena",
+  "%Name":"obj_blockCheckers",
   "eventList":[],
   "managed":true,
-  "name":"obj_blockArena",
+  "name":"obj_blockCheckers",
   "overriddenProperties":[],
   "parent":{
     "name":"blocks",

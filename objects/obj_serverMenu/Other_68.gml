@@ -20,18 +20,18 @@ var _asyncString =	"Type: "	+ string(_type)	+
 
 show_debug_message("!!! async received: " + string(_asyncString))
 
-if (_id == global.socketServer)
+if (_id == global.socketSelf)
 {
 	switch (_type) 
 	{    
 		case network_type_connect:
-			global.socketClient = _socket;
-			show_debug_message("!!! Socket connected! " + string(global.socketClient))
+			global.socketOther = _socket;
+			show_debug_message("!!! Socket connected! " + string(global.socketOther))
 			room_goto(room_deathmatchServer);
 	        break;
 		case network_type_disconnect:
-			global.socketClient = noone;
-			show_debug_message("!!! Socket disconnected! " + string(global.socketClient))
+			global.socketOther = noone;
+			show_debug_message("!!! Socket disconnected! " + string(global.socketOther))
 	        break;
 	}
 }

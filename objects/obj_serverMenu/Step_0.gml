@@ -11,7 +11,7 @@ if (timer < 0)
 	var _buffer = buffer_create(256, buffer_grow, 1);
 	buffer_seek(_buffer, buffer_seek_start, 0);
 	buffer_write(_buffer, buffer_u16, epoch);
-	network_send_packet(global.socketClient, _buffer, buffer_tell(_buffer))
+	network_send_packet(global.socketOther, _buffer, buffer_tell(_buffer))
 	buffer_delete(_buffer);
 	
 	//Next it sends out a broadcast periodically

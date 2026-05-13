@@ -141,7 +141,7 @@ function doll_input_jump(_jump, _jumpOffset)
 	
 	if (_jump) //Jumps
 	{
-		if (multiJumps > 0)
+		if (grounded) || (multiJumps > 0)
 		{
 			if (!grounded)
 			{

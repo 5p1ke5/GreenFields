@@ -160,6 +160,6 @@ function phys_step()
 	grounded = collision_rectangle(bbox_left, bbox_bottom, bbox_right, bbox_bottom + 1, GROUND, false, true);
 
 	
-	x = round(x);
-	y = round(y);
+	//x = round(x);
+	//y = round(y);
 }

@@ -1,2 +1,3 @@
-/// @description Uses physics for movement 
-phys_step();
+/// @description Uses simplified physics for movement 
+y += vsp;
+x += hsp;

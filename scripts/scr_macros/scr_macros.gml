@@ -8,6 +8,7 @@
 
 #region items
 #macro ITEM_PISTOL ItemEquip("Pistol", noone, spr_pistol, 100, "A basic but useful handgun.", 0, obj_equipFirearmPistol)
+#macro ITEM_SHOTGUN ItemEquip("Shotgun", noone, spr_shotgun, 100, "A slow, powerful shotgun.", 0, obj_equipFirearmShotgun)
 #endregion
 
 #region rooms

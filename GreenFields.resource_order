@@ -35,6 +35,7 @@
     {"name":"abs_doll","order":5,"path":"objects/abs_doll/abs_doll.yy",},
     {"name":"abs_equip","order":3,"path":"objects/abs_equip/abs_equip.yy",},
     {"name":"abs_ground","order":2,"path":"objects/abs_ground/abs_ground.yy",},
+    {"name":"abs_hurtbox","order":6,"path":"objects/abs_hurtbox/abs_hurtbox.yy",},
     {"name":"abs_menu","order":4,"path":"objects/abs_menu/abs_menu.yy",},
     {"name":"abs_physics","order":1,"path":"objects/abs_physics/abs_physics.yy",},
     {"name":"obj_blockArena","order":4,"path":"objects/obj_blockArena/obj_blockArena.yy",},

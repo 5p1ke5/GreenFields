@@ -3,6 +3,7 @@ event_inherited();
 
 
 var _buffer = buffer_create(256, buffer_grow, 1);
+
 buffer_seek(_buffer, buffer_seek_start, 0);
 buffer_write(_buffer, buffer_bool, A_BUTTON_PRESSED);
 buffer_write(_buffer, buffer_bool, A_BUTTON);
@@ -16,13 +17,7 @@ buffer_write(_buffer, buffer_bool, MOUSE_RIGHT_BUTTON_RELEASED);
 buffer_write(_buffer, buffer_bool, MOUSE_RIGHT_BUTTON_RELEASED);
 buffer_write(_buffer, buffer_s16, mouse_x);
 buffer_write(_buffer, buffer_s16, mouse_y);
+
 network_send_packet(global.socketClient, _buffer, buffer_tell(_buffer))
-
-
-/*	
-for (var _i = 0; _i < array_length(sockets); _i++) 
-{
-}
-*/
 
 buffer_delete(_buffer);

@@ -1,7 +1,7 @@
 
 var _clickFunction = function()
 {
-	room_goto(ROOM_TITLE);
+	room_goto(ROOM_MULTIPLAYER);
 
 	//Sends out packet with rejection
 	var _buffer = buffer_create(8, buffer_fixed, 1);

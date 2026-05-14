@@ -1,6 +1,6 @@
 /// @descr Periodically sends out updates depending on if the user has decided to rematch
 
-
+show_debug_message("!!! Time: " + string(current_time) + ", Status: " + string(status))
 
 
 if (statusOther == REMATCH.REJECTED) //If the other's status is READY that means they're in deathMatchServer and sending out commands already.

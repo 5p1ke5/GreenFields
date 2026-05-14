@@ -1,0 +1,1 @@
+/// @descr Receives a periodic ping telling if the other person wants to rematch.

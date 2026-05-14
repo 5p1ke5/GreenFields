@@ -74,6 +74,7 @@
     {"id":{"name":"obj_player","path":"objects/obj_player/obj_player.yy",},},
     {"id":{"name":"obj_playerNet","path":"objects/obj_playerNet/obj_playerNet.yy",},},
     {"id":{"name":"obj_playerNetOther","path":"objects/obj_playerNetOther/obj_playerNetOther.yy",},},
+    {"id":{"name":"obj_rematch","path":"objects/obj_rematch/obj_rematch.yy",},},
     {"id":{"name":"obj_serverMenu","path":"objects/obj_serverMenu/obj_serverMenu.yy",},},
     {"id":{"name":"obj_speechBalloon","path":"objects/obj_speechBalloon/obj_speechBalloon.yy",},},
     {"id":{"name":"obj_textField","path":"objects/obj_textField/obj_textField.yy",},},
@@ -84,6 +85,7 @@
     {"id":{"name":"room_initialize","path":"rooms/room_initialize/room_initialize.yy",},},
     {"id":{"name":"room_menuClient","path":"rooms/room_menuClient/room_menuClient.yy",},},
     {"id":{"name":"room_menuMultiplayer","path":"rooms/room_menuMultiplayer/room_menuMultiplayer.yy",},},
+    {"id":{"name":"room_menuRematch","path":"rooms/room_menuRematch/room_menuRematch.yy",},},
     {"id":{"name":"room_menuServer","path":"rooms/room_menuServer/room_menuServer.yy",},},
     {"id":{"name":"room_menuTitle","path":"rooms/room_menuTitle/room_menuTitle.yy",},},
     {"id":{"name":"room_plains","path":"rooms/room_plains/room_plains.yy",},},
@@ -151,6 +153,7 @@
     {"roomId":{"name":"room_menuMultiplayer","path":"rooms/room_menuMultiplayer/room_menuMultiplayer.yy",},},
     {"roomId":{"name":"room_deathmatchServer","path":"rooms/room_deathmatchServer/room_deathmatchServer.yy",},},
     {"roomId":{"name":"room_deathmatchClient","path":"rooms/room_deathmatchClient/room_deathmatchClient.yy",},},
+    {"roomId":{"name":"room_menuRematch","path":"rooms/room_menuRematch/room_menuRematch.yy",},},
   ],
   "templateType":"game",
   "TextureGroups":[

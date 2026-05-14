@@ -3,7 +3,7 @@
 show_debug_message("!!! Time: " + string(current_time) + ", Status: " + string(status))
 
 
-if (statusOther == REMATCH.REJECTED) //If the other's status is READY that means they're in deathMatchServer and sending out commands already.
+if (statusOther == REMATCH.REJECTED) //If the other rejects your rematch it kicks you back to the stage.
 {
 	//Go to deathmatchclient room
 	room_goto(ROOM_MULTIPLAYER);
@@ -13,8 +13,9 @@ if (statusOther == REMATCH.READY) //If the other's status is READY that means th
 	//Go to deathmatchclient room
 	room_goto(room_deathmatchClient);
 }
-else if (status == REMATCH.ACCEPTED) //Otherwise if this one's status is accepted will wait and see if the other server accepted.
+else if (statusOther == REMATCH.ACCEPTED) //Otherwise if this one's status is accepted will wait and see if the other server accepted.
 {
+	text = "Your opponent would like a rematch!";
 	if (status == statusOther)
 	{
 		// First one that gets a matching "wants a rematch" status goes to room_deathMatchServer

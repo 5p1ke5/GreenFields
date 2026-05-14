@@ -7,3 +7,4 @@
 */
 status = REMATCH.UNDECIDED;
 statusOther = REMATCH.UNDECIDED;
+text = "Would you like a rematch?";

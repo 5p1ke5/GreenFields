@@ -34,6 +34,8 @@ if (_type == network_type_data) //Receives packet with input data.
 	mRightButton = buffer_read(_buffer, buffer_bool);
 	mLeftButtonReleased = buffer_read(_buffer, buffer_bool);
 	mRightButtonReleased = buffer_read(_buffer, buffer_bool);
+	upButtonReleased = buffer_read(_buffer, buffer_bool);
+	downButtonReleased = buffer_read(_buffer, buffer_bool);
 	mouseX = buffer_read(_buffer, buffer_s16);
 	mouseY = buffer_read(_buffer, buffer_s16);
 	buffer_delete(_buffer);

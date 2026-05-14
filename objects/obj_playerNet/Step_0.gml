@@ -19,13 +19,6 @@ buffer_write(_buffer, buffer_bool, DOWN_BUTTON_RELEASED);
 buffer_write(_buffer, buffer_s16, mouse_x);
 buffer_write(_buffer, buffer_s16, mouse_y);
 
-//Stuff to update the sprite periodically. Maybe apply this during the end step? Only if player desyncing becomes an issue.
-/*
-buffer_write(_buffer, buffer_s16, x);
-buffer_write(_buffer, buffer_s16, y);
-etc...Basically other variables abs_doll has
-*/
-
 network_send_packet(global.socketOther, _buffer, buffer_tell(_buffer))
 
 buffer_delete(_buffer);

@@ -2,7 +2,7 @@
 event_inherited();
 
 
-var _buffer = buffer_create(256, buffer_grow, 1);
+var _buffer = buffer_create(15, buffer_fixed, 1);
 
 buffer_seek(_buffer, buffer_seek_start, 0);
 buffer_write(_buffer, buffer_bool, A_BUTTON_PRESSED);

@@ -20,7 +20,7 @@ for (var _i = 0; _i < _bulletNum; _i++)
 	var _angle = angle;
 	with (_bullet)
 	{
-		var _randomAngle = _angle + random_range(-2, 2);
+		var _randomAngle = _angle + (-2 + (4 * (1/(_bulletNum - _i) )));
 		hsp = lengthdir_x(_speed, _randomAngle);
 		vsp = lengthdir_y(_speed, _randomAngle);
 		image_angle = _angle;

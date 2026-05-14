@@ -1,3 +1,4 @@
 make rematch system
-make buffers have a fixed size with appropriate buffer size 
+make buffers have a fixed size with appropriate buffer size. 
+Maybe implement a way to check packets if I end up needing it? I could check buffer size maybe
 rewrite collision so it uses a ds_map or something to store cooldowns for individual hitboxes (you get bit with a bullet and your hitbox checks if the bullet is in the 'hit' _map before registering a hit and if it's not already in the ds_map it gets added with a cooldown that gets decremented in hitbox_step().)

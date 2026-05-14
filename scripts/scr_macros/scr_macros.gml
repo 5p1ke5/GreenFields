@@ -120,3 +120,12 @@
 #macro c_brown make_colour_rgb(190, 85, 0)
 
 #endregion
+
+enum REMATCH 
+{
+	UNDECIDED, 
+	ACCEPTED,
+	REJECTED,
+	READY
+	
+}

@@ -15,6 +15,7 @@
 #macro ROOM_TITLE room_menuTitle
 #macro ROOM_SINGLEPLAYER room_plains
 #macro ROOM_MULTIPLAYER room_menuMultiplayer
+#macro ROOM_REMATCH room_menuRematch
 #macro ROOM_SERVER room_menuServer
 #macro ROOM_CLIENT room_menuClient
 #endregion

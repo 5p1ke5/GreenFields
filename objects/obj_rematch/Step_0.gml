@@ -2,12 +2,18 @@
 
 
 
+
+if (statusOther == REMATCH.REJECTED) //If the other's status is READY that means they're in deathMatchServer and sending out commands already.
+{
+	//Go to deathmatchclient room
+	room_goto(ROOM_MULTIPLAYER);
+}
 if (statusOther == REMATCH.READY) //If the other's status is READY that means they're in deathMatchServer and sending out commands already.
 {
 	//Go to deathmatchclient room
 	room_goto(room_deathmatchClient);
 }
-else if (status == REMATCH.ACCEPTED)
+else if (status == REMATCH.ACCEPTED) //Otherwise if this one's status is accepted will wait and see if the other server accepted.
 {
 	if (status == statusOther)
 	{

@@ -40,7 +40,7 @@ function equip_firearm_initialize(_damage, _maxCooldown, _projectile, _twoHanded
 {
 	damage = _damage;
 	maxCooldown = _maxCooldown;
-	cooldown = -1;
+	cooldown = _maxCooldown;
 	projectile = _projectile;
 	twoHanded = _twoHanded;
 }

@@ -216,8 +216,38 @@ function doll_input_aim(_angle, _myHeld, _fireDown, _altFireDown, _fireUp, _altF
 }
 
 
+/// @function doll_input_equipment(_incrementUp, _incrementDown)
+/// @desc Sets equipIndex, equips selected inventory iem.
+/// @param _incrementUp should equipmentIndex be incremented upwards
+/// @param _incrementDown should equipmentIndex be incremented downwards
+function doll_input_equipment(_incrementUp, _incrementDown)
+{
+	var _increment = _incrementDown - _incrementUp;
+	var _index = equipIndex + _increment;
+	
+	//If index is too low loops around to the end of the array.
+	if (_index < 0) 
+	{
+		equipIndex = array_length(inventory) - 1;
+	}
+	//Sets it to the new index if it's not too high
+	else if (_index < array_length(inventory))
+	{
+		equipIndex = _index;	
+	}
+	//If the new index is too high just set it to zero.
+	else 
+	{
+		equipIndex = 0;	
+	}
+	
+	//If index was changed then re-equips.
+	if (_increment != 0)
+	{
+		inventory[equipIndex].Equip(self);
+	}
 
-
+}
 
 
 

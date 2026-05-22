@@ -35,6 +35,7 @@
 #macro PLAYER_WEIGHT 0.02
 #macro DEFAULT_ANGLE 300
 #macro FLICKER_MAX 5
+#macro FLIP_SPEED 10
 #macro TEXT_BALLOON_SPEED 5
 #macro TEXT_BALLOON_MAXW 150
 #endregion

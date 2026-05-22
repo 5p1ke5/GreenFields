@@ -110,12 +110,12 @@ function doll_animate()
 function doll_draw()
 {
 	draw_sprite_ext(armSpriteB, 0, x, y, 1, image_yscale, handAngle, skinColor, 1);
-	draw_sprite_ext(sprite_index, image_index, x, y, image_xscale, image_yscale, image_angle, skinColor, 1);
-	draw_sprite_ext(faceSprite, faceIndex, x, y, image_xscale, image_yscale, image_angle, c_white, 1);
-	draw_sprite_ext(hairSprite, hairIndex, x, y, image_xscale, image_yscale, image_angle, hairColor, 1);
-	draw_sprite_ext(pantsSprite, image_index, x, y, image_xscale, image_yscale, image_angle, pantsColor, 1);
-	draw_sprite_ext(shirtSprite, shirtIndex, x, y, image_xscale, image_yscale, image_angle, shirtColor, 1);
-	draw_sprite_ext(shoeSprite, image_index, x, y, image_xscale, image_yscale, image_angle, shoeColor, 1);
+	draw_sprite_ext(sprite_index, image_index, x, y, image_xscale, image_yscale, drawAngle, skinColor, 1);
+	draw_sprite_ext(faceSprite, faceIndex, x, y, image_xscale, image_yscale, drawAngle, c_white, 1);
+	draw_sprite_ext(hairSprite, hairIndex, x, y, image_xscale, image_yscale, drawAngle, hairColor, 1);
+	draw_sprite_ext(pantsSprite, image_index, x, y, image_xscale, image_yscale, drawAngle, pantsColor, 1);
+	draw_sprite_ext(shirtSprite, shirtIndex, x, y, image_xscale, image_yscale, drawAngle, shirtColor, 1);
+	draw_sprite_ext(shoeSprite, image_index, x, y, image_xscale, image_yscale, drawAngle, shoeColor, 1);
 	
 	if (myHeld)
 	{
@@ -137,6 +137,8 @@ function doll_input_jump(_jump, _jumpOffset)
 	if (grounded)
 	{
 		multiJumps = maxMultiJumps;
+		spinSpeed = 0;
+		drawAngle = 0;
 	}
 	
 	if (_jump) //Jumps
@@ -145,6 +147,9 @@ function doll_input_jump(_jump, _jumpOffset)
 		{
 			if (!grounded)
 			{
+				//Makes the player flip when they double jump.
+				spinSpeed = -facing * FLIP_SPEED;
+				
 				multiJumps--;
 			}
 			vsp = -jumpHeight;
@@ -156,6 +161,9 @@ function doll_input_jump(_jump, _jumpOffset)
 	{
 		vsp -= jumpOffset;
 	}
+	
+	
+	drawAngle += spinSpeed;
 }
 
 

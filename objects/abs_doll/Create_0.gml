@@ -19,6 +19,11 @@ jumpOffset = 0.1; //This is applied to gravity to let the player jump higher whi
 animSpeed = 0.2; //How fast the player animates normally
 animSpeedRun = 0.5; //How fast the player animates while running
 image_speed = animSpeed;
+drawAngle = 0;
+
+//How fast the doll is spinning
+spinSpeed = 0;
+
 
 handAngle = DEFAULT_ANGLE;
 

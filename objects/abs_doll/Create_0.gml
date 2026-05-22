@@ -1,7 +1,8 @@
 /// @description Initializes variables, position at spawn.
 
+//TODO: Maybe move this into doll_initialize, none of it relies on parameters
 hitbox_initialize([HURTBOX]);
-phys_initialize(0.2, 0.2);
+phys_initialize(0.2, 0.1);
 living_initialize(100, FLICKER_MAX);
 
 //Doll movement control things.
@@ -24,6 +25,10 @@ drawAngle = 0;
 //How fast the doll is spinning
 spinSpeed = 0;
 
+//Dash stuff.
+canDash = grounded;
+dashInputRCD = -1;
+dashInputLCD = -1;
 
 handAngle = DEFAULT_ANGLE;
 

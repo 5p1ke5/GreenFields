@@ -136,6 +136,8 @@ function doll_input_jump(_jump, _jumpOffset)
 	
 	if (grounded)
 	{
+		//If grounded refills dash and jumps, resets spinspeed and drawangle
+		canDash = 1;
 		multiJumps = maxMultiJumps;
 		spinSpeed = 0;
 		drawAngle = 0;
@@ -183,8 +185,58 @@ function doll_input_move(_right, _left, _run)
 		hsp = phys_force_add(hsp, accel * hDir, maxSpeed + (0.5 * maxSpeed * _run));
 		facing = hDir;
 	}
+}
+
+
+
+/// @function doll_input_dash(_rightReleased, _leftReleased)
+/// @descr Decrements dash input cooldowns. If right or left bttton is released before cooldown expires, performs a dash.
+/// @param _rightReleased right button released
+/// @param _leftReleased left button released
+function doll_input_dash(_rightReleased, _leftReleased)
+{
+	if (!canDash)
+	{
+		return;	
+	}
 	
-	//dash things go here...
+	//decrement timers
+	if (dashInputRCD > 0) 
+	{ 
+		if (_rightReleased)
+		{
+			//dash
+			vsp -= 2;
+			hsp = DASH_SPEED;
+			spinSpeed = 0;
+			canDash--;
+		}
+		dashInputRCD-- 
+	}
+	
+	//decrement timers
+	if (dashInputLCD > 0) 
+	{ 
+		if (_leftReleased)
+		{
+			//dash
+			vsp -= 2;
+			hsp = -DASH_SPEED;
+			spinSpeed = 0;
+			canDash--;
+		}
+		dashInputLCD-- 
+	}
+	
+	if (_rightReleased)
+	{
+		dashInputRCD = DASH_INPUT_CD;	
+	}
+	
+	if (_leftReleased)
+	{
+		dashInputLCD = DASH_INPUT_CD;	
+	}
 }
 
 

@@ -148,7 +148,7 @@ function doll_input_jump(_jump, _jumpOffset)
 			if (!grounded)
 			{
 				//Makes the player flip when they double jump.
-				spinSpeed = -facing * FLIP_SPEED;
+				spinSpeed = facing * FLIP_SPEED;
 				
 				multiJumps--;
 			}
@@ -183,6 +183,8 @@ function doll_input_move(_right, _left, _run)
 		hsp = phys_force_add(hsp, accel * hDir, maxSpeed + (0.5 * maxSpeed * _run));
 		facing = hDir;
 	}
+	
+	//dash things go here...
 }
 
 

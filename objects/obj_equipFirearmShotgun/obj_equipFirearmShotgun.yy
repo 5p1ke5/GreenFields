@@ -35,8 +35,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_shotgun",
-    "path":"sprites/spr_shotgun/spr_shotgun.yy",
+    "name":"spr_equipShotgun",
+    "path":"sprites/spr_equipShotgun/spr_equipShotgun.yy",
   },
   "spriteMaskId":null,
   "visible":true,

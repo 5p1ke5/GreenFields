@@ -1,7 +1,7 @@
 ///Inventory functions. inventory_* functions and Item* constructors.
 ///Structs for item types
 
-/// @function Item(_itemName,  _inventory, _icon, _amount, _description, _ai) constructor
+/// @function Item(_itemName,  _inventory, _icon = spr_iconBlank, _amount = 1, _description = "")
 /// @description Constructor for an item struct.
 /// @param _itemName <String> item's name.
 /// @param _inventory Inventory array the item is inside of.
@@ -9,84 +9,55 @@
 /// @param _amount quantity of item in stack.
 /// @param _description <String> string description of item.
 /// @param _ai enum that tells an NPC how to behave when they have the item.
-function Item(_itemName,  _inventory, _icon, _amount, _description, _ai) constructor
+function Item(_itemName,  _inventory, _icon = spr_iconBlank, _amount = 1, _description = "") constructor
 {
 		itemName = _itemName;
-		icon = _icon;
 		inventory = _inventory;
+		icon = _icon;
 		amount = _amount;
 		description = _description;
-		ai = _ai;
+
+		//These functions correspond to mouse buttons
+		static RightButton = function(_user)
+		{
+			
+		}
+
+		static LeftButton = function(_user)
+		{
+			
+		}
+		
+		static RightButtonPressed = function(_user)
+		{
+			
+		}
+
+		static LeftButtonPressed = function(_user)
+		{
+			
+		}
+
+		static RightButtonReleased = function(_user)
+		{
+			
+		}
+
+		static LeftButtonReleased = function(_user)
+		{
+			
+		}
 
 		
-		/// @description Uses the item. Called when owner tries to use an item in the inventory.
-		static Use = function(_user)
-		{
-			show_debug_message("Item used!" + string(self) + "by " + string(_user));
-		}
-		
-		/// @description Alternate use for the item. Usually called by right clicking.
-		static AltUse = function(_user)
-		{
-			show_debug_message("Item alt used!" + string(self) + "by " + string(_user));
-		}
-		
-		/// @description Script that gets called when an item is equipped. Can be used to spawn equipped items.
+		/// @description Script that gets called when an item is equipped.
 		static Equip = function(_user)
 		{
-			//If left blank just destroys the current held item and unbinds it from the user's myHeld.
-			//TODO: maybe make this a function? Could put it in equip_initialize, maybe, but if equip_initialize isn't called the player still keeps the equipped instance..
+			var _self = self;
+			
 			with (_user)
 			{
-				if (myHeld)
-				{
-					instance_destroy(myHeld);	
-				}
-				
-				myHeld = noone;	
+				myHeld = _self;	
 			}
-		}
-		
-		static GetAmount = function()
-		{
-			return amount;
-		}
-		static GetName = function()
-		{
-			return itemName;
-		}
-		static GetInventory = function()
-		{
-			return inventory;
-		}
-		static GetAI = function()
-		{
-			return ai;
-		}
-		
-		static GetIcon = function()
-		{
-			return icon;
-		}
-		
-		static GetId = function()
-		{
-			return GetName() + string(icon);
-		}
-		
-		static SetAmount = function(_amount)
-		{
-			amount = _amount;
-		}
-		
-		static SetName = function(_name)
-		{
-			name = _name;
-		}
-		
-		static SetInventory = function(_inventory)
-		{
-			inventory = _inventory;
 		}
 }
 
@@ -99,64 +70,60 @@ function Item(_itemName,  _inventory, _icon, _amount, _description, _ai) constru
 /// @param _descrtiption A description of the item.
 /// @param _ai enum that tells an NPC how to behave when they have the item.
 /// @param _equipObj Object to spawn an instance equipped to the player.
-function ItemEquip(_itemName, _inventory, _icon, _amount, _description, _ai, _equipObj) : Item(_itemName,  _inventory, _icon, _amount, _description, _ai)  constructor
+function ItemEquip(_itemName,  _inventory, _icon = spr_iconBlank, _amount = 1, _description = "", _sprite_index) : Item(_itemName,  _inventory, _icon = spr_iconBlank, _amount = 1, _description = "")  constructor
 {	
-	equipObj = _equipObj;
-	static Use  = function(_user)
-	{
-
-	}
-	
-		
-	/// @description Script that gets called when an item is equipped. Can be used to spawn equipped items.
-	static Equip = function(_user)
-	{
-		
-		var _equip = instance_create_depth(_user.x, _user.y, _user.depth, equipObj);
-		with (_equip)
-		{
-			equip_initialize(_user);
-		}
-		
-		with (_user)
-		{
-			if (myHeld)
-			{
-				instance_destroy(myHeld);	
-			}
-			
-			myHeld = _equip;
-		}
-	}
+	sprite_index = _sprite_index;
+	image_index = 0;
 }
 
 
-/// @function ItemFirearm(_itemName, _inventory, _icon, _amount, _description, _ai, _equipObj)
-/// @description Constructor for an item struct that creates a firearm object using passed parameters and binds it to myHeld.
+/// @function ItemEquipFirearm(_itemName,  _inventory, _icon = spr_iconBlank, _amount = 1, _description = "", _sprite_index = spr_equipEmpty, _cooldown = game_get_speed(gamespeed_fps) / 4, _bullet = obj_bullet, _damage = noone)
+/// @description Constructor for an item struct that is used to fire the player's gun.
 /// @param _itemName <String> item's name.
 /// @param _inventory Inventory list the item is inside of.
 /// @param _icon <sprite> Sprite representation of item.
 /// @param _amount  quantity of item in stack.
-/// @param _ai enum that tells an NPC how to behave when they have the item.
-/// @param _equipObj Object to spawn an instance equipped to the player.
-function ItemFirearm(_itemName, _inventory, _icon, _amount, _description, _ai, _equipObj) : Item(_itemName,  _inventory, _icon, _amount, _description, _ai)  constructor
+/// @param _description Description of the name in the inventory.
+/// @param _sprite_index Sprite for the struct.
+/// @param _cooldown How many frames to wait between shots.
+/// @param _bullet Bullet object to fire.
+/// @param _damage How much damage the bullet object does. Defaults to noone. If value is noone doesn't set the damage for the bullet object.
+function ItemEquipFirearm(_itemName,  _inventory, _icon = spr_iconBlank, _amount = 1, _description = "", _sprite_index = spr_equipEmpty, _cooldown = game_get_speed(gamespeed_fps) / 4, _bullet = obj_bullet, _damage = noone) : ItemEquip(_itemName,  _inventory, _icon = spr_iconBlank, _amount = 1, _description = "", _sprite_index) constructor
 {	
-	equipObj = _equipObj;
-	static Use  = function(_user)
-	{
-
-	}
+	damage = _damage;
+	cooldownCD = _cooldown;
+	cooldown = -1;
+	bullet = _bullet;
 	
-		
-	/// @description Script that gets called when an item is equipped. Can be used to spawn equipped items.
-	static Equip = function(_user)
+	//These functions correspond to mouse buttons
+	static RightButton = function(_user)
 	{
-		var _firearm = instance_create_depth(_user.x, _user.y, _user.depth, equipObj);
 		
-		with (_firearm)
-		{
-			owner = _user;
-		}
+	}
+
+	static LeftButton = function(_user)
+	{
+		
+	}
+		
+	static RightButtonPressed = function(_user)
+	{
+		
+	}
+
+	static LeftButtonPressed = function(_user)
+	{
+		
+	}
+
+	static RightButtonReleased = function(_user)
+	{
+		
+	}
+
+	static LeftButtonReleased = function(_user)
+	{
+			
 	}
 }
 

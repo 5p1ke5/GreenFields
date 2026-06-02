@@ -17,6 +17,7 @@ function Item(_itemName,  _inventory, _icon, _amount, _description, _ai) constru
 		amount = _amount;
 		description = _description;
 		ai = _ai;
+
 		
 		/// @description Uses the item. Called when owner tries to use an item in the inventory.
 		static Use = function(_user)

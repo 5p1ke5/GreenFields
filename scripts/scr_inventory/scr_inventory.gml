@@ -113,11 +113,8 @@ function ItemEquipFirearm(_itemName,  _inventory, _icon = spr_iconBlank, _amount
 		}
 	}
 	
-	//These functions correspond to mouse 
-	//Shoots the gun.
-	static RightButton = function(_user)
+	static Fire = function(_user)
 	{
-		
 		if (cooldown > 0)
 		{
 			exit;	
@@ -126,9 +123,9 @@ function ItemEquipFirearm(_itemName,  _inventory, _icon = spr_iconBlank, _amount
 		var _depth = _user.depth;
 		var _angle = _user.handAngle;
 		var _x = _user.x;
-		var _y = _user.y;
-		var _xOffset = lengthdir_x(6, _angle);
-		var _yOffset = lengthdir_y(6, _angle);
+		var _y = _user.y - 3;
+		var _xOffset = lengthdir_x(16, _angle);
+		var _yOffset = lengthdir_y(16, _angle);
 		var _bullet = instance_create_depth(_x + _xOffset, _y + _yOffset, _depth + 1, bullet);
 
 		var _speed = 16;
@@ -140,7 +137,11 @@ function ItemEquipFirearm(_itemName,  _inventory, _icon = spr_iconBlank, _amount
 			vsp = lengthdir_y(_speed, _angle);
 			image_angle = _angle;
 	
-			hurtbox_initialize(_damage, _owner);
+			//If damage was set initializes a hurtbox.
+			if (_damage != noone)
+			{
+				hurtbox_initialize(_damage, _owner);
+			}
 		}
 
 		//Resets timer
@@ -149,30 +150,10 @@ function ItemEquipFirearm(_itemName,  _inventory, _icon = spr_iconBlank, _amount
 		//Play sound effect
 		audio_play_sound(sfx_fire, 0, false);
 	}
-
-	static LeftButton = function(_user)
-	{
-		show_debug_message("Left button!");
-	}
-		
-	static RightButtonPressed = function(_user)
-	{
-		show_debug_message("Right button pressed!");
-	}
-
+	
 	static LeftButtonPressed = function(_user)
 	{
-		show_debug_message("Left button pressed!");
-	}
-
-	static RightButtonReleased = function(_user)
-	{
-		show_debug_message("Right button released!");
-	}
-
-	static LeftButtonReleased = function(_user)
-	{
-		show_debug_message("Left button released!");
+		Fire(_user);
 	}
 }
 

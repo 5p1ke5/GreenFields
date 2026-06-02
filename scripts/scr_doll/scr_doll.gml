@@ -241,39 +241,28 @@ function doll_input_dash(_rightReleased, _leftReleased)
 
 
 
-/// @function doll_input_aim(_angle, _myHeld, _fireDown, _altFireDown, _fireUp, _altFireUp)
+/// @function doll_input_aim(_angle, _myHeld, _mbLeft, _mbRight, _mbLeftPressed, _mbRightPressed, _mbLeftReleased, _mbRightReleased)
 /// @descr Aims the player's weapon, controls fire and alt fire.
 /// @param _angle The angle the player is pointing the weapon at.
-/// @param _myHeld A reference to the held object that will be controlled.
-/// @param _fireDown if the main fire button (left button) is being held. 
-/// @param _altFireDown if the alt fire button (right button) is being held.
-/// @param _fireUp if the main fire button (left button) is being released. 
-/// @param _altFireUp if the alt fire button (right button) is being released.
-function doll_input_aim(_angle, _myHeld, _fireDown, _altFireDown, _fireUp, _altFireUp)
+/// @param _myHeld A reference to the currently equipped struct.
+/// @param _mbLeft is the left mouse button presently down
+/// @param _mbRight is the right mouse button presently down
+/// @param _mbLeftPressed Was the left mouse button pressed this frame
+/// @param _mbRightPressed Was the right mouse button pressed this frame
+/// @param _mbLeftReleased Was the left mouse button released this frame
+/// @param _mbRightReleased Was the right mouse button released this frame
+function doll_input_aim(_angle, _myHeld, _mbLeft, _mbRight, _mbLeftPressed, _mbRightPressed, _mbLeftReleased, _mbRightReleased)
 {
 	handAngle = _angle;
 	
 	if (_myHeld)
 	{
-		//TODO: put these event_user(#) indices into an enum
-		if (_fireDown)
-		{
-			with (_myHeld) { event_user(0);}
-		}
-	
-		if (_altFireDown)
-		{
-			with (_myHeld) { event_user(1);}
-		}
-		if (_fireUp)
-		{
-			with (_myHeld) { event_user(2);}
-		}
-	
-		if (_altFireUp)
-		{
-			with (_myHeld) { event_user(3);}
-		}
+		if (_mbLeft) {_myHeld.LeftButton();}
+		if (_mbRight){_myHeld.RightButton();}
+		if (_mbLeftPressed) {_myHeld.LeftButtonPressed();}
+		if (_mbRightPressed){ _myHeld.RightButtonPressed();}
+		if (_mbLeftReleased) {_myHeld.LeftButtonReleased();}
+		if (_mbRightReleased){ _myHeld.RightButtonReleased();}
 	}
 }
 

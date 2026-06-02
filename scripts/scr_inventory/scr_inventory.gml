@@ -20,32 +20,32 @@ function Item(_itemName,  _inventory, _icon = spr_iconBlank, _amount = 1, _descr
 		//These functions correspond to mouse buttons
 		static RightButton = function(_user)
 		{
-			
+			show_debug_message("Right button!");
 		}
 
 		static LeftButton = function(_user)
 		{
-			
+			show_debug_message("Left button!");
 		}
 		
 		static RightButtonPressed = function(_user)
 		{
-			
+			show_debug_message("Right button pressed!");
 		}
 
 		static LeftButtonPressed = function(_user)
 		{
-			
+			show_debug_message("Left button pressed!");
 		}
 
 		static RightButtonReleased = function(_user)
 		{
-			
+			show_debug_message("Right button released!");
 		}
 
 		static LeftButtonReleased = function(_user)
 		{
-			
+			show_debug_message("Left button released!");
 		}
 
 		
@@ -98,32 +98,32 @@ function ItemEquipFirearm(_itemName,  _inventory, _icon = spr_iconBlank, _amount
 	//These functions correspond to mouse buttons
 	static RightButton = function(_user)
 	{
-		
+		show_debug_message("Right button!");
 	}
 
 	static LeftButton = function(_user)
 	{
-		
+		show_debug_message("Left button!");
 	}
 		
 	static RightButtonPressed = function(_user)
 	{
-		
+		show_debug_message("Right button pressed!");
 	}
 
 	static LeftButtonPressed = function(_user)
 	{
-		
+		show_debug_message("Left button pressed!");
 	}
 
 	static RightButtonReleased = function(_user)
 	{
-		
+		show_debug_message("Right button released!");
 	}
 
 	static LeftButtonReleased = function(_user)
 	{
-			
+		show_debug_message("Left button released!");
 	}
 }
 

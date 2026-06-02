@@ -257,12 +257,12 @@ function doll_input_aim(_angle, _myHeld, _mbLeft, _mbRight, _mbLeftPressed, _mbR
 	
 	if (_myHeld)
 	{
-		if (_mbLeft) {_myHeld.LeftButton();}
-		if (_mbRight){_myHeld.RightButton();}
-		if (_mbLeftPressed) {_myHeld.LeftButtonPressed();}
-		if (_mbRightPressed){ _myHeld.RightButtonPressed();}
-		if (_mbLeftReleased) {_myHeld.LeftButtonReleased();}
-		if (_mbRightReleased){ _myHeld.RightButtonReleased();}
+		if (_mbLeft) {_myHeld.LeftButton(self);}
+		if (_mbRight){_myHeld.RightButton(self);}
+		if (_mbLeftPressed) {_myHeld.LeftButtonPressed(self);}
+		if (_mbRightPressed){ _myHeld.RightButtonPressed(self);}
+		if (_mbLeftReleased) {_myHeld.LeftButtonReleased(self);}
+		if (_mbRightReleased){ _myHeld.RightButtonReleased(self);}
 	}
 }
 

@@ -3,6 +3,11 @@ event_inherited();
 
 living_step();
 
+if (myHeld)
+{
+	myHeld.Step();
+}
+
 var _collisions = hitbox_step();
 
 //Goes through all the collisions and processes each one.

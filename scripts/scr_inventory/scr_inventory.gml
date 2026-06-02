@@ -16,6 +16,7 @@ function Item(_itemName,  _inventory, _icon = spr_iconBlank, _amount = 1, _descr
 		icon = _icon;
 		amount = _amount;
 		description = _description;
+		
 
 		//These functions correspond to mouse buttons
 		static RightButton = function(_user)
@@ -74,6 +75,12 @@ function ItemEquip(_itemName,  _inventory, _icon = spr_iconBlank, _amount = 1, _
 {	
 	sprite_index = _sprite_index;
 	image_index = 0;
+	
+	// This should be called in the step event while the item is equipped
+	static Step = function()
+	{
+		
+	}
 }
 
 
@@ -85,20 +92,62 @@ function ItemEquip(_itemName,  _inventory, _icon = spr_iconBlank, _amount = 1, _
 /// @param _amount  quantity of item in stack.
 /// @param _description Description of the name in the inventory.
 /// @param _sprite_index Sprite for the struct.
-/// @param _cooldown How many frames to wait between shots.
+/// @param _cooldownMax How many frames to wait between shots.
 /// @param _bullet Bullet object to fire.
 /// @param _damage How much damage the bullet object does. Defaults to noone. If value is noone doesn't set the damage for the bullet object.
-function ItemEquipFirearm(_itemName,  _inventory, _icon = spr_iconBlank, _amount = 1, _description = "", _sprite_index = spr_equipEmpty, _cooldown = game_get_speed(gamespeed_fps) / 4, _bullet = obj_bullet, _damage = noone) : ItemEquip(_itemName,  _inventory, _icon = spr_iconBlank, _amount = 1, _description = "", _sprite_index) constructor
+function ItemEquipFirearm(_itemName,  _inventory, _icon = spr_iconBlank, _amount = 1, _description = "", _sprite_index = spr_equipEmpty, _cooldownMax = game_get_speed(gamespeed_fps) / 4, _bullet = obj_bullet, _damage = noone) : ItemEquip(_itemName,  _inventory, _icon = spr_iconBlank, _amount = 1, _description = "", _sprite_index) constructor
 {	
 	damage = _damage;
-	cooldownCD = _cooldown;
+	cooldownMax = _cooldownMax;
 	cooldown = -1;
 	bullet = _bullet;
 	
-	//These functions correspond to mouse buttons
+	
+	
+	// Increments coodlwon
+	static Step = function()
+	{
+		if (cooldown >= 0)
+		{
+			cooldown--;	
+		}
+	}
+	
+	//These functions correspond to mouse 
+	//Shoots the gun.
 	static RightButton = function(_user)
 	{
-		show_debug_message("Right button!");
+		
+		if (cooldown > 0)
+		{
+			exit;	
+		}
+
+		var _depth = _user.depth;
+		var _angle = _user.handAngle;
+		var _x = _user.x;
+		var _y = _user.y;
+		var _xOffset = lengthdir_x(6, _angle);
+		var _yOffset = lengthdir_y(6, _angle);
+		var _bullet = instance_create_depth(_x + _xOffset, _y + _yOffset, _depth + 1, bullet);
+
+		var _speed = 16;
+		var _damage = damage;
+		var _owner = _user;
+		with (_bullet)
+		{
+			hsp = lengthdir_x(_speed, _angle);
+			vsp = lengthdir_y(_speed, _angle);
+			image_angle = _angle;
+	
+			hurtbox_initialize(_damage, _owner);
+		}
+
+		//Resets timer
+		cooldown = cooldownMax;
+
+		//Play sound effect
+		audio_play_sound(sfx_fire, 0, false);
 	}
 
 	static LeftButton = function(_user)

@@ -151,7 +151,6 @@ function phys_gravity(_vsp, _grav, _terminalVelocity)
 /// @description Place in the step event to activate physics.
 function phys_step() 
 {
-	
 	//grav increases the object's downwards speed by raising vsp. Does not do so past the terminal velocity.
 	vsp = phys_gravity(vsp, grav, TERMINAL_VELOCITY);
 
@@ -170,8 +169,4 @@ function phys_step()
 
 	//Checks if the object is on the ground.
 	grounded = collision_rectangle(bbox_left, bbox_bottom, bbox_right, bbox_bottom + 1, GROUND, false, true);
-
-	
-	//x = round(x);
-	//y = round(y);
 }

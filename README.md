@@ -8,10 +8,6 @@ If you want to play the game GreenFields.zip has an exe file with the latest bui
 
 TODO:
 
+* Make dash mechanic have afterimages for player
+* make twohanded guns move player's hand
 * rewrite collision so it uses a ds_map or something to store cooldowns for individual hitboxes (you get bit with a bullet and your hitbox checks if the bullet is in the 'hit' _map before registering a hit and if it's not already in the ds_map it gets added with a cooldown that gets decremented in hitbox_step().)
-
-* make equip objects into just structs that are on the player objects
-
-* make it so player can do a flip when they double jump
-
-* give player a dash mechanic

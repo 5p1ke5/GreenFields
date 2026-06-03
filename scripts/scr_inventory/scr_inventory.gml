@@ -101,6 +101,7 @@ function ItemEquipFirearm(_itemName,  _inventory, _icon = spr_iconBlank, _amount
 	cooldownMax = _cooldownMax;
 	cooldown = -1;
 	bullet = _bullet;
+	twoHanded = _twoHanded;
 	
 	// Increments coodlwon
 	static Step = function()

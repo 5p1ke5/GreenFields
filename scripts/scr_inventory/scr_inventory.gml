@@ -95,7 +95,7 @@ function ItemEquip(_itemName,  _inventory, _icon = spr_iconBlank, _amount = 1, _
 /// @param _cooldownMax How many frames to wait between shots.
 /// @param _bullet Bullet object to fire.
 /// @param _damage How much damage the bullet object does. Defaults to noone. If value is noone doesn't set the damage for the bullet object.
-function ItemEquipFirearm(_itemName,  _inventory, _icon = spr_iconBlank, _amount = 1, _description = "", _sprite_index = spr_equipEmpty, _cooldownMax = game_get_speed(gamespeed_fps) / 4, _bullet = obj_bullet, _damage = noone) : ItemEquip(_itemName,  _inventory, _icon, _amount, _description, _sprite_index) constructor
+function ItemEquipFirearm(_itemName,  _inventory, _icon = spr_iconBlank, _amount = 1, _description = "", _sprite_index = spr_equipEmpty, _cooldownMax = game_get_speed(gamespeed_fps) / 4, _bullet = obj_bullet, _damage = noone, _twoHanded = false) : ItemEquip(_itemName,  _inventory, _icon, _amount, _description, _sprite_index) constructor
 {	
 	damage = _damage;
 	cooldownMax = _cooldownMax;
@@ -169,7 +169,7 @@ function ItemEquipFirearm(_itemName,  _inventory, _icon = spr_iconBlank, _amount
 /// @param _cooldownMax How many frames to wait between shots.
 /// @param _bullet Bullet object to fire.
 /// @param _damage How much damage the bullet object does. Defaults to noone. If value is noone doesn't set the damage for the bullet object.
-function ItemEquipFirearmAuto(_itemName,  _inventory, _icon = spr_iconBlank, _amount = 1, _description = "", _sprite_index = spr_equipEmpty, _cooldownMax = game_get_speed(gamespeed_fps) / 4, _bullet = obj_bullet, _damage = noone) : ItemEquipFirearm(_itemName,  _inventory, _icon, _amount, _description, _sprite_index, _cooldownMax, _bullet, _damage ) constructor
+function ItemEquipFirearmAuto(_itemName,  _inventory, _icon = spr_iconBlank, _amount = 1, _description = "", _sprite_index = spr_equipEmpty, _cooldownMax = game_get_speed(gamespeed_fps) / 4, _bullet = obj_bullet, _damage = noone, _twoHanded = false) : ItemEquipFirearm(_itemName,  _inventory, _icon, _amount, _description, _sprite_index, _cooldownMax, _bullet, _damage, _twoHanded) constructor
 {
 	//Overrides parent, instead just uses LeftButton to fire.
 	static LeftButtonPressed = function(_user)

@@ -102,8 +102,6 @@ function ItemEquipFirearm(_itemName,  _inventory, _icon = spr_iconBlank, _amount
 	cooldown = -1;
 	bullet = _bullet;
 	
-	
-	
 	// Increments coodlwon
 	static Step = function()
 	{
@@ -156,6 +154,36 @@ function ItemEquipFirearm(_itemName,  _inventory, _icon = spr_iconBlank, _amount
 		Fire(_user);
 	}
 }
+
+//huh this doesn't quite work how i hoped...
+
+
+/// @function ItemEquipFirearmAuto(_itemName,  _inventory, _icon = spr_iconBlank, _amount = 1, _description = "", _sprite_index = spr_equipEmpty, _cooldownMax = game_get_speed(gamespeed_fps) / 4, _bullet = obj_bullet, _damage = noone)
+/// @description Constructor for an item struct that is used to fire the player's gun. This one fires automatically.
+/// @param _itemName <String> item's name.
+/// @param _inventory Inventory list the item is inside of.
+/// @param _icon <sprite> Sprite representation of item.
+/// @param _amount  quantity of item in stack.
+/// @param _description Description of the name in the inventory.
+/// @param _sprite_index Sprite for the struct.
+/// @param _cooldownMax How many frames to wait between shots.
+/// @param _bullet Bullet object to fire.
+/// @param _damage How much damage the bullet object does. Defaults to noone. If value is noone doesn't set the damage for the bullet object.
+function ItemEquipFirearmAuto(_itemName,  _inventory, _icon = spr_iconBlank, _amount = 1, _description = "", _sprite_index = spr_equipEmpty, _cooldownMax = game_get_speed(gamespeed_fps) / 4, _bullet = obj_bullet, _damage = noone) : ItemEquipFirearm(_itemName,  _inventory, _icon, _amount, _description, _sprite_index, _cooldownMax, _bullet, _damage ) constructor
+{
+	//Overrides parent, instead just uses LeftButton to fire.
+	static LeftButtonPressed = function(_user)
+	{
+		
+	}
+	
+	static LeftButton = function(_user)
+	{
+		Fire(_user);
+	}
+	
+}
+
 
 
 ///@function inventory_initialize()

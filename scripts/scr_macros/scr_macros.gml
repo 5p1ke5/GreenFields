@@ -7,7 +7,7 @@
 
 
 #region items
-#macro ITEM_PISTOL ItemEquipFirearm("Pistol", noone, spr_iconPistol, 100, "A basic but useful handgun.", spr_equipPistol, game_get_speed(gamespeed_fps)/4, obj_bullet, 10)
+#macro ITEM_PISTOL ItemEquipFirearmAuto("Pistol", noone, spr_iconPistol, 100, "A basic but useful handgun.", spr_equipPistol, game_get_speed(gamespeed_fps)/4, obj_bullet, 10)
 #endregion
 
 #region rooms

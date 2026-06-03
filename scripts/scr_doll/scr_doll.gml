@@ -156,6 +156,7 @@ function doll_input_jump(_jump, _jumpOffset)
 	if (grounded)
 	{
 		//If grounded refills dash and jumps, resets spinspeed and drawangle
+		// TODO: Make canDash more of a cooldown thing
 		canDash = 1;
 		multiJumps = maxMultiJumps;
 		spinSpeed = 0;

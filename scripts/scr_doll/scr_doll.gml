@@ -120,7 +120,11 @@ function doll_draw()
 		}
 	}
 	
-	draw_sprite_ext(armSpriteB, 0, x - (_twoHanded * image_xscale * 6), y, 1, image_yscale, handAngle, skinColor, 1);
+	if (!_twoHanded)
+	{
+		draw_sprite_ext(armSpriteB, 0, x, y, 1, image_yscale, handAngle, skinColor, 1);
+	}
+	
 	draw_sprite_ext(sprite_index, image_index, x, y, image_xscale, image_yscale, drawAngle, skinColor, 1);
 	draw_sprite_ext(faceSprite, faceIndex, x, y, image_xscale, image_yscale, drawAngle, c_white, 1);
 	draw_sprite_ext(hairSprite, hairIndex, x, y, image_xscale, image_yscale, drawAngle, hairColor, 1);
@@ -133,7 +137,10 @@ function doll_draw()
 		draw_sprite_ext(myHeld.sprite_index, myHeld.image_index, x, y, 1, image_xscale, handAngle, c_white1, 1);	
 	}
 	
-	//draw_sprite_ext(armSpriteA, 0, x + (_twoHanded * image_xscale * 8), y, 1, image_yscale, handAngle, skinColor, 1);
+	if (_twoHanded)
+	{
+		draw_sprite_ext(armSpriteB, 0, x - (_twoHanded * image_xscale * 6), y, 1, image_yscale, handAngle, skinColor, 1);
+	}
 	draw_sprite_ext(armSpriteA, 0, x, y, 1, image_yscale, handAngle, skinColor, 1);
 }
 

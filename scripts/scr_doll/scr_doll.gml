@@ -109,7 +109,18 @@ function doll_animate()
 ///@description Draws the sprites associated with the doll.
 function doll_draw()
 {
-	draw_sprite_ext(armSpriteB, 0, x, y, 1, image_yscale, handAngle, skinColor, 1);
+	
+	
+	var _twoHanded = false;
+	if (myHeld)
+	{
+		if (is_instanceof(myHeld, ItemEquipFirearm))
+		{
+			_twoHanded = myHeld.twoHanded;
+		}
+	}
+	
+	draw_sprite_ext(armSpriteB, 0, x - (_twoHanded * image_xscale * 6), y, 1, image_yscale, handAngle, skinColor, 1);
 	draw_sprite_ext(sprite_index, image_index, x, y, image_xscale, image_yscale, drawAngle, skinColor, 1);
 	draw_sprite_ext(faceSprite, faceIndex, x, y, image_xscale, image_yscale, drawAngle, c_white, 1);
 	draw_sprite_ext(hairSprite, hairIndex, x, y, image_xscale, image_yscale, drawAngle, hairColor, 1);
@@ -117,18 +128,13 @@ function doll_draw()
 	draw_sprite_ext(shirtSprite, shirtIndex, x, y, image_xscale, image_yscale, drawAngle, shirtColor, 1);
 	draw_sprite_ext(shoeSprite, image_index, x, y, image_xscale, image_yscale, drawAngle, shoeColor, 1);
 	
-	var _twoHanded = false;
 	if (myHeld)
 	{
 		draw_sprite_ext(myHeld.sprite_index, myHeld.image_index, x, y, 1, image_xscale, handAngle, c_white1, 1);	
-		
-		if (is_instanceof(myHeld, ItemEquipFirearm))
-		{
-			_twoHanded = myHeld.twoHanded;
-		}
 	}
 	
-	draw_sprite_ext(armSpriteA, 0, x + (_twoHanded * image_xscale * 8), y, 1, image_yscale, handAngle, skinColor, 1);
+	//draw_sprite_ext(armSpriteA, 0, x + (_twoHanded * image_xscale * 8), y, 1, image_yscale, handAngle, skinColor, 1);
+	draw_sprite_ext(armSpriteA, 0, x, y, 1, image_yscale, handAngle, skinColor, 1);
 }
 
 //These function take input to issue commands to the doll. The function vets the commands, and if the conditions are met performs the action.

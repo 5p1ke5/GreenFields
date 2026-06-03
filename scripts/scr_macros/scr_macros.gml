@@ -9,7 +9,7 @@
 #region items
 #macro ITEM_PISTOL ItemEquipFirearm("Pistol", noone, spr_iconPistol, 100, "A basic but useful handgun.", spr_equipPistol, game_get_speed(gamespeed_fps)/4, obj_bullet, 10, false)
 #macro ITEM_AUTOPISTOL ItemEquipFirearmAuto("Auto Pistol", noone, spr_iconPistol, 100, "A fully automatic handgun.", spr_equipPistol, game_get_speed(gamespeed_fps)/4, obj_bullet, 10, false)
-#macro ITEM_SHOTGUN ItemEquipFirearm("Shotgun", noone, spr_iconPistol, 100, "A powerful shotgun.", spr_equipShotgun, game_get_speed(gamespeed_fps)/2, obj_bullet, 2, true)
+#macro ITEM_SHOTGUN ItemEquipFirearm("Shotgun", noone, spr_iconPistol, 100, "A powerful shotgun.", spr_equipShotgun, game_get_speed(gamespeed_fps)/2, obj_bulletShotgun, 2, true)
 #endregion
 
 #region rooms

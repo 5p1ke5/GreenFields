@@ -66,7 +66,7 @@
     {"id":{"name":"obj_blockPlains","path":"objects/obj_blockPlains/obj_blockPlains.yy",},},
     {"id":{"name":"obj_blockSuburbs","path":"objects/obj_blockSuburbs/obj_blockSuburbs.yy",},},
     {"id":{"name":"obj_bullet","path":"objects/obj_bullet/obj_bullet.yy",},},
-    {"id":{"name":"obj_equipFirearmPistol","path":"objects/obj_equipFirearmPistol/obj_equipFirearmPistol.yy",},},
+    {"id":{"name":"obj_bulletShotgun","path":"objects/obj_bulletShotgun/obj_bulletShotgun.yy",},},
     {"id":{"name":"obj_equipFirearmShotgun","path":"objects/obj_equipFirearmShotgun/obj_equipFirearmShotgun.yy",},},
     {"id":{"name":"obj_label","path":"objects/obj_label/obj_label.yy",},},
     {"id":{"name":"obj_menuTitle","path":"objects/obj_menuTitle/obj_menuTitle.yy",},},

@@ -135,6 +135,7 @@ function ItemEquipFirearm(_itemName,  _inventory, _icon = spr_iconBlank, _amount
 			hsp = lengthdir_x(_speed, _angle);
 			vsp = lengthdir_y(_speed, _angle);
 			image_angle = _angle;
+			angle = _angle;
 	
 			//If damage was set initializes a hurtbox.
 			if (_damage != noone)

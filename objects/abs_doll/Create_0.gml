@@ -8,12 +8,12 @@ living_initialize(100, FLICKER_MAX);
 //Doll movement control things.
 hDir = 0; //Horizontal movement direction.
 facing = 1; //Direction facing. Should always be 1 or -1.
-maxSpeed = 3; 
-accel = 0.5;
+maxSpeed = MAX_ACCEL; 
+accel = PLAYER_ACCEL;
 
 maxMultiJumps = 1;
 multiJumps = maxMultiJumps;
-jumpHeight = 4;
+jumpHeight = JUMP_HEIGHT;
 jumpOffset = 0.1; //This is applied to gravity to let the player jump higher while holding the jump button.
 
 //Various variables dolls use to animate.

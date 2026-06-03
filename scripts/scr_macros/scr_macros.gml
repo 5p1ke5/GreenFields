@@ -7,7 +7,7 @@
 
 
 #region items
-#macro ITEM_PISTOL ItemEquipFirearmAuto("Pistol", noone, spr_iconPistol, 100, "A basic but useful handgun.", spr_equipPistol, game_get_speed(gamespeed_fps)/4, obj_bullet, 10)
+#macro ITEM_PISTOL ItemEquipFirearm("Pistol", noone, spr_iconPistol, 100, "A basic but useful handgun.", spr_equipPistol, game_get_speed(gamespeed_fps)/4, obj_bullet, 10)
 #endregion
 
 #region rooms
@@ -30,8 +30,9 @@
 #macro STARTING_HP 3
 #macro TERMINAL_VELOCITY 20
 #macro MAX_ACCEL 3
-#macro JUMP_HEIGHT 4
-#macro PLAYER_WEIGHT 0.02
+#macro PLAYER_ACCEL 0.5
+#macro JUMP_HEIGHT 5
+#macro PLAYER_WEIGHT 0.2
 #macro DASH_COOLDOWN (game_get_speed(gamespeed_fps))
 #macro DASH_INPUT_CD (game_get_speed(gamespeed_fps) / 2)
 #macro DASH_SPEED 10

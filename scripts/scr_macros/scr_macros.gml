@@ -37,7 +37,7 @@
 #macro PLAYER_ACCEL 0.5
 #macro JUMP_HEIGHT 5
 #macro PLAYER_WEIGHT 0.2
-#macro DASH_COOLDOWN (game_get_speed(gamespeed_fps))
+#macro DASH_COOLDOWN (game_get_speed(gamespeed_fps) / 2)
 #macro DASH_INPUT_CD (game_get_speed(gamespeed_fps) / 2)
 #macro DASH_SPEED 10
 #macro DEFAULT_ANGLE 300
@@ -54,7 +54,7 @@
 #macro LEFT_BUTTON (keyboard_check(vk_left)		 || keyboard_check(ord("A")) || gamepad_button_check(0, gp_padl))
 #macro UP_BUTTON (keyboard_check(vk_up)			 || keyboard_check(ord("W")) || gamepad_button_check(0, gp_padu))
 #macro A_BUTTON (keyboard_check(vk_space) || gamepad_button_check(0, gp_face1))
-#macro B_BUTTON (keyboard_check(ord("Z")) || gamepad_button_check(0, gp_face3))
+#macro B_BUTTON (keyboard_check(vk_shift) || gamepad_button_check(0, gp_face3))
 #macro X_BUTTON (keyboard_check(ord("X")) || gamepad_button_check(0, gp_face2))
 #macro Y_BUTTON (keyboard_check(ord("C")) || gamepad_button_check(0, gp_face4))
 #macro FACE_BUTTON (A_BUTTON || B_BUTTON || X_BUTTON || Y_BUTTON) 

@@ -120,6 +120,7 @@
     {"id":{"name":"sfx_fire","path":"sounds/sfx_fire/sfx_fire.yy",},},
     {"id":{"name":"spr_armA","path":"sprites/spr_armA/spr_armA.yy",},},
     {"id":{"name":"spr_armB","path":"sprites/spr_armB/spr_armB.yy",},},
+    {"id":{"name":"spr_armBBack","path":"sprites/spr_armBBack/spr_armBBack.yy",},},
     {"id":{"name":"spr_block","path":"sprites/spr_block/spr_block.yy",},},
     {"id":{"name":"spr_blockArena","path":"sprites/spr_blockArena/spr_blockArena.yy",},},
     {"id":{"name":"spr_blockBadlands","path":"sprites/spr_blockBadlands/spr_blockBadlands.yy",},},

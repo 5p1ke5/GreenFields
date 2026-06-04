@@ -210,53 +210,39 @@ function doll_input_move(_right, _left, _run)
 
 
 /// @function doll_input_dash(_rightReleased, _leftReleased)
-/// @descr Decrements dash input cooldowns. If right or left bttton is released before cooldown expires, performs a dash.
+/// @descr Decrements dash input cooldowns. If dash button is down while left or right is pressed, makes the player dash.
 /// @param _rightReleased right button released
 /// @param _leftReleased left button released
-function doll_input_dash(_rightReleased, _leftReleased)
+function doll_input_dash(_dashDown, _rightPressed, _leftPressed)
 {
-	if (!canDash)
+	if (dashCD >= 0)
+	{
+		dashCD--;
+		/* I can uncomment this to make the player stop at the end of their dash.
+		if (dashCD == 0)// && (grounded)
+		{
+			hsp = 0;	
+		}
+		*/
+		
+		return;	
+	}
+	
+	if (!B_BUTTON)
 	{
 		return;	
 	}
 	
-	//decrement timers
-	if (dashInputRCD > 0) 
-	{ 
-		if (_rightReleased)
-		{
-			//dash
-			vsp -= 2;
-			hsp = DASH_SPEED;
-			spinSpeed = 0;
-			canDash--;
-		}
-		dashInputRCD-- 
-	}
-	
-	//decrement timers
-	if (dashInputLCD > 0) 
-	{ 
-		if (_leftReleased)
-		{
-			//dash
-			vsp -= 2;
-			hsp = -DASH_SPEED;
-			spinSpeed = 0;
-			canDash--;
-		}
-		dashInputLCD-- 
-	}
-	
-	if (_rightReleased)
+	//If DashCD < 0 and B_BUTTON is down...
+	var _dir = (_rightPressed - _leftPressed)
+	if (_dir != 0)
 	{
-		dashInputRCD = DASH_INPUT_CD;	
+		vsp = -1;
+		hsp = _dir * DASH_SPEED;
+		dashCD = DASH_COOLDOWN;
+		spinSpeed = 0;
 	}
 	
-	if (_leftReleased)
-	{
-		dashInputLCD = DASH_INPUT_CD;	
-	}
 }
 
 

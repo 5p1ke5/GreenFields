@@ -26,9 +26,7 @@ drawAngle = 0;
 spinSpeed = 0;
 
 //Dash stuff.
-canDash = grounded;
-dashInputRCD = -1;
-dashInputLCD = -1;
+dashCD = -1;
 
 handAngle = DEFAULT_ANGLE;
 

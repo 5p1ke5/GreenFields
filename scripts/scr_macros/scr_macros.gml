@@ -29,6 +29,10 @@
 #macro SHOES_ARRAY [spr_dollShoes0, spr_dollShoes1]
 #endregion
 
+#region Ranges
+#macro RANGE_CLOSE 100
+#endregion
+
 
 #region Constant numbers
 #macro STARTING_HP 3

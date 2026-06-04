@@ -89,6 +89,8 @@
     {"name":"scr_menu","order":10,"path":"scripts/scr_menu/scr_menu.yy",},
     {"name":"scr_messageLog","order":12,"path":"scripts/scr_messageLog/scr_messageLog.yy",},
     {"name":"scr_npc","order":5,"path":"scripts/scr_npc/scr_npc.yy",},
+    {"name":"scr_npcCommand","order":16,"path":"scripts/scr_npcCommand/scr_npcCommand.yy",},
+    {"name":"scr_point","order":17,"path":"scripts/scr_point/scr_point.yy",},
     {"name":"sfx_dash","order":1,"path":"sounds/sfx_dash/sfx_dash.yy",},
     {"name":"spr_armB","order":2,"path":"sprites/spr_armB/spr_armB.yy",},
     {"name":"spr_armBBack","order":3,"path":"sprites/spr_armBBack/spr_armBBack.yy",},

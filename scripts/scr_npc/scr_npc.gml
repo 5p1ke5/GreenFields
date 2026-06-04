@@ -21,9 +21,13 @@ function npc_initialize(_name = "", _dialogue = "", _target = noone)
 	**noone: The npc is doing nothing and can be idle.
 	**Point2: The npc should move here.
 	
-	Hmm I could also make this something like State and have an NPCState struct that it gets data from. Decisions, decisions.
-	*/
 	target = _target;
+	
+	Hmm I could also make this something like State and have an NPCState struct that it gets data from. Decisions, decisions.
+	
+	like have commands[] and it's an array of NPCState structs like last time
+	*/
+	commands = [];
 	
 	//This will contain a reference to any dialogue balloon the NPC creates.
 	//If it equals noone the NPC has no created dialogue balloons.

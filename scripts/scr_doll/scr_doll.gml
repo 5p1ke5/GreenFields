@@ -270,6 +270,7 @@ function doll_input_dash(_dashDown, _rightPressed, _leftPressed)
 		}
 		*/
 		
+		
 		return;	
 	}
 	
@@ -286,6 +287,8 @@ function doll_input_dash(_dashDown, _rightPressed, _leftPressed)
 		hsp = _dir * DASH_SPEED;
 		dashCD = DASH_COOLDOWN;
 		spinSpeed = 0;
+		
+		audio_play_sound(sfx_dash, 1, false);
 	}
 	
 }
@@ -308,12 +311,12 @@ function doll_input_aim(_angle, _myHeld, _mbLeft, _mbRight, _mbLeftPressed, _mbR
 	
 	if (_myHeld)
 	{
-		if (_mbLeft) {_myHeld.LeftButton(self);}
-		if (_mbRight){_myHeld.RightButton(self);}
-		if (_mbLeftPressed) {_myHeld.LeftButtonPressed(self);}
-		if (_mbRightPressed){ _myHeld.RightButtonPressed(self);}
-		if (_mbLeftReleased) {_myHeld.LeftButtonReleased(self);}
-		if (_mbRightReleased){ _myHeld.RightButtonReleased(self);}
+		if (_mbLeft)			{_myHeld.LeftButton(self);}
+		if (_mbRight)			{_myHeld.RightButton(self);}
+		if (_mbLeftPressed)		{_myHeld.LeftButtonPressed(self);}
+		if (_mbRightPressed)	{ _myHeld.RightButtonPressed(self);}
+		if (_mbLeftReleased)	{_myHeld.LeftButtonReleased(self);}
+		if (_mbRightReleased)	{ _myHeld.RightButtonReleased(self);}
 	}
 }
 

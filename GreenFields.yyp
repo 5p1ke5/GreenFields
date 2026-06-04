@@ -117,6 +117,7 @@
     {"id":{"name":"scr_messageLog","path":"scripts/scr_messageLog/scr_messageLog.yy",},},
     {"id":{"name":"scr_npc","path":"scripts/scr_npc/scr_npc.yy",},},
     {"id":{"name":"scr_phys","path":"scripts/scr_phys/scr_phys.yy",},},
+    {"id":{"name":"sfx_dash","path":"sounds/sfx_dash/sfx_dash.yy",},},
     {"id":{"name":"sfx_fire","path":"sounds/sfx_fire/sfx_fire.yy",},},
     {"id":{"name":"spr_armA","path":"sprites/spr_armA/spr_armA.yy",},},
     {"id":{"name":"spr_armB","path":"sprites/spr_armB/spr_armB.yy",},},

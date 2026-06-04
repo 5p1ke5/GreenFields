@@ -134,7 +134,7 @@ function doll_draw()
 	
 	if (myHeld)
 	{
-		draw_sprite_ext(myHeld.sprite_index, myHeld.image_index, x, y, 1, image_xscale, handAngle, c_white1, 1);	
+		draw_sprite_ext(myHeld.sprite_index, myHeld.image_index, x, y, 1, image_xscale, handAngle, c_white, 1);	
 	}
 	
 	if (_twoHanded)
@@ -143,6 +143,51 @@ function doll_draw()
 	}
 	draw_sprite_ext(armSpriteA, 0, x, y, 1, image_yscale, handAngle, skinColor, 1);
 }
+
+
+
+
+///@function doll_draw_ext(_x, _y, _color, _alpha)
+///@description Draws the sprites associated with the doll, with params for coordinate, color, and alpha.
+///@param _x X coordinae to draw at 
+///@param _y Y coordinae to draw at 
+///@param _color Color to draw everything as.
+///@param _alpha Alpha to draw everything at.
+function doll_draw_ext(_x, _y, _color, _alpha)
+{
+	var _twoHanded = false;
+	if (myHeld)
+	{
+		if (is_instanceof(myHeld, ItemEquipFirearm))
+		{
+			_twoHanded = myHeld.twoHanded;
+		}
+	}
+	
+	if (!_twoHanded)
+	{
+		draw_sprite_ext(armSpriteB, 0, x, y, 1, image_yscale, handAngle, _color, _alpha);
+	}
+	
+	draw_sprite_ext(sprite_index, image_index, x, y, image_xscale, image_yscale, drawAngle, _color, _alpha);
+	draw_sprite_ext(faceSprite, faceIndex, x, y, image_xscale, image_yscale, drawAngle, _color, _alpha);
+	draw_sprite_ext(hairSprite, hairIndex, x, y, image_xscale, image_yscale, drawAngle, _color, _alpha);
+	draw_sprite_ext(pantsSprite, image_index, x, y, image_xscale, image_yscale, drawAngle, _color, _alpha);
+	draw_sprite_ext(shirtSprite, shirtIndex, x, y, image_xscale, image_yscale, drawAngle, _color, _alpha);
+	draw_sprite_ext(shoeSprite, image_index, x, y, image_xscale, image_yscale, drawAngle, _color, _alpha);
+	
+	if (myHeld)
+	{
+		draw_sprite_ext(myHeld.sprite_index, myHeld.image_index, x, y, 1, image_xscale, handAngle, _color, _alpha);	
+	}
+	
+	if (_twoHanded)
+	{
+		draw_sprite_ext(armSpriteB, 0, x - (_twoHanded * image_xscale * 6), y, 1, image_yscale, handAngle, _color, _alpha);
+	}
+	draw_sprite_ext(armSpriteA, 0, x, y, 1, image_yscale, handAngle, _color, _alpha);
+}
+
 
 //These function take input to issue commands to the doll. The function vets the commands, and if the conditions are met performs the action.
 

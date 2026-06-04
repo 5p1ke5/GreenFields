@@ -166,26 +166,26 @@ function doll_draw_ext(_x, _y, _color, _alpha)
 	
 	if (!_twoHanded)
 	{
-		draw_sprite_ext(armSpriteB, 0, x, y, 1, image_yscale, handAngle, _color, _alpha);
+		draw_sprite_ext(armSpriteB, 0, _x, _y, 1, image_yscale, handAngle, _color, _alpha);
 	}
 	
-	draw_sprite_ext(sprite_index, image_index, x, y, image_xscale, image_yscale, drawAngle, _color, _alpha);
-	draw_sprite_ext(faceSprite, faceIndex, x, y, image_xscale, image_yscale, drawAngle, _color, _alpha);
-	draw_sprite_ext(hairSprite, hairIndex, x, y, image_xscale, image_yscale, drawAngle, _color, _alpha);
-	draw_sprite_ext(pantsSprite, image_index, x, y, image_xscale, image_yscale, drawAngle, _color, _alpha);
-	draw_sprite_ext(shirtSprite, shirtIndex, x, y, image_xscale, image_yscale, drawAngle, _color, _alpha);
-	draw_sprite_ext(shoeSprite, image_index, x, y, image_xscale, image_yscale, drawAngle, _color, _alpha);
+	draw_sprite_ext(sprite_index, image_index, _x, _y, image_xscale, image_yscale, drawAngle, _color, _alpha);
+	draw_sprite_ext(faceSprite, faceIndex, _x, _y, image_xscale, image_yscale, drawAngle, _color, _alpha);
+	draw_sprite_ext(hairSprite, hairIndex, _x, _y, image_xscale, image_yscale, drawAngle, _color, _alpha);
+	draw_sprite_ext(pantsSprite, image_index, _x, _y, image_xscale, image_yscale, drawAngle, _color, _alpha);
+	draw_sprite_ext(shirtSprite, shirtIndex, _x, _y, image_xscale, image_yscale, drawAngle, _color, _alpha);
+	draw_sprite_ext(shoeSprite, image_index, _x, _y, image_xscale, image_yscale, drawAngle, _color, _alpha);
 	
 	if (myHeld)
 	{
-		draw_sprite_ext(myHeld.sprite_index, myHeld.image_index, x, y, 1, image_xscale, handAngle, _color, _alpha);	
+		draw_sprite_ext(myHeld.sprite_index, myHeld.image_index, _x, _y, 1, image_xscale, handAngle, _color, _alpha);	
 	}
 	
 	if (_twoHanded)
 	{
-		draw_sprite_ext(armSpriteB, 0, x - (_twoHanded * image_xscale * 6), y, 1, image_yscale, handAngle, _color, _alpha);
+		draw_sprite_ext(armSpriteB, 0, _x - (_twoHanded * image_xscale * 6), _y, 1, image_yscale, handAngle, _color, _alpha);
 	}
-	draw_sprite_ext(armSpriteA, 0, x, y, 1, image_yscale, handAngle, _color, _alpha);
+	draw_sprite_ext(armSpriteA, 0, _x, _y, 1, image_yscale, handAngle, _color, _alpha);
 }
 
 

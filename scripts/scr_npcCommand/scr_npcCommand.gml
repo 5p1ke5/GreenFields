@@ -12,7 +12,6 @@ function NPCCommand() constructor
 	// Makes the user idly point their gun downwards if not fighting.
 	static IdleHands = function(_user)
 	{
-		
 		with (_user)
 		{
 			mouseX = facing == 1 ? bbox_left : bbox_right;
@@ -96,12 +95,21 @@ function NPCCommandMove(_target, _duration = -1): NPCCommand() constructor
 		var _leftButton = false;
 		
 		//test this after my break.
-		if (point_distance(_user.x, _user.y, target.x, target.y) > RANGE_MELEE)
+		if (point_distance(_user.x, _user.y, target.x, target.y) > RANGE_CLOSE)
 		{
-			show_debug_message(target.x - _user.x);
-			if (target.x - _user.x > RANGE_MELEE)
+			if (target.x - _user.x > RANGE_CLOSE)
 			{
-				
+				// move left
+				_rightButton = true;
+			}
+			else if (target.x - _user.x < -RANGE_CLOSE)
+			{
+				_leftButton = true;
+			}
+			else if (target.y < _user.y)
+			{
+				_aButtonPressed = _user.grounded;
+				_aButton = true;
 			}
 		}
 		
@@ -112,6 +120,8 @@ function NPCCommandMove(_target, _duration = -1): NPCCommand() constructor
 			rightButton = _rightButton;
 			leftButton = _leftButton;
 		}
+		
+		IdleHands(_user);
 	}
 }
 

@@ -2,8 +2,8 @@
 /// @description Initializes npc variables.
 /// @param _name Name of the character.
 /// @param _dialogue Text string to be put in the speech balloon.
-/// @param _target The current target the NPC is trying to attack. Noone means the NPC is passive and not doing anything. 
-function npc_initialize(_name = "", _dialogue = "", _target = noone)
+/// @param _commands An array of commands for the NPC to follow.
+function npc_initialize(_name = "", _dialogue = "", _commands = [])
 {
 	name = _name;
 	
@@ -16,25 +16,15 @@ function npc_initialize(_name = "", _dialogue = "", _target = noone)
 	dialogueIndex = 0;
 	talkedToCount = 0;
 
-	/*This should be noone or a reference to an instance. Later I will add a Point2 struct. Basically a state. What each one does:
-	**Instance: Something that the NPC is trying to attack.
-	**noone: The npc is doing nothing and can be idle.
-	**Point2: The npc should move here.
-	
-	target = _target;
-	
-	Hmm I could also make this something like State and have an NPCState struct that it gets data from. Decisions, decisions.
-	
-	like have commands[] and it's an array of NPCState structs like last time
-	*/
-	commands = [];
+	//An array of commands for the NPC to follow.
+	commands = _commands;
 	
 	//This will contain a reference to any dialogue balloon the NPC creates.
 	//If it equals noone the NPC has no created dialogue balloons.
 	myBalloon = noone;
 	
 	
-	//These values correspond to palyer inputs. The NPC is essentially being 'controlled' by the computer.
+	//These values correspond to palyer inputs. The NPC is essentially being 'controlled' by the computer
 	aButtonPressed = false;
 	aButton = false;
 	rightButton = false;
@@ -57,7 +47,14 @@ function npc_initialize(_name = "", _dialogue = "", _target = noone)
 /// @description Sets input variables defined in npc_initialize to make them move according to npc behavior.
 function npc_step()
 {
-	aButtonPressed = current_time % 60 == 0;
+	if (array_length(commands) == 0)
+	{
+		return;	
+	}
+	
+	var _command = commands[0]
+	
+	_command.Perform(self);
 }
 
 /// @function npc_speak(_text, _name = undefined)

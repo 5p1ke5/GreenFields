@@ -43,6 +43,7 @@
 #macro PLAYER_WEIGHT 0.2
 #macro DASH_COOLDOWN (game_get_speed(gamespeed_fps) / 2)
 #macro DASH_INPUT_CD (game_get_speed(gamespeed_fps) / 2)
+#macro NPC_PASSIVE_CD (game_get_speed(gamespeed_fps))
 #macro DASH_SPEED 10
 #macro DEFAULT_ANGLE 300
 #macro FLICKER_MAX 5

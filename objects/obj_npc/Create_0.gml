@@ -3,7 +3,7 @@ event_inherited();
 
 doll_initialize_random();
 
-npc_initialize("", "");
+npc_initialize("", "", [new NPCCommandIdle()]);
 
 //Initialize inventory.
 inventory = [new ITEM_PISTOL];

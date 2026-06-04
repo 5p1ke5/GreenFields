@@ -9,6 +9,50 @@ function NPCCommand() constructor
 	}
 }
 
+///@function NPCCommandIdle(): NPCCommand() constructor
+///@description state for when NPC is idle. Just makes them sort of mill about. No exit condition.
+function NPCCommandIdle(): NPCCommand() constructor
+{
+	//How long the NPC waits between switching between standing still and moving around.
+	passiveTimer = -1;
+	
+	//Directions the state is telling the NPC to move to. If both are 0 just doesn't move.
+	commandHDir = 0;
+	
+	static Perform = function(_user)
+	{
+		//Increments timer, makes doll move in chosen direction.
+		if (passiveTimer >= 0)
+		{
+			passiveTimer--;
+		}
+		else
+		{
+			//Reset timer.
+			passiveTimer = NPC_PASSIVE_CD;
+			
+			//Either picks a new direction to move in or stays still till timer goes off next.
+			var _move = choose(true, false);
+			if (_move)
+			{
+				commandHDir = irandom_range(-1, 1);
+			}
+			else
+			{
+				commandHDir = 0;
+			}
+		}
+		var _hDir = commandHDir;
+		
+		with (_user)
+		{
+			rightButton = (_hDir < 0);
+			leftButton = (_hDir > 0);
+		}
+	}
+}
+
+
 ///@function NPCCommandMove(_target, _duration)
 ///@description state for when NPC is moving towards a given point. Once the NPC gets there they just wait so this can also be used to make an NPC wait at a given point. If the NPC has more than one item in npcCommands exits upon reaching the point.
 ///@param _target Point2 for the target to move towards. Also accepts an instance.

@@ -89,12 +89,12 @@ function NPCCommandMove(_target, _duration = -1): NPCCommand() constructor
 			}
 		}
 		
+		//This may want to go in something like npc_movement(x1, y1, x2, y2) but it'd be hard getting _rightButton etc as outputs. I could just put the 'with (_user)' block in the function too, maybe...
 		var _aButton = false;
 		var _aButtonPressed = false;
 		var _rightButton = false;
 		var _leftButton = false;
 		
-		//test this after my break.
 		if (point_distance(_user.x, _user.y, target.x, target.y) > RANGE_CLOSE)
 		{
 			if (target.x - _user.x > RANGE_CLOSE)
@@ -108,7 +108,7 @@ function NPCCommandMove(_target, _duration = -1): NPCCommand() constructor
 			}
 			else if (target.y < _user.y)
 			{
-				_aButtonPressed = _user.grounded;
+				_aButtonPressed = (_user.vsp == 0);
 				_aButton = true;
 			}
 		}

@@ -57,8 +57,10 @@ function npc_step()
 	_command.Perform(self);
 }
 
-
-function npc_move_to()
+/// @function npc_input_move_to(_target)
+/// @desc Controls NPC input to make it move towards a given target (Point2 or instance)
+/// @param _target A point2 or instance for the npc to move towards.
+function npc_input_move_to(_target)
 {
 	
 }

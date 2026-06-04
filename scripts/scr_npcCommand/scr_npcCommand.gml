@@ -95,6 +95,16 @@ function NPCCommandMove(_target, _duration = -1): NPCCommand() constructor
 		var _rightButton = false;
 		var _leftButton = false;
 		
+		//test this after my break.
+		if (point_distance(_user.x, _user.y, target.x, target.y) > RANGE_MELEE)
+		{
+			show_debug_message(target.x - _user.x);
+			if (target.x - _user.x > RANGE_MELEE)
+			{
+				
+			}
+		}
+		
 		with (_user)
 		{
 			aButton = _aButton;

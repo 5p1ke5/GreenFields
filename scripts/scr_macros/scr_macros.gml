@@ -16,7 +16,7 @@
 
 #region rooms
 #macro ROOM_TITLE room_menuTitle
-#macro ROOM_SINGLEPLAYER room_downtown
+#macro ROOM_SINGLEPLAYER room_test
 #macro ROOM_MULTIPLAYER room_menuMultiplayer
 #macro ROOM_REMATCH room_menuRematch
 #macro ROOM_SERVER room_menuServer
@@ -30,6 +30,7 @@
 #endregion
 
 #region Ranges
+#macro RANGE_MELEE 16
 #macro RANGE_CLOSE 100
 #endregion
 

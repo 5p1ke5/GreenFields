@@ -89,7 +89,7 @@ function NPCCommandMove(_target, _duration = -1): NPCCommand() constructor
 			}
 		}
 		
-		//This may want to go in something like npc_movement(x1, y1, x2, y2) but it'd be hard getting _rightButton etc as outputs. I could just put the 'with (_user)' block in the function too, maybe...
+		/*This may want to go in something like npc_movement(x1, y1, x2, y2) but it'd be hard getting _rightButton etc as outputs. I could just put the 'with (_user)' block in the function too, maybe...
 		var _aButton = false;
 		var _aButtonPressed = false;
 		var _rightButton = false;
@@ -119,6 +119,12 @@ function NPCCommandMove(_target, _duration = -1): NPCCommand() constructor
 			aButtonPressed = _aButtonPressed;
 			rightButton = _rightButton;
 			leftButton = _leftButton;
+		}
+		*/
+		var _target = target;
+		with (_user)
+		{
+			npc_input_moveto(_target)
 		}
 		
 		IdleHands(_user);

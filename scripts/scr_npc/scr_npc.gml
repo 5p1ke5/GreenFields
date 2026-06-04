@@ -57,12 +57,34 @@ function npc_step()
 	_command.Perform(self);
 }
 
-/// @function npc_input_move_to(_target)
+/// @function npc_input_moveto(_target)
 /// @desc Controls NPC input to make it move towards a given target (Point2 or instance)
 /// @param _target A point2 or instance for the npc to move towards.
-function npc_input_move_to(_target)
+function npc_input_moveto(_target)
 {
+	if (point_distance(x, y, _target.x, _target.y) < RANGE_CLOSE/2)
+	{
+		return;	
+	}
 	
+	var _aButton = false;
+	var _aButtonPressed = false;
+	var _rightButton = (_target.x - x > RANGE_CLOSE/2);
+	var _leftButton =  (_target.x - x < -RANGE_CLOSE/2);
+	
+	if (point_distance(x, y, _target.x, _target.y) < RANGE_CLOSE)
+	{
+		if (_target.y < y)
+		{
+			_aButton = true;
+			_aButtonPressed = (vsp == 0);
+		}
+	}
+	
+	aButton = _aButton;
+	aButtonPressed = _aButtonPressed;
+	rightButton = _rightButton;
+	leftButton = _leftButton;
 }
 
 /// @function npc_speak(_text, _name = undefined)

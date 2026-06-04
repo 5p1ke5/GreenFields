@@ -57,7 +57,7 @@ function npc_initialize(_name = "", _dialogue = "", _target = noone)
 /// @description Sets input variables defined in npc_initialize to make them move according to npc behavior.
 function npc_step()
 {
-		
+	aButtonPressed = current_time % 60 == 0;
 }
 
 /// @function npc_speak(_text, _name = undefined)

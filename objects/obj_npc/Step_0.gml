@@ -1,5 +1,6 @@
 /// @description does player things, inherits physics
 
+npc_step();
 
 doll_input_jump(aButtonPressed, aButton);
 doll_input_move(rightButton, leftButton, runButton);

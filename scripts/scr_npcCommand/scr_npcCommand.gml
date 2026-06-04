@@ -21,11 +21,11 @@ function NPCCommandMove(_target, _duration = -1): NPCCommand() constructor
 	static Perform = function(_user)
 	{
 		//If target no longer exists attempts to exit state.
-		if !(npc_check_target(target))
+		if (true)//* !(npc_check_target(target))
 		{
 			with (_user)
 			{
-				// * npc_exit_command();
+				//* npc_exit_command();
 				return;
 			}
 		}

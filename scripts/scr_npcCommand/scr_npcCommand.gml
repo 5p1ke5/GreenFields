@@ -28,7 +28,7 @@ function NPCCommandIdle(): NPCCommand() constructor
 	//How long the NPC waits between switching between standing still and moving around.
 	passiveTimer = -1;
 	
-	//Directions the state is telling the NPC to move to. If both are 0 just doesn't move.
+	//Direction the state is telling the NPC to move to. If both are 0 just doesn't move.
 	commandHDir = 0;
 	
 	static Perform = function(_user)
@@ -43,7 +43,7 @@ function NPCCommandIdle(): NPCCommand() constructor
 			//Reset timer.
 			passiveTimer = NPC_PASSIVE_CD;
 			
-			//Either picks a new direction to move in or stays still till timer goes off next.
+			//Either picks a direction and starts to move (true) or stays still till timer goes off next (false).
 			var _move = choose(true, false);
 			if (_move)
 			{
@@ -56,12 +56,13 @@ function NPCCommandIdle(): NPCCommand() constructor
 		}
 		var _hDir = commandHDir;
 		
-		
+		//Command the user to move.
 		with (_user)
 		{
 			rightButton = (_hDir < 0);
 			leftButton = (_hDir > 0);
 		}
+		
 		IdleHands(_user);
 	}
 }
@@ -78,8 +79,9 @@ function NPCCommandMove(_target, _duration = -1): NPCCommand() constructor
 	
 	static Perform = function(_user)
 	{
+		
 		//If target no longer exists attempts to exit state.
-		if (true)//* !(npc_check_target(target))
+		if (!target)
 		{
 			with (_user)
 			{
@@ -88,28 +90,18 @@ function NPCCommandMove(_target, _duration = -1): NPCCommand() constructor
 			}
 		}
 		
-		var _target = target;
-		var _duration = duration;
+		var _aButton = false;
+		var _aButtonPressed = false;
+		var _rightButton = false;
+		var _leftButton = false;
+		
 		with (_user)
 		{
-			//Moves towards target point until right at it.
-			// * npc_move_to(_target);
-			
-			//If NPC gets to their location waits for duration (if any) and then attempt to exit state.
-			if (distance_to_point(_target.x, _target.y) < RANGE_CLOSE)
-			{
-				if (_duration > -1)
-				{
-					_duration--;	
-				}
-				else
-				{
-					//* npc_exit_command();
-				}
-			}
+			aButton = _aButton;
+			aButtonPressed = _aButtonPressed;
+			rightButton = _rightButton;
+			leftButton = _leftButton;
 		}
-		
-		duration = _duration;
 	}
 }
 

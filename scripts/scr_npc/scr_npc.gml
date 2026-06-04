@@ -57,6 +57,12 @@ function npc_step()
 	_command.Perform(self);
 }
 
+
+function npc_move_to()
+{
+	
+}
+
 /// @function npc_speak(_text, _name = undefined)
 /// @description generates a speech balloon for the npc.
 /// @param _text The text to be put in the balloon.

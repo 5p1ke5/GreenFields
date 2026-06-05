@@ -94,6 +94,7 @@ function npc_input_moveto(_target)
 /// @desc Controls NPC to make them move into position and attack a target.
 function npc_input_fight(_target)
 {
+	show_debug_message("Fight!");
 	//checks weapon type, assesses a good point at which to attack the target (melee, ranged vantage point)
 	
 	//Something like

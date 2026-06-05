@@ -168,3 +168,20 @@ function NPCCommandTalkTo(_target, _dialogue): NPCCommand() constructor
 	}
 }
 
+
+/// @function NPCCommandFight(_target)
+/// @description Command to make the NPC hunt down and fight a target
+/// @param _target The target to fight.
+function NPCCommandFight(_target): NPCCommand() constructor
+{
+	target = _target;
+	
+	static Perform = function(_user)
+	{
+		var _target = target;
+		with (_user)
+		{
+			npc_input_fight(_target);
+		}
+	}
+}

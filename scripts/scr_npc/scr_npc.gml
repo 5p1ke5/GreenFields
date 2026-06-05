@@ -58,13 +58,14 @@ function npc_step()
 }
 
 /// @function npc_input_moveto(_target)
-/// @desc Controls NPC input to make it move towards a given target (Point2 or instance)
+/// @desc Controls NPC input to make it move towards a given target (Point2 or instance). Return true if they are at the position, false if still moving towards it.
 /// @param _target A point2 or instance for the npc to move towards.
 function npc_input_moveto(_target)
 {
 	if (point_distance(x, y, _target.x, _target.y) < RANGE_CLOSE/2)
 	{
-		return;	
+		//If the playe is at position returns true.
+		return true;	
 	}
 	
 	var _aButton = false;
@@ -85,15 +86,34 @@ function npc_input_moveto(_target)
 	aButtonPressed = _aButtonPressed;
 	rightButton = _rightButton;
 	leftButton = _leftButton;
+	
+	//Since the player is not at position returns false.
+	return false;
+}
+
+
+///@function npc_exit_command()
+///@description Attempts to exit the npc's current command. Can only exit command if npcCommands array has more than 1 item. Needs to be called from within an NPC instance.
+///@returns The next command in the array or noone if there is only 1 item in the array.
+function npc_exit_command()
+{
+	//State can only be exited if the number of items in npcState is greater than 1.
+	if (array_length(commands) > 1)
+	{
+		array_shift(commands); //If so, deletes the current state from the npcCommands array
+		return commands[0];
+	}
+	
+	return noone;
 }
 
 /// @function npc_speak(_text, _name = undefined)
 /// @description generates a speech balloon for the npc.
 /// @param _text The text to be put in the balloon.
 /// @param _name The name to be put in the balloon.
-function npc_speak(_text, _name = undefined)
+function npc_speak(_text, _name = "")
 {
-	if (!_name)
+	if (_name == "")
 	{
 		_name = name; //If a name is not given just puts in the NPC's name
 	}

@@ -122,6 +122,7 @@
     {"id":{"name":"scr_point","path":"scripts/scr_point/scr_point.yy",},},
     {"id":{"name":"sfx_dash","path":"sounds/sfx_dash/sfx_dash.yy",},},
     {"id":{"name":"sfx_fire","path":"sounds/sfx_fire/sfx_fire.yy",},},
+    {"id":{"name":"sfx_jump","path":"sounds/sfx_jump/sfx_jump.yy",},},
     {"id":{"name":"spr_armA","path":"sprites/spr_armA/spr_armA.yy",},},
     {"id":{"name":"spr_armB","path":"sprites/spr_armB/spr_armB.yy",},},
     {"id":{"name":"spr_armBBack","path":"sprites/spr_armBBack/spr_armBBack.yy",},},

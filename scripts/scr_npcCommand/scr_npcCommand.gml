@@ -14,7 +14,7 @@ function NPCCommand() constructor
 	{
 		with (_user)
 		{
-			mouseX = facing == 1 ? bbox_left : bbox_right;
+			mouseX = facing == -1 ? bbox_left : bbox_right;
 			mouseY = bbox_bottom;
 		}
 	}
@@ -70,64 +70,53 @@ function NPCCommandIdle(): NPCCommand() constructor
 ///@function NPCCommandMove(_target, _duration)
 ///@description state for when NPC is moving towards a given point. Once the NPC gets there they just wait so this can also be used to make an NPC wait at a given point. If the NPC has more than one item in npcCommands exits upon reaching the point.
 ///@param _target Point2 for the target to move towards. Also accepts an instance.
-///@param _duration Time for the NPC to wait at the given point.
-function NPCCommandMove(_target, _duration = -1): NPCCommand() constructor
+///@param _duration Time for the NPC to wait at the given point. If set to 'noone' it has no end duration.
+function NPCCommandMove(_target, _duration = noone): NPCCommand() constructor
 {
 	target = _target;
 	duration = _duration;
 	
 	static Perform = function(_user)
 	{
-		
 		//If target no longer exists attempts to exit state.
 		if (!target)
 		{
 			with (_user)
 			{
-				//* npc_exit_command();
+				npc_exit_command();
 				return;
 			}
 		}
 		
-		/*This may want to go in something like npc_movement(x1, y1, x2, y2) but it'd be hard getting _rightButton etc as outputs. I could just put the 'with (_user)' block in the function too, maybe...
-		var _aButton = false;
-		var _aButtonPressed = false;
-		var _rightButton = false;
-		var _leftButton = false;
-		
-		if (point_distance(_user.x, _user.y, target.x, target.y) > RANGE_CLOSE)
-		{
-			if (target.x - _user.x > RANGE_CLOSE)
-			{
-				// move left
-				_rightButton = true;
-			}
-			else if (target.x - _user.x < -RANGE_CLOSE)
-			{
-				_leftButton = true;
-			}
-			else if (target.y < _user.y)
-			{
-				_aButtonPressed = (_user.vsp == 0);
-				_aButton = true;
-			}
-		}
-		
-		with (_user)
-		{
-			aButton = _aButton;
-			aButtonPressed = _aButtonPressed;
-			rightButton = _rightButton;
-			leftButton = _leftButton;
-		}
-		*/
 		var _target = target;
 		with (_user)
 		{
-			npc_input_moveto(_target)
+			var _atTarget = npc_input_moveto(_target)
+		}
+		IdleHands(_user);
+		
+		
+		//If no duration is set exits the function, skipping any duration code.
+		if (duration == noone)
+		{
+			return;	
 		}
 		
-		IdleHands(_user);
+		//If duration is above zero decrements it while the player is at the target. Otherwise attempts to exit the command.
+		if (duration >= 0)
+		{
+			if (_atTarget)
+			{
+				duration--;	
+			}
+		}
+		else
+		{
+			with (_user)
+			{
+				npc_exit_command();	
+			}
+		}
 	}
 }
 

@@ -1,1 +1,1 @@
-npc_initialize("", "", [new NPCCommandMove(obj_player, game_get_speed(gamespeed_fps) * 5)]);
+npc_initialize("Testicle", "Hi!", [new NPCCommandMove(obj_player, game_get_speed(gamespeed_fps) * 5)]);

@@ -131,6 +131,45 @@ function npc_speak(_text, _name = "")
 	return _balloon;
 }
 
+
+/// @function npc_dialogue()
+/// @description Attempts to generate a speech balloon if none exists, incrementing dialogue.
+function npc_dialogue()
+{
+	if !(myBalloon)
+	{
+		myBalloon = npc_speak(dialogue[dialogueIndex], name);
+		dialogueIndex++;
+		if (dialogueIndex >= array_length(dialogue))
+		{
+			dialogueIndex = 0;
+		}
+	}
+}
+
+
+/// @function npc_dialogue_ext(_myBalloon, _dialogue, _dialogueIndex, _name)
+/// @description Attempts to generate a speech balloon if none exists, incrementing dialogue. Returns the incremented dialogue index.
+/// @param _myBalloon Reference to the dialogue balloon object.
+/// @param _dialogue Array of dialogue strings.
+/// @param _dialogueIndex he index in the dialogue array to call.
+/// @param _name The name to put in the dialogue balloon.
+function npc_dialogue_ext(_dialogue = dialogue, _dialogueIndex = dialogueIndex, _name = name)
+{
+	if !(myBalloon)
+	{
+		myBalloon = npc_speak(_dialogue[_dialogueIndex], _name);
+		_dialogueIndex++;
+		if (_dialogueIndex >= array_length(_dialogue))
+		{
+			_dialogueIndex = 0;
+		}
+	}
+	
+	return _dialogueIndex;
+}
+
+
 /// @function speechBalloon_initialize(_text, _maxTime, _owner, _name)
 /// @description Initializes variables for a specch balloon object.
 /// @param _text The text that will be displayed.

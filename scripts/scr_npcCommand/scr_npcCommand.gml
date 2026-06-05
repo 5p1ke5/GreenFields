@@ -79,13 +79,13 @@ function NPCCommandMove(_target, _duration = noone): NPCCommand() constructor
 	static Perform = function(_user)
 	{
 		//If target no longer exists attempts to exit state.
-		if (!target)
+		if !(instance_exists(target))
 		{
 			with (_user)
 			{
 				npc_exit_command();
-				return;
 			}
+			return;
 		}
 		
 		//Sts player input to move towards the target.
@@ -144,6 +144,15 @@ function NPCCommandTalkTo(_target, _dialogue): NPCCommand() constructor
 	
 	static Perform = function(_user)
 	{
+		if !(instance_exists(target))
+		{
+			with (_user)
+			{
+				npc_exit_command();
+			}
+			return;
+		}
+		
 		var _target = target;
 		var _dialogue = dialogue;
 		var _dialogueIndex = dialogueIndex;
@@ -178,6 +187,19 @@ function NPCCommandFight(_target): NPCCommand() constructor
 	
 	static Perform = function(_user)
 	{
+		if !(instance_exists(target))
+		{
+			with (_user)
+			{
+				mLeftButton = false;
+				mRightButton = false;
+				mLeftButtonPressed = false;
+				mRightButtonPressed = false;
+				npc_exit_command();
+			}
+			return;
+		}
+		
 		var _target = target;
 		with (_user)
 		{

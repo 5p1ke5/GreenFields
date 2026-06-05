@@ -60,14 +60,15 @@ function npc_step()
 /// @function npc_input_moveto(_target)
 /// @desc Controls NPC input to make it move towards a given target (Point2 or instance). Return true if they are at the position, false if still moving towards it.
 /// @param _target A point2 or instance for the npc to move towards.
-function npc_input_moveto(_target)
+/// @param _range How close the move to the target.
+function npc_input_moveto(_target, _range = RANGE_CLOSE/2)
 {
 	
-	rightButton = (_target.x - x > RANGE_CLOSE/2);
-	leftButton = (_target.x - x < -RANGE_CLOSE/2);
+	rightButton = (_target.x - x > _range);
+	leftButton = (_target.x - x < -_range);
 	
 	//If the npc is at position returns true.
-	if (point_distance(x, y, _target.x, _target.y) < RANGE_CLOSE/2)
+	if (point_distance(x, y, _target.x, _target.y) < _range)
 	{
 		return true;	
 	}
@@ -76,7 +77,7 @@ function npc_input_moveto(_target)
 	aButtonPressed = false;
 	
 	//Later replace this with code that checks if wall is in front of the npc or a platform to jump on
-	if (point_distance(x, y, _target.x, _target.y) < RANGE_CLOSE)
+	if (point_distance(x, y, _target.x, _target.y) < _range * 2)
 	{
 		if (_target.y < y)
 		{
@@ -91,17 +92,39 @@ function npc_input_moveto(_target)
 
 
 /// @function npc_input_fight(_target)
-/// @desc Controls NPC to make them move into position and attack a target.
+/// @desc Controls NPC to make them move into position and attack a target. Returns true if target is being pursued, false i
+/// @param _target Target to attack.
 function npc_input_fight(_target)
-{
-	show_debug_message("Fight!");
+{	
 	//checks weapon type, assesses a good point at which to attack the target (melee, ranged vantage point)
+	var _equip = noone;
 	
-	//Something like
-	//npc_input_moveto(position)
-	//to get into position
+	if (array_length(inventory) > 0)
+	{
+		_equip = inventory[equipIndex];	
+	}
 	
-	//And then sets input to attack the target if in position
+	if (is_instanceof(_equip, ItemEquipMelee))
+	{
+		//I'll program in melee fight code later.
+	}
+	else //For now everything can use the same code for ranged weapons.
+	{
+		var _inRange = npc_input_moveto(_target, RANGE_LONG);
+		
+		//This is actually really strong, make a way for it to be a little less scary
+		if (_inRange)
+		{
+			mouseX = _target.xprevious;
+			mouseY = _target.yprevious;
+			mLeftButton = true;
+			mRightButton = true;
+			mLeftButtonPressed = true;
+			mRightButtonPressed = true;
+		}
+	}
+	
+	return true;
 }
 
 

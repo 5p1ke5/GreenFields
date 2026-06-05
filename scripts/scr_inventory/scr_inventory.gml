@@ -68,10 +68,9 @@ function Item(_itemName,  _inventory, _icon = spr_iconBlank, _amount = 1, _descr
 /// @param _inventory Inventory list the item is inside of.
 /// @param _icon <sprite> Sprite representation of item.
 /// @param _amount  quantity of item in stack.
-/// @param _descrtiption A description of the item.
-/// @param _ai enum that tells an NPC how to behave when they have the item.
-/// @param _equipObj Object to spawn an instance equipped to the player.
-function ItemEquip(_itemName,  _inventory, _icon = spr_iconBlank, _amount = 1, _description = "", _sprite_index) : Item(_itemName,  _inventory, _icon = spr_iconBlank, _amount = 1, _description = "")  constructor
+/// @param description A description of the item.
+/// @param _sprite_index Sprite for the struct.
+function ItemEquip(_itemName,  _inventory, _icon = spr_iconBlank, _amount = 1, _description = "", _sprite_index) : Item(_itemName,  _inventory, _icon, _amount, _description = "")  constructor
 {	
 	sprite_index = _sprite_index;
 	image_index = 0;
@@ -81,6 +80,19 @@ function ItemEquip(_itemName,  _inventory, _icon = spr_iconBlank, _amount = 1, _
 	{
 		
 	}
+}
+
+/// @function ItemEquipMelee(_itemName,  _inventory, _icon = spr_iconBlank, _amount = 1, _description = "", _sprite_index)
+/// @description Will have melee weapons in here for later. For now is just a placeholder.
+/// @param _itemName <String> item's name.
+/// @param _inventory Inventory list the item is inside of.
+/// @param _icon <sprite> Sprite representation of item.
+/// @param _amount  quantity of item in stack.
+/// @param description A description of the item.
+/// @param _sprite_index Sprite for the struct.
+function ItemEquipMelee(_itemName,  _inventory, _icon = spr_iconBlank, _amount = 1, _description = "", _sprite_index): Item(_itemName,  _inventory, _icon, _amount, _description = "")  constructor
+{
+	
 }
 
 

@@ -120,3 +120,18 @@ function NPCCommandMove(_target, _duration = noone): NPCCommand() constructor
 	}
 }
 
+
+///@function  NPCCommandTalkTo(_target, _dialogue)
+///@description Makes NPC move to point while saying a specified line.
+function NPCCommandTalkTo(_target, _dialogue): NPCCommand() constructor
+{
+	target = _target;
+	dialogue = _dialogue;
+	dialogueIndex = 0;
+	
+	static Perform = function(_user)
+	{
+		
+	}
+}
+

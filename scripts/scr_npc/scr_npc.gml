@@ -64,7 +64,8 @@ function npc_input_moveto(_target)
 {
 	if (point_distance(x, y, _target.x, _target.y) < RANGE_CLOSE/2)
 	{
-		//If the playe is at position returns true.
+		//If the npc is at position returns true.
+		//Note: After making a fight script onsider if I should have it set aButton etc to false before returning true or just leave as is 
 		return true;	
 	}
 	
@@ -89,6 +90,20 @@ function npc_input_moveto(_target)
 	
 	//Since the player is not at position returns false.
 	return false;
+}
+
+
+/// @function npc_input_fight(_target)
+/// @desc Controls NPC to make them move into position and attack a target.
+function npc_input_fight(_target)
+{
+	//checks weapon type, assesses a good point at which to attack the target (melee, ranged vantage point)
+	
+	//Something like
+	//npc_input_moveto(position)
+	//to get into position
+	
+	//And then sets input to attack the target if in position
 }
 
 

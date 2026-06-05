@@ -62,31 +62,28 @@ function npc_step()
 /// @param _target A point2 or instance for the npc to move towards.
 function npc_input_moveto(_target)
 {
+	
+	rightButton = (_target.x - x > RANGE_CLOSE/2);
+	leftButton = (_target.x - x < -RANGE_CLOSE/2);
+	
+	//If the npc is at position returns true.
 	if (point_distance(x, y, _target.x, _target.y) < RANGE_CLOSE/2)
 	{
-		//If the npc is at position returns true.
-		//Note: After making a fight script onsider if I should have it set aButton etc to false before returning true or just leave as is 
 		return true;	
 	}
 	
-	var _aButton = false;
-	var _aButtonPressed = false;
-	var _rightButton = (_target.x - x > RANGE_CLOSE/2);
-	var _leftButton =  (_target.x - x < -RANGE_CLOSE/2);
+	aButton = false;
+	aButtonPressed = false;
 	
+	//Later replace this with code that checks if wall is in front of the npc or a platform to jump on
 	if (point_distance(x, y, _target.x, _target.y) < RANGE_CLOSE)
 	{
 		if (_target.y < y)
 		{
-			_aButton = true;
-			_aButtonPressed = (vsp == 0);
+			aButton = true;
+			aButtonPressed = (vsp == 0);
 		}
 	}
-	
-	aButton = _aButton;
-	aButtonPressed = _aButtonPressed;
-	rightButton = _rightButton;
-	leftButton = _leftButton;
 	
 	//Since the player is not at position returns false.
 	return false;

@@ -1,6 +1,6 @@
 /// @desc On the first step event, creates 10 bullets at different angles and then destroys self.
 
-var _speed = 16;
+var _speed = 1;
 var _damage = damage;
 
 var _xOffset = lengthdir_x(6, angle);

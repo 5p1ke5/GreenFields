@@ -42,6 +42,7 @@
 #region Constant numbers
 #macro STARTING_HP 3
 #macro TERMINAL_VELOCITY 20
+#macro BULLET_SPEED 16
 #macro MAX_ACCEL 3
 #macro PLAYER_ACCEL 0.5
 #macro JUMP_HEIGHT 5

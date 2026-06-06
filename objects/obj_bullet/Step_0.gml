@@ -1,3 +1,3 @@
 /// @description Uses simplified physics for movement 
-y += vsp;
-x += hsp;
+y += vsp * spd;
+x += hsp * spd;

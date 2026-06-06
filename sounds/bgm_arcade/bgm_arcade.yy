@@ -1,6 +1,6 @@
 {
   "$GMSound":"v2",
-  "%Name":"sfx_dash",
+  "%Name":"bgm_arcade",
   "audioGroupId":{
     "name":"audiogroup_default",
     "path":"audiogroups/audiogroup_default",
@@ -10,17 +10,17 @@
   "compression":0,
   "compressionQuality":4,
   "conversionMode":0,
-  "duration":0.16188209,
+  "duration":180.21985,
   "exportDir":"",
-  "name":"sfx_dash",
+  "name":"bgm_arcade",
   "parent":{
-    "name":"sfx",
-    "path":"folders/Audio/sfx.yy",
+    "name":"bgm",
+    "path":"folders/Audio/bgm.yy",
   },
   "preload":false,
   "resourceType":"GMSound",
   "resourceVersion":"2.0",
   "sampleRate":44100,
-  "soundFile":"sfx_dash.wav",
+  "soundFile":"bgm_arcade.mp3",
   "volume":0.2,
 }

@@ -3,9 +3,11 @@
 /// @param _name Name of the character.
 /// @param _dialogue Text string to be put in the speech balloon.
 /// @param _commands An array of commands for the NPC to follow.
-function npc_initialize(_name = "", _dialogue = "", _commands = [])
+/// @param _combatLevel How strong the NPC is. Modifies aim and how often they fire. Higher = less skilled, lower = stronger.
+function npc_initialize(_name = "", _dialogue = "", _commands = [], _combatLevel = 50)
 {
 	name = _name;
+	combatLevel = _combatLevel;
 	
 	if (is_string(_dialogue))
 	{
@@ -125,10 +127,11 @@ function npc_input_fight(_target)
 		//This is actually really strong, make a way for it to be a little less scary
 		if (_inRange)
 		{
-			mLeftButton = (irandom(30) == 0);
-			mLeftButtonPressed = (irandom(30) == 0);
-			mouseX = _target.xprevious + (mLeftButton || mLeftButtonPressed) * irandom_range(-50, 50);
-			mouseY = _target.yprevious + (mLeftButton || mLeftButtonPressed) * irandom_range(-50, 50);
+			mLeftButton = (irandom(combatLevel/2) == 0);
+			mLeftButtonPressed = (irandom(combatLevel/2) == 0);
+			mouseX = _target.xprevious + (mLeftButton || mLeftButtonPressed) * irandom_range(-combatLevel, combatLevel);
+			mouseY = _target.yprevious + (mLeftButton || mLeftButtonPressed) * irandom_range(-combatLevel, combatLevel);
+
 			
 			return true;
 			/*

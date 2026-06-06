@@ -125,11 +125,10 @@ function npc_input_fight(_target)
 		//This is actually really strong, make a way for it to be a little less scary
 		if (_inRange)
 		{
-			//sorta works but makes NPCs look jittery af
-			mouseX = _target.xprevious + irandom_range(-30, 30);
-			mouseY = _target.yprevious + irandom_range(-30, 30);
-			mLeftButton = (irandom(20) == 0);
-			mLeftButtonPressed = (irandom(20) == 0);
+			mLeftButton = (irandom(30) == 0);
+			mLeftButtonPressed = (irandom(30) == 0);
+			mouseX = _target.xprevious + (mLeftButton || mLeftButtonPressed) * irandom_range(-50, 50);
+			mouseY = _target.yprevious + (mLeftButton || mLeftButtonPressed) * irandom_range(-50, 50);
 			
 			return true;
 			/*
@@ -177,7 +176,7 @@ function npc_speak(_text, _name = "")
 	//Gets height of the balloon text when using fnt_speech, then resets font.
 	var _balloonHeight = string_height_ext(_text, string_height(_text), TEXT_BALLOON_MAXW);
 	
-	var _balloon = instance_create_layer(x, y - 32 - (_balloonHeight/2), layer, obj_speechBalloon);
+	var _balloon = instance_create_depth(x, y - 32 - (_balloonHeight/2), depth, obj_speechBalloon);
 	with (_balloon)
 	{
 		speechBalloon_initialize(_text, string_length(_text) * TEXT_BALLOON_SPEED, other, _name);

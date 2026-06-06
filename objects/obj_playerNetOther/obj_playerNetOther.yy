@@ -11,8 +11,8 @@
   "name":"obj_playerNetOther",
   "overriddenProperties":[],
   "parent":{
-    "name":"Objects",
-    "path":"folders/Objects.yy",
+    "name":"player",
+    "path":"folders/Objects/player.yy",
   },
   "parentObjectId":{
     "name":"abs_doll",

@@ -18,6 +18,7 @@
 #macro ROOM_TITLE room_menuTitle
 #macro ROOM_SINGLEPLAYER room_downtown
 #macro ROOM_TRAINING room_test
+#macro ROOM_ARCADE room_arcademode
 #macro ROOM_MULTIPLAYER room_menuMultiplayer
 #macro ROOM_REMATCH room_menuRematch
 #macro ROOM_SERVER room_menuServer

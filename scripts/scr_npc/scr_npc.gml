@@ -92,7 +92,7 @@ function npc_input_moveto(_target, _range = RANGE_CLOSE/2)
 
 
 /// @function npc_input_fight(_target)
-/// @desc Controls NPC to make them move into position and attack a target. Returns true if target is being pursued, false i
+/// @desc Controls NPC to make them move into position and attack a target. Returns true if the target is being attacked, false if not.
 /// @param _target Target to attack.
 function npc_input_fight(_target)
 {	
@@ -107,10 +107,17 @@ function npc_input_fight(_target)
 	if (is_instanceof(_equip, ItemEquipMelee))
 	{
 		//I'll program in melee fight code later.
+		return true;
 	}
 	else //For now everything can use the same code for ranged weapons.
 	{
 		var _inRange = npc_input_moveto(_target, RANGE_LONG);
+		
+		//later make it check if there is a clear line between the NPC and target. Like...
+		if (collision_line(x, y, _target.x, _target.y, BLOCK, true, true))
+		{
+			return false;
+		}
 		
 		//This is actually really strong, make a way for it to be a little less scary
 		if (_inRange)
@@ -120,6 +127,8 @@ function npc_input_fight(_target)
 			mouseY = _target.yprevious + irandom_range(-30, 30);
 			mLeftButton = (irandom(20) == 0);
 			mLeftButtonPressed = (irandom(20) == 0);
+			
+			return true;
 			/*
 			mLeftButton = (irandom(120) == 0);
 			mLeftButtonPressed = (irandom(120) == 0);
@@ -131,8 +140,7 @@ function npc_input_fight(_target)
 			*/
 		}
 	}
-	
-	return true;
+	return false;
 }
 
 

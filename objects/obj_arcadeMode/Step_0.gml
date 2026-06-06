@@ -14,10 +14,12 @@ if (instance_number(obj_npc) == 0)
 		[
 			new NPCCommandFight(obj_player)
 		])
-		living_initialize(50, FLICKER_MAX);
+		living_initialize(20, FLICKER_MAX);
 		inventory = choose([new ITEM_PISTOL], [new ITEM_SHOTGUN], [new ITEM_ASSAULTRIFLE], [new ITEM_MACHINEGUN]);
 		equipIndex = 0;
 
 		inventory[equipIndex].Equip(self);
 	}
+	
+	count++;
 }

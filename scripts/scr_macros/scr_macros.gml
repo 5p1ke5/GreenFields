@@ -11,7 +11,7 @@
 #macro ITEM_AUTOPISTOL ItemEquipFirearmAuto("Auto Pistol", noone, spr_iconPistol, 100, "A fully automatic handgun.", spr_equipPistol, game_get_speed(gamespeed_fps)/4, obj_bullet, 10, false)
 #macro ITEM_SHOTGUN ItemEquipFirearm("Shotgun", noone, spr_iconPistol, 100, "A powerful shotgun.", spr_equipShotgun, game_get_speed(gamespeed_fps)/2, obj_bulletShotgun, 2, true)
 #macro ITEM_ASSAULTRIFLE ItemEquipFirearmAuto("Assault RIfle", noone, spr_iconPistol, 100, "A rapid-fire rifle.", spr_equipAssaultRifle, game_get_speed(gamespeed_fps)/10, obj_bullet, 4, true)
-#macro ITEM_MACHINEGUN ItemEquipFirearmAuto("Machine Gun", noone, spr_iconPistol, 100, "A powerful machine gun.", spr_equipAssaultRifle, game_get_speed(gamespeed_fps)/5, obj_bullet, 8, true)
+#macro ITEM_MACHINEGUN ItemEquipFirearmAuto("Machine Gun", noone, spr_iconPistol, 100, "A powerful machine gun.", spr_equipMachinegun, game_get_speed(gamespeed_fps)/5, obj_bullet, 8, true)
 #endregion
 
 #region rooms

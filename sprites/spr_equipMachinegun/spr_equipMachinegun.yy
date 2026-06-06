@@ -1,8 +1,8 @@
 {
   "$GMSprite":"v2",
-  "%Name":"spr_equipAssaultRifle",
+  "%Name":"spr_equipMachinegun",
   "bboxMode":0,
-  "bbox_bottom":10,
+  "bbox_bottom":11,
   "bbox_left":17,
   "bbox_right":44,
   "bbox_top":5,
@@ -12,16 +12,16 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"v1","%Name":"aa076a1b-ef50-4ece-a4f7-722c5b3bfa59","name":"aa076a1b-ef50-4ece-a4f7-722c5b3bfa59","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"00e93ec7-e7dc-4738-93b2-5e383ca6abea","name":"00e93ec7-e7dc-4738-93b2-5e383ca6abea","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,
   "height":20,
   "HTile":false,
   "layers":[
-    {"$GMImageLayer":"","%Name":"6eb4af9a-ef02-4d97-bb4a-6d4eec8a61db","blendMode":0,"displayName":"default","isLocked":false,"name":"6eb4af9a-ef02-4d97-bb4a-6d4eec8a61db","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
+    {"$GMImageLayer":"","%Name":"edcd0e91-544d-4205-9f61-7f825c40ac0a","blendMode":0,"displayName":"default","isLocked":false,"name":"edcd0e91-544d-4205-9f61-7f825c40ac0a","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
   ],
-  "name":"spr_equipAssaultRifle",
+  "name":"spr_equipMachinegun",
   "nineSlice":null,
   "origin":9,
   "parent":{
@@ -33,7 +33,7 @@
   "resourceVersion":"2.0",
   "sequence":{
     "$GMSequence":"v1",
-    "%Name":"spr_equipAssaultRifle",
+    "%Name":"spr_equipMachinegun",
     "autoRecord":true,
     "backdropHeight":768,
     "backdropImageOpacity":0.5,
@@ -57,7 +57,7 @@
       "resourceType":"KeyframeStore<MomentsEventKeyframe>",
       "resourceVersion":"2.0",
     },
-    "name":"spr_equipAssaultRifle",
+    "name":"spr_equipMachinegun",
     "playback":1,
     "playbackSpeed":30.0,
     "playbackSpeedType":0,
@@ -69,8 +69,8 @@
     "tracks":[
       {"$GMSpriteFramesTrack":"","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"$KeyframeStore<SpriteFrameKeyframe>":"","Keyframes":[
             {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"aa076a1b-ef50-4ece-a4f7-722c5b3bfa59","path":"sprites/spr_equipAssaultRifle/spr_equipAssaultRifle.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"84b378a4-bbce-4c78-928b-0ae67bee152d","IsCreationKey":false,"Key":0.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"00e93ec7-e7dc-4738-93b2-5e383ca6abea","path":"sprites/spr_equipMachinegun/spr_equipMachinegun.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+              },"Disabled":false,"id":"84610ea1-5a22-43f4-affb-12f93af7370b","IsCreationKey":false,"Key":0.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
           ],"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"2.0",},"modifiers":[],"name":"frames","resourceType":"GMSpriteFramesTrack","resourceVersion":"2.0","spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange":null,

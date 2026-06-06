@@ -1,6 +1,6 @@
 {
   "$GMSprite":"v2",
-  "%Name":"spr_equipAssaultRifle",
+  "%Name":"spr_equipBazooka",
   "bboxMode":0,
   "bbox_bottom":10,
   "bbox_left":17,
@@ -12,16 +12,16 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"v1","%Name":"aa076a1b-ef50-4ece-a4f7-722c5b3bfa59","name":"aa076a1b-ef50-4ece-a4f7-722c5b3bfa59","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"aacb6b72-0231-4ffc-b7a2-c04696e4ebe3","name":"aacb6b72-0231-4ffc-b7a2-c04696e4ebe3","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,
   "height":20,
   "HTile":false,
   "layers":[
-    {"$GMImageLayer":"","%Name":"6eb4af9a-ef02-4d97-bb4a-6d4eec8a61db","blendMode":0,"displayName":"default","isLocked":false,"name":"6eb4af9a-ef02-4d97-bb4a-6d4eec8a61db","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
+    {"$GMImageLayer":"","%Name":"a7aa9675-bde5-466c-8746-6d750262b626","blendMode":0,"displayName":"default","isLocked":false,"name":"a7aa9675-bde5-466c-8746-6d750262b626","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
   ],
-  "name":"spr_equipAssaultRifle",
+  "name":"spr_equipBazooka",
   "nineSlice":null,
   "origin":9,
   "parent":{
@@ -33,7 +33,7 @@
   "resourceVersion":"2.0",
   "sequence":{
     "$GMSequence":"v1",
-    "%Name":"spr_equipAssaultRifle",
+    "%Name":"spr_equipBazooka",
     "autoRecord":true,
     "backdropHeight":768,
     "backdropImageOpacity":0.5,
@@ -57,7 +57,7 @@
       "resourceType":"KeyframeStore<MomentsEventKeyframe>",
       "resourceVersion":"2.0",
     },
-    "name":"spr_equipAssaultRifle",
+    "name":"spr_equipBazooka",
     "playback":1,
     "playbackSpeed":30.0,
     "playbackSpeedType":0,
@@ -69,8 +69,8 @@
     "tracks":[
       {"$GMSpriteFramesTrack":"","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"$KeyframeStore<SpriteFrameKeyframe>":"","Keyframes":[
             {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"aa076a1b-ef50-4ece-a4f7-722c5b3bfa59","path":"sprites/spr_equipAssaultRifle/spr_equipAssaultRifle.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"84b378a4-bbce-4c78-928b-0ae67bee152d","IsCreationKey":false,"Key":0.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"aacb6b72-0231-4ffc-b7a2-c04696e4ebe3","path":"sprites/spr_equipBazooka/spr_equipBazooka.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+              },"Disabled":false,"id":"708e6dfd-19f2-4414-8709-54c45d27b0a3","IsCreationKey":false,"Key":0.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
           ],"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"2.0",},"modifiers":[],"name":"frames","resourceType":"GMSpriteFramesTrack","resourceVersion":"2.0","spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange":null,

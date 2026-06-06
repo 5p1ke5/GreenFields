@@ -139,7 +139,7 @@ function ItemEquipFirearm(_itemName,  _inventory, _icon = spr_iconBlank, _amount
 		var _yOffset = lengthdir_y(16, _angle);
 		var _bullet = instance_create_depth(_x + _xOffset, _y + _yOffset, _depth + 1, bullet);
 
-		var _speed = 16;
+		var _speed = 12;
 		var _damage = damage;
 		var _owner = _user;
 		with (_bullet)

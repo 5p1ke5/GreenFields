@@ -115,12 +115,20 @@ function npc_input_fight(_target)
 		//This is actually really strong, make a way for it to be a little less scary
 		if (_inRange)
 		{
+			//sorta works but makes NPCs look jittery af
+			mouseX = _target.xprevious + irandom_range(-30, 30);
+			mouseY = _target.yprevious + irandom_range(-30, 30);
+			mLeftButton = (irandom(20) == 0);
+			mLeftButtonPressed = (irandom(20) == 0);
+			/*
+			mLeftButton = (irandom(120) == 0);
+			mLeftButtonPressed = (irandom(120) == 0);
+			
 			mouseX = _target.xprevious;
 			mouseY = _target.yprevious;
 			mLeftButton = true;
-			mRightButton = true;
 			mLeftButtonPressed = true;
-			mRightButtonPressed = true;
+			*/
 		}
 	}
 	

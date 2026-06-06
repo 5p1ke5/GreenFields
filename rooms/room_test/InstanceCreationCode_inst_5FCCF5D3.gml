@@ -6,5 +6,7 @@ npc_initialize("Testicle",  ["Penis. Penis penis penis pensi penis penis"],
 					new NPCCommandIdle()
 				]);
 				
+				/*
 inventory = [new ITEM_SHOTGUN ]
 inventory[equipIndex].Equip(self);
+*/

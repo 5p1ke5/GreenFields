@@ -113,9 +113,12 @@ function npc_input_fight(_target)
 	{
 		var _inRange = npc_input_moveto(_target, RANGE_LONG);
 		
-		//later make it check if there is a clear line between the NPC and target. Like...
+		//Checks if the npc has an unblocked line of fire.
 		if (collision_line(x, y, _target.x, _target.y, BLOCK, true, true))
 		{
+			//Later make it so we override the previous npc_input_moveto command. Something like...
+			//npc_input_moveto(new Point2(x, y + 200), RANGE_CLOSE);
+			
 			return false;
 		}
 		

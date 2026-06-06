@@ -13,12 +13,6 @@ if ((mousePreviousX != device_mouse_raw_x(0)) || (mousePreviousY != device_mouse
 	}
 }
 
-/*
-xOffset = -(camera_get_view_width(view_camera[0])/2);
-yOffset = -320;
-*/
-
-
 x = _player.x + xOffset;
 y = _player.y + yOffset;
 

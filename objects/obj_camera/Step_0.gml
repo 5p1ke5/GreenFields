@@ -4,13 +4,12 @@ if (_player == noone) { exit;}
 
 if ((mousePreviousX != device_mouse_raw_x(0)) || (mousePreviousY != device_mouse_raw_y(0)))
 {
-	show_debug_message("Mouse x: {0}, Mouse y: {1}, Mouse x(prev):{2}, Mouse x(prev):{3}",  device_mouse_raw_x(0), device_mouse_raw_y(0), mousePreviousX, mousePreviousY)
+	var _angle = point_direction(_player.x, _player.y, mouse_x, mouse_y);
+	var _dist = point_distance(_player.x, _player.y, mouse_x, mouse_y);
+	_dist = (_dist/320) * RANGE_CLOSE
 	
-	if (point_distance(mouse_x, mouse_y, _player.x, _player.y) < RANGE_CLOSE)
-	{
-		xOffset = mouse_x - _player.x-(camera_get_view_width(view_camera[0])/2);
-		yOffset = mouse_y - _player.y -320;	
-	}
+	xOffset = lengthdir_x(_dist, _angle) - (camera_get_view_width(view_camera[0]) / 2)
+	yOffset = lengthdir_y(_dist, _angle) -  (camera_get_view_height(view_camera[0]) * 7 / 10)
 }
 
 x = _player.x + xOffset;

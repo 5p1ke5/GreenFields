@@ -81,6 +81,7 @@
     {"name":"room_test","order":2,"path":"rooms/room_test/room_test.yy",},
     {"name":"scr_audio","order":18,"path":"scripts/scr_audio/scr_audio.yy",},
     {"name":"scr_button","order":11,"path":"scripts/scr_button/scr_button.yy",},
+    {"name":"scr_collision","order":19,"path":"scripts/scr_collision/scr_collision.yy",},
     {"name":"scr_doll","order":1,"path":"scripts/scr_doll/scr_doll.yy",},
     {"name":"scr_equip","order":9,"path":"scripts/scr_equip/scr_equip.yy",},
     {"name":"scr_gameInitialize","order":4,"path":"scripts/scr_gameInitialize/scr_gameInitialize.yy",},

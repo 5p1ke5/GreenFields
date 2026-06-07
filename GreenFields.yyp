@@ -112,6 +112,7 @@
     {"id":{"name":"room_test","path":"rooms/room_test/room_test.yy",},},
     {"id":{"name":"scr_audio","path":"scripts/scr_audio/scr_audio.yy",},},
     {"id":{"name":"scr_button","path":"scripts/scr_button/scr_button.yy",},},
+    {"id":{"name":"scr_collision","path":"scripts/scr_collision/scr_collision.yy",},},
     {"id":{"name":"scr_doll","path":"scripts/scr_doll/scr_doll.yy",},},
     {"id":{"name":"scr_equip","path":"scripts/scr_equip/scr_equip.yy",},},
     {"id":{"name":"scr_gameInitialize","path":"scripts/scr_gameInitialize/scr_gameInitialize.yy",},},

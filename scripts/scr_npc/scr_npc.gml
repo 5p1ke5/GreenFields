@@ -25,6 +25,9 @@ function npc_initialize(_name = "", _dialogue = "", _commands = [], _combatLevel
 	//If it equals noone the NPC has no created dialogue balloons.
 	myBalloon = noone;
 	
+	//Arrays containing the other dolls that are sensed and another one listing the enemies.
+	sensed = [];
+	sensedEnemies = [];
 	
 	//These values correspond to palyer inputs. The NPC is essentially being 'controlled' by the computer
 	aButtonPressed = false;
@@ -49,14 +52,27 @@ function npc_initialize(_name = "", _dialogue = "", _commands = [], _combatLevel
 /// @description Sets input variables defined in npc_initialize to make them move according to npc behavior.
 function npc_step()
 {
+	npc_update_sensed();
+	show_debug_message("Sensed: " + string(sensed));
+	
 	if (array_length(commands) == 0)
 	{
 		return;	
 	}
 	
-	var _command = commands[0]
+	var _command = commands[0];
 	
 	_command.Perform(self);
+}
+
+
+/// @function npc_update_sensed()
+/// @descr Updates the arrays of sensed dolls.
+function npc_update_sensed()
+{
+	sensed = collision_circle_array(x, y, RANGE_LONG, abs_doll, false, true, false);
+	
+	//Check if elements in sensedEnemies are in the 
 }
 
 /// @function npc_input_moveto(_target)
@@ -118,9 +134,6 @@ function npc_input_fight(_target)
 		//Checks if the npc has an unblocked line of fire.
 		if (collision_line(x, y, _target.x, _target.y, BLOCK, true, true))
 		{
-			//Later make it so we override the previous npc_input_moveto command. Something like...
-			//npc_input_moveto(new Point2(x, y + 200), RANGE_CLOSE);
-			
 			return false;
 		}
 		
@@ -131,26 +144,17 @@ function npc_input_fight(_target)
 			mLeftButtonPressed = (irandom(combatLevel/2) == 0);
 			mouseX = _target.xprevious + (mLeftButton || mLeftButtonPressed) * irandom_range(-combatLevel, combatLevel);
 			mouseY = _target.yprevious + (mLeftButton || mLeftButtonPressed) * irandom_range(-combatLevel, combatLevel);
-
 			
-			return true;
-			/*
-			mLeftButton = (irandom(120) == 0);
-			mLeftButtonPressed = (irandom(120) == 0);
-			
-			mouseX = _target.xprevious;
-			mouseY = _target.yprevious;
-			mLeftButton = true;
-			mLeftButtonPressed = true;
-			*/
+			return true
 		}
 	}
+	
 	return false;
 }
 
 
 ///@function npc_exit_command()
-///@description Attempts to exit the npc's current command. Can only exit command if npcCommands array has more than 1 item. Needs to be called from within an NPC instance.
+///@description Attempts to exit the npc's current command. Can only exit command if npcCommands array has more than 1 item. Needs to be called from within an NPC instance. Returns the next command.
 ///@returns The next command in the array or noone if there is only 1 item in the array.
 function npc_exit_command()
 {
@@ -163,7 +167,7 @@ function npc_exit_command()
 	
 	return noone;
 }
-
+	
 /// @function npc_speak(_text, _name = undefined)
 /// @description generates a speech balloon for the npc.
 /// @param _text The text to be put in the balloon.

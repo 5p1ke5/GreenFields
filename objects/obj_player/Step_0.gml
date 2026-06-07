@@ -9,6 +9,20 @@ doll_input_aim(point_direction(x, y, mouse_x, mouse_y), myHeld, MOUSE_LEFT_BUTTO
 //Inherits physics and collision from doll.
 event_inherited();
 
+
+var _collisions = hitbox_step();
+
+//Goes through all the collisions and processes each one.
+for (var _i = 0; _i < array_length(_collisions); _i++) 
+{   
+	var _collision = _collisions[_i];
+	
+	if (_collision.owner != self)
+	{
+		living_take_damage(_collision.damage);
+	}
+}
+
 //update alert. TODO: once interactables are added add a thing that sets 'interact' to 'true'
 alert = "";
 

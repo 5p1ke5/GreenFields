@@ -53,7 +53,7 @@ function npc_initialize(_name = "", _dialogue = "", _commands = [], _combatLevel
 function npc_step()
 {
 	npc_update_sensed();
-	show_debug_message("Sensed: " + string(sensed));
+	show_debug_message("Sensed: " + string(sensedEnemies));
 	
 	if (array_length(commands) == 0)
 	{

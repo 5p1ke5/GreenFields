@@ -12,3 +12,22 @@ doll_input_aim(_angle, myHeld, mLeftButton, mRightButton, mLeftButtonPressed, mR
 
 //Inherits physics and collision from doll.
 event_inherited();
+
+
+var _collisions = hitbox_step();
+
+//Goes through all the collisions and processes each one.
+for (var _i = 0; _i < array_length(_collisions); _i++) 
+{   
+	var _collision = _collisions[_i];
+	var _owner = _collision.owner;
+	if (_owner != self)
+	{
+		living_take_damage(_collision.damage);
+	
+		if (_owner != noone)
+		{
+			array_push(sensedEnemies, _owner);
+		}
+	}
+}

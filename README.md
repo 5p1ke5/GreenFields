@@ -7,6 +7,4 @@ Code is offered as-is, WYSIWYG. If code is not actually referenced by in-game as
 If you want to play the game GreenFields.zip has an exe file with the latest build. Game is not done and not really what I'd call playable but it's there if you want it.
 
 TODO:
-
-* make a camera that follows the mouse relative to the player instance
 * rewrite collision so it uses a ds_map or matrix something to store cooldowns for individual hitboxes (you get bit with a bullet and your hitbox checks if the bullet is in the 'hit' _map before registering a hit and if it's not already in the ds_map it gets added with a cooldown that gets decremented in hitbox_step

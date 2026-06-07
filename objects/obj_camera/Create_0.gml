@@ -11,5 +11,5 @@ height = camera_get_view_height(view_camera[0]);
 mousePreviousX = device_mouse_raw_x(0);
 mousePreviousY = device_mouse_raw_y(0);
 
-xOffset = -(camera_get_view_width(view_camera[0])/2);
-yOffset = -320;
+xOffset = - (camera_get_view_width(view_camera[0]) / 2)
+yOffset = - (camera_get_view_height(view_camera[0]) * 7 / 10)

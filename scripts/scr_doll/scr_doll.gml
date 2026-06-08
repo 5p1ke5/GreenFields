@@ -303,6 +303,10 @@ function doll_input_dash(_dashDown, _rightPressed, _leftPressed)
 	var _dir = (_rightPressed - _leftPressed)
 	if (_dir != 0)
 	{
+		if (grounded)
+		{
+			multiJumps++;	
+		}
 		vsp = -1;
 		hsp = _dir * DASH_SPEED;
 		dashCD = DASH_COOLDOWN;

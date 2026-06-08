@@ -1,18 +1,17 @@
 {
   "$GMObject":"",
-  "%Name":"obj_blockArcade",
-  "eventList":[],
+  "%Name":"obj_oneWayArcade",
+  "eventList":[
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+  ],
   "managed":true,
-  "name":"obj_blockArcade",
+  "name":"obj_oneWayArcade",
   "overriddenProperties":[],
   "parent":{
     "name":"blocks",
     "path":"folders/Objects/blocks.yy",
   },
-  "parentObjectId":{
-    "name":"obj_block",
-    "path":"objects/obj_block/obj_block.yy",
-  },
+  "parentObjectId":null,
   "persistent":false,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,
@@ -31,8 +30,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_blockArcade",
-    "path":"sprites/spr_blockArcade/spr_blockArcade.yy",
+    "name":"spr_onewayArcade",
+    "path":"sprites/spr_onewayArcade/spr_onewayArcade.yy",
   },
   "spriteMaskId":null,
   "visible":true,

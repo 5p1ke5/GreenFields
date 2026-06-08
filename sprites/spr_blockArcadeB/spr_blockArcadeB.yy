@@ -1,6 +1,6 @@
 {
   "$GMSprite":"v2",
-  "%Name":"spr_blockArcade",
+  "%Name":"spr_blockArcadeB",
   "bboxMode":0,
   "bbox_bottom":47,
   "bbox_left":0,
@@ -21,18 +21,18 @@
   "layers":[
     {"$GMImageLayer":"","%Name":"1290414d-30d1-411c-946f-c926beb2544e","blendMode":0,"displayName":"default","isLocked":false,"name":"1290414d-30d1-411c-946f-c926beb2544e","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
   ],
-  "name":"spr_blockArcade",
+  "name":"spr_blockArcadeB",
   "nineSlice":{
     "$GMNineSliceData":"",
-    "bottom":16,
+    "bottom":3,
     "enabled":true,
     "guideColour":[4294902015,4294902015,4294902015,4294902015,],
     "highlightColour":1728023040,
     "highlightStyle":0,
-    "left":16,
+    "left":3,
     "resourceType":"GMNineSliceData",
     "resourceVersion":"2.0",
-    "right":16,
+    "right":3,
     "tileMode":[
       1,
       1,
@@ -40,7 +40,7 @@
       1,
       1,
     ],
-    "top":16,
+    "top":3,
   },
   "origin":0,
   "parent":{
@@ -52,7 +52,7 @@
   "resourceVersion":"2.0",
   "sequence":{
     "$GMSequence":"v1",
-    "%Name":"spr_blockArcade",
+    "%Name":"spr_blockArcadeB",
     "autoRecord":true,
     "backdropHeight":768,
     "backdropImageOpacity":0.5,
@@ -76,7 +76,7 @@
       "resourceType":"KeyframeStore<MomentsEventKeyframe>",
       "resourceVersion":"2.0",
     },
-    "name":"spr_blockArcade",
+    "name":"spr_blockArcadeB",
     "playback":1,
     "playbackSpeed":30.0,
     "playbackSpeedType":0,
@@ -88,7 +88,7 @@
     "tracks":[
       {"$GMSpriteFramesTrack":"","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"$KeyframeStore<SpriteFrameKeyframe>":"","Keyframes":[
             {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"011acc0c-501f-4cdb-ae83-a4775962158c","path":"sprites/spr_blockArcade/spr_blockArcade.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"011acc0c-501f-4cdb-ae83-a4775962158c","path":"sprites/spr_blockArcadeB/spr_blockArcadeB.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
               },"Disabled":false,"id":"66582171-7db6-4104-a8e6-099ebbd40bbe","IsCreationKey":false,"Key":0.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
           ],"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"2.0",},"modifiers":[],"name":"frames","resourceType":"GMSpriteFramesTrack","resourceVersion":"2.0","spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],

@@ -166,6 +166,9 @@ function phys_step()
 
 	y += round(vsp);
 	x += round(hsp);
+	
+	x = round(x);
+	y = round(y);
 
 	//Checks if the object is on the ground.
 	grounded = collision_rectangle(bbox_left, bbox_bottom, bbox_right, bbox_bottom + 1, GROUND, false, true);

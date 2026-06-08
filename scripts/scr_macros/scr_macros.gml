@@ -47,7 +47,7 @@
 #macro PLAYER_ACCEL 0.5
 #macro JUMP_HEIGHT 5
 #macro PLAYER_WEIGHT 0.2
-#macro DASH_COOLDOWN (game_get_speed(gamespeed_fps) / 2)
+#macro DASH_COOLDOWN (game_get_speed(gamespeed_fps) * 5 / 8)
 #macro DASH_INPUT_CD (game_get_speed(gamespeed_fps) / 2)
 #macro NPC_PASSIVE_CD (game_get_speed(gamespeed_fps))
 #macro DASH_SPEED 10

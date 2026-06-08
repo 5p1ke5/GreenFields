@@ -1,9 +1,9 @@
 {
   "$GMObject":"",
-  "%Name":"obj_blockCheckers",
+  "%Name":"obj_blockArcade",
   "eventList":[],
   "managed":true,
-  "name":"obj_blockCheckers",
+  "name":"obj_blockArcade",
   "overriddenProperties":[],
   "parent":{
     "name":"blocks",
@@ -31,8 +31,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_blockCheckers",
-    "path":"sprites/spr_blockCheckers/spr_blockCheckers.yy",
+    "name":"spr_blockArcade",
+    "path":"sprites/spr_blockArcade/spr_blockArcade.yy",
   },
   "spriteMaskId":null,
   "visible":true,

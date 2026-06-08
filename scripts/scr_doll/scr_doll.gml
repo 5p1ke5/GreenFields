@@ -235,7 +235,14 @@ function doll_input_jump(_jump, _jumpOffset)
 			if (!grounded)
 			{
 				//Makes the player flip when they double jump.
-				spinSpeed = facing * FLIP_SPEED;
+				if (spinSpeed = 0)
+				{
+					spinSpeed = facing * FLIP_SPEED;
+				}
+				else
+				{
+					spinSpeed = -spinSpeed;
+				}
 				
 				multiJumps--;
 			}

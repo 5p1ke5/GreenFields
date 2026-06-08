@@ -8,4 +8,5 @@ function game_initialize()
 	draw_set_font(fnt_default);
 	room_goto(ROOM_TITLE);
 	show_debug_message("Game initialized.");
+	window_set_cursor(cr_cross)
 }

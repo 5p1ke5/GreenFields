@@ -13,8 +13,8 @@
     "path":"folders/Objects/hazard.yy",
   },
   "parentObjectId":{
-    "name":"abs_hurtbox",
-    "path":"objects/abs_hurtbox/abs_hurtbox.yy",
+    "name":"abs_hurtboxAny",
+    "path":"objects/abs_hurtboxAny/abs_hurtboxAny.yy",
   },
   "persistent":false,
   "physicsAngularDamping":0.1,

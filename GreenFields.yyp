@@ -65,6 +65,7 @@
     {"id":{"name":"abs_equip","path":"objects/abs_equip/abs_equip.yy",},},
     {"id":{"name":"abs_ground","path":"objects/abs_ground/abs_ground.yy",},},
     {"id":{"name":"abs_hurtbox","path":"objects/abs_hurtbox/abs_hurtbox.yy",},},
+    {"id":{"name":"abs_hurtboxAny","path":"objects/abs_hurtboxAny/abs_hurtboxAny.yy",},},
     {"id":{"name":"abs_menu","path":"objects/abs_menu/abs_menu.yy",},},
     {"id":{"name":"abs_physics","path":"objects/abs_physics/abs_physics.yy",},},
     {"id":{"name":"obj_arcadeMode","path":"objects/obj_arcadeMode/obj_arcadeMode.yy",},},

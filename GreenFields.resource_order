@@ -45,6 +45,7 @@
     {"name":"abs_equip","order":2,"path":"objects/abs_equip/abs_equip.yy",},
     {"name":"abs_ground","order":1,"path":"objects/abs_ground/abs_ground.yy",},
     {"name":"abs_hurtbox","order":5,"path":"objects/abs_hurtbox/abs_hurtbox.yy",},
+    {"name":"abs_hurtboxAny","order":6,"path":"objects/abs_hurtboxAny/abs_hurtboxAny.yy",},
     {"name":"abs_menu","order":3,"path":"objects/abs_menu/abs_menu.yy",},
     {"name":"obj_blockArcadeA","order":13,"path":"objects/obj_blockArcadeA/obj_blockArcadeA.yy",},
     {"name":"obj_blockArcadeB","order":15,"path":"objects/obj_blockArcadeB/obj_blockArcadeB.yy",},

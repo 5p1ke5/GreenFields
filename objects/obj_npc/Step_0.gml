@@ -21,7 +21,8 @@ for (var _i = 0; _i < array_length(_collisions); _i++)
 {   
 	var _collision = _collisions[_i];
 	var _owner = _collision.owner;
-	if (_owner != self)
+	
+	if (object_is_ancestor(_collision.object_index, HURTBOX_ANY)) || (_owner != self)
 	{
 		living_take_damage(_collision.damage);
 	

@@ -154,6 +154,10 @@ function ItemEquipFirearm(_itemName,  _inventory, _icon = spr_iconBlank, _amount
 			{
 				hurtbox_initialize(_damage, _owner);
 			}
+			else
+			{
+				owner = _owner;
+			}
 		}
 
 		//Resets timer

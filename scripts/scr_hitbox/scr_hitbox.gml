@@ -6,7 +6,7 @@
 	then returns the filtered array for instances to process the collisions.
 */
 
-/// @function hitbox_initialize(_hitboxObjs = [], _maxFlicker = FLICKER_MAX) 
+/// @function hitbox_initialize(_hitboxObjs = []) 
 /// @description Initializes varibales for a hitbox. This struct has a Step method which should be called in the step event.
 /// @param _hitboxObjs The objects to check for collisions with. Can be a single element or an array. If its a single element gets put into a 1-element array.
 function hitbox_initialize(_hitboxObjs = []) 
@@ -62,8 +62,6 @@ function hitbox_step()
 		_instance = _collisions[_i];
 		array_push(savedCollisions, [_instance, SECOND/2]);
 	}
-	
-	show_debug_message("{0}", string(savedCollisions));
 	
 	return _collisions;
 }

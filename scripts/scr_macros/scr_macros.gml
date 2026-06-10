@@ -55,7 +55,6 @@
 #macro NPC_PASSIVE_CD (game_get_speed(gamespeed_fps))
 #macro DASH_SPEED 10
 #macro DEFAULT_ANGLE 300
-#macro FLICKER_MAX 5
 #macro FLIP_SPEED 12
 #macro TEXT_BALLOON_SPEED 5
 #macro TEXT_BALLOON_MAXW 150

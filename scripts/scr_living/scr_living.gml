@@ -1,27 +1,21 @@
-/// @function living_initialize(_hp = 1, _flicker = FLICKER_MAX)
+/// @function living_initialize(_hp = 1)
 /// @desc Initializes for living objects (has HP, can die)
 /// @param _hpMax How much HP the instance has.
-/// @param _flicker How long the unit flickers when it gets hit.
-function living_initialize(_hpMax = 1, _flicker = FLICKER_MAX)
+function living_initialize(_hpMax = 1)
 {
 	hpMax = _hpMax;
 	hp = hpMax;
-	flickerMax = _flicker;
-	flicker = -1;
 }
 
 /// @function living_step()
-/// @desc Step event for living things. Decrements flicker.
+/// @desc Step event for living things. 
 function living_step()
 {
-	if (flicker >= 0)
-	{
-		flicker--;	
-	}
+	
 }
 
 /// @function living_take_damage(_damage)
-/// @desc Decrements HP. If HP is less than 0 executes death routine. Otherwise, resets flicker to flickerMax.
+/// @desc Decrements HP. If HP is less than 0 executes death routine. 
 /// @param _damage How much damage to take.
 function living_take_damage(_damage)
 {
@@ -29,10 +23,6 @@ function living_take_damage(_damage)
 	if (hp <= 0)
 	{
 		living_die();	
-	}
-	else
-	{
-		flicker = flickerMax;	
 	}
 }
 

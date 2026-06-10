@@ -3,7 +3,7 @@
 //TODO: Maybe move this into doll_initialize, none of it relies on parameters
 hitbox_initialize([HURTBOX]);
 phys_initialize(0.2, 0.1);
-living_initialize(100, FLICKER_MAX);
+living_initialize(100);
 
 //Doll movement control things.
 hDir = 0; //Horizontal movement direction.

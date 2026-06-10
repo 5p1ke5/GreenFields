@@ -9,6 +9,7 @@
     {"name":"arcade mode","order":14,"path":"folders/Objects/arcade mode.yy",},
     {"name":"blocks","order":6,"path":"folders/Objects/blocks.yy",},
     {"name":"camera","order":13,"path":"folders/Objects/camera.yy",},
+    {"name":"blood","order":16,"path":"folders/Objects/blood.yy",},
     {"name":"hazard","order":15,"path":"folders/Objects/hazard.yy",},
     {"name":"items","order":7,"path":"folders/Objects/items.yy",},
     {"name":"equip","order":2,"path":"folders/Objects/items/equip.yy",},
@@ -36,6 +37,7 @@
     {"name":"equip","order":2,"path":"folders/Sprites/inventory/equip.yy",},
     {"name":"bullets","order":1,"path":"folders/Sprites/inventory/equip/bullets.yy",},
     {"name":"icons","order":1,"path":"folders/Sprites/inventory/icons.yy",},
+    {"name":"particles","order":7,"path":"folders/Sprites/particles.yy",},
     {"name":"UI","order":1,"path":"folders/Sprites/UI.yy",},
   ],
   "ResourceOrderSettings":[

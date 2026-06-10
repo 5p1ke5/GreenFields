@@ -54,7 +54,7 @@ function phys_floor_collision(_vsp)
 {
 	//Checks every pixel in the player's path for collision.
 	//for (var _i = 0; (abs(_i) < abs(_vsp)) || (place_meeting(x, y + _i, BLOCK)) || collision_point(x, bbox_bottom + 1 + _i, ONEWAY, true, true)/* || (grounded && _vsp > 0)*/; _i += sign(_vsp))
-	for (var _i = 0; (abs(_i) < abs(_vsp)); _i += sign(_vsp))
+	for (var _i = 0; (abs(_i) <= abs(_vsp)); _i += sign(_vsp))
 	{
 	    //If there is a collision, it will move the player as close to the object as possible and then stop. 
 		var _collision = instance_place(x, y + _i + sign(_vsp), BLOCK)
@@ -164,12 +164,12 @@ function phys_step()
 	    hsp = phys_wall_collision(hsp);
 	}
 
-	y += round(vsp);
-	x += round(hsp);
-	
-	x = round(x);
-	y = round(y);
+	y += vsp;
+	x += hsp;
 
+	y = round(y);
+	x = round(x);
+	
 	//Checks if the object is on the ground.
 	grounded = collision_rectangle(bbox_left, bbox_bottom, bbox_right, bbox_bottom + 1, GROUND, false, true);
 }

@@ -114,7 +114,7 @@
   "name":"fnt_speech",
   "parent":{
     "name":"Fonts",
-    "path":"folders/Fonts.yy",
+    "path":"folders/Objects/Fonts.yy",
   },
   "pointRounding":0,
   "ranges":[

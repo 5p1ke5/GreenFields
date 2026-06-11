@@ -26,6 +26,7 @@
 #macro ROOM_SERVER room_menuServer
 #macro ROOM_CLIENT room_menuClient
 #macro ROOM_PAUSE room_menuPause
+#macro ROOM_CHARACTER_CREATOR room_menuCharacterCreation
 #endregion
 
 

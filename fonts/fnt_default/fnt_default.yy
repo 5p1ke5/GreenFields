@@ -120,7 +120,7 @@
   "name":"fnt_default",
   "parent":{
     "name":"Fonts",
-    "path":"folders/Fonts.yy",
+    "path":"folders/Objects/Fonts.yy",
   },
   "pointRounding":0,
   "ranges":[

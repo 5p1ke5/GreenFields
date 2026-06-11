@@ -16,10 +16,17 @@ var _collisions = hitbox_step();
 for (var _i = 0; _i < array_length(_collisions); _i++) 
 {   
 	var _collision = _collisions[_i];
+	var _damage = _collision.damage;
 	
 	if (_collision.owner != self)
 	{
-		living_take_damage(_collision.damage);
+		living_take_damage(_damage);
+		
+		var _x = _collision.x;
+		var _y = _collision.y;
+		var _angle = point_direction(x, y, _x, _y);
+	
+		living_bleed(_angle, _damage * 4);
 	}
 }
 

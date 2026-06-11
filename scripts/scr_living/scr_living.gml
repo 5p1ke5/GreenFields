@@ -26,6 +26,25 @@ function living_take_damage(_damage)
 	}
 }
 
+///@function living_bleed(_angle, _amount)
+///@desc Creates blood objects at a randomized angle.
+///@param _angle The angle to shoot blood out at
+///@param _amount How many blood particles to make
+function living_bleed(_angle, _amount)
+{
+	repeat(_amount)
+	{
+	    var _blood = instance_create_depth(x, y, depth, obj_blood);
+	
+		with (_blood)
+		{
+			var _speed = irandom_range(3, 5);
+			var _angleRand = _angle + irandom_range(-30, 30);
+			hsp = lengthdir_x(_speed, _angleRand);
+			vsp = lengthdir_y(_speed, _angleRand);
+		}
+	}
+}
 
 /// @function living_die()
 /// @desc Death routine. For now just destroys the instance, might do something else later.

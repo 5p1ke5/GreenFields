@@ -129,8 +129,6 @@ function doll_animate()
 ///@description Draws the sprites associated with the doll.
 function doll_draw()
 {
-	
-	
 	var _twoHanded = false;
 	if (myHeld)
 	{
@@ -217,7 +215,6 @@ function doll_draw_ext(_x, _y, _color, _alpha)
 /// @param _jumpOffset if the doll should offset their jump to jump higher.
 function doll_input_jump(_jump, _jumpOffset)
 {
-	
 	if (grounded)
 	{
 		//If grounded refills dash and jumps, resets spinspeed and drawangle
@@ -288,14 +285,6 @@ function doll_input_dash(_dashDown, _rightPressed, _leftPressed)
 	if (dashCD >= 0)
 	{
 		dashCD--;
-		/* I can uncomment this to make the player stop at the end of their dash.
-		if (dashCD == 0)// && (grounded)
-		{
-			hsp = 0;	
-		}
-		*/
-		
-		
 		return;	
 	}
 	
@@ -380,7 +369,6 @@ function doll_input_equipment(_incrementUp, _incrementDown)
 	{
 		inventory[equipIndex].Equip(self);
 	}
-
 }
 
 

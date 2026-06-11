@@ -38,6 +38,7 @@
 #macro RANGE_MELEE 16
 #macro RANGE_CLOSE 100
 #macro RANGE_MEDIUM 200
+#macro RANGE_CAMERA 320
 #macro RANGE_LONG 400
 #endregion
 

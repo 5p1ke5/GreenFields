@@ -1,1 +1,0 @@
-bgm_play(bgm_menu);

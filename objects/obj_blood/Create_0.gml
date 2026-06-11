@@ -1,4 +1,7 @@
-/// @description Initializes physics, sets duration.
+/// @description Initializes physics, sets duration, color
 phys_initialize(0.2, 0.2);
 
-duration = SECOND;
+maxDuration = SECOND;
+duration = maxDuration;
+
+image_blend = c_red + irandom_range(-20, 20);

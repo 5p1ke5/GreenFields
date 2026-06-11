@@ -33,7 +33,10 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":null,
+  "spriteId":{
+    "name":"spr_partPixel",
+    "path":"sprites/spr_partPixel/spr_partPixel.yy",
+  },
   "spriteMaskId":null,
   "visible":true,
 }

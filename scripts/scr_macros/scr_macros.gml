@@ -48,11 +48,10 @@
 #macro MAX_ACCEL 3
 #macro PLAYER_ACCEL 0.5
 #macro JUMP_HEIGHT 5
-#macro PLAYER_WEIGHT 0.2
 #macro SECOND game_get_speed(gamespeed_fps)
-#macro DASH_COOLDOWN (game_get_speed(gamespeed_fps) * 5 / 8)
-#macro DASH_INPUT_CD (game_get_speed(gamespeed_fps) / 2)
-#macro NPC_PASSIVE_CD (game_get_speed(gamespeed_fps))
+#macro DASH_COOLDOWN (SECOND * 5 / 8)
+#macro DASH_INPUT_CD (SECOND / 2)
+#macro NPC_PASSIVE_CD (SECOND)
 #macro DASH_SPEED 10
 #macro DEFAULT_ANGLE 300
 #macro FLIP_SPEED 12

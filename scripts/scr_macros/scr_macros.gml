@@ -25,6 +25,7 @@
 #macro ROOM_REMATCH room_menuRematch
 #macro ROOM_SERVER room_menuServer
 #macro ROOM_CLIENT room_menuClient
+#macro ROOM_PAUSE room_menuPause
 #endregion
 
 

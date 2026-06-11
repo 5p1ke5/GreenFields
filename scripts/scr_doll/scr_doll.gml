@@ -376,6 +376,44 @@ function doll_input_equipment(_incrementUp, _incrementDown)
 
 
 
+/// @function doll_input_interact(_upReleased)
+/// @descr Checks if the doll is touching an interactable. If so, lets them interact with it.
+function doll_input_interact(_upReleased)
+{
+	interact = instance_place(x, y, INTERACTABLE);
+
+	//update alert. TODO: once interactables are added add a thing that sets 'interact' to 'true'
+	alert = "";
+
+	if (interact)
+	{
+		alert += "?";
+		
+		if (_upReleased)
+		{
+			with (interact)
+			{
+				event_user(0);
+			}
+		}
+	}
+}
+
+
+/// @function doll_input_pause(_pauseButton)
+/// @desc Pauses the game.
+function doll_input_pause(_pauseButton)
+{
+	if (_pauseButton)
+	{
+		global.roomPausedFrom = room;
+		room_persistent = true;
+		room_goto(ROOM_PAUSE)	
+	}
+}
+
+
+
 
 
 

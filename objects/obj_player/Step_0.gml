@@ -10,6 +10,7 @@ doll_input_aim(point_direction(x, y, mouse_x, mouse_y), myHeld, MOUSE_LEFT_BUTTO
 //Inherits physics and collision from doll.
 event_inherited();
 
+audio_listener_set_position(0, x, y, 0);
 
 var _collisions = hitbox_step();
 

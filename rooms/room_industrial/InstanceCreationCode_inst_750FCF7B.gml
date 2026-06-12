@@ -1,0 +1,1 @@
+transition_initialize(room_badlands, 10080, 2300);

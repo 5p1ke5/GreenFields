@@ -1,0 +1,1 @@
+/// @desc This is called on collision with a player. Should usually be overridden by parents.

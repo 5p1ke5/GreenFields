@@ -37,6 +37,6 @@ for (var _i = 0; _i < array_length(_collisions); _i++)
 		var _y = _collision.y;
 		var _angle = point_direction(x, y, _x, _y);
 	
-		living_bleed(_angle, _damage * 4);
+		living_bleed(_angle, _damage * 2);
 	}
 }

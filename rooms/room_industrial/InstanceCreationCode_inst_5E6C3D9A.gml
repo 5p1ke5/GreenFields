@@ -1,0 +1,1 @@
+transition_initialize(room_downtown, 160, 2300);

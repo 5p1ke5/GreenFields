@@ -42,7 +42,7 @@
     ],
     "top":4,
   },
-  "origin":1,
+  "origin":0,
   "parent":{
     "name":"block",
     "path":"folders/Sprites/block.yy",
@@ -94,7 +94,7 @@
     ],
     "visibleRange":null,
     "volume":1.0,
-    "xorigin":24,
+    "xorigin":0,
     "yorigin":0,
   },
   "swatchColours":null,

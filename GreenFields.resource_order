@@ -3,7 +3,6 @@
     {"name":"Audio","order":6,"path":"folders/Audio.yy",},
     {"name":"bgm","order":4,"path":"folders/Audio/bgm.yy",},
     {"name":"sfx","order":3,"path":"folders/Audio/sfx.yy",},
-    {"name":"Tilesets","order":7,"path":"folders/Tilesets.yy",},
     {"name":"Objects","order":3,"path":"folders/Objects.yy",},
     {"name":"arcade mode","order":8,"path":"folders/Objects/arcade mode.yy",},
     {"name":"blocks","order":2,"path":"folders/Objects/blocks.yy",},
@@ -46,6 +45,7 @@
     {"name":"tiles","order":11,"path":"folders/Sprites/tiles.yy",},
     {"name":"UI","order":1,"path":"folders/Sprites/UI.yy",},
     {"name":"zones","order":9,"path":"folders/Sprites/zones.yy",},
+    {"name":"Tilesets","order":7,"path":"folders/Tilesets.yy",},
   ],
   "ResourceOrderSettings":[
     {"name":"fnt_gothic","order":2,"path":"fonts/fnt_gothic/fnt_gothic.yy",},

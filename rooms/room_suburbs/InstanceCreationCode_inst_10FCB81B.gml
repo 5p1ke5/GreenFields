@@ -1,1 +1,1 @@
-transition_initialize(room_arcademode, 800, 800);
+transition_initialize(room_suburbsUniApartments, 992, 2240);

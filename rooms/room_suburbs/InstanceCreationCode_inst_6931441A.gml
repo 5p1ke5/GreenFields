@@ -1,0 +1,1 @@
+transition_initialize(room_suburbsUniApartments, 1568, 2240);

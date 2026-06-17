@@ -1,1 +1,1 @@
-transition_initialize(room_plains, 5000, 2200);
+transition_initialize(room_countryside, 5000, 2200);

@@ -432,6 +432,7 @@ function doll_input_interact(_upReleased)
 
 /// @function doll_input_pause(_pauseButton)
 /// @desc Pauses the game.
+/// @param _pauseButton The button to press to pause the game.
 function doll_input_pause(_pauseButton)
 {
 	if (_pauseButton)
@@ -441,9 +442,6 @@ function doll_input_pause(_pauseButton)
 		room_goto(ROOM_PAUSE)	
 	}
 }
-
-
-
 
 
 

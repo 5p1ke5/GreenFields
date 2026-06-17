@@ -4,6 +4,7 @@
 #macro GROUND abs_ground
 #macro HURTBOX abs_hurtbox
 #macro HURTBOX_ANY abs_hurtboxAny
+#macro INTERACTABLE abs_interactable
 #endregion
 
 

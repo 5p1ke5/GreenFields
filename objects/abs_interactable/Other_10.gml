@@ -1,0 +1,1 @@
+///@description Called when interacted with. Should usually be overwritten by children.

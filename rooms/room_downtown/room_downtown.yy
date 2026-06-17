@@ -230,8 +230,8 @@
   ],
   "name":"room_downtown",
   "parent":{
-    "name":"levels",
-    "path":"folders/Rooms/levels.yy",
+    "name":"downtown",
+    "path":"folders/Rooms/levels/overworld/downtown.yy",
   },
   "parentRoom":null,
   "physicsSettings":{

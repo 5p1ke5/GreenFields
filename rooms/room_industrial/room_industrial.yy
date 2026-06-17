@@ -39,8 +39,8 @@
   ],
   "name":"room_industrial",
   "parent":{
-    "name":"levels",
-    "path":"folders/Rooms/levels.yy",
+    "name":"industrial",
+    "path":"folders/Rooms/levels/overworld/industrial.yy",
   },
   "parentRoom":null,
   "physicsSettings":{

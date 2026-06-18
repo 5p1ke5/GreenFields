@@ -1,7 +1,6 @@
 /// @description inherits physics, senses collision.
 event_inherited();
 
-living_step();
 
 if (myHeld)
 {
@@ -11,3 +10,5 @@ if (myHeld)
 
 ///Set sprite properties.
 doll_animate();
+
+living_step();

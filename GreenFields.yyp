@@ -156,6 +156,7 @@
     {"id":{"name":"room_suburbs","path":"rooms/room_suburbs/room_suburbs.yy",},},
     {"id":{"name":"room_suburbsApartments","path":"rooms/room_suburbsApartments/room_suburbsApartments.yy",},},
     {"id":{"name":"room_suburbsApartmentsA","path":"rooms/room_suburbsApartmentsA/room_suburbsApartmentsA.yy",},},
+    {"id":{"name":"room_suburbsApartmentsC","path":"rooms/room_suburbsApartmentsC/room_suburbsApartmentsC.yy",},},
     {"id":{"name":"room_test","path":"rooms/room_test/room_test.yy",},},
     {"id":{"name":"room_tutorial","path":"rooms/room_tutorial/room_tutorial.yy",},},
     {"id":{"name":"scr_audio","path":"scripts/scr_audio/scr_audio.yy",},},
@@ -322,6 +323,7 @@
     {"roomId":{"name":"room_menuCharacterCreation","path":"rooms/room_menuCharacterCreation/room_menuCharacterCreation.yy",},},
     {"roomId":{"name":"room_suburbsApartments","path":"rooms/room_suburbsApartments/room_suburbsApartments.yy",},},
     {"roomId":{"name":"room_suburbsApartmentsA","path":"rooms/room_suburbsApartmentsA/room_suburbsApartmentsA.yy",},},
+    {"roomId":{"name":"room_suburbsApartmentsC","path":"rooms/room_suburbsApartmentsC/room_suburbsApartmentsC.yy",},},
   ],
   "templateType":"game",
   "TextureGroups":[

@@ -2,10 +2,10 @@
   "$GMSprite":"v2",
   "%Name":"spr_furniSeatBrown",
   "bboxMode":0,
-  "bbox_bottom":31,
+  "bbox_bottom":18,
   "bbox_left":0,
   "bbox_right":31,
-  "bbox_top":13,
+  "bbox_top":0,
   "collisionKind":1,
   "collisionTolerance":0,
   "DynamicTexturePage":false,
@@ -16,7 +16,7 @@
   ],
   "gridX":0,
   "gridY":0,
-  "height":32,
+  "height":19,
   "HTile":false,
   "layers":[
     {"$GMImageLayer":"","%Name":"0ab8c975-0813-47bd-936f-4b01bdea3a48","blendMode":0,"displayName":"default","isLocked":false,"name":"0ab8c975-0813-47bd-936f-4b01bdea3a48","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
@@ -86,5 +86,5 @@
   },
   "type":0,
   "VTile":false,
-  "width":64,
+  "width":32,
 }

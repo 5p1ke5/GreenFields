@@ -35,5 +35,5 @@
     "path":"sprites/spr_doorMarker/spr_doorMarker.yy",
   },
   "spriteMaskId":null,
-  "visible":true,
+  "visible":false,
 }

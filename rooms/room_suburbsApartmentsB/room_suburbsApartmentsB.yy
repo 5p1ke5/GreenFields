@@ -23,6 +23,7 @@
     {"name":"inst_585E1394_1_1","path":"rooms/room_suburbsApartmentsB/room_suburbsApartmentsB.yy",},
     {"name":"inst_3ED7E5B1_1","path":"rooms/room_suburbsApartmentsB/room_suburbsApartmentsB.yy",},
     {"name":"inst_42D4637B1_1","path":"rooms/room_suburbsApartmentsB/room_suburbsApartmentsB.yy",},
+    {"name":"inst_68FB53E9","path":"rooms/room_suburbsApartmentsB/room_suburbsApartmentsB.yy",},
   ],
   "isDnd":false,
   "layers":[
@@ -43,6 +44,7 @@
       ],"layers":[],"name":"Furniture","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
     {"$GMRInstanceLayer":"","%Name":"Doors","depth":300,"effectEnabled":true,"effectType":null,"gridX":16,"gridY":16,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[
         {"$GMRInstance":"v4","%Name":"inst_2E7338A3_2_1","colour":4294967295,"frozen":false,"hasCreationCode":true,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_2E7338A3_2_1","objectId":{"name":"obj_doorHouse","path":"objects/obj_doorHouse/obj_doorHouse.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":832.0,"y":784.0,},
+        {"$GMRInstance":"v4","%Name":"inst_68FB53E9","colour":4294967295,"frozen":false,"hasCreationCode":true,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_68FB53E9","objectId":{"name":"obj_doorMarker","path":"objects/obj_doorMarker/obj_doorMarker.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.55,"scaleY":1.0,"x":1568.0,"y":784.0,},
       ],"layers":[],"name":"Doors","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
     {"$GMRInstanceLayer":"","%Name":"Blocks","depth":400,"effectEnabled":true,"effectType":null,"gridX":16,"gridY":16,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[
         {"$GMRInstance":"v4","%Name":"inst_2E81B7D5_2_1","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_2E81B7D5_2_1","objectId":{"name":"obj_block","path":"objects/obj_block/obj_block.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":15.0,"scaleY":1.0,"x":768.0,"y":816.0,},

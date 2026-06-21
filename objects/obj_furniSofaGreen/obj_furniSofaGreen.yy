@@ -1,9 +1,9 @@
 {
   "$GMObject":"",
-  "%Name":"obj_furniBed",
+  "%Name":"obj_furniSofaGreen",
   "eventList":[],
   "managed":true,
-  "name":"obj_furniBed",
+  "name":"obj_furniSofaGreen",
   "overriddenProperties":[],
   "parent":{
     "name":"furniture",
@@ -31,8 +31,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_furniBed",
-    "path":"sprites/spr_furniBed/spr_furniBed.yy",
+    "name":"spr_furniSofaGreen",
+    "path":"sprites/spr_furniSofaGreen/spr_furniSofaGreen.yy",
   },
   "spriteMaskId":null,
   "visible":true,

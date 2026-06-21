@@ -120,7 +120,7 @@
   "name":"fnt_gothic",
   "parent":{
     "name":"Fonts",
-    "path":"folders/Objects/Fonts.yy",
+    "path":"folders/Fonts.yy",
   },
   "pointRounding":0,
   "ranges":[

@@ -1,9 +1,9 @@
 {
   "$GMObject":"",
-  "%Name":"obj_furniSophaRed",
+  "%Name":"obj_furniSofaRed",
   "eventList":[],
   "managed":true,
-  "name":"obj_furniSophaRed",
+  "name":"obj_furniSofaRed",
   "overriddenProperties":[],
   "parent":{
     "name":"furniture",

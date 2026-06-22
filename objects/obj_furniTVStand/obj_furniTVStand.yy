@@ -1,9 +1,9 @@
 {
   "$GMObject":"",
-  "%Name":"obj_furniBoxBig",
+  "%Name":"obj_furniTVStand",
   "eventList":[],
   "managed":true,
-  "name":"obj_furniBoxBig",
+  "name":"obj_furniTVStand",
   "overriddenProperties":[],
   "parent":{
     "name":"furniture",
@@ -31,8 +31,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_furniBoxM",
-    "path":"sprites/spr_furniBoxM/spr_furniBoxM.yy",
+    "name":"spr_furniTVStand",
+    "path":"sprites/spr_furniTVStand/spr_furniTVStand.yy",
   },
   "spriteMaskId":null,
   "visible":true,

@@ -31,8 +31,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_furniBoxS",
-    "path":"sprites/spr_furniBoxS/spr_furniBoxS.yy",
+    "name":"spr_furniBox",
+    "path":"sprites/spr_furniBox/spr_furniBox.yy",
   },
   "spriteMaskId":null,
   "visible":true,

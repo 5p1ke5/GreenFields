@@ -192,6 +192,7 @@
     {"id":{"name":"room_suburbsApartmentsD","path":"rooms/room_suburbsApartmentsD/room_suburbsApartmentsD.yy",},},
     {"id":{"name":"room_suburbsApartmentsE","path":"rooms/room_suburbsApartmentsE/room_suburbsApartmentsE.yy",},},
     {"id":{"name":"room_suburbsApartmentsF","path":"rooms/room_suburbsApartmentsF/room_suburbsApartmentsF.yy",},},
+    {"id":{"name":"room_suburbsHouseB","path":"rooms/room_suburbsHouseB/room_suburbsHouseB.yy",},},
     {"id":{"name":"room_test","path":"rooms/room_test/room_test.yy",},},
     {"id":{"name":"room_tutorial","path":"rooms/room_tutorial/room_tutorial.yy",},},
     {"id":{"name":"scr_audio","path":"scripts/scr_audio/scr_audio.yy",},},
@@ -248,6 +249,7 @@
     {"id":{"name":"spr_building19","path":"sprites/spr_building19/spr_building19.yy",},},
     {"id":{"name":"spr_building2","path":"sprites/spr_building2/spr_building2.yy",},},
     {"id":{"name":"spr_building20","path":"sprites/spr_building20/spr_building20.yy",},},
+    {"id":{"name":"spr_building21","path":"sprites/spr_building21/spr_building21.yy",},},
     {"id":{"name":"spr_building3","path":"sprites/spr_building3/spr_building3.yy",},},
     {"id":{"name":"spr_building4","path":"sprites/spr_building4/spr_building4.yy",},},
     {"id":{"name":"spr_building5","path":"sprites/spr_building5/spr_building5.yy",},},
@@ -378,6 +380,7 @@
     {"roomId":{"name":"room_suburbsApartmentsB","path":"rooms/room_suburbsApartmentsB/room_suburbsApartmentsB.yy",},},
     {"roomId":{"name":"room_suburbsApartmentsD","path":"rooms/room_suburbsApartmentsD/room_suburbsApartmentsD.yy",},},
     {"roomId":{"name":"room_suburbsApartmentsF","path":"rooms/room_suburbsApartmentsF/room_suburbsApartmentsF.yy",},},
+    {"roomId":{"name":"room_suburbsHouseB","path":"rooms/room_suburbsHouseB/room_suburbsHouseB.yy",},},
   ],
   "templateType":"game",
   "TextureGroups":[

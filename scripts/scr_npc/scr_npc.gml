@@ -76,8 +76,6 @@ function npc_step()
 function npc_update_sensed()
 {
 	sensed = collision_circle_array(x, y, RANGE_LONG, abs_doll, false, true, false);
-	
-	//Check if elements in sensedEnemies are in the 
 }
 
 /// @function npc_input_moveto(_target)

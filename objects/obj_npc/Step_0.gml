@@ -13,6 +13,7 @@ doll_input_aim(_angle, myHeld, mLeftButton, mRightButton, mLeftButtonPressed, mR
 //Inherits physics and collision from doll.
 event_inherited();
 
+npc_update_sensed();
 
 var _collisions = hitbox_step();
 

@@ -78,6 +78,18 @@ function npc_update_sensed()
 {
 	sensedDolls = collision_circle_array(x, y, RANGE_LONG, abs_doll, false, true, false);
 	
+	show_debug_message("{0} sensedEnemies: {1}", string(id), array_length(sensedEnemies));
+	
+	//Go through sensedEnemies and remove any targets that have been killed
+	
+	for (var _i = 0; _i < array_length(sensedEnemies); _i++) 
+	{
+	    if (!instance_exists(sensedEnemies[_i]))
+		{
+			array_delete(sensedEnemies, _i, 1);
+		}
+	}
+	
 	//TODO: Add any enemies sensed to the sensedEnemies array if they're not already there.
 	for (var _i = 0; _i < array_length(sensedDolls); _i++) 
 	{

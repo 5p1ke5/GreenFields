@@ -30,7 +30,7 @@ for (var _i = 0; _i < array_length(_collisions); _i++)
 	
 		if (_owner != noone)
 		{
-			array_push(sensedEnemies, _owner);
+			npc_enemies_add(_owner);
 		}
 		
 		//shoot blood out here. Something like...

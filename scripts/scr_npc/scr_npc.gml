@@ -4,10 +4,11 @@
 /// @param _dialogue Text string to be put in the speech balloon.
 /// @param _commands An array of commands for the NPC to follow.
 /// @param _combatLevel How strong the NPC is. Modifies aim and how often they fire. Higher = less skilled, lower = stronger.
-function npc_initialize(_name = "", _dialogue = "", _commands = [], _combatLevel = 50)
+function npc_initialize(_name = "", _dialogue = "", _commands = [], _combatLevel = 50, _faction = FACTIONS.NONE)
 {
 	name = _name;
 	combatLevel = _combatLevel;
+	faction = _faction;
 	
 	if (is_string(_dialogue))
 	{
@@ -76,6 +77,12 @@ function npc_step()
 function npc_update_sensed()
 {
 	sensed = collision_circle_array(x, y, RANGE_LONG, abs_doll, false, true, false);
+	
+	//TODO: Add any enemies sensed to the sensedEnemies array if they're not already there.
+	for (var _i = 0; _i < array_length(sensed); _i++) 
+	{
+	    // code here
+	}
 }
 
 /// @function npc_input_moveto(_target)

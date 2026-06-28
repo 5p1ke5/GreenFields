@@ -5,10 +5,11 @@ event_inherited();
 var _doll = global.playerDoll;
 doll_initialize(_doll.faceIndex, _doll.hairIndex, _doll.shirtIndex, _doll.pantsIndex, _doll.shoeIndex, _doll.skinColor, _doll.hairColor, _doll.shirtColor, _doll.pantsColor, _doll.shoeColor);
 
+faction = FACTIONS.PLAYER;
+
 //Initialize inventory.
 inventory = [new ITEM_PISTOL, new ITEM_SHOTGUN, new ITEM_ASSAULTRIFLE, new ITEM_MACHINEGUN, new ITEM_BAZOOKA ];
 equipIndex = 0;
-
 inventory[equipIndex].Equip(self);
 
 
@@ -17,7 +18,6 @@ interact = undefined;
 
 //The alert being displayed.
 alert = "";
-
 
 //Positions at spawn point if defined.
 if (global.spawnX != undefined)

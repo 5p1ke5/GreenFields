@@ -78,9 +78,7 @@ function npc_update_sensed()
 {
 	sensedDolls = collision_circle_array(x, y, RANGE_LONG, abs_doll, false, true, false);
 	
-	show_debug_message("{0} sensedEnemies: {1}", string(id), array_length(sensedEnemies));
-	
-	//Go through sensedEnemies and remove any targets that have been killed
+	//Go through sensedEnemies and remove any targets that have been killed. Maybe later also check for if they're too far away removes them from the array
 	
 	for (var _i = 0; _i < array_length(sensedEnemies); _i++) 
 	{
@@ -94,12 +92,23 @@ function npc_update_sensed()
 	for (var _i = 0; _i < array_length(sensedDolls); _i++) 
 	{
 		var _sensed = sensedDolls[_i];
+		//If it's already in the sensedEnemies array just breaks.
+		if (array_get_index(sensedEnemies, _sensed) > -1)
+		{
+			break;
+		}
 		
 	    switch (faction)
 		{
-			case FACTIONS.HOSTILE:
+			case FACTIONS.HOSTILE: //If hostile just adds anyone they see in a different faction.
+				if (_sensed.faction != faction)
+				{
+				array_insert(sensedEnemies, 0, _sensed);
+				}
 			break;
-			case FACTIONS.CRIMINAL:
+			case FACTIONS.POLICE: //if Police adds all criminals + player if wanted
+			break;
+			case FACTIONS.CRIMINAL: //if Police adds all police
 			break;
 		}
 	}

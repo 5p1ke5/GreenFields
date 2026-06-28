@@ -18,6 +18,7 @@
     {"name":"character creation","order":1,"path":"folders/Objects/menus/character creation.yy",},
     {"name":"network","order":4,"path":"folders/Objects/network.yy",},
     {"name":"npcs","order":1,"path":"folders/Objects/npcs.yy",},
+    {"name":"premade","order":2,"path":"folders/Objects/npcs/premade.yy",},
     {"name":"player","order":6,"path":"folders/Objects/player.yy",},
     {"name":"UI","order":5,"path":"folders/Objects/UI.yy",},
     {"name":"zones","order":13,"path":"folders/Objects/zones.yy",},

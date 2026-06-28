@@ -76,13 +76,37 @@ function npc_step()
 /// @descr Updates the arrays of sensed dolls.
 function npc_update_sensed()
 {
-	sensed = collision_circle_array(x, y, RANGE_LONG, abs_doll, false, true, false);
+	sensedDolls = collision_circle_array(x, y, RANGE_LONG, abs_doll, false, true, false);
 	
 	//TODO: Add any enemies sensed to the sensedEnemies array if they're not already there.
-	for (var _i = 0; _i < array_length(sensed); _i++) 
+	for (var _i = 0; _i < array_length(sensedDolls); _i++) 
 	{
-	    // code here
+		var _sensed = sensedDolls[_i];
+		
+	    switch (faction)
+		{
+			case FACTIONS.HOSTILE:
+			break;
+			case FACTIONS.CRIMINAL:
+			break;
+		}
 	}
+}
+
+
+/// @function npc_enemies_add(_target)
+/// @desc Adds a target to the front of the sensedEnemies array. If already in the array, removes it and then adds it to the start.
+/// @param _target The object to be added to the front of the array.
+function npc_enemies_add(_target)
+{
+	var _index = array_get_index(sensedEnemies, _target);
+	
+	//If the target is in the list, removes it from the list before putting it back in front.
+	if (_index > -1)
+	{
+		array_delete(sensedEnemies, _index, 1);
+	}
+	array_insert(sensedEnemies, 0, _target);
 }
 
 /// @function npc_input_moveto(_target)

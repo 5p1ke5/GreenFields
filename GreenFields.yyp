@@ -30,6 +30,7 @@
     {"$GMFolder":"","%Name":"character creation","folderPath":"folders/Objects/menus/character creation.yy","name":"character creation","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"network","folderPath":"folders/Objects/network.yy","name":"network","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"npcs","folderPath":"folders/Objects/npcs.yy","name":"npcs","resourceType":"GMFolder","resourceVersion":"2.0",},
+    {"$GMFolder":"","%Name":"premade","folderPath":"folders/Objects/npcs/premade.yy","name":"premade","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"player","folderPath":"folders/Objects/player.yy","name":"player","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"UI","folderPath":"folders/Objects/UI.yy","name":"UI","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"zones","folderPath":"folders/Objects/zones.yy","name":"zones","resourceType":"GMFolder","resourceVersion":"2.0",},

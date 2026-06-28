@@ -1,0 +1,1 @@
+npc_initialize("Outlaw", "Ahahahaah!",  [new NPCCommandMove(new Point2(x, y))], , FACTIONS.HOSTILE);

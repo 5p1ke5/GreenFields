@@ -55,19 +55,21 @@ function npc_step()
 {
 	npc_update_sensed();
 	
-	if (array_length(commands) == 0)
-	{
-		return;	
-	}
-	
+	//If there are enemies bypasses the current command to try and fight them, then exits the function.
 	if (array_length(sensedEnemies) > 0)
 	{
 		npc_input_fight(sensedEnemies[0]);
 		return;
 	}
 	
-	var _command = commands[0];
+	//If there are no commands just exits.
+	if (array_length(commands) == 0)
+	{
+		return;	
+	}
 	
+	//Otherwise calls the Perform method of the first command in the list.
+	var _command = commands[0];
 	_command.Perform(self);
 }
 
@@ -92,6 +94,7 @@ function npc_update_sensed()
 	for (var _i = 0; _i < array_length(sensedDolls); _i++) 
 	{
 		var _sensed = sensedDolls[_i];
+		
 		//If it's already in the sensedEnemies array just breaks.
 		if (array_get_index(sensedEnemies, _sensed) > -1)
 		{
@@ -100,10 +103,16 @@ function npc_update_sensed()
 		
 	    switch (faction)
 		{
-			case FACTIONS.HOSTILE: //If hostile just adds anyone they see in a different faction.
+			case FACTIONS.HOSTILE: //If HOSTILE just adds anyone they see in a different faction.
 				if (_sensed.faction != faction)
 				{
-				array_insert(sensedEnemies, 0, _sensed);
+					array_insert(sensedEnemies, 0, _sensed);
+				}
+			break;
+			case FACTIONS.ENEMY: //If ENEMY then it is hostile to just the player.
+				if (_sensed.faction == FACTIONS.PLAYER)
+				{
+					array_insert(sensedEnemies, 0, _sensed);
 				}
 			break;
 			case FACTIONS.POLICE: //if Police adds all criminals + player if wanted

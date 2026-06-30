@@ -1,0 +1,1 @@
+npc_initialize("Outlaw", "Ahahahaah!",  [], , FACTIONS.ENEMY);

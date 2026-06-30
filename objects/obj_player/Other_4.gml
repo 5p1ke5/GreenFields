@@ -1,2 +1,2 @@
-/// @desc On room start checks if room_persistent is true. If so, sets room_persistent as false and restarts the room.
+/// @desc On room start sets room_persistent as false
 room_persistent = false;

@@ -57,6 +57,7 @@
   "ResourceOrderSettings":[
     {"name":"fnt_gothic","order":2,"path":"fonts/fnt_gothic/fnt_gothic.yy",},
     {"name":"fnt_speech","order":1,"path":"fonts/fnt_speech/fnt_speech.yy",},
+    {"name":"abs_button","order":11,"path":"objects/abs_button/abs_button.yy",},
     {"name":"abs_doll","order":4,"path":"objects/abs_doll/abs_doll.yy",},
     {"name":"abs_equip","order":2,"path":"objects/abs_equip/abs_equip.yy",},
     {"name":"abs_furniture","order":10,"path":"objects/abs_furniture/abs_furniture.yy",},

@@ -81,6 +81,7 @@
     {"id":{"name":"fnt_default","path":"fonts/fnt_default/fnt_default.yy",},},
     {"id":{"name":"fnt_gothic","path":"fonts/fnt_gothic/fnt_gothic.yy",},},
     {"id":{"name":"fnt_speech","path":"fonts/fnt_speech/fnt_speech.yy",},},
+    {"id":{"name":"abs_button","path":"objects/abs_button/abs_button.yy",},},
     {"id":{"name":"abs_colorSlider","path":"objects/abs_colorSlider/abs_colorSlider.yy",},},
     {"id":{"name":"abs_doll","path":"objects/abs_doll/abs_doll.yy",},},
     {"id":{"name":"abs_equip","path":"objects/abs_equip/abs_equip.yy",},},

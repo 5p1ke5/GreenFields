@@ -39,9 +39,6 @@
     "name":"spr_uiButton",
     "path":"sprites/spr_uiButton/spr_uiButton.yy",
   },
-  "spriteMaskId":{
-    "name":"spr_uiButton",
-    "path":"sprites/spr_uiButton/spr_uiButton.yy",
-  },
+  "spriteMaskId":null,
   "visible":true,
 }

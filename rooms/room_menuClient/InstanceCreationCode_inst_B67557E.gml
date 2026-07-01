@@ -39,4 +39,4 @@ var _clickFunction = function()
 
 
 
-button_initialize("Connect", _clickFunction);
+uibutton_initialize("Connect", _clickFunction);

@@ -8,4 +8,4 @@ var _clickFunction = function()
 	text = "ACCEPTED";
 }
 
-button_initialize("Rematch?", _clickFunction);
+uibutton_initialize("Rematch?", _clickFunction);

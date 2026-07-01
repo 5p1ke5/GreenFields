@@ -1,0 +1,1 @@
+/// @desc Gives the user the assigned weapon.

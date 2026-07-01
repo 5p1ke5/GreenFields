@@ -5,4 +5,4 @@ var _clickFunction = function()
 	show_debug_message("Error");
 }
 
-button_initialize("foo", _clickFunction);
+uibutton_initialize("foo", _clickFunction);

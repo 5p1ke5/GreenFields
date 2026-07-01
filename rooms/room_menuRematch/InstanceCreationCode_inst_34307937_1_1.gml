@@ -11,4 +11,4 @@ var _clickFunction = function()
 	buffer_delete(_buffer);
 }
 
-button_initialize("Back", _clickFunction);
+uibutton_initialize("Back", _clickFunction);

@@ -5,4 +5,4 @@ var _clickFunction = function()
 	network_destroy(global.socketSelf);
 }
 
-button_initialize("Back", _clickFunction);
+uibutton_initialize("Back", _clickFunction);

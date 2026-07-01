@@ -4,12 +4,11 @@ for (var _i = 0; _i < array_length(_inventory); _i++)
 {
     var _element = _inventory[_i];
 	
-	var _button = instance_create_layer(room_width/2, (room_height/4) + (_i * 32), layer, obj_uiButton);
-	var _function = function(){ show_debug_message("Clicked! {0}", current_time) };
+	var _button = instance_create_layer(room_width/2, (room_height/4) + (_i * 32), layer, obj_buttonWeapon);
 	
 	with (_button)
 	{
-		button_initialize(_element.itemName, _function, c_white);
+		item = _element;
 		sprite_index = _element.icon;
 	}
 }

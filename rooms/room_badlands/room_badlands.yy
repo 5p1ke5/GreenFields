@@ -50,7 +50,7 @@
   "name":"room_badlands",
   "parent":{
     "name":"badlands",
-    "path":"folders/Rooms/levels/overworld/badlands.yy",
+    "path":"folders/Rooms/levels/freeplay/badlands.yy",
   },
   "parentRoom":null,
   "physicsSettings":{

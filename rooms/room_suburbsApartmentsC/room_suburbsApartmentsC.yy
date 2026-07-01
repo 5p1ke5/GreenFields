@@ -93,7 +93,7 @@
   "name":"room_suburbsApartmentsC",
   "parent":{
     "name":"suburbs",
-    "path":"folders/Rooms/levels/overworld/suburbs.yy",
+    "path":"folders/Rooms/levels/freeplay/suburbs.yy",
   },
   "parentRoom":null,
   "physicsSettings":{

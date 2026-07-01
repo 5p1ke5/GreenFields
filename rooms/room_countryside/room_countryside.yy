@@ -132,7 +132,7 @@
   "name":"room_countryside",
   "parent":{
     "name":"countryside",
-    "path":"folders/Rooms/levels/overworld/countryside.yy",
+    "path":"folders/Rooms/levels/freeplay/countryside.yy",
   },
   "parentRoom":null,
   "physicsSettings":{

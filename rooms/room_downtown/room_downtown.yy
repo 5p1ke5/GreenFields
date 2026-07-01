@@ -231,7 +231,7 @@
   "name":"room_downtown",
   "parent":{
     "name":"downtown",
-    "path":"folders/Rooms/levels/overworld/downtown.yy",
+    "path":"folders/Rooms/levels/freeplay/downtown.yy",
   },
   "parentRoom":null,
   "physicsSettings":{

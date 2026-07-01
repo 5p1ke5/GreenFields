@@ -40,7 +40,7 @@
   "name":"room_industrial",
   "parent":{
     "name":"industrial",
-    "path":"folders/Rooms/levels/overworld/industrial.yy",
+    "path":"folders/Rooms/levels/freeplay/industrial.yy",
   },
   "parentRoom":null,
   "physicsSettings":{

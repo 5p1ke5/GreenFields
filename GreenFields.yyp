@@ -107,6 +107,7 @@
     {"id":{"name":"obj_blood","path":"objects/obj_blood/obj_blood.yy",},},
     {"id":{"name":"obj_bullet","path":"objects/obj_bullet/obj_bullet.yy",},},
     {"id":{"name":"obj_bulletShotgun","path":"objects/obj_bulletShotgun/obj_bulletShotgun.yy",},},
+    {"id":{"name":"obj_buttonEquip","path":"objects/obj_buttonEquip/obj_buttonEquip.yy",},},
     {"id":{"name":"obj_buttonUI","path":"objects/obj_buttonUI/obj_buttonUI.yy",},},
     {"id":{"name":"obj_buttonWeapon","path":"objects/obj_buttonWeapon/obj_buttonWeapon.yy",},},
     {"id":{"name":"obj_camera","path":"objects/obj_camera/obj_camera.yy",},},

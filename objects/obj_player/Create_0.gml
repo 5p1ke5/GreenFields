@@ -8,7 +8,7 @@ doll_initialize(_doll.faceIndex, _doll.hairIndex, _doll.shirtIndex, _doll.pantsI
 faction = FACTIONS.PLAYER;
 
 //Initialize inventory.
-inventory = global.playerInventory;
+inventory = global.playerEquip;
 equipIndex = 0;
 inventory[equipIndex].Equip(self);
 

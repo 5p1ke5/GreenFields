@@ -33,7 +33,10 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":null,
+  "spriteId":{
+    "name":"spr_iconBlank",
+    "path":"sprites/spr_iconBlank/spr_iconBlank.yy",
+  },
   "spriteMaskId":null,
   "visible":true,
 }

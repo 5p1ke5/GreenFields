@@ -132,6 +132,7 @@
     {"name":"obj_oneWayTreetop","order":16,"path":"objects/obj_oneWayTreetop/obj_oneWayTreetop.yy",},
     {"name":"obj_playerNet","order":1,"path":"objects/obj_playerNet/obj_playerNet.yy",},
     {"name":"obj_playerNetOther","order":2,"path":"objects/obj_playerNetOther/obj_playerNetOther.yy",},
+    {"name":"obj_projectileFlame","order":5,"path":"objects/obj_projectileFlame/obj_projectileFlame.yy",},
     {"name":"obj_projectileGrenade","order":4,"path":"objects/obj_projectileGrenade/obj_projectileGrenade.yy",},
     {"name":"obj_projectileMissile","order":2,"path":"objects/obj_projectileMissile/obj_projectileMissile.yy",},
     {"name":"obj_rematch","order":3,"path":"objects/obj_rematch/obj_rematch.yy",},

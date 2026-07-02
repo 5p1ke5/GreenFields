@@ -168,6 +168,7 @@
     {"id":{"name":"obj_player","path":"objects/obj_player/obj_player.yy",},},
     {"id":{"name":"obj_playerNet","path":"objects/obj_playerNet/obj_playerNet.yy",},},
     {"id":{"name":"obj_playerNetOther","path":"objects/obj_playerNetOther/obj_playerNetOther.yy",},},
+    {"id":{"name":"obj_projectileFlame","path":"objects/obj_projectileFlame/obj_projectileFlame.yy",},},
     {"id":{"name":"obj_projectileGrenade","path":"objects/obj_projectileGrenade/obj_projectileGrenade.yy",},},
     {"id":{"name":"obj_projectileMissile","path":"objects/obj_projectileMissile/obj_projectileMissile.yy",},},
     {"id":{"name":"obj_rematch","path":"objects/obj_rematch/obj_rematch.yy",},},

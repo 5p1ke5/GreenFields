@@ -1,4 +1,4 @@
-/// @desc Accelerates to top speed.
+/// @desc Applies gravity, moves.
 vsp = phys_gravity(vsp, grav, TERMINAL_VELOCITY);
 
 y += vsp * spd;

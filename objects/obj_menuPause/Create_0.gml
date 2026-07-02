@@ -6,7 +6,7 @@ selected = noone;
 var _inventory = global.playerInventory;
 for (var _i = 0; _i < array_length(_inventory); _i++) 
 {
-	var _button = instance_create_layer(room_width/12, (room_height/4) + (_i * 64), layer, obj_buttonItem);
+	var _button = instance_create_layer(room_width/12 + ((_i div 5) * 96), (room_height/4) + ((_i % 5) * 64), layer, obj_buttonItem);
     var _element = _inventory[_i];	
 	var _menuPause = id;
 	

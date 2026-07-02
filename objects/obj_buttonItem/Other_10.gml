@@ -3,5 +3,4 @@ var _item = item;
 with (menuPause)
 {
 	selected = _item;
-	show_debug_message(string(selected))
 }

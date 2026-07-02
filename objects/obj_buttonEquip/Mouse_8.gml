@@ -1,0 +1,1 @@
+global.playerEquip[index] = new ITEM_NONE

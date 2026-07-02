@@ -114,6 +114,7 @@
     {"name":"obj_furniTableDinner","order":28,"path":"objects/obj_furniTableDinner/obj_furniTableDinner.yy",},
     {"name":"obj_furniTableLamp","order":21,"path":"objects/obj_furniTableLamp/obj_furniTableLamp.yy",},
     {"name":"obj_furniTVStand","order":29,"path":"objects/obj_furniTVStand/obj_furniTVStand.yy",},
+    {"name":"obj_itemPickup","order":3,"path":"objects/obj_itemPickup/obj_itemPickup.yy",},
     {"name":"obj_label","order":4,"path":"objects/obj_label/obj_label.yy",},
     {"name":"obj_menuPause","order":1,"path":"objects/obj_menuPause/obj_menuPause.yy",},
     {"name":"obj_menuTitle","order":2,"path":"objects/obj_menuTitle/obj_menuTitle.yy",},

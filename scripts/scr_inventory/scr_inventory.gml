@@ -203,32 +203,14 @@ function ItemEquipFirearmAuto(_itemName,  _inventory, _icon = spr_iconBlank, _am
 }
 
 
-
-///@function inventory_initialize()
-///@description Initializes the inventory. Returns an array for an inventory. This should usually be set to a variable (eg inventory = inventory_initialize();
-function inventory_initialize()
+/// @function itemPickup_initialize(_item)
+/// @description Initializes an itemPickup object from the passed item.
+function itemPickup_initialize(_item)
 {
-	return array_create(1, noone);
+	item = _item;
+	sprite_index = _item.icon;
 }
 
-
-
-///@function inventory_equip_initialize()
-///@description Initializes gear, which are the equipped items
-function inventory_equip_initialize()
-{
-	return array_create(1, noone);
-}
-
-
-/// @function inventory_find(_inventory, _Item)
-/// @description returns the first index of the given item in the given inventory. If none is found, returns -1.
-/// @param _inventory inventory list data structure.
-/// @param _Item Item struct to search for.
-function inventory_find(_inventory, _Item)
-{
-	return array_get_index(_inventory, _Item)
-}
 
 ///@function inventory_add(_inventory, _Item)
 ///@description Adds an item to the inventory. Returns index 
@@ -237,7 +219,7 @@ function inventory_find(_inventory, _Item)
 function inventory_add(_inventory, _Item)
 {
 	//Tries to check if the player already has a copy of the item in their inventory.
-	var _index = inventory_find(_inventory, _Item);
+	var _index = array_get_index(_inventory, _Item);
 	
 	//If an item with the same name was not found, just updates inventory and adds it to the list.
 	if (_index == -1)
@@ -249,6 +231,7 @@ function inventory_add(_inventory, _Item)
 		array_push(_inventory, _Item);	
 	}
 	//Otherwise, gets the found Item and adds 1 to amount.
+	/*
 	else
 	{
 		var _foundItem = array_get(_inventory, _index);
@@ -258,6 +241,7 @@ function inventory_add(_inventory, _Item)
 			amount = amount + _Item.GetAmount();
 		}
 	}
+	*/
 }
 
 ///@function inventory_remove(_inventory, _Item)

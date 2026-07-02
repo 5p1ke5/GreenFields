@@ -149,6 +149,7 @@
     {"id":{"name":"obj_furniTableDinner","path":"objects/obj_furniTableDinner/obj_furniTableDinner.yy",},},
     {"id":{"name":"obj_furniTableLamp","path":"objects/obj_furniTableLamp/obj_furniTableLamp.yy",},},
     {"id":{"name":"obj_furniTVStand","path":"objects/obj_furniTVStand/obj_furniTVStand.yy",},},
+    {"id":{"name":"obj_itemPickup","path":"objects/obj_itemPickup/obj_itemPickup.yy",},},
     {"id":{"name":"obj_label","path":"objects/obj_label/obj_label.yy",},},
     {"id":{"name":"obj_menuPause","path":"objects/obj_menuPause/obj_menuPause.yy",},},
     {"id":{"name":"obj_menuTitle","path":"objects/obj_menuTitle/obj_menuTitle.yy",},},

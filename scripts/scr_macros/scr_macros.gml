@@ -22,7 +22,7 @@
 
 #region rooms
 #macro ROOM_TITLE room_menuTitle
-#macro ROOM_SINGLEPLAYER room_countryside
+#macro ROOM_SINGLEPLAYER room_downtown
 #macro ROOM_TRAINING room_tutorial
 #macro ROOM_ARCADE room_arcademode
 #macro ROOM_MULTIPLAYER room_menuMultiplayer
@@ -64,6 +64,7 @@
 #macro FLIP_SPEED 12
 #macro TEXT_BALLOON_SPEED 5
 #macro TEXT_BALLOON_MAXW 150
+#macro INVENTORY_MAX 16
 #endregion
 
 #region	Controls.

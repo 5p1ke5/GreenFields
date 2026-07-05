@@ -6,3 +6,6 @@ if (array_length(global.playerInventory) < INVENTORY_MAX)
 	inventory_add(global.playerInventory, item);
 	instance_destroy();
 }
+
+audio_play_sound(sfx_itemGet, 0, false);
+message_create(x, y, depth, item.itemName + " Acquired!");

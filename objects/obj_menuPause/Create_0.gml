@@ -3,6 +3,7 @@
 //A reference to the currently selected item.
 selected = noone;
 
+//Note: Maybe make this an index thing too?
 var _inventory = global.playerInventory;
 for (var _i = 0; _i < array_length(_inventory); _i++) 
 {

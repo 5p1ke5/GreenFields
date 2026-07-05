@@ -224,10 +224,6 @@ function inventory_add(_inventory, _Item)
 	//If an item with the same name was not found, just updates inventory and adds it to the list.
 	if (_index == -1)
 	{
-		with (_Item)
-		{
-			inventory = _inventory;
-		}
 		array_push(_inventory, _Item);	
 	}
 	//Otherwise, gets the found Item and adds 1 to amount.
@@ -244,41 +240,6 @@ function inventory_add(_inventory, _Item)
 	*/
 }
 
-///@function inventory_remove(_inventory, _Item)
-///@description Removes a stack of an item from the inventory. If amount is 0 from this deletes it from the inventory. 
-///@param _inventory inventory list to remove from.
-///@param _Item Item struct to remove from.
-///@param _user (optional) The instance id of the instance the inventory is associated with. Used to alter inventoryIndex if applicable.
-function inventory_remove(_inventory, _Item, _user = noone)
-{
-	_Item.SetAmount(_Item.GetAmount() - 1);
-	
-	show_debug_message("New amount: " + string(_Item.GetAmount()));
-	
-	if (_Item.GetAmount() <= 0)
-	{
-			var _index = ds_list_find_index(_inventory, _Item);
-			ds_list_delete(_inventory, _index);
-			show_debug_message("item removed");
-	}
-	
-	//If a reference to a user instance was passed, attempts to set the inventoryIndex for them.
-	//Maybe make inventories a struct??
-	if (instance_exists(_user))
-	{
-		with (_user)
-		{
-			//Makes sure it has an inventoryIndex variable and if so caps it at ds_list_size - 1, but not below 0.
- 			if (variable_instance_exists(_user, "inventoryIndex"))
-			{
-				show_debug_message("index resiezed" + string(ds_list_size(_inventory) ));
-				inventoryIndex = min(ds_list_size(_inventory) - 1, inventoryIndex);
-				inventoryIndex = max(inventoryIndex, 0);
-			}
-			
-		}
-	}
-}
 
 /// @function inventory_meleeInstance_initialize(_name, _owner, _sprite, _damage, _knockback, _arc, _spd, _angle)
 /// @description Initializes variables for a melee object instance.
@@ -288,6 +249,7 @@ function inventory_remove(_inventory, _Item, _user = noone)
 /// @param _arc Arc for the object to rotate along.
 /// @param _spd Speed at which to rotate along he arc.
 /// @param _angle angle for the instance to start  at.
+/*
 function inventory_meleeInstance_initialize(_name, _owner, _sprite, _damage, _knockback, _arc, _spd, _angle)
 {
 	name = _name;
@@ -312,3 +274,4 @@ function inventory_meleeInstance_initialize(_name, _owner, _sprite, _damage, _kn
 	//checks if attack is being parried as it's created.
 	parryCheck();
 }
+*/

@@ -13,8 +13,8 @@ for (var _i = 0; _i < array_length(_inventory); _i++)
 	
 	with (_button)
 	{
+		index = _i
 		menuPause = _menuPause;
-		item = _element;
 		sprite_index = _element.icon;
 		image_yscale = 2;
 		image_xscale = 2;

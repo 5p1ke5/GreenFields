@@ -2,7 +2,9 @@
 draw_rectangle_colour(bbox_left, bbox_top, bbox_right, bbox_bottom, c_blue, c_blue, c_blue, c_blue, false);
 draw_rectangle_colour(bbox_left, bbox_top, bbox_right, bbox_bottom, c_aqua, c_aqua, c_aqua, c_aqua, true);
 
-if (menuPause.selected != item)
+var _item = global.playerInventory[index];
+
+if (menuPause.selected != _item)
 {
 	draw_self();
 }

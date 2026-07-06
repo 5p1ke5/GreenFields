@@ -1,18 +1,16 @@
 ///Inventory functions. inventory_* functions and Item* constructors.
 ///Structs for item types
 
-/// @function Item(_itemName,  _inventory, _icon = spr_iconBlank, _amount = 1, _description = "")
+/// @function Item(_itemName, _icon = spr_iconBlank, _amount = 1, _description = "")
 /// @description Constructor for an item struct.
 /// @param _itemName <String> item's name.
-/// @param _inventory Inventory array the item is inside of.
 /// @param _icon <sprite> Sprite representation of item.
 /// @param _amount quantity of item in stack.
 /// @param _description <String> string description of item.
 /// @param _ai enum that tells an NPC how to behave when they have the item.
-function Item(_itemName,  _inventory, _icon = spr_iconBlank, _amount = 1, _description = "") constructor
+function Item(_itemName, _icon = spr_iconBlank, _amount = 1, _description = "") constructor
 {
 		itemName = _itemName;
-		inventory = _inventory;
 		icon = _icon;
 		amount = _amount;
 		description = _description;
@@ -62,15 +60,14 @@ function Item(_itemName,  _inventory, _icon = spr_iconBlank, _amount = 1, _descr
 		}
 }
 
-/// @function ItemEquip(_itemName, _inventory, _icon, _amount, _description, _ai, _equipObj)
+/// @function ItemEquip(_itemName, _icon, _amount, _description, _ai, _equipObj)
 /// @description Constructor for an item struct that creates an equipped item.
 /// @param _itemName <String> item's name.
-/// @param _inventory Inventory list the item is inside of.
 /// @param _icon <sprite> Sprite representation of item.
 /// @param _amount  quantity of item in stack.
 /// @param description A description of the item.
 /// @param _sprite_index Sprite for the struct.
-function ItemEquip(_itemName,  _inventory, _icon = spr_iconBlank, _amount = 1, _description = "", _sprite_index) : Item(_itemName,  _inventory, _icon, _amount, _description = "")  constructor
+function ItemEquip(_itemName, _icon = spr_iconBlank, _amount = 1, _description = "", _sprite_index) : Item(_itemName, _icon, _amount, _description = "")  constructor
 {	
 	sprite_index = _sprite_index;
 	image_index = 0;
@@ -82,24 +79,22 @@ function ItemEquip(_itemName,  _inventory, _icon = spr_iconBlank, _amount = 1, _
 	}
 }
 
-/// @function ItemEquipMelee(_itemName,  _inventory, _icon = spr_iconBlank, _amount = 1, _description = "", _sprite_index)
+/// @function ItemEquipMelee(_itemName, _icon = spr_iconBlank, _amount = 1, _description = "", _sprite_index)
 /// @description Will have melee weapons in here for later. For now is just a placeholder.
 /// @param _itemName <String> item's name.
-/// @param _inventory Inventory list the item is inside of.
 /// @param _icon <sprite> Sprite representation of item.
 /// @param _amount  quantity of item in stack.
 /// @param description A description of the item.
 /// @param _sprite_index Sprite for the struct.
-function ItemEquipMelee(_itemName,  _inventory, _icon = spr_iconBlank, _amount = 1, _description = "", _sprite_index): Item(_itemName,  _inventory, _icon, _amount, _description = "")  constructor
+function ItemEquipMelee(_itemName, _icon = spr_iconBlank, _amount = 1, _description = "", _sprite_index): Item(_itemName, _icon, _amount, _description = "")  constructor
 {
 	
 }
 
 
-/// @function ItemEquipFirearm(_itemName,  _inventory, _icon = spr_iconBlank, _amount = 1, _description = "", _sprite_index = spr_equipEmpty, _cooldown = game_get_speed(gamespeed_fps) / 4, _bullet = obj_bullet, _damage = noone)
+/// @function ItemEquipFirearm(_itemName, _icon = spr_iconBlank, _amount = 1, _description = "", _sprite_index = spr_equipEmpty, _cooldown = game_get_speed(gamespeed_fps) / 4, _bullet = obj_bullet, _damage = noone)
 /// @description Constructor for an item struct that is used to fire the player's gun.
 /// @param _itemName <String> item's name.
-/// @param _inventory Inventory list the item is inside of.
 /// @param _icon <sprite> Sprite representation of item.
 /// @param _amount  quantity of item in stack.
 /// @param _description Description of the name in the inventory.
@@ -107,7 +102,7 @@ function ItemEquipMelee(_itemName,  _inventory, _icon = spr_iconBlank, _amount =
 /// @param _cooldownMax How many frames to wait between shots.
 /// @param _bullet Bullet object to fire.
 /// @param _damage How much damage the bullet object does. Defaults to noone. If value is noone doesn't set the damage for the bullet object.
-function ItemEquipFirearm(_itemName,  _inventory, _icon = spr_iconBlank, _amount = 1, _description = "", _sprite_index = spr_equipEmpty, _cooldownMax = game_get_speed(gamespeed_fps) / 4, _bullet = obj_bullet, _damage = noone, _twoHanded = false) : ItemEquip(_itemName,  _inventory, _icon, _amount, _description, _sprite_index) constructor
+function ItemEquipFirearm(_itemName, _icon = spr_iconBlank, _amount = 1, _description = "", _sprite_index = spr_equipEmpty, _cooldownMax = game_get_speed(gamespeed_fps) / 4, _bullet = obj_bullet, _damage = noone, _twoHanded = false) : ItemEquip(_itemName, _icon, _amount, _description, _sprite_index) constructor
 {	
 	damage = _damage;
 	cooldownMax = _cooldownMax;
@@ -176,10 +171,9 @@ function ItemEquipFirearm(_itemName,  _inventory, _icon = spr_iconBlank, _amount
 //huh this doesn't quite work how i hoped...
 
 
-/// @function ItemEquipFirearmAuto(_itemName,  _inventory, _icon = spr_iconBlank, _amount = 1, _description = "", _sprite_index = spr_equipEmpty, _cooldownMax = game_get_speed(gamespeed_fps) / 4, _bullet = obj_bullet, _damage = noone)
+/// @function ItemEquipFirearmAuto(_itemName, _icon = spr_iconBlank, _amount = 1, _description = "", _sprite_index = spr_equipEmpty, _cooldownMax = game_get_speed(gamespeed_fps) / 4, _bullet = obj_bullet, _damage = noone)
 /// @description Constructor for an item struct that is used to fire the player's gun. This one fires automatically.
 /// @param _itemName <String> item's name.
-/// @param _inventory Inventory list the item is inside of.
 /// @param _icon <sprite> Sprite representation of item.
 /// @param _amount  quantity of item in stack.
 /// @param _description Description of the name in the inventory.
@@ -187,7 +181,7 @@ function ItemEquipFirearm(_itemName,  _inventory, _icon = spr_iconBlank, _amount
 /// @param _cooldownMax How many frames to wait between shots.
 /// @param _bullet Bullet object to fire.
 /// @param _damage How much damage the bullet object does. Defaults to noone. If value is noone doesn't set the damage for the bullet object.
-function ItemEquipFirearmAuto(_itemName,  _inventory, _icon = spr_iconBlank, _amount = 1, _description = "", _sprite_index = spr_equipEmpty, _cooldownMax = game_get_speed(gamespeed_fps) / 4, _bullet = obj_bullet, _damage = noone, _twoHanded = false) : ItemEquipFirearm(_itemName,  _inventory, _icon, _amount, _description, _sprite_index, _cooldownMax, _bullet, _damage, _twoHanded) constructor
+function ItemEquipFirearmAuto(_itemName, _icon = spr_iconBlank, _amount = 1, _description = "", _sprite_index = spr_equipEmpty, _cooldownMax = game_get_speed(gamespeed_fps) / 4, _bullet = obj_bullet, _damage = noone, _twoHanded = false) : ItemEquipFirearm(_itemName, _icon, _amount, _description, _sprite_index, _cooldownMax, _bullet, _damage, _twoHanded) constructor
 {
 	//Overrides parent, instead just uses LeftButton to fire.
 	static LeftButtonPressed = function(_user)

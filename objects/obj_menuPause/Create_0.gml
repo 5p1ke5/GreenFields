@@ -3,7 +3,7 @@
 //A reference to the currently selected item.
 selected = noone;
 
-//Note: Maybe make this an index thing too?
+//Makes a button for each item in the player inventory.
 var _inventory = global.playerInventory;
 for (var _i = 0; _i < array_length(_inventory); _i++) 
 {
@@ -20,6 +20,14 @@ for (var _i = 0; _i < array_length(_inventory); _i++)
 		image_xscale = 2;
 	}
 }
+
+//Make blank buttons for the rest....Later.
+/*
+for (; _i < INVENTORY_MAX; _i++) 
+{
+	show_debug_message("{0}", _i);
+}
+*/
 
 
 var _equip = global.playerEquip;

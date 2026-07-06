@@ -1,1 +1,1 @@
-itemPickup_initialize(new ITEM_RAYGUN);
+itemPickup_initialize(new ITEM_AUTOPISTOL);

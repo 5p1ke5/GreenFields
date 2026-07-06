@@ -157,9 +157,6 @@ function ItemEquipFirearm(_itemName, _icon = spr_iconBlank, _amount = 1, _descri
 
 		//Resets timer
 		cooldown = cooldownMax;
-
-		//Play sound effect
-		audio_play_sound(sfx_fire, 0, false);
 	}
 	
 	static LeftButtonPressed = function(_user)

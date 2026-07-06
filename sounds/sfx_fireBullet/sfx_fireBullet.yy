@@ -1,6 +1,6 @@
 {
   "$GMSound":"v2",
-  "%Name":"sfx_fire",
+  "%Name":"sfx_fireBullet",
   "audioGroupId":{
     "name":"audiogroup_default",
     "path":"audiogroups/audiogroup_default",
@@ -12,7 +12,7 @@
   "conversionMode":0,
   "duration":0.12945578,
   "exportDir":"",
-  "name":"sfx_fire",
+  "name":"sfx_fireBullet",
   "parent":{
     "name":"sfx",
     "path":"folders/Audio/sfx.yy",
@@ -21,6 +21,6 @@
   "resourceType":"GMSound",
   "resourceVersion":"2.0",
   "sampleRate":44100,
-  "soundFile":"sfx_fire.wav",
+  "soundFile":"sfx_fireBullet.wav",
   "volume":0.2,
 }

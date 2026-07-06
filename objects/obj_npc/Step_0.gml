@@ -12,8 +12,6 @@ doll_input_aim(_angle, myHeld, mLeftButton, mRightButton, mLeftButtonPressed, mR
 //Inherits physics and collision from doll.
 event_inherited();
 
-npc_update_sensed();
-
 var _collisions = hitbox_step();
 
 //Goes through all the collisions and processes each one.
@@ -27,12 +25,12 @@ for (var _i = 0; _i < array_length(_collisions); _i++)
 		var _damage = _collision.damage
 		living_take_damage(_damage);
 	
-		if (_owner != noone)
+		if (_owner != noone)// && (faction != _owner.faction)
 		{
 			npc_enemies_add(_owner);
 		}
 		
-		//shoot blood out here. Something like...
+		//shoot blood out here.
 		var _x = _collision.x;
 		var _y = _collision.y;
 		var _angle = point_direction(x, y, _x, _y);

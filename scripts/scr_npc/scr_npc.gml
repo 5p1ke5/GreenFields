@@ -59,7 +59,10 @@ function npc_step()
 	if (array_length(sensedEnemies) > 0)
 	{
 		var _enemy = sensedEnemies[0];
+		npc_input_fight(_enemy);
+		
 		//If the enemy no longer exists removes them from the list.
+		/*
 		if (!instance_exists(_enemy))
 		{
 			array_shift(sensedEnemies);
@@ -68,6 +71,7 @@ function npc_step()
 		{
 			npc_input_fight(_enemy);
 		}
+		*/
 		return;
 	}
 	
@@ -88,16 +92,7 @@ function npc_step()
 function npc_update_sensed()
 {
 	sensedDolls = collision_circle_array(x, y, RANGE_LONG, abs_doll, false, true, false);
-	
-	//Go through sensedEnemies and remove any targets that have been killed. Maybe later also check for if they're too far away removes them from the array
-	
-	for (var _i = 0; _i < array_length(sensedEnemies); _i++) 
-	{
-	    if (!instance_exists(sensedEnemies[_i]))
-		{
-			array_delete(sensedEnemies, _i, 1);
-		}
-	}
+
 	
 	//Add any enemies sensed to the sensedEnemies array if they're not already there.
 	for (var _i = 0; _i < array_length(sensedDolls); _i++) 
@@ -138,7 +133,12 @@ function npc_update_sensed()
 				}
 			break;
 		}
-	}
+	}	
+
+	//Filters out destroyed enemies.
+	var _filter = function(element, index){ return instance_exists(element);}
+	sensedEnemies = array_filter(sensedEnemies, _filter);
+
 }
 
 

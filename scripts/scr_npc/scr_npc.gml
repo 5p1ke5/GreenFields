@@ -58,7 +58,16 @@ function npc_step()
 	//If there are enemies bypasses the current command to try and fight them, then exits the function.
 	if (array_length(sensedEnemies) > 0)
 	{
-		npc_input_fight(sensedEnemies[0]);
+		var _enemy = sensedEnemies[0];
+		//If the enemy no longer exists removes them from the list.
+		if (!instance_exists(_enemy))
+		{
+			array_shift(sensedEnemies);
+		}
+		else
+		{
+			npc_input_fight(_enemy);
+		}
 		return;
 	}
 	
@@ -90,7 +99,7 @@ function npc_update_sensed()
 		}
 	}
 	
-	//TODO: Add any enemies sensed to the sensedEnemies array if they're not already there.
+	//Add any enemies sensed to the sensedEnemies array if they're not already there.
 	for (var _i = 0; _i < array_length(sensedDolls); _i++) 
 	{
 		var _sensed = sensedDolls[_i];
@@ -101,6 +110,7 @@ function npc_update_sensed()
 			break;
 		}
 		
+		//Adds enemies based on 
 	    switch (faction)
 		{
 			case FACTIONS.HOSTILE: //If HOSTILE just adds anyone they see in a different faction.
@@ -116,8 +126,16 @@ function npc_update_sensed()
 				}
 			break;
 			case FACTIONS.POLICE: //if Police adds all criminals + player if wanted
+				if (_sensed.faction == FACTIONS.CRIMINAL)
+				{
+					array_insert(sensedEnemies, 0, _sensed);
+				}
 			break;
 			case FACTIONS.CRIMINAL: //if Police adds all police
+				if (_sensed.faction == FACTIONS.POLICE)
+				{
+					array_insert(sensedEnemies, 0, _sensed);
+				}
 			break;
 		}
 	}

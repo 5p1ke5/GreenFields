@@ -201,9 +201,13 @@ function NPCCommandFight(_target): NPCCommand() constructor
 		}
 		
 		var _target = target;
-		with (_user)
+		
+		if (_target)
 		{
-			npc_input_fight(_target);
+			with (_user)
+			{
+				npc_input_fight(_target);
+			}
 		}
 	}
 }

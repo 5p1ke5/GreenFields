@@ -1,1 +1,0 @@
-npc_initialize("Outlaw", "Ahahahaah!",  [new NPCCommandIdle()], , FACTIONS.ENEMY);

@@ -7,6 +7,9 @@ Code is offered as-is, WYSIWYG. If code is not actually referenced by in-game as
 If you want to play the game you should open it in game maker.
 
 TODO:
-* make some enemies
-* make inventory system (items show when you pause, you can equip ~4 items at once, can drop/buy/sell items)
+(higher items = higher priority)
+* make area where npcs are having a little war
+* make NPCs less likely to fight others in same faction
+* time system w/ day-night cycle
+* make a shop where you can buy guns
 * make opening cutscene + short opening sequence where you land in Downtown and fight through the police

@@ -27,7 +27,7 @@ function npc_initialize(_name = "", _dialogue = "", _commands = [], _combatLevel
 	myBalloon = noone;
 	
 	//Arrays containing the other dolls that are sensed and another one listing the enemies.
-	sensed = [];
+	sensedDolls = [];
 	sensedEnemies = [];
 	
 	//These values correspond to palyer inputs. The NPC is essentially being 'controlled' by the computer

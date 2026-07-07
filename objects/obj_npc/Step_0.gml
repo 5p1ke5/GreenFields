@@ -25,9 +25,22 @@ for (var _i = 0; _i < array_length(_collisions); _i++)
 		var _damage = _collision.damage
 		living_take_damage(_damage);
 	
-		if (_owner != noone)// && (faction != _owner.faction)
+		if (_owner != noone) 
 		{
-			npc_enemies_add(_owner);
+			switch (faction) 
+			{
+				//Some factions allow infighting.
+			    case FACTIONS.NONE:
+					npc_enemies_add(_owner);
+			        break;
+				//Most only add you to the list if you're in a different faction.
+			    default: 
+					if (faction != _owner.faction)
+					{
+						npc_enemies_add(_owner);
+					}
+			        break;
+			}
 		}
 		
 		//shoot blood out here.

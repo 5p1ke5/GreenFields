@@ -11,8 +11,6 @@ doll_input_interact(X_BUTTON_PRESSED);
 //Inherits physics and collision from doll.
 event_inherited();
 
-audio_listener_set_position(0, x, y, 0);
-
 var _collisions = hitbox_step();
 
 //Goes through all the collisions and processes each one.
@@ -32,3 +30,6 @@ for (var _i = 0; _i < array_length(_collisions); _i++)
 		living_bleed(_angle, _damage * 4);
 	}
 }
+
+//Sets audio listener position to player position.
+audio_listener_position(x, y, 0)

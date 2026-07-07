@@ -4,4 +4,4 @@ hurtbox_initialize(20, noone, 10, 10);
 
 duration = 0;
 
-audio_play_sound(sfx_explosion, 0, false);
+audio_play_sound_pos(sfx_explosion, x, y);

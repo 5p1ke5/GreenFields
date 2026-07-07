@@ -4,5 +4,6 @@ vsp = 0;
 
 grav = 0.02;
 spd = BULLET_SPEED/2;
+
 //Play sound effect
-audio_play_sound(sfx_fireGrenadegun, 0, false);
+audio_play_sound_pos(sfx_fireGrenadegun, x, y);

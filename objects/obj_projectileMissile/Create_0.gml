@@ -6,4 +6,4 @@ spd = 1;
 maxSpeed = BULLET_SPEED;
 
 //Play sound effect
-audio_play_sound(sfx_fireRocket, 0, false);
+audio_play_sound_pos(sfx_fireRocket, x, y);

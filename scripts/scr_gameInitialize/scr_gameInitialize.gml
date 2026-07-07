@@ -8,7 +8,7 @@ function game_initialize()
 	draw_set_font(fnt_default);
 	room_goto(ROOM_TITLE);
 	window_set_cursor(cr_cross);
-	audio_listener_orientation(0, 0, -1, 0, 1, 0);
+	audio_listener_orientation(0, 0, 1, 0, -1, 0);
 	audio_falloff_set_model(audio_falloff_linear_distance);
 	show_debug_message("Game initialized.");
 }

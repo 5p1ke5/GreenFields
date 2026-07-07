@@ -55,23 +55,11 @@ function npc_step()
 {
 	npc_update_sensed();
 	
-	//If there are enemies bypasses the current command to try and fight them, then exits the function.
+	//If there are enemies ignores the current command to try and fight them, then exits the function.
 	if (array_length(sensedEnemies) > 0)
 	{
 		var _enemy = sensedEnemies[0];
 		npc_input_fight(_enemy);
-		
-		//If the enemy no longer exists removes them from the list.
-		/*
-		if (!instance_exists(_enemy))
-		{
-			array_shift(sensedEnemies);
-		}
-		else
-		{
-			npc_input_fight(_enemy);
-		}
-		*/
 		return;
 	}
 	
@@ -163,7 +151,6 @@ function npc_enemies_add(_target)
 /// @param _range How close the move to the target.
 function npc_input_moveto(_target, _range = RANGE_CLOSE/2)
 {
-	
 	rightButton = (_target.x - x > _range);
 	leftButton = (_target.x - x < -_range);
 	
@@ -219,7 +206,7 @@ function npc_input_fight(_target)
 			return false;
 		}
 		
-		//This is actually really strong, make a way for it to be a little less scary
+		//If the target is within range tries to shoot at them.
 		if (_inRange)
 		{
 			mLeftButton = (irandom(combatLevel/2) == 0);

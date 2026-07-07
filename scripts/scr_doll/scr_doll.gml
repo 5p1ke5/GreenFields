@@ -88,10 +88,10 @@ function doll_initialize_random()
 	var _shoeIndex = irandom(1);
 	
 	var _skinColor = choose(c_asian1, c_white1, c_black1, c_hispanic1);
-	var _hairColor = choose(c_blonde, c_brunette, c_darkBrunette, c_red);
-	var _shirtColor = choose(c_red, c_blue, c_green, c_purple, c_orange, c_yellow);
+	var _hairColor = choose(c_blonde, c_lightBrunette, c_brunette, c_darkBrunette, c_ginger);
+	var _shirtColor = choose(c_red, c_blue, c_green, c_purple, c_orange, c_yellow, c_violet, c_pink);
 	var _pantsColor = choose(c_blue, c_gray, c_green, c_navy);
-	var _shoeColor = choose(c_brunette, c_green, c_red, c_black);
+	var _shoeColor = choose(c_brunette, c_green, c_red, c_black, c_brown);
 	
 	doll_initialize(_faceIndex, _hairIndex, _shirtIndex, _pantsIndex, _shoeIndex, _skinColor, _hairColor, _shirtColor, _pantsColor, _shoeColor);
 	

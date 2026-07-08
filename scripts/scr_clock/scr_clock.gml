@@ -2,7 +2,7 @@
 /// @desc Increments the in-game clock.
 function clock_tick()
 {
-	global.clockSteps += 10;
+	global.clockSteps += 100;
 	global.clockMinutes = global.clockSteps/SECOND;
 	global.clockHours = global.clockMinutes / 60;
 	
@@ -24,33 +24,39 @@ function clock_skybox_control()
 	
 	if (_layerIndex)
 	{
-		var _time = global.clockHours;
+		var _time = global.clockMinutes;
 		
-		//Night (evening - dawn)
-		/*
-		if (_time < 6) || (_time > 18)
+		if (_time < 180) // 3
 		{
-			//dark blue -> almost black -> dark purple
-			var _color = make_colour_hsv(128 + (global.clockHours/24) * 127, 255, 255);
+			var _color = make_colour_hsv(150, 255, 127);
 		}
-		//Morning (dawn - midday)
-		else if (_time >= 6) && (_time < 12)
+		else if (_time < 360) // 6
 		{
-			//dark purple -> pink -> teal
-			var _color = make_colour_hsv(128 + (global.clockHours/24) * 127, 255, 255);
+			var _color = make_colour_hsv(150, 255, 255);
 		}
-		//afternoon (midday - evening)
-		else// if (_time  >= 12) && (_time < 18)
+		else if (_time < 720) // 12
 		{
-			//teal -> yellow -> orange -> violet -> dark blue
-			var _color = make_colour_hsv(128 + (global.clockHours/24) * 127, 255, 255);
+			var _color = make_colour_hsv(132, 255, 255);
 		}
-		*/
+		else if (_time < 1020) //18
+		{
+			var _color = make_colour_hsv(25, 255, 255)
+		}
+		else if (_time < 1200) //20
+		{
+			var _color = make_colour_hsv(250, 255, 255)
+		}
+		else if (_time < 1320) //22
+		{
+			var _color = make_colour_hsv(200, 255, 200)
+		}
+		else //24
+		{
+			var _color = make_colour_hsv(150, 255, 32)
+		}
 		
 		//midnight (0:00) -> sunrise (6) -> midday (12) -> sunset (6) ->
 		//almost black -> dark blue -> teal (most of the day) -> yellow -> orange -> violet -> dark purple -> dark blue ->
-		
-		var _color = make_colour_hsv(128 + (global.clockHours/24) * 127, 255, 255);
 		var _bgLayer = layer_background_get_id(_layerIndex);
 		layer_background_blend(_bgLayer, _color);
 	}

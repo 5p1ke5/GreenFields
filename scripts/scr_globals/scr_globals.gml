@@ -3,6 +3,9 @@
 function globals_initialize()
 {
 	global.money = 0;
+	global.clockSteps = 0;
+	global.clockMinutes = 0;
+	global.clockHours = 0;
 	
 	
 	//These may be moved to a file but for now reading from memory is fine.

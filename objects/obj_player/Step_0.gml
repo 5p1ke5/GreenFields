@@ -33,3 +33,6 @@ for (var _i = 0; _i < array_length(_collisions); _i++)
 
 //Sets audio listener position to player position.
 audio_listener_position(x, y, 0)
+
+//Sets clock time
+clock_tick();

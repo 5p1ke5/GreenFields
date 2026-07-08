@@ -163,6 +163,7 @@
     {"name":"scr_array","order":22,"path":"scripts/scr_array/scr_array.yy",},
     {"name":"scr_audio","order":18,"path":"scripts/scr_audio/scr_audio.yy",},
     {"name":"scr_button","order":11,"path":"scripts/scr_button/scr_button.yy",},
+    {"name":"scr_clock","order":24,"path":"scripts/scr_clock/scr_clock.yy",},
     {"name":"scr_collision","order":19,"path":"scripts/scr_collision/scr_collision.yy",},
     {"name":"scr_doll","order":1,"path":"scripts/scr_doll/scr_doll.yy",},
     {"name":"scr_equip","order":9,"path":"scripts/scr_equip/scr_equip.yy",},

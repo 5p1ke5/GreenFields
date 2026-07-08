@@ -2,7 +2,7 @@
 /// @desc Increments the in-game clock.
 function clock_tick()
 {
-	global.clockSteps += 100;
+	global.clockSteps += 10;
 	global.clockMinutes = global.clockSteps/SECOND;
 	global.clockHours = global.clockMinutes / 60;
 	
@@ -28,31 +28,36 @@ function clock_skybox_control()
 		
 		if (_time < 180) // 3
 		{
-			var _color = make_colour_hsv(150, 255, 127);
+			var _color = make_colour_hsv(150, 255, 32 + (95 * (_time/180)));
+			//var _color = make_colour_hsv(150, 255, 127);
 		}
 		else if (_time < 360) // 6
 		{
-			var _color = make_colour_hsv(150, 255, 255);
+			var _color = make_colour_hsv(150 - ((_time - 180) / 180) * 18, 255, 127 + ((_time - 180) / 180) * 128);
+			//var _color = make_colour_hsv(150, 255, 255);
 		}
 		else if (_time < 720) // 12
 		{
-			var _color = make_colour_hsv(132, 255, 255);
+			var _color = make_colour_hsv(132 + ((_time - 360) / 360) * 18, 255, 255);
+			//var _color = make_colour_hsv(132, 255, 255);
 		}
 		else if (_time < 1020) //18
 		{
-			var _color = make_colour_hsv(25, 255, 255)
+			var _color = make_colour_hsv(150, 255, 255);
+			//var _color = make_colour_hsv(25, 255, 255)
 		}
 		else if (_time < 1200) //20
 		{
-			var _color = make_colour_hsv(250, 255, 255)
+			var _color = make_colour_hsv(150 + ((_time - 1020) / 180) * 20, 255, 255 -  ((_time - 1020) / 180) * 55);
+			//var _color = make_colour_hsv(250, 255, 255)
 		}
 		else if (_time < 1320) //22
 		{
-			var _color = make_colour_hsv(200, 255, 200)
+			var _color = make_colour_hsv(170 - ((_time - 1200) / 120) * 20, 255, 200 - ((_time - 1200) / 120) * 170);
 		}
 		else //24
 		{
-			var _color = make_colour_hsv(150, 255, 32)
+			var _color = make_colour_hsv(150, 255, 30)
 		}
 		
 		//midnight (0:00) -> sunrise (6) -> midday (12) -> sunset (6) ->

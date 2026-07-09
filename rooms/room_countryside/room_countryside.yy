@@ -59,6 +59,7 @@
     {"name":"inst_2F47ECEA","path":"rooms/room_countryside/room_countryside.yy",},
     {"name":"inst_2F409376","path":"rooms/room_countryside/room_countryside.yy",},
     {"name":"inst_35817033","path":"rooms/room_countryside/room_countryside.yy",},
+    {"name":"inst_7F28AECF","path":"rooms/room_countryside/room_countryside.yy",},
   ],
   "isDnd":false,
   "layers":[
@@ -79,6 +80,7 @@
     {"$GMRInstanceLayer":"","%Name":"Player","depth":300,"effectEnabled":true,"effectType":null,"gridX":16,"gridY":16,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[
         {"$GMRInstance":"v4","%Name":"inst_3FC939DD","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_3FC939DD","objectId":{"name":"obj_player","path":"objects/obj_player/obj_player.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":4736.0,"y":2272.0,},
         {"$GMRInstance":"v4","%Name":"inst_28035DAE","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_28035DAE","objectId":{"name":"obj_camera","path":"objects/obj_camera/obj_camera.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":4768.0,"y":2144.0,},
+        {"$GMRInstance":"v4","%Name":"inst_7F28AECF","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_7F28AECF","objectId":{"name":"obj_clock","path":"objects/obj_clock/obj_clock.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":96.0,"y":48.0,},
       ],"layers":[],"name":"Player","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
     {"$GMRAssetLayer":"","%Name":"Buildings","assets":[
         {"$GMRSpriteGraphic":"v1","%Name":"graphic_70E6D2AF","animationSpeed":1.0,"colour":4294967295,"frozen":false,"headPosition":0.0,"ignore":false,"inheritedItemId":null,"inheritItemSettings":false,"name":"graphic_70E6D2AF","resourceType":"GMRSpriteGraphic","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"spriteId":{"name":"spr_building21","path":"sprites/spr_building21/spr_building21.yy",},"x":1648.0,"y":2064.0,},

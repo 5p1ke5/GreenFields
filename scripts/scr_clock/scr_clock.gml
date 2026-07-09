@@ -1,8 +1,10 @@
+
+
 /// @function clock_tick()
 /// @desc Increments the in-game clock.
 function clock_tick()
 {
-	//global.clockSteps += 100;
+	global.clockSteps += 100;
 	global.clockMinutes = global.clockSteps/SECOND;
 	global.clockHours = global.clockMinutes / 60;
 	
@@ -12,9 +14,6 @@ function clock_tick()
 		global.clockMinutes = 0;
 		global.clockHours = 0;
 	}
-	
-	clock_skybox_control();
-	clock_fx_control();
 }
 
 /// @function clock_skybox_control()
@@ -60,6 +59,12 @@ function clock_skybox_control()
 	}
 }
 
+/// @function clock_fx_initialize()
+/// @desc Initializes references to the layers that are on the clock.
+function clock_initialize()
+{
+	
+}
 
 /// @function clock_fx_control()
 /// @desc Controls the FX layers in relation to the game clock.

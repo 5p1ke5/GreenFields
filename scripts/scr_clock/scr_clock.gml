@@ -1,7 +1,7 @@
 
 
 /// @function clock_initialize()
-/// @desc Initializes references to the layers that are on the clock.
+/// @desc Initializes references to the layers that are connected to the clock.
 function clock_initialize()
 {
 	bgLayerSkybox = layer_background_get_id("Skybox");
@@ -39,11 +39,11 @@ function clock_skybox_control(_bgLayer)
 	var _time = global.clockMinutes;
 	if (_time < 180) // 3
 	{
-		var _color = make_colour_hsv(150, 255, 32 + (95 * (_time/180)));
+		var _color = make_colour_hsv(150, 255, 32);
 	}
 	else if (_time < 360) // 6
 	{
-		var _color = make_colour_hsv(150 - ((_time - 180) / 180) * 18, 255, 127 + ((_time - 180) / 180) * 128);
+		var _color = make_colour_hsv(150 - ((_time - 180) / 180) * 18, 255, 32 + ((_time - 180) / 180) * 223);
 	}
 	else if (_time < 720) // 12
 	{
@@ -74,7 +74,33 @@ function clock_skybox_control(_bgLayer)
 /// @param _layerFXDayNight a reference to the "DayNight" fx layer (eg layer_get_id("DayNight"))
 function clock_fx_control(_layerFXDayNight)
 {
-	show_debug_message(layer_get_fx(_layerFXDayNight))
+	
+	var _fx = layer_get_fx(_layerFXDayNight);
+	var _time = global.clockMinutes;
+	
+	if (_time < 180) // 3
+	{
+		fx_set_parameter(_fx, "g_TintCol", [0.5, 0.5, 0.9, 1]);
+	}
+	else if (_time < 360) // 6
+	{
+		fx_set_parameter(_fx, "g_TintCol", [0.5 + ((_time - 180)/180) * 0.5, 0.5 + ((_time - 180)/180) * 0.5, 0.9 + ((_time - 180)/180) * 0.1, 1]);
+	}
+	else if (_time < 960) //17
+	{
+		fx_set_parameter(_fx, "g_TintCol", [1, 1, 1, 1]);
+	}
+	else if (_time < 1200) //20
+	{
+		fx_set_parameter(_fx, "g_TintCol", [1 - ((_time - 960)/240) * 0.5, 1 - ((_time - 960)/240) * 0.5, 1 - ((_time - 960)/240) * 0.1, 1]);
+	}
+	else //24
+	{
+		fx_set_parameter(_fx, "g_TintCol", [0.5, 0.5, 0.9, 1]);
+	}
+	
+	
+	//layer_set_fx(_layerFXDayNight, _fx);
 }
 
 

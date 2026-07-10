@@ -15,11 +15,12 @@ function clock_initialize()
 	}
 }
 
-/// @function clock_tick()
+/// @function clock_tick(_increment)
 /// @desc Increments the in-game clock.
-function clock_tick()
+/// @param _increment The value to be added to the clock's step counter every frame.
+function clock_tick(_increment = 1)
 {
-	global.clockSteps += 100;
+	global.clockSteps += _increment;
 	global.clockMinutes = global.clockSteps/SECOND;
 	global.clockHours = global.clockMinutes / 60;
 	

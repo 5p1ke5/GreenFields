@@ -147,6 +147,7 @@
 #macro c_violet make_colour_rgb(200,0, 140)
 #macro c_pink make_colour_rgb(255, 50, 255)
 #macro c_brown make_colour_rgb(190, 85, 0)
+#macro c_cream make_color_rgb(255, 255, 200)
 
 #endregion
 

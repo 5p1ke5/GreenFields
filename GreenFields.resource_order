@@ -147,6 +147,7 @@
     {"name":"room_arcademode","order":1,"path":"rooms/room_arcademode/room_arcademode.yy",},
     {"name":"room_deathmatchClient","order":1,"path":"rooms/room_deathmatchClient/room_deathmatchClient.yy",},
     {"name":"room_deathmatchServer","order":2,"path":"rooms/room_deathmatchServer/room_deathmatchServer.yy",},
+    {"name":"room_downtownOffice","order":1,"path":"rooms/room_downtownOffice/room_downtownOffice.yy",},
     {"name":"room_menuCharacterCreation","order":6,"path":"rooms/room_menuCharacterCreation/room_menuCharacterCreation.yy",},
     {"name":"room_menuClient","order":1,"path":"rooms/room_menuClient/room_menuClient.yy",},
     {"name":"room_menuMultiplayer","order":3,"path":"rooms/room_menuMultiplayer/room_menuMultiplayer.yy",},

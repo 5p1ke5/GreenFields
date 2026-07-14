@@ -1,6 +1,6 @@
 {
   "$GMSound":"v2",
-  "%Name":"sfx_death",
+  "%Name":"sfx_moneyGet",
   "audioGroupId":{
     "name":"audiogroup_default",
     "path":"audiogroups/audiogroup_default",
@@ -10,9 +10,9 @@
   "compression":0,
   "compressionQuality":4,
   "conversionMode":0,
-  "duration":0.60380954,
+  "duration":0.3499773,
   "exportDir":"",
-  "name":"sfx_death",
+  "name":"sfx_moneyGet",
   "parent":{
     "name":"sfx",
     "path":"folders/Audio/sfx.yy",
@@ -21,6 +21,6 @@
   "resourceType":"GMSound",
   "resourceVersion":"2.0",
   "sampleRate":44100,
-  "soundFile":"sfx_death.wav",
-  "volume":0.5,
+  "soundFile":"sfx_moneyGet.wav",
+  "volume":0.2,
 }

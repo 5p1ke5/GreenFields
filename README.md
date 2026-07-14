@@ -8,6 +8,5 @@ If you want to play the game you should open it in game maker.
 
 TODO:
 (higher items = higher priority)
-* time system w/ day-night cycle
 * make a shop where you can buy guns
 * make opening cutscene + short opening sequence where you land in Downtown and fight through the police

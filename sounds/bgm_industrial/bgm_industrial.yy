@@ -10,7 +10,7 @@
   "compression":0,
   "compressionQuality":4,
   "conversionMode":0,
-  "duration":287.60922,
+  "duration":194.97902,
   "exportDir":"",
   "name":"bgm_industrial",
   "parent":{
@@ -22,5 +22,5 @@
   "resourceVersion":"2.0",
   "sampleRate":44100,
   "soundFile":"bgm_industrial.mp3",
-  "volume":0.3,
+  "volume":1.0,
 }

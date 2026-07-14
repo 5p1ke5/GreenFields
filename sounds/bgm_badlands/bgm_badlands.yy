@@ -10,7 +10,7 @@
   "compression":0,
   "compressionQuality":4,
   "conversionMode":0,
-  "duration":157.88515,
+  "duration":107.050865,
   "exportDir":"",
   "name":"bgm_badlands",
   "parent":{
@@ -22,5 +22,5 @@
   "resourceVersion":"2.0",
   "sampleRate":44100,
   "soundFile":"bgm_badlands.mp3",
-  "volume":0.7,
+  "volume":0.2,
 }

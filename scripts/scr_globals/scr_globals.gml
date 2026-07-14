@@ -4,7 +4,7 @@ function globals_initialize()
 {
 	global.money = 0;
 	
-	global.clockSteps = 1320 * SECOND;
+	global.clockSteps = 360 * SECOND;
 	global.clockMinutes = global.clockSteps/SECOND;
 	global.clockHours = global.clockMinutes / 60;
 	

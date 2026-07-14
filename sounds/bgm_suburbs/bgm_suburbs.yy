@@ -10,7 +10,7 @@
   "compression":0,
   "compressionQuality":4,
   "conversionMode":0,
-  "duration":227.05948,
+  "duration":142.0027,
   "exportDir":"",
   "name":"bgm_suburbs",
   "parent":{

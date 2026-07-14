@@ -10,7 +10,7 @@
   "compression":0,
   "compressionQuality":4,
   "conversionMode":0,
-  "duration":232.32736,
+  "duration":116.41333,
   "exportDir":"",
   "name":"bgm_downtown",
   "parent":{
@@ -22,5 +22,5 @@
   "resourceVersion":"2.0",
   "sampleRate":44100,
   "soundFile":"bgm_downtown.mp3",
-  "volume":0.2,
+  "volume":0.09,
 }

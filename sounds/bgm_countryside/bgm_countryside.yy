@@ -10,7 +10,7 @@
   "compression":0,
   "compressionQuality":4,
   "conversionMode":0,
-  "duration":118.294174,
+  "duration":137.03943,
   "exportDir":"",
   "name":"bgm_countryside",
   "parent":{
@@ -22,5 +22,5 @@
   "resourceVersion":"2.0",
   "sampleRate":44100,
   "soundFile":"bgm_countryside.mp3",
-  "volume":0.4,
+  "volume":0.2,
 }

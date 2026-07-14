@@ -1,4 +1,4 @@
-if (instance_number(obj_npc) == 0)
+if (instance_number(obj_npcRandom) == 0)
 {
 	var _x;
 	do 
@@ -6,7 +6,7 @@ if (instance_number(obj_npc) == 0)
 	    _x = irandom(room_width);
 	} until !(collision_point(_x, y, BLOCK, false, true));
 	
-	var _npc = instance_create_depth(_x, y, depth, obj_npc);
+	var _npc = instance_create_depth(_x, y, depth, obj_npcRandom);
 	var _combatLevel = 50// - (count * 5)
 	with (_npc)
 	{

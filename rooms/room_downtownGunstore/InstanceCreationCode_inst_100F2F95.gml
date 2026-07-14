@@ -1,0 +1,1 @@
+shop_item_initialize(new ITEM_MACHINEGUN, 500);

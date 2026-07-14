@@ -17,6 +17,7 @@
     {"name":"inst_71E429B6","path":"rooms/room_downtownGunstore/room_downtownGunstore.yy",},
     {"name":"inst_3A4C1F45","path":"rooms/room_downtownGunstore/room_downtownGunstore.yy",},
     {"name":"inst_346C08CF","path":"rooms/room_downtownGunstore/room_downtownGunstore.yy",},
+    {"name":"inst_100F2F95","path":"rooms/room_downtownGunstore/room_downtownGunstore.yy",},
   ],
   "isDnd":false,
   "layers":[
@@ -33,6 +34,7 @@
     {"$GMRInstanceLayer":"","%Name":"Shop","depth":300,"effectEnabled":true,"effectType":null,"gridX":16,"gridY":16,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[
         {"$GMRInstance":"v4","%Name":"inst_3A4C1F45","colour":4294967295,"frozen":false,"hasCreationCode":true,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_3A4C1F45","objectId":{"name":"obj_itemPurchase","path":"objects/obj_itemPurchase/obj_itemPurchase.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":1008.0,"y":2240.0,},
         {"$GMRInstance":"v4","%Name":"inst_346C08CF","colour":4294967295,"frozen":false,"hasCreationCode":true,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_346C08CF","objectId":{"name":"obj_itemPurchase","path":"objects/obj_itemPurchase/obj_itemPurchase.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":1088.0,"y":2240.0,},
+        {"$GMRInstance":"v4","%Name":"inst_100F2F95","colour":4294967295,"frozen":false,"hasCreationCode":true,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_100F2F95","objectId":{"name":"obj_itemPurchase","path":"objects/obj_itemPurchase/obj_itemPurchase.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":1168.0,"y":2240.0,},
       ],"layers":[],"name":"Shop","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
     {"$GMRInstanceLayer":"","%Name":"Blocks","depth":400,"effectEnabled":true,"effectType":null,"gridX":16,"gridY":16,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[
         {"$GMRInstance":"v4","%Name":"inst_427BDCB7_1","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_427BDCB7_1","objectId":{"name":"obj_block","path":"objects/obj_block/obj_block.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":16.0,"scaleY":1.0,"x":720.0,"y":2272.0,},

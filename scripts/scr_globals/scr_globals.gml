@@ -2,7 +2,7 @@
 /// @description Initializes the game's global variabls.
 function globals_initialize()
 {
-	global.money = 0;
+	global.money = 500;
 	
 	global.clockSteps = 360 * SECOND;
 	global.clockMinutes = global.clockSteps/SECOND;
@@ -38,7 +38,7 @@ function globals_initialize()
 	var _shoeColor = choose(c_brunette, c_green, c_red, c_black);
 	
 	global.playerDoll = doll_struct(_faceIndex, _hairIndex, _shirtIndex, _pantsIndex, _shoeIndex, _skinColor, _hairColor, _shirtColor, _pantsColor, _shoeColor);
-	global.playerInventory = [new ITEM_PISTOL, new ITEM_SHOTGUN, new ITEM_ASSAULTRIFLE, new ITEM_MACHINEGUN, new ITEM_BAZOOKA, new ITEM_RAYGUN, new ITEM_GRENADEGUN ];
+	global.playerInventory = [new ITEM_PISTOL, new ITEM_SHOTGUN, new ITEM_ASSAULTRIFLE];//, new ITEM_MACHINEGUN, new ITEM_BAZOOKA, new ITEM_RAYGUN, new ITEM_GRENADEGUN ];
 	//global.playerEquip = [global.playerInventory[0], global.playerInventory[1], global.playerInventory[2]];
 	global.playerEquip = [global.playerInventory[0], new ITEM_NONE, new ITEM_NONE];
 	show_debug_message("Globals initialized.");

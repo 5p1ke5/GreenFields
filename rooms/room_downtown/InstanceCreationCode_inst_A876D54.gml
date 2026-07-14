@@ -1,0 +1,1 @@
+transition_initialize(room_downtownGunstore, 1616, 2240);

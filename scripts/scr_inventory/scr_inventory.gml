@@ -209,15 +209,24 @@ function itemPickup_initialize(_item)
 ///@param _Item Item struct to add.
 function inventory_add(_inventory, _Item)
 {
-	//Tries to check if the player already has a copy of the item in their inventory.
-	var _index = array_get_index(_inventory, _Item);
+	var _index = -1;
+	
+	for (var _i = 0; _i < array_length(_inventory); _i++) 
+	{
+	    if (_inventory[_i].itemName == _Item.itemName)
+		{
+			_index = _i;
+			break;
+		}
+	}
 	
 	//If an item with the same name was not found, just updates inventory and adds it to the list.
 	if (_index == -1)
 	{
 		array_push(_inventory, _Item);	
 	}
-	//Otherwise, gets the found Item and adds 1 to amount.
+	
+	//Otherwise, gets the found Item and adds 1 to amount...When I put ammo in
 	/*
 	else
 	{

@@ -196,6 +196,7 @@
     {"id":{"name":"obj_oneWayIndustrial","path":"objects/obj_oneWayIndustrial/obj_oneWayIndustrial.yy",},},
     {"id":{"name":"obj_oneWayPlains","path":"objects/obj_oneWayPlains/obj_oneWayPlains.yy",},},
     {"id":{"name":"obj_oneWaySuburbs","path":"objects/obj_oneWaySuburbs/obj_oneWaySuburbs.yy",},},
+    {"id":{"name":"obj_oneWayTest","path":"objects/obj_oneWayTest/obj_oneWayTest.yy",},},
     {"id":{"name":"obj_oneWayTreetop","path":"objects/obj_oneWayTreetop/obj_oneWayTreetop.yy",},},
     {"id":{"name":"obj_player","path":"objects/obj_player/obj_player.yy",},},
     {"id":{"name":"obj_playerNet","path":"objects/obj_playerNet/obj_playerNet.yy",},},

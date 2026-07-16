@@ -14,6 +14,7 @@ function phys_initialize(_grav = 0, _frict = 0, _hsp = 0, _vsp = 0, _isSolid = t
 	hsp = _hsp;
 	hspExt = 0;
 	vsp = _vsp;
+	vspExt = 0;
 	isSolid = _isSolid;
 	
 	//The object is considered grounded if they are directly above a block.
@@ -50,29 +51,44 @@ function phys_force_add(_force, _accel, _max)
 /// @param _vsp object's vertical speed.
 function phys_floor_collision(_vsp) 
 {
+	grounded = false;
+	
 	//Checks every pixel in the player's path for collision.
 	//for (var _i = 0; (abs(_i) < abs(_vsp)) || (place_meeting(x, y + _i, BLOCK)) || collision_point(x, bbox_bottom + 1 + _i, ONEWAY, true, true)/* || (grounded && _vsp > 0)*/; _i += sign(_vsp))
 	for (var _i = 0; (abs(_i) <= abs(_vsp)); _i += sign(_vsp))
 	{
 	    //If there is a collision, it will move the player as close to the object as possible and then stop. 
-		var _collision = instance_place(x, y + _i + sign(_vsp), BLOCK)
+		
+		// Block collision. 
+		var _collision = instance_place(x, y + _i + sign(_vsp), BLOCK);
 		if (_collision)
 		{
 			y += _i;
+			
+			if (_vsp >= 0)
+			{
+				grounded = true;	
+			}
 			return 0;
 		}
+
 		
-		//Having issues with collision mask scaling
-		//what if I just have oneWay blocks spawn a oneway platform for themselves
-		
-		var _collision = instance_place(x, y + 1 + _i, ONEWAY);
-		if (_collision)
+		// Oneway platform collision.
+		if (_vsp >= 0)
 		{
-		    if (_vsp >= 0) && ((bbox_bottom <= _collision.bbox_top))
+			var _collisions = instance_place_array(x, y + _i + 1, ONEWAY, true);
+			for (var _ii = 0; _ii < array_length(_collisions); _ii++) 
 			{
-				y += _i;
-				return 0;
+			    if (bbox_bottom - 1) <= (_collisions[_ii].bbox_top)
+				{
+					y += _i;
+					grounded = true;
+					return 0;	
+				}
 			}
+			
+			
+			//y += _i - sign((vsp + vspExt));
 		}
 	}
 
@@ -85,7 +101,6 @@ function phys_floor_collision(_vsp)
 /// @param hsp object's horizontal speed.
 function phys_wall_collision(_hsp) 
 {
-
 	//Checks every pixel in the object's path for collision.
 	for (var _i = 0; (abs(_i) < abs(_hsp)) || (place_meeting(x + _i, y, BLOCK)); _i += sign(_hsp))
 	{
@@ -109,7 +124,6 @@ function phys_wall_collision(_hsp)
 /// @param grounded Whether the object is on the ground or not.
 function phys_friction(_hsp, _frict, _grounded) 
 {
-
 	//Friction will reduce horizontal speed. This is reduced while in the air.
 	  _hsp -= (_frict * sign(_hsp)) * (1 / (power(10, !_grounded)));
 	  
@@ -137,7 +151,6 @@ function phys_friction(_hsp, _frict, _grounded)
 /// @param _terminalVelocity The maximum gravity that can be applied.
 function phys_gravity(_vsp, _grav, _terminalVelocity) 
 {
-
 	_vsp = min(_vsp + _grav, _terminalVelocity) 
 
 	return _vsp;
@@ -169,5 +182,5 @@ function phys_step()
 	x = round(x);
 	
 	//Checks if the object is on the ground.
-	grounded = collision_rectangle(bbox_left, bbox_bottom, bbox_right, bbox_bottom + 1, GROUND, false, true);
+	//grounded = collision_rectangle(bbox_left, bbox_bottom, bbox_right, bbox_bottom + 1, GROUND, false, true);
 }

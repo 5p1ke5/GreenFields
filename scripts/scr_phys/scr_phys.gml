@@ -27,8 +27,6 @@ function phys_initialize(_grav = 0, _frict = 0, _hsp = 0, _vsp = 0, _isSolid = t
 /// @param _max the maximum value that _force can be set to.
 function phys_force_add(_force, _accel, _max)
 {
-	
-	
 	//if the input force is alraedy greater than the max just returns the _force
 	if (abs(_force) > abs(_max))
 	{

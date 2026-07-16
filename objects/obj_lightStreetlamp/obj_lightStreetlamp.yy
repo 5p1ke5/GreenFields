@@ -12,7 +12,10 @@
     "name":"lighting",
     "path":"folders/Objects/lighting.yy",
   },
-  "parentObjectId":null,
+  "parentObjectId":{
+    "name":"obj_oneWay",
+    "path":"objects/obj_oneWay/obj_oneWay.yy",
+  },
   "persistent":false,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,

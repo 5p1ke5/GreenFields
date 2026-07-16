@@ -1,9 +1,7 @@
 {
   "$GMObject":"",
   "%Name":"obj_oneWayIndustrial",
-  "eventList":[
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-  ],
+  "eventList":[],
   "managed":true,
   "name":"obj_oneWayIndustrial",
   "overriddenProperties":[],
@@ -11,7 +9,10 @@
     "name":"blocks",
     "path":"folders/Objects/blocks.yy",
   },
-  "parentObjectId":null,
+  "parentObjectId":{
+    "name":"obj_oneWay",
+    "path":"objects/obj_oneWay/obj_oneWay.yy",
+  },
   "persistent":false,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,

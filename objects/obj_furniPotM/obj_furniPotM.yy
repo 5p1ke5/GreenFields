@@ -1,9 +1,9 @@
 {
   "$GMObject":"",
-  "%Name":"obj_furniRefrigerator",
+  "%Name":"obj_furniPotM",
   "eventList":[],
   "managed":true,
-  "name":"obj_furniRefrigerator",
+  "name":"obj_furniPotM",
   "overriddenProperties":[],
   "parent":{
     "name":"furniture",
@@ -31,8 +31,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_furniFridge",
-    "path":"sprites/spr_furniFridge/spr_furniFridge.yy",
+    "name":"spr_furniPotM",
+    "path":"sprites/spr_furniPotM/spr_furniPotM.yy",
   },
   "spriteMaskId":null,
   "visible":true,

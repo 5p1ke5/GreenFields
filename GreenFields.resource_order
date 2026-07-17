@@ -220,6 +220,7 @@
     {"name":"bgm_downtown","order":2,"path":"sounds/bgm_downtown/bgm_downtown.yy",},
     {"name":"bgm_industrial","order":5,"path":"sounds/bgm_industrial/bgm_industrial.yy",},
     {"name":"bgm_menu","order":1,"path":"sounds/bgm_menu/bgm_menu.yy",},
+    {"name":"bgm_night","order":7,"path":"sounds/bgm_night/bgm_night.yy",},
     {"name":"bgm_suburbs","order":3,"path":"sounds/bgm_suburbs/bgm_suburbs.yy",},
     {"name":"sfx_death","order":3,"path":"sounds/sfx_death/sfx_death.yy",},
     {"name":"sfx_explosion","order":4,"path":"sounds/sfx_explosion/sfx_explosion.yy",},

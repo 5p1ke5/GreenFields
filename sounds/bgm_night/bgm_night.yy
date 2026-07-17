@@ -1,6 +1,6 @@
 {
   "$GMSound":"v2",
-  "%Name":"bgm_menu",
+  "%Name":"bgm_night",
   "audioGroupId":{
     "name":"audiogroup_default",
     "path":"audiogroups/audiogroup_default",
@@ -10,9 +10,9 @@
   "compression":0,
   "compressionQuality":4,
   "conversionMode":0,
-  "duration":0.0,
+  "duration":44.01739,
   "exportDir":"",
-  "name":"bgm_menu",
+  "name":"bgm_night",
   "parent":{
     "name":"bgm",
     "path":"folders/Audio/bgm.yy",
@@ -21,6 +21,6 @@
   "resourceType":"GMSound",
   "resourceVersion":"2.0",
   "sampleRate":44100,
-  "soundFile":"bgm_menu.mp3",
+  "soundFile":"bgm_night.mp3",
   "volume":0.2,
 }

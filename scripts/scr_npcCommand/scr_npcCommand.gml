@@ -81,7 +81,6 @@ function NPCCommandMove(_target, _duration = noone): NPCCommand() constructor
 		//If target is an instance and no longer exists attempts to exit state.
 		if !is_struct(target) && !(instance_exists(target))
 		{
-			show_debug_message("Target does not exist.");
 			with (_user)
 			{
 				npc_exit_command();

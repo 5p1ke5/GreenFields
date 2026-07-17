@@ -283,6 +283,7 @@
     {"id":{"name":"bgm_downtown","path":"sounds/bgm_downtown/bgm_downtown.yy",},},
     {"id":{"name":"bgm_industrial","path":"sounds/bgm_industrial/bgm_industrial.yy",},},
     {"id":{"name":"bgm_menu","path":"sounds/bgm_menu/bgm_menu.yy",},},
+    {"id":{"name":"bgm_night","path":"sounds/bgm_night/bgm_night.yy",},},
     {"id":{"name":"bgm_suburbs","path":"sounds/bgm_suburbs/bgm_suburbs.yy",},},
     {"id":{"name":"sfx_dash","path":"sounds/sfx_dash/sfx_dash.yy",},},
     {"id":{"name":"sfx_death","path":"sounds/sfx_death/sfx_death.yy",},},

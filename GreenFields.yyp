@@ -192,6 +192,7 @@
     {"id":{"name":"obj_money100","path":"objects/obj_money100/obj_money100.yy",},},
     {"id":{"name":"obj_mpLoss","path":"objects/obj_mpLoss/obj_mpLoss.yy",},},
     {"id":{"name":"obj_mpVictory","path":"objects/obj_mpVictory/obj_mpVictory.yy",},},
+    {"id":{"name":"obj_npc","path":"objects/obj_npc/obj_npc.yy",},},
     {"id":{"name":"obj_npcCriminal","path":"objects/obj_npcCriminal/obj_npcCriminal.yy",},},
     {"id":{"name":"obj_npcPolice","path":"objects/obj_npcPolice/obj_npcPolice.yy",},},
     {"id":{"name":"obj_npcRandom","path":"objects/obj_npcRandom/obj_npcRandom.yy",},},

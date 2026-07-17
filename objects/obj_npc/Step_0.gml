@@ -1,4 +1,4 @@
-/// @description does player things, inherits physics
+/// @description uses npc_step to decide input based on NPC things, then uses that input for movement.
 
 npc_step();
 

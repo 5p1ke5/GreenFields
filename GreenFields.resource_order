@@ -145,6 +145,7 @@
     {"name":"obj_money100","order":2,"path":"objects/obj_money100/obj_money100.yy",},
     {"name":"obj_mpLoss","order":2,"path":"objects/obj_mpLoss/obj_mpLoss.yy",},
     {"name":"obj_mpVictory","order":1,"path":"objects/obj_mpVictory/obj_mpVictory.yy",},
+    {"name":"obj_npc","order":5,"path":"objects/obj_npc/obj_npc.yy",},
     {"name":"obj_npcCriminal","order":4,"path":"objects/obj_npcCriminal/obj_npcCriminal.yy",},
     {"name":"obj_npcPolice","order":3,"path":"objects/obj_npcPolice/obj_npcPolice.yy",},
     {"name":"obj_npcRandom","order":2,"path":"objects/obj_npcRandom/obj_npcRandom.yy",},

@@ -14,7 +14,7 @@
 #macro ITEM_RAYGUN ItemEquipFirearmAuto("Ray Gun", spr_iconRaygun, 100, "A gun that shoots bursts of energy.", spr_equipRaygun, game_get_speed(gamespeed_fps)/4, obj_bulletEnergy, 20, false)
 #macro ITEM_AUTOPISTOL ItemEquipFirearmAuto("Auto Pistol", spr_iconAutopistol, 100, "A fully automatic handgun.", spr_equipAutopistol, game_get_speed(gamespeed_fps)/4, obj_bullet, 10, false)
 #macro ITEM_SHOTGUN ItemEquipFirearm("Shotgun", spr_iconShotgun, 100, "A powerful shotgun.", spr_equipShotgun, game_get_speed(gamespeed_fps)/2, obj_bulletShotgun, 2, true)
-#macro ITEM_ASSAULTRIFLE ItemEquipFirearmAuto("Assault RIfle", spr_iconAssaultRifle, 100, "A rapid-fire rifle.", spr_equipAssaultRifle, game_get_speed(gamespeed_fps)/10, obj_bullet, 4, true)
+#macro ITEM_ASSAULTRIFLE ItemEquipFirearmAuto("Assault Rifle", spr_iconAssaultRifle, 100, "A rapid-fire rifle.", spr_equipAssaultRifle, game_get_speed(gamespeed_fps)/10, obj_bullet, 4, true)
 #macro ITEM_MACHINEGUN ItemEquipFirearmAuto("Machine Gun", spr_iconMachinegun, 100, "A powerful machine gun.", spr_equipMachinegun, game_get_speed(gamespeed_fps)/5, obj_bullet, 8, true)
 #macro ITEM_BAZOOKA ItemEquipFirearm("Bazooka", spr_iconBazooka, 100, "A bazooka that fires rockets.", spr_equipBazooka, game_get_speed(gamespeed_fps), obj_projectileMissile, noone, true)
 #macro ITEM_GRENADEGUN ItemEquipFirearm("Grenade Gun", spr_iconGrenadegun, 100, "A handgun the shoots explosive grenades.", spr_equipGrenadeGun, game_get_speed(gamespeed_fps)/2, obj_projectileGrenade, noone, true)
@@ -22,8 +22,9 @@
 
 #region rooms
 #macro ROOM_TITLE room_menuTitle
+#macro ROOM_TEST room_downtownTutorial
 #macro ROOM_SINGLEPLAYER room_downtown
-#macro ROOM_TRAINING room_tutorial
+#macro ROOM_TRAINING room_trainingmode
 #macro ROOM_ARCADE room_arcademode
 #macro ROOM_MULTIPLAYER room_menuMultiplayer
 #macro ROOM_REMATCH room_menuRematch

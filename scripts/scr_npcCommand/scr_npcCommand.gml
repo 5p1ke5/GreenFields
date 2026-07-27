@@ -88,7 +88,7 @@ function NPCCommandMove(_target, _duration = noone): NPCCommand() constructor
 			return;
 		}
 		
-		//Sts player input to move towards the target.
+		//Sets input to move towards the target.
 		var _target = target;
 		var _atTarget = noone;
 		with (_user)

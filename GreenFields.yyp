@@ -249,6 +249,7 @@
     {"id":{"name":"room_suburbsApartmentsF","path":"rooms/room_suburbsApartmentsF/room_suburbsApartmentsF.yy",},},
     {"id":{"name":"room_suburbsHouseA","path":"rooms/room_suburbsHouseA/room_suburbsHouseA.yy",},},
     {"id":{"name":"room_suburbsHouseB","path":"rooms/room_suburbsHouseB/room_suburbsHouseB.yy",},},
+    {"id":{"name":"room_suburbsHouseC","path":"rooms/room_suburbsHouseC/room_suburbsHouseC.yy",},},
     {"id":{"name":"room_test","path":"rooms/room_test/room_test.yy",},},
     {"id":{"name":"room_trainingmode","path":"rooms/room_trainingmode/room_trainingmode.yy",},},
     {"id":{"name":"scr_array","path":"scripts/scr_array/scr_array.yy",},},
@@ -486,6 +487,7 @@
     {"roomId":{"name":"room_downtownOffice","path":"rooms/room_downtownOffice/room_downtownOffice.yy",},},
     {"roomId":{"name":"room_downtownGunstore","path":"rooms/room_downtownGunstore/room_downtownGunstore.yy",},},
     {"roomId":{"name":"room_downtownTutorial","path":"rooms/room_downtownTutorial/room_downtownTutorial.yy",},},
+    {"roomId":{"name":"room_suburbsHouseC","path":"rooms/room_suburbsHouseC/room_suburbsHouseC.yy",},},
   ],
   "templateType":"game",
   "TextureGroups":[

@@ -163,7 +163,7 @@ function npc_input_moveto(_target, _range = RANGE_CLOSE/2)
 	aButton = false;
 	aButtonPressed = false;
 	
-	//Later replace this with code that checks if wall is in front of the npc or a platform to jump on
+	//Jumps up if target is close and above calling instace
 	if (point_distance(x, y, _target.x, _target.y) < _range * 2)
 	{
 		if (_target.y < y)
@@ -171,6 +171,13 @@ function npc_input_moveto(_target, _range = RANGE_CLOSE/2)
 			aButton = true;
 			aButtonPressed = (vsp == 0);
 		}
+	}
+	
+	//Tries to jump if an obstacle is in the way
+	if (instance_place(x + ((rightButton - leftButton) * sprite_width), y, BLOCK))
+	{
+		aButton = true;
+		aButtonPressed = (vsp == 0);
 	}
 	
 	//Since the player is not at position returns false.

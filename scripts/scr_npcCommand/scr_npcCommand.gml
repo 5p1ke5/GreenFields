@@ -211,3 +211,26 @@ function NPCCommandFight(_target): NPCCommand() constructor
 		}
 	}
 }
+
+
+
+/// @function NPCCommandSetDialogue(_dialogueArray)
+/// @description Command to set the NPCs dialogue to the given array. After doing so attempts to eit comand.
+/// @param _dialogueArray Array containing the dialogue strings
+function NPCCommandSetDialogue(_dialogue): NPCCommand() constructor
+{
+	dialogue = _dialogue;
+	
+	static Perform = function(_user)
+	{
+		var _dialogue = dialogue;
+		
+		with (_user)
+		{
+			dialogue = _dialogue;
+			npc_exit_command();
+		}
+	}
+	
+}
+

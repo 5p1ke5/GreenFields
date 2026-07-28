@@ -259,7 +259,7 @@ function npc_speak(_text, _name = "")
 	//Gets height of the balloon text when using fnt_speech, then resets font.
 	var _balloonHeight = string_height_ext(_text, string_height(_text), TEXT_BALLOON_MAXW);
 	
-	var _balloon = instance_create_depth(x, y - 32 - (_balloonHeight/2), depth, obj_speechBalloon);
+	var _balloon = instance_create_depth(x, y - (sprite_height) - (_balloonHeight), depth, obj_speechBalloon);
 	with (_balloon)
 	{
 		speechBalloon_initialize(_text, string_length(_text) * TEXT_BALLOON_SPEED, other, _name);

@@ -7,7 +7,7 @@ selected = noone;
 var _inventory = global.playerInventory;
 for (var _i = 0; _i < array_length(_inventory); _i++) 
 {
-	var _button = instance_create_layer(room_width/12 + ((_i div 5) * 96), (room_height/4) + ((_i % 5) * 64), layer, obj_buttonItem);
+	var _button = instance_create_layer(room_width/12 + ((_i div 5) * 96), (room_height/3) + ((_i % 5) * 64), layer, obj_buttonItem);
     var _element = _inventory[_i];	
 	var _menuPause = id;
 	
@@ -33,7 +33,7 @@ for (; _i < INVENTORY_MAX; _i++)
 var _equip = global.playerEquip;
 for (var _i = 0; _i < array_length(_equip); _i++) 
 {
-	var _button = instance_create_layer(room_width * 3/4, (room_height/4) + (_i * 64), layer, obj_buttonEquip);
+	var _button = instance_create_layer(room_width * 3/4, (room_height/3) + (_i * 64), layer, obj_buttonEquip);
 	var _element = _equip[_i];	
 	var _menuPause = id;
 	

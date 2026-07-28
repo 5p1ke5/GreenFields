@@ -5,7 +5,7 @@ function NPCCommand() constructor
 	//Performs whatever action the state is associated with. Should usually be overwritten.
 	static Perform = function(_user)
 	{
-		print("Called!");
+		show_debug_message("Called!");
 	}
 	
 	
@@ -144,7 +144,7 @@ function NPCCommandTalkTo(_target, _dialogue): NPCCommand() constructor
 	
 	static Perform = function(_user)
 	{
-		if !(instance_exists(target))
+		if !is_struct(target) && !(instance_exists(target))
 		{
 			with (_user)
 			{
@@ -231,6 +231,5 @@ function NPCCommandSetDialogue(_dialogue): NPCCommand() constructor
 			npc_exit_command();
 		}
 	}
-	
 }
 

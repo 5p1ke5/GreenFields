@@ -172,6 +172,7 @@
     {"name":"room_deathmatchClient","order":1,"path":"rooms/room_deathmatchClient/room_deathmatchClient.yy",},
     {"name":"room_deathmatchServer","order":2,"path":"rooms/room_deathmatchServer/room_deathmatchServer.yy",},
     {"name":"room_downtownGunstore","order":2,"path":"rooms/room_downtownGunstore/room_downtownGunstore.yy",},
+    {"name":"room_downtownMurderBuilding","order":4,"path":"rooms/room_downtownMurderBuilding/room_downtownMurderBuilding.yy",},
     {"name":"room_downtownOffice","order":1,"path":"rooms/room_downtownOffice/room_downtownOffice.yy",},
     {"name":"room_downtownTutorial","order":3,"path":"rooms/room_downtownTutorial/room_downtownTutorial.yy",},
     {"name":"room_menuCharacterCreation","order":6,"path":"rooms/room_menuCharacterCreation/room_menuCharacterCreation.yy",},

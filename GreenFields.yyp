@@ -228,6 +228,7 @@
     {"id":{"name":"room_deathmatchServer","path":"rooms/room_deathmatchServer/room_deathmatchServer.yy",},},
     {"id":{"name":"room_downtown","path":"rooms/room_downtown/room_downtown.yy",},},
     {"id":{"name":"room_downtownGunstore","path":"rooms/room_downtownGunstore/room_downtownGunstore.yy",},},
+    {"id":{"name":"room_downtownMurderBuilding","path":"rooms/room_downtownMurderBuilding/room_downtownMurderBuilding.yy",},},
     {"id":{"name":"room_downtownOffice","path":"rooms/room_downtownOffice/room_downtownOffice.yy",},},
     {"id":{"name":"room_downtownTutorial","path":"rooms/room_downtownTutorial/room_downtownTutorial.yy",},},
     {"id":{"name":"room_industrial","path":"rooms/room_industrial/room_industrial.yy",},},
@@ -488,6 +489,7 @@
     {"roomId":{"name":"room_downtownGunstore","path":"rooms/room_downtownGunstore/room_downtownGunstore.yy",},},
     {"roomId":{"name":"room_downtownTutorial","path":"rooms/room_downtownTutorial/room_downtownTutorial.yy",},},
     {"roomId":{"name":"room_suburbsHouseC","path":"rooms/room_suburbsHouseC/room_suburbsHouseC.yy",},},
+    {"roomId":{"name":"room_downtownMurderBuilding","path":"rooms/room_downtownMurderBuilding/room_downtownMurderBuilding.yy",},},
   ],
   "templateType":"game",
   "TextureGroups":[

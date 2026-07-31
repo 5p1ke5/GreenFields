@@ -178,6 +178,7 @@
     {"name":"inst_4592A98D","path":"rooms/room_downtown/room_downtown.yy",},
     {"name":"inst_416F57B8","path":"rooms/room_downtown/room_downtown.yy",},
     {"name":"inst_359831C8","path":"rooms/room_downtown/room_downtown.yy",},
+    {"name":"inst_BC578C0","path":"rooms/room_downtown/room_downtown.yy",},
   ],
   "isDnd":false,
   "layers":[
@@ -367,6 +368,7 @@
         {"$GMRInstance":"v4","%Name":"inst_61F1EBFC","colour":4294967295,"frozen":false,"hasCreationCode":true,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_61F1EBFC","objectId":{"name":"obj_doorMarker","path":"objects/obj_doorMarker/obj_doorMarker.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.8,"scaleY":1.0,"x":5792.0,"y":2336.0,},
         {"$GMRInstance":"v4","%Name":"inst_A876D54","colour":4294967295,"frozen":false,"hasCreationCode":true,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_A876D54","objectId":{"name":"obj_doorMarker","path":"objects/obj_doorMarker/obj_doorMarker.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.8,"scaleY":1.0,"x":5952.0,"y":2336.0,},
         {"$GMRInstance":"v4","%Name":"inst_23FC9EB8","colour":4294967295,"frozen":false,"hasCreationCode":true,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_23FC9EB8","objectId":{"name":"obj_doorMarker","path":"objects/obj_doorMarker/obj_doorMarker.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.6,"scaleY":1.0,"x":4576.0,"y":2336.0,},
+        {"$GMRInstance":"v4","%Name":"inst_BC578C0","colour":4294967295,"frozen":false,"hasCreationCode":true,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_BC578C0","objectId":{"name":"obj_doorMarker","path":"objects/obj_doorMarker/obj_doorMarker.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.6,"scaleY":1.0,"x":3888.0,"y":2272.0,},
       ],"layers":[],"name":"Door","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
     {"$GMRAssetLayer":"","%Name":"Buildings","assets":[
         {"$GMRSpriteGraphic":"v1","%Name":"graphic_1AB30793","animationSpeed":1.0,"colour":4294967295,"frozen":false,"headPosition":0.0,"ignore":false,"inheritedItemId":null,"inheritItemSettings":false,"name":"graphic_1AB30793","resourceType":"GMRSpriteGraphic","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"spriteId":{"name":"spr_building3","path":"sprites/spr_building3/spr_building3.yy",},"x":1696.0,"y":1728.0,},

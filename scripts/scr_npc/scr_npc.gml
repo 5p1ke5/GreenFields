@@ -1,7 +1,7 @@
 /// @function npc_initialize(_name = "", _dialogue = "")
 /// @description Initializes npc variables.
 /// @param _name Name of the character.
-/// @param _dialogue Text string to be put in the speech balloon.
+/// @param _dialogue Text string or array of text strings to be put in the speech balloon(s).
 /// @param _commands An array of commands for the NPC to follow.
 /// @param _combatLevel How strong the NPC is. Modifies aim and how often they fire. Higher = less skilled, lower = stronger.
 function npc_initialize(_name = "", _dialogue = "", _commands = [], _combatLevel = 50, _faction = FACTIONS.NONE)
@@ -10,6 +10,7 @@ function npc_initialize(_name = "", _dialogue = "", _commands = [], _combatLevel
 	combatLevel = _combatLevel;
 	faction = _faction;
 	
+	//If dialogue is just a string turns it into an array containing just that string as its single element.
 	if (is_string(_dialogue))
 	{
 		_dialogue = [_dialogue];	
@@ -22,15 +23,14 @@ function npc_initialize(_name = "", _dialogue = "", _commands = [], _combatLevel
 	//An array of commands for the NPC to follow.
 	commands = _commands;
 	
-	//This will contain a reference to any dialogue balloon the NPC creates.
-	//If it equals noone the NPC has no created dialogue balloons.
+	//This will contain a reference to any dialogue balloon the NPC creates. Noone indicates the NPC does not have a dialgue balloon.
 	myBalloon = noone;
 	
 	//Arrays containing the other dolls that are sensed and another one listing the enemies.
 	sensedDolls = [];
 	sensedEnemies = [];
 	
-	//These values correspond to palyer inputs. The NPC is essentially being 'controlled' by the computer
+	//These values correspond to palyer inputs. The NPC is essentially being 'controlled' by these variables being fed into the corresponding doll_input_* functions.
 	aButtonPressed = false;
 	aButton = false;
 	rightButton = false;
@@ -50,7 +50,7 @@ function npc_initialize(_name = "", _dialogue = "", _commands = [], _combatLevel
 
 
 /// @function npc_step()
-/// @description Sets input variables defined in npc_initialize to make them move according to npc behavior.
+/// @description Sets input variables defined in npc_initialize to make them move according to npc behavior, updates sensed NPCs.
 function npc_step()
 {
 	npc_update_sensed();
@@ -69,7 +69,7 @@ function npc_step()
 		return;	
 	}
 	
-	//Otherwise calls the Perform method of the first command in the list.
+	//Otherwise calls the Perform method of the first command in the array.
 	var _command = commands[0];
 	_command.Perform(self);
 }
@@ -80,41 +80,50 @@ function npc_step()
 function npc_update_sensed()
 {
 	sensedDolls = collision_circle_array(x, y, RANGE_LONG, abs_doll, false, true, false);
-
 	
 	//Add any enemies sensed to the sensedEnemies array if they're not already there.
 	for (var _i = 0; _i < array_length(sensedDolls); _i++) 
 	{
 		var _sensed = sensedDolls[_i];
 		
-		//If it's already in the sensedEnemies array just breaks.
+		//If it's already in the sensedEnemies array we don't need to do anything else so breaks.
 		if (array_get_index(sensedEnemies, _sensed) > -1)
 		{
 			break;
 		}
 		
-		//Adds enemies based on 
+		//Adds enemies to the enemies array based on the faction of the NPC calling this function.
 	    switch (faction)
 		{
-			case FACTIONS.HOSTILE: //If HOSTILE just adds anyone they see in a different faction.
+			case FACTIONS.HOSTILE: //If HOSTILE just adds anyone they see that's in a different faction.
 				if (_sensed.faction != faction)
 				{
 					array_insert(sensedEnemies, 0, _sensed);
 				}
 			break;
+			
 			case FACTIONS.ENEMY: //If ENEMY then it is hostile to just the player.
 				if (_sensed.faction == FACTIONS.PLAYER)
 				{
 					array_insert(sensedEnemies, 0, _sensed);
 				}
 			break;
+			
 			case FACTIONS.POLICE: //if Police adds all criminals + player if wanted
 				if (_sensed.faction == FACTIONS.CRIMINAL)
 				{
 					array_insert(sensedEnemies, 0, _sensed);
 				}
+				
+				/*
+				if (_sensed.faction == FACTIONS.PLAYER)
+				{
+					//Check wanted level here...	
+				}
+				*/
 			break;
-			case FACTIONS.CRIMINAL: //if Police adds all police
+			
+			case FACTIONS.CRIMINAL: //if criminal adds all police to enemies.
 				if (_sensed.faction == FACTIONS.POLICE)
 				{
 					array_insert(sensedEnemies, 0, _sensed);
@@ -151,17 +160,20 @@ function npc_enemies_add(_target)
 /// @param _range How close the move to the target.
 function npc_input_moveto(_target, _range = RANGE_CLOSE/2)
 {
-	rightButton = (_target.x - x > _range);
-	leftButton = (_target.x - x < -_range);
 	
-	//If the npc is at position returns true.
+	aButton = false;
+	aButtonPressed = false;
+	rightButton = false;
+	leftButton = false;
+	
+	//If the npc is at position we're done so it returns true.
 	if (point_distance(x, y, _target.x, _target.y) < _range)
 	{
 		return true;	
 	}
 	
-	aButton = false;
-	aButtonPressed = false;
+	rightButton = (_target.x - x > _range);
+	leftButton = (_target.x - x < -_range);
 	
 	//Jumps up if target is close and above calling instace
 	if (point_distance(x, y, _target.x, _target.y) < _range * 2)
@@ -180,7 +192,7 @@ function npc_input_moveto(_target, _range = RANGE_CLOSE/2)
 		aButtonPressed = (vsp == 0);
 	}
 	
-	//Since the player is not at position returns false.
+	//Since the instance is not at position returns false.
 	return false;
 }
 

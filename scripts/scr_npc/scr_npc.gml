@@ -53,6 +53,13 @@ function npc_initialize(_name = "", _dialogue = "", _commands = [], _combatLevel
 /// @description Sets input variables defined in npc_initialize to make them move according to npc behavior, updates sensed NPCs.
 function npc_step()
 {
+	//If dialogue is in progress tries to continue.
+	if (dialogueIndex > 0)
+	{
+		npc_dialogue();
+	}
+	
+	
 	npc_update_sensed();
 	
 	//If there are enemies ignores the current command to try and fight them, then exits the function.

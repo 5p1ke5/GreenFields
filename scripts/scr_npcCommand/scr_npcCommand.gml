@@ -126,61 +126,6 @@ function NPCCommandMove(_target, _duration = noone, _range = undefined): NPCComm
 }
 
 
-///@function  NPCCommandTalkTo(_target, _dialogue)
-///@description Makes NPC move to point while saying a specified line.
-///@param _target The target to move towards while talking.
-///@param _dialogue What to say. 
-function NPCCommandTalkTo(_target, _dialogue): NPCCommand() constructor
-{
-	target = _target;
-	
-	if (is_array(_dialogue))
-	{
-		dialogue = _dialogue;
-	}
-	else
-	{
-		dialogue = [_dialogue];	
-	}
-	
-	dialogueIndex = 0;
-	
-	static Perform = function(_user)
-	{
-		if !is_struct(target) && !(instance_exists(target))
-		{
-			with (_user)
-			{
-				npc_exit_command();
-			}
-			return;
-		}
-		
-		var _target = target;
-		var _dialogue = dialogue;
-		var _dialogueIndex = dialogueIndex;
-		
-		//Moves towards position, does dialogue and increments dialogue index.
-		with(_user)
-		{
-			npc_input_moveto(_target);
-			_dialogueIndex = npc_dialogue_ext(_dialogue, _dialogueIndex, name);
-		}
-		
-		dialogueIndex = _dialogueIndex;
-		
-		// If it reaches the end of dialogue dialogueIndex will be set to 0. This is the exit condition.
-		if (dialogueIndex == 0)
-		{
-			with (_user)
-			{
-				npc_exit_command();	
-			}
-		}
-	}
-}
-
-
 /// @function NPCCommandFight(_target)
 /// @description Command to make the NPC hunt down and fight a target
 /// @param _target The target to fight.

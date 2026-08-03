@@ -59,7 +59,6 @@ function npc_step()
 		npc_dialogue();
 	}
 	
-	
 	npc_update_sensed();
 	
 	//If there are enemies ignores the current command to try and fight them, then exits the function.
@@ -276,6 +275,24 @@ function npc_exit_command()
 	
 	return noone;
 }
+
+
+/// @function npc_dialogue()
+/// @description Attempts to generate a speech balloon if none exists, incrementing dialogue.
+function npc_dialogue()
+{
+	if !(myBalloon)
+	{
+		myBalloon = npc_speak(dialogue[dialogueIndex], name);
+		dialogueIndex++;
+		if (dialogueIndex >= array_length(dialogue))
+		{
+			dialogueIndex = 0;
+		}
+	}
+}
+
+
 	
 /// @function npc_speak(_text, _name = undefined)
 /// @description generates a speech balloon for the npc.
@@ -300,24 +317,8 @@ function npc_speak(_text, _name = "")
 	
 	return _balloon;
 }
-
-
-/// @function npc_dialogue()
-/// @description Attempts to generate a speech balloon if none exists, incrementing dialogue.
-function npc_dialogue()
-{
-	if !(myBalloon)
-	{
-		myBalloon = npc_speak(dialogue[dialogueIndex], name);
-		dialogueIndex++;
-		if (dialogueIndex >= array_length(dialogue))
-		{
-			dialogueIndex = 0;
-		}
-	}
-}
-
-
+/* 
+Most likely deprecated, probably remove later.
 /// @function npc_dialogue_ext(_myBalloon, _dialogue, _dialogueIndex, _name)
 /// @description Attempts to generate a speech balloon if none exists, incrementing dialogue. Returns the incremented dialogue index.
 /// @param _myBalloon Reference to the dialogue balloon object.
@@ -338,6 +339,7 @@ function npc_dialogue_ext(_dialogue = dialogue, _dialogueIndex = dialogueIndex, 
 	
 	return _dialogueIndex;
 }
+*/
 
 
 /// @function speechBalloon_initialize(_text, _maxTime, _owner, _name)

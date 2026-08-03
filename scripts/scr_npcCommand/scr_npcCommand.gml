@@ -66,6 +66,36 @@ function NPCCommandIdle(): NPCCommand() constructor
 	}
 }
 
+/// @function NPCCommandSpeak() 
+/// @description Forces the NPC to set their dialogue index to zero and make a new speech balloon with their current dialogue.
+/// @param _dialogue An array or string containing things for the NPC to say. If a string it will be converted to an array.
+function NPCCommandSpeak(_dialogue = noone) : NPCCommand() constructor 
+{
+	//If dialogue is a string converts it to an array containing just that string.
+	dialogue = _dialogue;
+	if (is_string(_dialogue))
+	{
+		dialogue = [_dialogue];	
+	}
+	
+	static Perform = function(_user)
+	{
+		var _dialogue = dialogue;
+		with (_user)
+		{
+			//If the NPCCommandSpeak has a dialogue value set, sets the npc's dialogue value to that.
+			if (_dialogue != noone)
+			{
+				dialogue = _dialogue;	
+			}
+			
+			instance_destroy(myBalloon);
+			dialogueIndex = 0;
+			npc_dialogue();
+			npc_exit_command();
+		}
+	}
+}
 
 ///@function NPCCommandMove(_target, _duration)
 ///@description state for when NPC is moving towards a given point. Once the NPC gets there they just wait so this can also be used to make an NPC wait at a given point. If the NPC has more than one item in npcCommands exits upon reaching the point.

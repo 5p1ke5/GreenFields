@@ -4,12 +4,15 @@ event_inherited();
 doll_initialize_random();
 
 //npc_initialize("Marcus", "Use the arrow keys or WASD to move. Follow me!", 
-npc_initialize("Marcus", ["Okay it's platforming time", "lets do some platforming"], 
+npc_initialize("Marcus", ["foo"], 
 [
 	//new NPCCommandMove(obj_player, , RANGE_MEDIUM)
+	new NPCCommandSpeak( ["Okay it's platforming time", "lets do some platforming", "we got this just jump over the blocks", "oof ow"]),
 	new NPCCommandMove(new Point2(1574, 2318), 10),
 	new NPCCommandSetDialogue(["fuck i fell down", "its alright im okay"]),
-	new NPCCommandMove(new Point2(4752, 2336))
+	new NPCCommandSpeak(),
+	new NPCCommandMove(new Point2(4752, 2336)),
+	new NPCCommandSetDialogue(["okay we did it we got this"])
 	//new NPCCommandMove(instance_nearest(x, y, obj_itemPickup)),
 	//new NPCCommandMove(new Point2(600, 2324), SECOND ),
 	//new NPCCommandTalkTo(obj_player, ["Press space to jump over the debris.", "You can press space in midair to double jump!"]),

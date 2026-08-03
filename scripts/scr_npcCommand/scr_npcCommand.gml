@@ -71,10 +71,12 @@ function NPCCommandIdle(): NPCCommand() constructor
 ///@description state for when NPC is moving towards a given point. Once the NPC gets there they just wait so this can also be used to make an NPC wait at a given point. If the NPC has more than one item in npcCommands exits upon reaching the point.
 ///@param _target Point2 for the target to move towards. Also accepts an instance.
 ///@param _duration Time for the NPC to wait at the given point. If set to 'noone' it has no end duration.
-function NPCCommandMove(_target, _duration = noone): NPCCommand() constructor
+///@param _range How close the NPC needs to get. Normally set to undefined, defaulting to npc_input_moveto's default.
+function NPCCommandMove(_target, _duration = noone, _range = undefined): NPCCommand() constructor
 {
 	target = _target;
 	duration = _duration;
+	range = _range;
 	
 	static Perform = function(_user)
 	{
@@ -91,9 +93,10 @@ function NPCCommandMove(_target, _duration = noone): NPCCommand() constructor
 		//Sets input to move towards the target.
 		var _target = target;
 		var _atTarget = noone;
+		var _range = range;
 		with (_user)
 		{
-			_atTarget = npc_input_moveto(_target);
+			_atTarget = npc_input_moveto(_target, _range);
 		}
 		IdleHands(_user);
 		

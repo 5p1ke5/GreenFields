@@ -156,14 +156,32 @@ function NPCCommandMove(_target, _duration = noone, _range = undefined): NPCComm
 }
 
 
-///@function NPCCommandAwait(_target, _duration, _range)
-///@description State for when the NPC is awaiting some instance or Point2 approaching it before executing further commands.
-function NPCCommandAwait(_target, _duration = noone, _range = undefined): NPCCommand() constructor
+
+
+//TODO: Test this after lunch
+
+/// @function NPCCommandAwait(_target, _duration, _range)
+/// @description State for when the NPC is awaiting some instance or Point2 approaching it before executing further commands
+/// @param _target The instance or other variable with xy values that will be awaited.
+/// @param _range How close the target needs to be to the NPC.
+function NPCCommandAwait(_target, _range = RANGE_CLOSE/2): NPCCommand() constructor
 {
-	
+	target = _target;
+	range = _range;
 	static Perform = function(_user)
 	{
 		// Wait for the target and if within _range attempts to exit command.
+		var _target = target;
+		var _range = range;
+		
+		with (_user)
+		{
+			var _distance = distance_to_point(_target.x, _target.y);
+			if (_distance < _range)
+			{
+				npc_exit_command();	
+			}
+		}
 	}
 }
 

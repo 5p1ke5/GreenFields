@@ -173,7 +173,7 @@ function npc_input_moveto(_target, _range = RANGE_CLOSE/2)
 	leftButton = false;
 	
 	//If the npc is at position we're done so it returns true.
-	if (point_distance(x, y, _target.x, _target.y) < _range)
+	if (distance_to_point(_target.x, _target.y) < _range)
 	{
 		return true;	
 	}

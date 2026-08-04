@@ -198,6 +198,7 @@
     {"name":"room_suburbsHouseA","order":9,"path":"rooms/room_suburbsHouseA/room_suburbsHouseA.yy",},
     {"name":"room_suburbsHouseB","order":8,"path":"rooms/room_suburbsHouseB/room_suburbsHouseB.yy",},
     {"name":"room_suburbsHouseC","order":10,"path":"rooms/room_suburbsHouseC/room_suburbsHouseC.yy",},
+    {"name":"room_testNPCObby","order":5,"path":"rooms/room_testNPCObby/room_testNPCObby.yy",},
     {"name":"room_trainingmode","order":2,"path":"rooms/room_trainingmode/room_trainingmode.yy",},
     {"name":"scr_array","order":22,"path":"scripts/scr_array/scr_array.yy",},
     {"name":"scr_audio","order":18,"path":"scripts/scr_audio/scr_audio.yy",},

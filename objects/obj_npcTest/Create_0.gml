@@ -8,11 +8,15 @@ npc_initialize("Marcus", ["foo"],
 [
 	//new NPCCommandMove(obj_player, , RANGE_MEDIUM)
 	new NPCCommandSpeak( ["Okay it's platforming time", "lets do some platforming", "we got this just jump over the blocks", "oof ow"]),
-	new NPCCommandMove(new Point2(1574, 2318), 10),
+	new NPCCommandMove(new Point2(1574, 2318), SECOND/10),
 	new NPCCommandSetDialogue(["fuck i fell down", "its alright im okay"]),
 	new NPCCommandSpeak(),
-	new NPCCommandMove(new Point2(4752, 2336)),
-	new NPCCommandSetDialogue(["okay we did it we got this"])
+	new NPCCommandMove(new Point2(4752, 2336), SECOND/10),
+	new NPCCommandSpeak("We did it"),
+	new NPCCommandMove(new Point2(4752, 2336), SECOND),
+	new NPCCommandSpeak("We're heroes"),
+	new NPCCommandMove(new Point2(4752, 2336), SECOND),
+	new NPCCommandSetDialogue(["foo"])
 	//new NPCCommandMove(instance_nearest(x, y, obj_itemPickup)),
 	//new NPCCommandMove(new Point2(600, 2324), SECOND ),
 	//new NPCCommandTalkTo(obj_player, ["Press space to jump over the debris.", "You can press space in midair to double jump!"]),

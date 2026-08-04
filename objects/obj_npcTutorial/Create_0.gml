@@ -5,7 +5,12 @@ doll_initialize_random();
 
 npc_initialize("Marcus", "Use the arrow keys or WASD to move. Follow me!", 
 [
-	new NPCCommandMove(obj_player, , RANGE_MEDIUM)
+	new NPCCommandSpeak(),
+	new NPCCommandMove(new Point2(700, 2324), 10),
+	//maybe something like NPCCommandAwaitTarget(obj_player)
+	new NPCCommandSpeak(["Press space to jump over the debris.", "You can press space in midair to double jump!"]),
+	new NPCCommandMove(new Point2(2000, 2300), SECOND /2)
+	
 	//new NPCCommandMove(new Point2(700, 2324)),
 	//new NPCCommandMove(instance_nearest(x, y, obj_itemPickup)),
 	//new NPCCommandMove(new Point2(600, 2324), SECOND ),

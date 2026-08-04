@@ -97,7 +97,7 @@ function NPCCommandSpeak(_dialogue = noone) : NPCCommand() constructor
 	}
 }
 
-///@function NPCCommandMove(_target, _duration)
+///@function NPCCommandMove(_target, _duration, _range)
 ///@description state for when NPC is moving towards a given point. Once the NPC gets there they just wait so this can also be used to make an NPC wait at a given point. If the NPC has more than one item in npcCommands exits upon reaching the point.
 ///@param _target Point2 for the target to move towards. Also accepts an instance.
 ///@param _duration Time for the NPC to wait at the given point. If set to 'noone' it has no end duration.
@@ -152,6 +152,18 @@ function NPCCommandMove(_target, _duration = noone, _range = undefined): NPCComm
 				npc_exit_command();	
 			}
 		}
+	}
+}
+
+
+///@function NPCCommandAwait(_target, _duration, _range)
+///@description State for when the NPC is awaiting some instance or Point2 approaching it before executing further commands.
+function NPCCommandAwait(_target, _duration = noone, _range = undefined): NPCCommand() constructor
+{
+	
+	static Perform = function(_user)
+	{
+		// Wait for the target and if within _range attempts to exit command.
 	}
 }
 

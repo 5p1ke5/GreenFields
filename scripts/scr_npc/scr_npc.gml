@@ -179,7 +179,6 @@ function npc_input_moveto(_target, _range = RANGE_CLOSE/2)
 	}
 	
 	//Jumps up if target is horizontally close and vertically above calling instace
-	//if (point_distance(x, y, _target.x, _target.y) < _range)
 	if (point_distance(x, y, _target.x, y) < _range)
 	{
 		if (_target.y < y)
@@ -195,18 +194,18 @@ function npc_input_moveto(_target, _range = RANGE_CLOSE/2)
 	
 	var _dir = rightButton - leftButton;
 	
-	// show_debug_message("{0}", _blocked);
-	
 	//Tries to jump if an obstacle is in the way
-	//if (place_meeting(x + (_dir * abs(sprite_width) * 4), y, BLOCK))
-	if (collision_line(x, y, x + (_dir * abs(sprite_width) * 4), y, BLOCK, false, true))
+	//if (collision_line(x, y, x + (_dir * abs(sprite_width) * 4), y, BLOCK, false, true))
+	if (collision_line(x, bbox_bottom - 1, x + (_dir * abs(sprite_width) * 4), y, BLOCK, false, true))
 	{
 		aButton = true;
 		aButtonPressed = (vsp == 0);
 	}
 	
+	//Jumps if there's no floor beneath where the player is goin
 	// if !(place_meeting(x + (_dir * abs(sprite_width) * 2), bbox_bottom + 1, GROUND))
-	if !collision_line(x + (_dir * abs(sprite_width) * 2), y, x + (_dir * abs(sprite_width) * 2), y + (sprite_height), GROUND, false, true )
+	//if !collision_line(x + (_dir * abs(sprite_width) * 2), y, x + (_dir * abs(sprite_width) * 2), y + (sprite_height), GROUND, false, true )
+	if !collision_line(x + (_dir * abs(sprite_width)), y, x + (_dir * abs(sprite_width) * 2), y + (sprite_height), GROUND, false, true )
 	{
 		aButton = true;
 		aButtonPressed = grounded;

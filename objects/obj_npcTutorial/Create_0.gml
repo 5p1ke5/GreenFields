@@ -3,21 +3,42 @@ event_inherited();
 
 doll_initialize_random();
 
+//Returns true if the player object is to the right of the clling instance or does not exist.
+var _conditionMethod = function()
+{
+	var _player = instance_find(obj_player, 0);
+	
+	if (_player)
+	{
+		return _player.x > x;	
+	}
+	else
+	{
+		return true;	
+	}
+}
+
 npc_initialize("Marcus", "Use the arrow keys or WASD to move. Follow me!", 
 [
 	new NPCCommandSpeak(),
 	new NPCCommandMove(new Point2(684, 2324), 10),
-	new NPCCommandAwait(obj_player, RANGE_CLOSE),
+	//new NPCCommandAwait(obj_player, RANGE_MEDIUM),
+	new NPCCommandCheckCondition(_conditionMethod, "foo"),
 	new NPCCommandSpeak(["Press space to jump over the debris."]),
 	new NPCCommandMove(new Point2(800, 2300), 10),
 	new NPCCommandMove(new Point2(1048, 2300), 10),
 	new NPCCommandMove(new Point2(1180, 2300), 10),
 	new NPCCommandMove(new Point2(1320, 2300), 10),
-	new NPCCommandAwait(obj_player, RANGE_CLOSE),
+	new NPCCommandAwait(obj_player, RANGE_MEDIUM),
 	new NPCCommandSpeak(["You can press space in midair to double jump!"]),
 	new NPCCommandMove(new Point2(2024, 2300), 0),
+	new NPCCommandAwait(obj_player, RANGE_MEDIUM),
+	new NPCCommandMove(instance_nearest(x, y, obj_itemPickup), 60),
+	new NPCCommandAwait(obj_player, RANGE_MEDIUM),
 	new NPCCommandSpeak(["Pick up this gun and press ENTER to equip it.", "Click on it in your inventory and drag it over to equip on the right.", "Use UP and DOWN or the scroll wheel to cycle through equipped gear."]),
-	new NPCCommandMove(instance_nearest(x, y, obj_itemPickup), 10)
+	new NPCCommandMove(instance_nearest(x, y, obj_itemPickup), 60),
+	new NPCCommandAwait(obj_player, RANGE_MEDIUM),
+	new NPCCommandMove(new Point2(2674, 2300), 0),
 	
 	//new NPCCommandMove(new Point2(700, 2324)),
 	//new NPCCommandMove(instance_nearest(x, y, obj_itemPickup)),

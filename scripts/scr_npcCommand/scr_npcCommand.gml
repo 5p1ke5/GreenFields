@@ -221,11 +221,34 @@ function NPCCommandFight(_target): NPCCommand() constructor
 }
 
 
+/// @function NPCCommandCheckCondition(_conditionMethod, _arguments = [])
+/// @description Checks a passed _conditionMethod function. If _conditionMethod evaluates as true, attempts to exit this command.
+/// @param _conditionMethod a method that is checked in the Perform function of this struct. If it returns truthy, exits the command.
+/// @param _arguments an array of optional arguments to be given to the _conditionMethod at creation.
+function NPCCommandCheckCondition(_conditionMethod, _arguments = []) : NPCCommand() constructor
+{
+	conditionMethod = _conditionMethod;
+	arguments = _arguments;
+	
+	static Perform = function(_user)
+	{
+		var _conditionReturn = conditionMethod(arguments);
+		
+		if (_conditionReturn)
+		{
+			with (_user)
+			{
+				npc_exit_command();	
+			}
+		}
+	}
+}
+
 
 /// @function NPCCommandSetDialogue(_dialogueArray)
 /// @description Command to set the NPCs dialogue to the given array. After doing so attempts to eit comand.
 /// @param _dialogueArray Array containing the dialogue strings
-function NPCCommandSetDialogue(_dialogue): NPCCommand() constructor
+function NPCCommandSetDialogue(_dialogue) : NPCCommand() constructor
 {
 	dialogue = _dialogue;
 	

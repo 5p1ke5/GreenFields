@@ -38,6 +38,8 @@
     {"name":"inst_436063F1","path":"rooms/room_downtownTutorial/room_downtownTutorial.yy",},
     {"name":"inst_14C61B0A","path":"rooms/room_downtownTutorial/room_downtownTutorial.yy",},
     {"name":"inst_6A3B2954","path":"rooms/room_downtownTutorial/room_downtownTutorial.yy",},
+    {"name":"inst_4157185C","path":"rooms/room_downtownTutorial/room_downtownTutorial.yy",},
+    {"name":"inst_18B1807E","path":"rooms/room_downtownTutorial/room_downtownTutorial.yy",},
   ],
   "isDnd":false,
   "layers":[
@@ -55,6 +57,8 @@
       ],"layers":[],"name":"Player","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
     {"$GMRInstanceLayer":"","%Name":"NPCs","depth":500,"effectEnabled":true,"effectType":null,"gridX":16,"gridY":16,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[
         {"$GMRInstance":"v4","%Name":"inst_6A3B2954","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_6A3B2954","objectId":{"name":"obj_npcTutorial","path":"objects/obj_npcTutorial/obj_npcTutorial.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":96.0,"y":2348.0,},
+        {"$GMRInstance":"v4","%Name":"inst_4157185C","colour":4294967295,"frozen":false,"hasCreationCode":true,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_4157185C","objectId":{"name":"obj_npcEnemy","path":"objects/obj_npcEnemy/obj_npcEnemy.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":3150.0,"y":2347.0,},
+        {"$GMRInstance":"v4","%Name":"inst_18B1807E","colour":4294967295,"frozen":false,"hasCreationCode":true,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_18B1807E","objectId":{"name":"obj_npcEnemy","path":"objects/obj_npcEnemy/obj_npcEnemy.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":3919.0,"y":2344.0,},
       ],"layers":[],"name":"NPCs","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
     {"$GMRInstanceLayer":"","%Name":"Lighting","depth":600,"effectEnabled":true,"effectType":null,"gridX":16,"gridY":16,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[
         {"$GMRInstance":"v4","%Name":"inst_7CFA98B2_1","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_7CFA98B2_1","objectId":{"name":"obj_lightStreetlamp","path":"objects/obj_lightStreetlamp/obj_lightStreetlamp.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":6.0,"x":576.0,"y":2080.0,},

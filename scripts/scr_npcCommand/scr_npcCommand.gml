@@ -245,6 +245,70 @@ function NPCCommandCheckCondition(_conditionMethod, _arguments = []) : NPCComman
 }
 
 
+/// @function NPCCommandCheckVector(_target, _xDir = noone, _yDir = noone, _range = noone)
+/// @description Checks if the target is in the given direction vector or within range relative to the calling instance. If so attempts to exit state.
+/// @param _target The target to check the x and y variables of.
+/// @param _xDir The horizontal direction to check if the _target is in the direction of. Right is 1, left is -1, noone means it's not checked.
+/// @param _yDir The vertical direction to check if the _target is in the direciton of. Down is 1, up is -1, noone means it's not checked.
+/// @param _range The range to check if the target is within. If noone is not checked.
+function NPCCommandCheckVector(_target, _xDir = noone, _yDir = noone, _range = noone) : NPCCommand() constructor
+{
+	target = _target;
+	xDir = _xDir;
+	yDir = _yDir;
+	range = _range;
+	
+	static Perform = function(_user)
+	{
+		//If target no longer exists attempts to exit state.
+		if (!is_struct(target) && !instance_exists(target))
+		{
+			show_debug_message("{0}, {1}", target.x, _user.x);
+			with (_user)
+			{
+				npc_exit_command();
+				return;
+			}
+		}
+		
+		
+		if (xDir != noone)
+		{
+			if (sign(target.x - _user.x) == xDir)
+			{
+				with (_user)
+				{
+					npc_exit_command();
+				}
+			}
+		}
+		
+		if (yDir != noone)
+		{
+			if (sign(target.y - _user.y) == yDir)
+			{
+				with (_user)
+				{
+					npc_exit_command();
+				}
+			}
+		}
+		
+		if (range != noone)
+		{
+			if (point_distance(_user.x, _user.y, target.x, target.y) < range)
+			{
+				with (_user)
+				{
+					npc_exit_command();
+				}
+			}
+		}
+	}
+}
+
+
+
 /// @function NPCCommandSetDialogue(_dialogueArray)
 /// @description Command to set the NPCs dialogue to the given array. After doing so attempts to eit comand.
 /// @param _dialogueArray Array containing the dialogue strings

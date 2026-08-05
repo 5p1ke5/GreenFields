@@ -22,8 +22,8 @@ var _conditionMethod = function()
 npc_initialize("Marcus", "Use the arrow keys or WASD to move. Follow me!", 
 [
 	new NPCCommandSpeak(),
-	new NPCCommandMove(new Point2(684, 2324), 10),
-	new NPCCommandCheckCondition(_conditionMethod),
+	new NPCCommandMove(new Point2(640, 2300), 10),
+	new NPCCommandCheckVector(obj_player, 1, , RANGE_MEDIUM),
 	new NPCCommandSpeak(["Press space to jump over the debris."]),
 	new NPCCommandMove(new Point2(800, 2300), 10),
 	new NPCCommandMove(new Point2(1048, 2300), 10),
@@ -39,17 +39,7 @@ npc_initialize("Marcus", "Use the arrow keys or WASD to move. Follow me!",
 	new NPCCommandMove(instance_nearest(x, y, obj_itemPickup), 60),
 	new NPCCommandCheckCondition(_conditionMethod),
 	new NPCCommandSpeak(["There's enemies up ahead. Use mouse to aim and Left Mouse Button to shoot."]),
-	new NPCCommandMove(new Point2(2674, 2300), 0),
-	new NPCCommandCheckCondition(_conditionMethod),
-	new NPCCommandMove(new Point2(5674, 2300), 0),
-	
-	//new NPCCommandMove(new Point2(700, 2324)),
-	//new NPCCommandMove(instance_nearest(x, y, obj_itemPickup)),
-	//new NPCCommandMove(new Point2(600, 2324), SECOND ),
-	//new NPCCommandTalkTo(obj_player, ["Press space to jump over the debris.", "You can press space in midair to double jump!"]),
-	//new NPCCommandMove(new Point2(2000, 2324), SECOND /2),
-	//new NPCCommandTalkTo(instance_nearest(x, y, obj_itemPickup),
-	//new NPCCommandTalkTo(obj_player, ["There are enemies up ahead. Left click to shoot at them. SHIFT and A or D lets you dash.", "Once you get to the door you can press CTRL to go through it and finish the tutorial."]),
+	new NPCCommandMove(new Point2(2674, 2300), 0)
 ], , FACTIONS.PLAYER);
 
 //Initialize inventory.

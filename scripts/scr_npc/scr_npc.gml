@@ -166,7 +166,6 @@ function npc_enemies_add(_target)
 /// @param _range How close the move to the target.
 function npc_input_moveto(_target, _range = RANGE_CLOSE/2)
 {
-	
 	aButton = false;
 	aButtonPressed = false;
 	rightButton = false;
@@ -205,7 +204,7 @@ function npc_input_moveto(_target, _range = RANGE_CLOSE/2)
 	//Jumps if there's no floor beneath where the player is goin
 	// if !(place_meeting(x + (_dir * abs(sprite_width) * 2), bbox_bottom + 1, GROUND))
 	//if !collision_line(x + (_dir * abs(sprite_width) * 2), y, x + (_dir * abs(sprite_width) * 2), y + (sprite_height), GROUND, false, true )
-	if !collision_line(x + (_dir * abs(sprite_width)), y, x + (_dir * abs(sprite_width) * 2), y + (sprite_height), GROUND, false, true )
+	if !collision_line(x + (_dir * abs(sprite_width)), bbox_bottom, x + (_dir * abs(sprite_width) * 2), bbox_bottom + (sprite_height * 4), GROUND, false, true )
 	{
 		aButton = true;
 		aButtonPressed = grounded;

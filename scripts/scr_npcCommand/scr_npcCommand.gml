@@ -222,7 +222,7 @@ function NPCCommandFight(_target): NPCCommand() constructor
 
 
 /// @function NPCCommandCheckCondition(_conditionMethod, _arguments = [])
-/// @description Checks a passed _conditionMethod function. If _conditionMethod evaluates as true, attempts to exit this command.
+/// @description Checks a passed _conditionMethod function. If _conditionMethod evaluates as true, attempts to exit this command. Mostly intended for specific use-cases: If a condition is used more than once it should usually just be made a bespoke command.
 /// @param _conditionMethod a method that is checked in the Perform function of this struct. If it returns truthy, exits the command.
 /// @param _arguments an array of optional arguments to be given to the _conditionMethod at creation.
 function NPCCommandCheckCondition(_conditionMethod, _arguments = []) : NPCCommand() constructor
@@ -243,7 +243,6 @@ function NPCCommandCheckCondition(_conditionMethod, _arguments = []) : NPCComman
 		}
 	}
 }
-
 
 /// @function NPCCommandCheckVector(_target, _xDir = noone, _yDir = noone, _range = noone)
 /// @description Checks if the target is in the given direction vector or within range relative to the calling instance. If so attempts to exit state.

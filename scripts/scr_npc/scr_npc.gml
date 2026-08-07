@@ -76,6 +76,11 @@ function npc_step()
 	}
 	
 	//Otherwise calls the Perform method of the first command in the array.
+	/*TODO: make this more like 
+		var _command = commands[commandIndex];
+		
+	then I can have stuff like NPCCommandGoto(_condition, _indexes[])
+	*/
 	var _command = commands[0];
 	_command.Perform(self);
 }

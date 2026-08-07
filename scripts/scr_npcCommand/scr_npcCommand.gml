@@ -244,6 +244,32 @@ function NPCCommandCheckCondition(_conditionMethod, _arguments = []) : NPCComman
 	}
 }
 
+
+// Won't work until NPCs have commandIndex variable
+/// @function NPCCommandConditionalBranch(_condition, _indexes = [0])
+/// @param _condition Condition method. Should return an integer within the bounds of _indexes, or true/false if _indexes is a tuple.
+/// @param _indexes an array of integers. The integer returned by _condition will be used to call an integer from the corresponding element in _indexes and sets the NPC's commandIndex as that value.
+function NPCCommandConditionalBranch(_condition, _indexes)
+{
+	conditionMethod = _condition;
+	indexes = _indexes;
+	
+	static Perform = function(_user)
+	{
+		var _conditionReturn = conditionMethod(indexes);
+		
+		//indexes[false] should equal indexes[0], indexes[true] should equal indexes[1], 
+		var _index = indexes[_conditionReturn];
+		
+		//Gets the index returned by the condition method, then sets the _user's commandIndex to that _index.
+		with (_user)
+		{
+			commandIndex = _index;	
+		}
+	}
+	
+}
+
 /// @function NPCCommandCheckVector(_target, _xDir = noone, _yDir = noone, _range = noone)
 /// @description Checks if the target is in the given direction vector or within range relative to the calling instance. If so attempts to exit state.
 /// @param _target The target to check the x and y variables of.
@@ -309,7 +335,7 @@ function NPCCommandCheckVector(_target, _xDir = noone, _yDir = noone, _range = n
 
 
 /// @function NPCCommandSetDialogue(_dialogueArray)
-/// @description Command to set the NPCs dialogue to the given array. After doing so attempts to eit comand.
+/// @description Command to set the NPCs dialogue to the given array. After doing so attempts to exit comand.
 /// @param _dialogueArray Array containing the dialogue strings
 function NPCCommandSetDialogue(_dialogue) : NPCCommand() constructor
 {
@@ -326,4 +352,3 @@ function NPCCommandSetDialogue(_dialogue) : NPCCommand() constructor
 		}
 	}
 }
-

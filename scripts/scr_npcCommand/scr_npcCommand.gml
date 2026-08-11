@@ -267,7 +267,6 @@ function NPCCommandConditionalBranch(_condition, _indexes)
 			commandIndex = _index;	
 		}
 	}
-	
 }
 
 /// @function NPCCommandCheckVector(_target, _xDir = noone, _yDir = noone, _range = noone)

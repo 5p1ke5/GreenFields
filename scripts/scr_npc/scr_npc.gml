@@ -103,6 +103,12 @@ function npc_update_sensed()
 			break;
 		}
 		
+		//Can't sense through walls
+		if (collision_line(x, y, _sensed.x, _sensed.y, BLOCK, false, true))
+		{
+			break;	
+		}
+		
 		//Adds enemies to the enemies array based on the faction of the NPC calling this function.
 	    switch (faction)
 		{

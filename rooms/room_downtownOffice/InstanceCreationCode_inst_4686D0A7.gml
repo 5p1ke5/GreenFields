@@ -1,0 +1,1 @@
+itemPickup_initialize(new ITEM_ASSAULTRIFLE);

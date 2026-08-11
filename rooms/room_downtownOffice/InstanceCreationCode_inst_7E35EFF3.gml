@@ -1,0 +1,1 @@
+npc_initialize("Boss", "I'm the boss. I'll destroy anyone who fights me!", , 30, FACTIONS.ENEMY);

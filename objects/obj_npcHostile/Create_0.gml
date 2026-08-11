@@ -1,5 +1,6 @@
 // Inherit the parent event
 event_inherited();
+living_initialize(50);
 
 doll_initialize_random();
 

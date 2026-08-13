@@ -29,13 +29,13 @@
     {"name":"inst_4E6686C7","path":"rooms/room_suburbsHouseB/room_suburbsHouseB.yy",},
     {"name":"inst_3ECE2A3E","path":"rooms/room_suburbsHouseB/room_suburbsHouseB.yy",},
     {"name":"inst_1782F65A","path":"rooms/room_suburbsHouseB/room_suburbsHouseB.yy",},
-    {"name":"inst_50FABFEC","path":"rooms/room_suburbsHouseB/room_suburbsHouseB.yy",},
+    {"name":"inst_itemPickupBazooka","path":"rooms/room_suburbsHouseB/room_suburbsHouseB.yy",},
     {"name":"inst_3B036457","path":"rooms/room_suburbsHouseB/room_suburbsHouseB.yy",},
   ],
   "isDnd":false,
   "layers":[
     {"$GMRInstanceLayer":"","%Name":"Items","depth":0,"effectEnabled":true,"effectType":null,"gridX":16,"gridY":16,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[
-        {"$GMRInstance":"v4","%Name":"inst_50FABFEC","colour":4294967295,"frozen":false,"hasCreationCode":true,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_50FABFEC","objectId":{"name":"obj_itemPickup","path":"objects/obj_itemPickup/obj_itemPickup.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":1536.0,"y":800.0,},
+        {"$GMRInstance":"v4","%Name":"inst_itemPickupBazooka","colour":4294967295,"frozen":false,"hasCreationCode":true,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_itemPickupBazooka","objectId":{"name":"obj_itemPickup","path":"objects/obj_itemPickup/obj_itemPickup.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":1536.0,"y":800.0,},
         {"$GMRInstance":"v4","%Name":"inst_3B036457","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_3B036457","objectId":{"name":"obj_clock","path":"objects/obj_clock/obj_clock.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":368.0,"y":208.0,},
       ],"layers":[],"name":"Items","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
     {"$GMRInstanceLayer":"","%Name":"Player","depth":100,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[

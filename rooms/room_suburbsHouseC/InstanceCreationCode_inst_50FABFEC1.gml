@@ -1,1 +1,0 @@
-itemPickup_initialize(new ITEM_BAZOOKA);

@@ -114,7 +114,7 @@
     {"name":"inst_6C3D6BBF","path":"rooms/room_downtownOffice/room_downtownOffice.yy",},
     {"name":"inst_3B5015DA","path":"rooms/room_downtownOffice/room_downtownOffice.yy",},
     {"name":"inst_7E35EFF3","path":"rooms/room_downtownOffice/room_downtownOffice.yy",},
-    {"name":"inst_4686D0A7","path":"rooms/room_downtownOffice/room_downtownOffice.yy",},
+    {"name":"inst_itemPickupAssaultRifle","path":"rooms/room_downtownOffice/room_downtownOffice.yy",},
     {"name":"inst_19077361","path":"rooms/room_downtownOffice/room_downtownOffice.yy",},
     {"name":"inst_6124B89E","path":"rooms/room_downtownOffice/room_downtownOffice.yy",},
     {"name":"inst_5E65C218","path":"rooms/room_downtownOffice/room_downtownOffice.yy",},
@@ -130,7 +130,7 @@
   "isDnd":false,
   "layers":[
     {"$GMRInstanceLayer":"","%Name":"Items","depth":0,"effectEnabled":true,"effectType":null,"gridX":16,"gridY":16,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[
-        {"$GMRInstance":"v4","%Name":"inst_4686D0A7","colour":4294967295,"frozen":false,"hasCreationCode":true,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_4686D0A7","objectId":{"name":"obj_itemPickup","path":"objects/obj_itemPickup/obj_itemPickup.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":588.0,"y":1870.0,},
+        {"$GMRInstance":"v4","%Name":"inst_itemPickupAssaultRifle","colour":4294967295,"frozen":false,"hasCreationCode":true,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_itemPickupAssaultRifle","objectId":{"name":"obj_itemPickup","path":"objects/obj_itemPickup/obj_itemPickup.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":588.0,"y":1870.0,},
         {"$GMRInstance":"v4","%Name":"inst_19077361","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_19077361","objectId":{"name":"obj_money10","path":"objects/obj_money10/obj_money10.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":1232.0,"y":2208.0,},
         {"$GMRInstance":"v4","%Name":"inst_6124B89E","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_6124B89E","objectId":{"name":"obj_money10","path":"objects/obj_money10/obj_money10.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":1232.0,"y":2112.0,},
         {"$GMRInstance":"v4","%Name":"inst_5E65C218","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_5E65C218","objectId":{"name":"obj_money10","path":"objects/obj_money10/obj_money10.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":1232.0,"y":2016.0,},
@@ -306,7 +306,7 @@
           -146,32,-14,0,-146,32,-14,0,-146,32,-14,0,-37,32,-13,0,-96,32,-14,0,-37,32,-13,0,-96,32,-14,0,-37,32,
           -13,0,-96,32,-14,0,-37,32,-13,0,-96,32,-14,0,-37,32,-13,0,-96,32,-14,0,-37,32,-13,0,-735,32,-16,0,-95,
           32,-14,0,-35,32,-16,0,-95,32,-14,0,-35,32,-16,0,-95,32,-14,0,-35,32,-16,0,-95,32,-14,0,-35,32,-16,0,
-          -95,32,-14,0,-35,32,-16,0,-95,32,-14,0,-3326,32,
+          -95,32,-14,0,-35,32,-16,0,-95,32,-14,0,-146,32,-12,0,-148,32,-12,0,-3008,32,
         ],"TileDataFormat":1,},"tilesetId":{"name":"til_interior","path":"tilesets/til_interior/til_interior.yy",},"userdefinedDepth":false,"visible":true,"x":0,"y":0,},
     {"$GMRBackgroundLayer":"","%Name":"Skybox","animationFPS":15.0,"animationSpeedType":0,"colour":4294929748,"depth":800,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"hspeed":0.0,"htiled":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"name":"Skybox","properties":[],"resourceType":"GMRBackgroundLayer","resourceVersion":"2.0","spriteId":null,"stretch":false,"userdefinedAnimFPS":false,"userdefinedDepth":false,"visible":true,"vspeed":0.0,"vtiled":false,"x":0,"y":0,},
   ],

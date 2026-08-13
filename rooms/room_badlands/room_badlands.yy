@@ -17,7 +17,7 @@
     {"name":"inst_73DD4C49","path":"rooms/room_badlands/room_badlands.yy",},
     {"name":"inst_1EABA3C1","path":"rooms/room_badlands/room_badlands.yy",},
     {"name":"inst_3422FFE8","path":"rooms/room_badlands/room_badlands.yy",},
-    {"name":"inst_31DFA09E","path":"rooms/room_badlands/room_badlands.yy",},
+    {"name":"inst_itemPickupRaygun","path":"rooms/room_badlands/room_badlands.yy",},
     {"name":"inst_F9756A3","path":"rooms/room_badlands/room_badlands.yy",},
     {"name":"inst_7A84A8","path":"rooms/room_badlands/room_badlands.yy",},
     {"name":"inst_5765ADA7","path":"rooms/room_badlands/room_badlands.yy",},
@@ -56,7 +56,7 @@
   "layers":[
     {"$GMREffectLayer":"","%Name":"DayNight","depth":0,"effectEnabled":true,"effectType":null,"gridX":16,"gridY":16,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"name":"DayNight","properties":[],"resourceType":"GMREffectLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
     {"$GMRInstanceLayer":"","%Name":"Items","depth":100,"effectEnabled":true,"effectType":null,"gridX":16,"gridY":16,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[
-        {"$GMRInstance":"v4","%Name":"inst_31DFA09E","colour":4294967295,"frozen":false,"hasCreationCode":true,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_31DFA09E","objectId":{"name":"obj_itemPickup","path":"objects/obj_itemPickup/obj_itemPickup.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":3664.0,"y":2208.0,},
+        {"$GMRInstance":"v4","%Name":"inst_itemPickupRaygun","colour":4294967295,"frozen":false,"hasCreationCode":true,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_itemPickupRaygun","objectId":{"name":"obj_itemPickup","path":"objects/obj_itemPickup/obj_itemPickup.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":3664.0,"y":2208.0,},
       ],"layers":[],"name":"Items","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
     {"$GMRInstanceLayer":"","%Name":"NPCs","depth":200,"effectEnabled":true,"effectType":null,"gridX":16,"gridY":16,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[
         {"$GMRInstance":"v4","%Name":"inst_F9756A3","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_F9756A3","objectId":{"name":"obj_npcPolice","path":"objects/obj_npcPolice/obj_npcPolice.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":705.0,"y":2394.0,},

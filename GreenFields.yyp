@@ -261,6 +261,8 @@
     {"id":{"name":"room_suburbsHouseA","path":"rooms/room_suburbsHouseA/room_suburbsHouseA.yy",},},
     {"id":{"name":"room_suburbsHouseB","path":"rooms/room_suburbsHouseB/room_suburbsHouseB.yy",},},
     {"id":{"name":"room_suburbsHouseC","path":"rooms/room_suburbsHouseC/room_suburbsHouseC.yy",},},
+    {"id":{"name":"room_suburbsHouseD","path":"rooms/room_suburbsHouseD/room_suburbsHouseD.yy",},},
+    {"id":{"name":"room_suburbsUni","path":"rooms/room_suburbsUni/room_suburbsUni.yy",},},
     {"id":{"name":"room_test","path":"rooms/room_test/room_test.yy",},},
     {"id":{"name":"room_testNPCObby","path":"rooms/room_testNPCObby/room_testNPCObby.yy",},},
     {"id":{"name":"room_trainingmode","path":"rooms/room_trainingmode/room_trainingmode.yy",},},
@@ -509,6 +511,8 @@
     {"roomId":{"name":"room_downtownMurderBuilding","path":"rooms/room_downtownMurderBuilding/room_downtownMurderBuilding.yy",},},
     {"roomId":{"name":"room_testNPCObby","path":"rooms/room_testNPCObby/room_testNPCObby.yy",},},
     {"roomId":{"name":"room_downtownTutorialBackup","path":"rooms/room_downtownTutorialBackup/room_downtownTutorialBackup.yy",},},
+    {"roomId":{"name":"room_suburbsHouseD","path":"rooms/room_suburbsHouseD/room_suburbsHouseD.yy",},},
+    {"roomId":{"name":"room_suburbsUni","path":"rooms/room_suburbsUni/room_suburbsUni.yy",},},
   ],
   "templateType":"game",
   "TextureGroups":[

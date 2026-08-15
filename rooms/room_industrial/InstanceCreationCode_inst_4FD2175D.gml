@@ -1,0 +1,1 @@
+transition_initialize(room_industrialGunstore, 848, 2240)

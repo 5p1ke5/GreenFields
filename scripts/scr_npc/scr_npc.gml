@@ -22,6 +22,7 @@ function npc_initialize(_name = "", _dialogue = "", _commands = [], _combatLevel
 
 	//An array of commands for the NPC to follow.
 	commands = _commands;
+	commandIndex = 0;
 	
 	//This will contain a reference to any dialogue balloon the NPC creates. Noone indicates the NPC does not have a dialgue balloon.
 	myBalloon = noone;

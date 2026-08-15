@@ -1,0 +1,1 @@
+npc_initialize("Homeowner", "Get out of my house!",  [new NPCCommandIdle()], , FACTIONS.ENEMY);

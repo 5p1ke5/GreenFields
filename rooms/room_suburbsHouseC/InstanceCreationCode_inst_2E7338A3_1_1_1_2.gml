@@ -1,1 +1,1 @@
-transition_initialize(room_suburbs, 8064, 2288);
+transition_initialize(room_suburbs, 5936, 2288);

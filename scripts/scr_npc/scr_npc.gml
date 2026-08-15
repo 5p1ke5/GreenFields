@@ -82,7 +82,7 @@ function npc_step()
 		
 	then I can have stuff like NPCCommandGoto(_condition, _indexes[])
 	*/
-	var _command = commands[0];
+	var _command = commands[commandIndex];
 	_command.Perform(self);
 }
 
@@ -272,15 +272,14 @@ function npc_input_fight(_target)
 
 
 ///@function npc_exit_command()
-///@description Attempts to exit the npc's current command. Can only exit command if npcCommands array has more than 1 item. Needs to be called from within an NPC instance. Returns the next command.
-///@returns The next command in the array or noone if there is only 1 item in the array.
+///@description Attempts to exit the npc's current command. Can only exit command if there's a command corresponding to commandIndex + 1, Needs to be called from within an NPC instance. Returns the next command.
+///@returns The next command in the array or noone if at the end of the command array.
 function npc_exit_command()
 {
-	//State can only be exited if the number of items in npcState is greater than 1.
-	if (array_length(commands) > 1)
+	if (commandIndex < array_length(commands))
 	{
-		array_shift(commands); //If so, deletes the current state from the npcCommands array
-		return commands[0];
+		commandIndex++;
+		return commands[commandIndex];
 	}
 	
 	return noone;

@@ -129,7 +129,7 @@ function ItemEquipFirearm(_itemName, _icon = spr_iconBlank, _amount = 1, _descri
 		//Check if the gun has ammo
 		if (amount <= 0)
 		{
-			exit;	
+			//exit;	
 		}
 		else
 		{

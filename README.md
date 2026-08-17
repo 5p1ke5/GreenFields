@@ -12,7 +12,7 @@ TODO:
 * update main menu
 * more interiors
 
-
+* ranged weapons take ammo
 * melee weapons
 * consumables
 * short opening sequence where you land in Downtown and fight through the police

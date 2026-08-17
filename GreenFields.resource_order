@@ -184,6 +184,7 @@
     {"name":"room_downtownOffice","order":1,"path":"rooms/room_downtownOffice/room_downtownOffice.yy",},
     {"name":"room_downtownTutorial","order":3,"path":"rooms/room_downtownTutorial/room_downtownTutorial.yy",},
     {"name":"room_downtownTutorialBackup","order":6,"path":"rooms/room_downtownTutorialBackup/room_downtownTutorialBackup.yy",},
+    {"name":"room_industrialFacilityA","order":7,"path":"rooms/room_industrialFacilityA/room_industrialFacilityA.yy",},
     {"name":"room_industrialGunstore","order":1,"path":"rooms/room_industrialGunstore/room_industrialGunstore.yy",},
     {"name":"room_menuCharacterCreation","order":6,"path":"rooms/room_menuCharacterCreation/room_menuCharacterCreation.yy",},
     {"name":"room_menuClient","order":1,"path":"rooms/room_menuClient/room_menuClient.yy",},

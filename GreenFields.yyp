@@ -241,6 +241,7 @@
     {"id":{"name":"room_downtownTutorial","path":"rooms/room_downtownTutorial/room_downtownTutorial.yy",},},
     {"id":{"name":"room_downtownTutorialBackup","path":"rooms/room_downtownTutorialBackup/room_downtownTutorialBackup.yy",},},
     {"id":{"name":"room_industrial","path":"rooms/room_industrial/room_industrial.yy",},},
+    {"id":{"name":"room_industrialFacilityA","path":"rooms/room_industrialFacilityA/room_industrialFacilityA.yy",},},
     {"id":{"name":"room_industrialGunstore","path":"rooms/room_industrialGunstore/room_industrialGunstore.yy",},},
     {"id":{"name":"room_initialize","path":"rooms/room_initialize/room_initialize.yy",},},
     {"id":{"name":"room_menuCharacterCreation","path":"rooms/room_menuCharacterCreation/room_menuCharacterCreation.yy",},},
@@ -513,6 +514,7 @@
     {"roomId":{"name":"room_downtownTutorialBackup","path":"rooms/room_downtownTutorialBackup/room_downtownTutorialBackup.yy",},},
     {"roomId":{"name":"room_suburbsHouseD","path":"rooms/room_suburbsHouseD/room_suburbsHouseD.yy",},},
     {"roomId":{"name":"room_suburbsUni","path":"rooms/room_suburbsUni/room_suburbsUni.yy",},},
+    {"roomId":{"name":"room_industrialFacilityA","path":"rooms/room_industrialFacilityA/room_industrialFacilityA.yy",},},
   ],
   "templateType":"game",
   "TextureGroups":[

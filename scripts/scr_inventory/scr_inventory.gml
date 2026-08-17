@@ -125,6 +125,17 @@ function ItemEquipFirearm(_itemName, _icon = spr_iconBlank, _amount = 1, _descri
 		{
 			exit;	
 		}
+		
+		//Check if the gun has ammo
+		if (amount <= 0)
+		{
+			exit;	
+		}
+		else
+		{
+			amount--;	
+		}
+		
 
 		var _depth = _user.depth;
 		var _angle = _user.handAngle;
@@ -157,7 +168,7 @@ function ItemEquipFirearm(_itemName, _icon = spr_iconBlank, _amount = 1, _descri
 
 		//Resets timer
 		cooldown = cooldownMax;
-	}
+	}	
 	
 	static LeftButtonPressed = function(_user)
 	{
@@ -226,18 +237,15 @@ function inventory_add(_inventory, _Item)
 		array_push(_inventory, _Item);	
 	}
 	
-	//Otherwise, gets the found Item and adds 1 to amount...When I put ammo in
-	/*
 	else
 	{
 		var _foundItem = array_get(_inventory, _index);
 		
 		with (_foundItem)
 		{
-			amount = amount + _Item.GetAmount();
+			amount = amount + _Item.amount;
 		}
 	}
-	*/
 }
 
 

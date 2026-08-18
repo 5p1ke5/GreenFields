@@ -52,36 +52,37 @@ function doll_initialize(_appearanceArray = [0, 0, 0, 0, 0, c_red, c_red, c_red,
 	hairSprite = spr_dollHair;
 	armSpriteA = spr_armA;
 	armSpriteB = spr_armB;
-//Doll movement control things.
-hDir = 0; //Horizontal movement direction.
-facing = 1; //Direction facing. Should always be 1 or -1.
-maxSpeed = MAX_ACCEL; 
-accel = PLAYER_ACCEL;
+	
+	//Doll movement control things.
+	hDir = 0; //Horizontal movement direction.
+	facing = 1; //Direction facing. Should always be 1 or -1.
+	maxSpeed = MAX_ACCEL; 
+	accel = PLAYER_ACCEL;
 
-maxMultiJumps = 1;
-multiJumps = maxMultiJumps;
-jumpHeight = JUMP_HEIGHT;
-jumpOffset = 0.1; //This is applied to gravity to let the player jump higher while holding the jump button.
+	maxMultiJumps = 1;
+	multiJumps = maxMultiJumps;
+	jumpHeight = JUMP_HEIGHT;
+	jumpOffset = 0.1; //This is applied to gravity to let the player jump higher while holding the jump button.
 
-//Various variables dolls use to animate.
-animSpeed = 0.2; //How fast the player animates normally
-animSpeedRun = 0.5; //How fast the player animates while running
-image_speed = animSpeed;
-drawAngle = 0;
+	//Various variables dolls use to animate.
+	animSpeed = 0.2; //How fast the player animates normally
+	animSpeedRun = 0.5; //How fast the player animates while running
+	image_speed = animSpeed;
+	drawAngle = 0;
 
-//How fast the doll is spinning
-spinSpeed = 0;
+	//How fast the doll is spinning
+	spinSpeed = 0;
 
-//Dash stuff.
-dashCD = -1;
+	//Dash stuff.
+	dashCD = -1;
 
-handAngle = DEFAULT_ANGLE;
+	handAngle = DEFAULT_ANGLE;
 
-myHeld = noone;
+	myHeld = noone;
 
-//Initialize inventory.
-inventory = [];
-equipIndex = 0;
+	//Initialize inventory.
+	inventory = [];
+	equipIndex = 0;
 }
 
 ///@function doll_initialize_random()
@@ -100,30 +101,23 @@ function doll_initialize_random()
 	var _pantsColor = choose(c_blue, c_gray, c_green, c_navy);
 	var _shoeColor = choose(c_brunette, c_green, c_red, c_black, c_brown);
 	
-	doll_initialize([_faceIndex, _hairIndex, _shirtIndex, _pantsIndex, _shoeIndex, _skinColor, _hairColor, _shirtColor, _pantsColor, _shoeColor]);
+	var _appearance = [_faceIndex, _hairIndex, _shirtIndex, _pantsIndex, _shoeIndex, _skinColor, _hairColor, _shirtColor, _pantsColor, _shoeColor]
+	
+	doll_initialize(_appearance);
 	
 }
 
 
-///@function doll_struct(_faceIndex, _hairIndex, _shirtIndex, _pantsIndex, _shoeIndex, _skinColor, _hairColor, _shirtColor, _pantsColor, _shoeColor)
+///@function doll_struct(_appearance)
 ///@description Creates a struct form of the doll component and returns it.
-///@param _faceIndex Subimage in the faces sprite to set face.
-///@param _hairIndex Subimage in the hair sprite to set hair.
-///@param _shirtIndex Subimage in the shirt sprite to set shirt.
-///@param _pantsIndex Which pants sprite to use.
-///@param _shoeIndex Subimage in the shoes sprite to set shoes to.
-///@param _skinColor Color for the doll's body.
-///@param _hairColor Color to make the doll's hair.
-///@param _shirtColor Color to make the doll's shirt.
-///@param _pantsColor Color to make the doll's pants.
-///@param _shoeColor Color to make the doll's shoes.
-function doll_struct(_faceIndex, _hairIndex, _shirtIndex, _pantsIndex, _shoeIndex, _skinColor, _hairColor, _shirtColor, _pantsColor, _shoeColor) 
+///@param _appearance 10-element array with indexes for face, hair, shirt, pants, shoes, as well as skin color and then colors for face, hair, shirt, pants, shoes 
+function doll_struct(_appearance) 
 {
 	var _struct = {};
 	
 	with (_struct)
 	{
-		doll_initialize([_faceIndex, _hairIndex, _shirtIndex, _pantsIndex, _shoeIndex, _skinColor, _hairColor, _shirtColor, _pantsColor, _shoeColor]);
+		doll_initialize(_appearance);
 	}
 	
 	return _struct;

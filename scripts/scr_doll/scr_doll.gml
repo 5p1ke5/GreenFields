@@ -1,3 +1,19 @@
+//intializes everything all at once
+function npc_doll_initialize ()
+{
+	hitbox_initialize([HURTBOX]);
+	phys_initialize(0.2, 0.2);
+	living_initialize();
+	//doll_initialize(); //Make this take an array instead, maybe?
+	npc_initialize("NPC", "Hello!", [new NPCCommandIdle()]);
+	
+	//Initialize inventory.
+	inventory = choose([new ITEM_PISTOL], [new ITEM_SHOTGUN], [new ITEM_MACHINEGUN]);
+	equipIndex = 0;
+
+	inventory[equipIndex].Equip(self);
+}
+
 ///@function doll_initialize(_faceIndex, _hairIndex, _shirtIndex, _pantsIndex, _shoeIndex, _skinColor, _hairColor, _shirtColor, _pantsColor, _shoeColor)
 ///@description Initializes variables for a draw. 
 ///@param _faceIndex Subimage in the faces sprite to set face.
@@ -96,6 +112,7 @@ function doll_initialize_random()
 	doll_initialize(_faceIndex, _hairIndex, _shirtIndex, _pantsIndex, _shoeIndex, _skinColor, _hairColor, _shirtColor, _pantsColor, _shoeColor);
 	
 }
+
 
 ///@function doll_struct(_faceIndex, _hairIndex, _shirtIndex, _pantsIndex, _shoeIndex, _skinColor, _hairColor, _shirtColor, _pantsColor, _shoeColor)
 ///@description Creates a struct form of the doll component and returns it.

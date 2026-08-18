@@ -9,7 +9,6 @@ If you want to play the game you should open it in game maker.
 TODO:
 (higher items = higher priority)
 * make npcs drop money on death
-* update main menu
 * more interiors
 
 * ranged weapons take ammo

@@ -50,7 +50,7 @@ function living_bleed(_angle, _amount)
 /// @desc Death routine. For now just destroys the instance, might do something else later.
 function living_die()
 {
-	repeat (irandom_range(100, 200)) 
+	repeat (irandom_range(80, 120)) 
 	{
 		living_bleed(irandom(180), 1);
 	}

@@ -1,4 +1,5 @@
 //intializes everything all at once
+/*
 function npc_doll_initialize ()
 {
 	hitbox_initialize([HURTBOX]);
@@ -13,11 +14,12 @@ function npc_doll_initialize ()
 
 	inventory[equipIndex].Equip(self);
 }
+*/
 
-///@function doll_initialize(_appearanceArray)
-///@description Initializes variables for a draw. 
+///@function doll_initialize_appearance(_appearanceArray)
+///@description Initializes the appearance of a doll.
 ///@param _appearanceArray 10-element array with indexes for face, hair, shirt, pants, shoes, as well as skin color and then colors for face, hair, shirt, pants, shoes
-function doll_initialize(_appearanceArray = [0, 0, 0, 0, 0, c_red, c_red, c_red, c_red, c_red])
+function doll_initialize_appearance(_appearanceArray)
 {
 	faceIndex = _appearanceArray[0];
 	hairIndex = _appearanceArray[1];
@@ -45,6 +47,7 @@ function doll_initialize(_appearanceArray = [0, 0, 0, 0, 0, c_red, c_red, c_red,
 		asset_get_index("spr_dollShoes" + string(shoeIndex) + "Jump"), 
 		asset_get_index("spr_dollShoes" + string(shoeIndex) + "Run")
 	];
+	
 	shoeSprite = shoeSprites[0]
 	
 	shirtSprite = spr_dollShirt;
@@ -52,6 +55,15 @@ function doll_initialize(_appearanceArray = [0, 0, 0, 0, 0, c_red, c_red, c_red,
 	hairSprite = spr_dollHair;
 	armSpriteA = spr_armA;
 	armSpriteB = spr_armB;
+}
+
+
+///@function doll_initialize(_appearanceArray)
+///@description Initializes variables for a doll. 
+///@param _appearanceArray 10-element array with indexes for face, hair, shirt, pants, shoes, as well as skin color and then colors for face, hair, shirt, pants, shoes
+function doll_initialize(_appearanceArray)
+{
+	doll_initialize_appearance(_appearanceArray);
 	
 	//Doll movement control things.
 	hDir = 0; //Horizontal movement direction.
@@ -79,8 +91,9 @@ function doll_initialize(_appearanceArray = [0, 0, 0, 0, 0, c_red, c_red, c_red,
 	handAngle = DEFAULT_ANGLE;
 
 	myHeld = noone;
-
 	//Initialize inventory.
+	
+	//TODO: This should be a parameter. Maybe I could add drops too even?
 	inventory = [];
 	equipIndex = 0;
 }
@@ -104,7 +117,6 @@ function doll_initialize_random()
 	var _appearance = [_faceIndex, _hairIndex, _shirtIndex, _pantsIndex, _shoeIndex, _skinColor, _hairColor, _shirtColor, _pantsColor, _shoeColor]
 	
 	doll_initialize(_appearance);
-	
 }
 
 

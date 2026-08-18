@@ -37,7 +37,8 @@ function globals_initialize()
 	var _pantsColor = choose(c_blue, c_gray, c_green, c_navy);
 	var _shoeColor = choose(c_brunette, c_green, c_red, c_black);
 	
-	global.playerDoll = doll_struct(_faceIndex, _hairIndex, _shirtIndex, _pantsIndex, _shoeIndex, _skinColor, _hairColor, _shirtColor, _pantsColor, _shoeColor);
+	var _appearance = [_faceIndex, _hairIndex, _shirtIndex, _pantsIndex, _shoeIndex, _skinColor, _hairColor, _shirtColor, _pantsColor, _shoeColor];
+	global.playerDoll = doll_struct(_appearance);
 	//global.playerInventory = [new ITEM_PISTOL, new ITEM_SHOTGUN, new ITEM_ASSAULTRIFLE] new ITEM_MACHINEGUN, new ITEM_BAZOOKA, new ITEM_RAYGUN, new ITEM_GRENADEGUN ];
 	global.playerInventory = [];
 	

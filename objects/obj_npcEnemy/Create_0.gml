@@ -1,7 +1,7 @@
 // Inherit the parent event
 event_inherited();
 
-doll_initialize_random();
+doll_initialize(doll_initialize_random_appearance());
 
 npc_initialize("Enemy", "Get em boys!", [], , FACTIONS.ENEMY);
 living_initialize(20);

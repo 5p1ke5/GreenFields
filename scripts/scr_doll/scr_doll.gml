@@ -103,9 +103,9 @@ function doll_initialize_inventory(_inventoryArray, _drops = _inventoryArray)
 	
 }
 
-///@function doll_initialize_random()
+///@function doll_initialize_random_appearance()
 ///@description Initializes a randomly generated doll appearance.
-function doll_initialize_random()
+function doll_initialize_random_appearance()
 {
 	var _faceIndex = irandom(sprite_get_number(spr_dollFace));
 	var _hairIndex = irandom(sprite_get_number(spr_dollHair));
@@ -121,7 +121,7 @@ function doll_initialize_random()
 	
 	var _appearance = [_faceIndex, _hairIndex, _shirtIndex, _pantsIndex, _shoeIndex, _skinColor, _hairColor, _shirtColor, _pantsColor, _shoeColor]
 	
-	doll_initialize(_appearance);
+	return _appearance;
 }
 
 

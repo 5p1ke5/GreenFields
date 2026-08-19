@@ -1,7 +1,7 @@
 // Inherit the parent event
 event_inherited();
 
-doll_initialize_random();
+doll_initialize(doll_initialize_random_appearance());
 living_initialize(1000000000);
 
 var _conditionMethod1 = function()

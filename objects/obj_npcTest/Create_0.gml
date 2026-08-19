@@ -3,7 +3,7 @@ event_inherited();
 
 living_initialize(100);
 
-doll_initialize_random();
+doll_initialize(doll_initialize_random_appearance());
 
 //npc_initialize("Marcus", "Use the arrow keys or WASD to move. Follow me!", 
 npc_initialize("Marcus", ["foo"], 

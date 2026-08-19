@@ -1,7 +1,7 @@
 // Inherit the parent event
 event_inherited();
 
-doll_initialize_random();
+doll_initialize(doll_initialize_random_appearance());
 living_initialize(100);
 
 npc_initialize("Reds", "Reds rise up!", [new NPCCommandIdle()], , FACTIONS.CRIMINAL);

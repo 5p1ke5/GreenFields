@@ -2,7 +2,7 @@
 event_inherited();
 living_initialize(50);
 
-doll_initialize_random();
+doll_initialize(doll_initialize_random_appearance());
 
 npc_initialize("Hostile", "I'll destroy everything!", [], , FACTIONS.HOSTILE);
 

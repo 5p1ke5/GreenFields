@@ -98,9 +98,13 @@ function doll_initialize(_appearanceArray)
 	equipIndex = 0;
 }
 
-function doll_initialize_inventory(_inventoryArray, _drops = _inventoryArray)
+/// @function doll_initialize_inventory(_inventoryArray, _drops = _inventoryArray)
+/// @description Initializes the inventory of the given doll.
+/// @param _inventoryArray an array of all inventory items.
+function doll_initialize_inventory(_inventoryArray = [new ITEM_NONE], _drops = _inventoryArray)
 {
-	
+	inventory = _inventoryArray;
+	drops = _inventoryArray;
 }
 
 ///@function doll_initialize_random_appearance()

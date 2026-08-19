@@ -98,6 +98,11 @@ function doll_initialize(_appearanceArray)
 	equipIndex = 0;
 }
 
+function doll_initialize_inventory(_inventoryArray, _drops = _inventoryArray)
+{
+	
+}
+
 ///@function doll_initialize_random()
 ///@description Initializes a randomly generated doll appearance.
 function doll_initialize_random()

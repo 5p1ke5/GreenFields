@@ -61,9 +61,10 @@ function doll_initialize_appearance(_appearanceArray)
 ///@function doll_initialize(_appearanceArray)
 ///@description Initializes variables for a doll. 
 ///@param _appearanceArray 10-element array with indexes for face, hair, shirt, pants, shoes, as well as skin color and then colors for face, hair, shirt, pants, shoes
-function doll_initialize(_appearanceArray)
+///@param _inventoryArray An array of inventory items.
+///@param _drops An array of items the NPC drops on death. Can be Items or objects to spawn
+function doll_initialize(_appearanceArray, _inventoryArray = [new ITEM_NONE], _drops = _inventoryArray)
 {
-	doll_initialize_appearance(_appearanceArray);
 	
 	//Doll movement control things.
 	hDir = 0; //Horizontal movement direction.
@@ -91,19 +92,57 @@ function doll_initialize(_appearanceArray)
 	handAngle = DEFAULT_ANGLE;
 
 	myHeld = noone;
-	//Initialize inventory.
+	//Initialize appearance, inventory.
 	
-	//TODO: This should be a parameter. Maybe I could add drops too even?
-	inventory = [];
-	equipIndex = 0;
+	//Maybe I should just have these be outside doll initialize and then I have 3 functions I can initialize at different stages.
+	doll_initialize_appearance(_appearanceArray);
+	doll_initialize_inventory(_inventoryArray, _drops);
 }
+
+///@function doll_initialize()
+///@description Initializes variables all dolls have.
+/*
+function doll_initialize()
+{
+	//Doll movement control things.
+	hDir = 0; //Horizontal movement direction.
+	facing = 1; //Direction facing. Should always be 1 or -1.
+	maxSpeed = MAX_ACCEL; 
+	accel = PLAYER_ACCEL;
+
+	maxMultiJumps = 1;
+	multiJumps = maxMultiJumps;
+	jumpHeight = JUMP_HEIGHT;
+	jumpOffset = 0.1; //This is applied to gravity to let the player jump higher while holding the jump button.
+
+	//Various variables dolls use to animate.
+	animSpeed = 0.2; //How fast the player animates normally
+	animSpeedRun = 0.5; //How fast the player animates while running
+	image_speed = animSpeed;
+	drawAngle = 0;
+
+	//How fast the doll is spinning
+	spinSpeed = 0;
+
+	//Dash stuff.
+	dashCD = -1;
+
+	handAngle = DEFAULT_ANGLE;
+
+	myHeld = noone;
+}
+*/
 
 /// @function doll_initialize_inventory(_inventoryArray, _drops = _inventoryArray)
 /// @description Initializes the inventory of the given doll.
 /// @param _inventoryArray an array of all inventory items.
+/// @param _drops An array of items dropped when the doll dies.
 function doll_initialize_inventory(_inventoryArray = [new ITEM_NONE], _drops = _inventoryArray)
 {
 	inventory = _inventoryArray;
+	equipIndex = 0;
+	inventory[equipIndex].Equip(self);
+	
 	drops = _inventoryArray;
 }
 

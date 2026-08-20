@@ -1,3 +1,4 @@
+/*
 /// @function equip_initialize(_owner)
 /// @description Initializes variables for an equipped item.
 /// @param _owner Object that the equipped object is linked to.
@@ -27,3 +28,4 @@ function equip_end_step()
 	
 	image_angle = angle;
 }
+*/

@@ -86,9 +86,22 @@ function ItemEquip(_itemName, _icon = spr_iconBlank, _amount = 1, _description =
 /// @param _amount  quantity of item in stack.
 /// @param description A description of the item.
 /// @param _sprite_index Sprite for the struct.
-function ItemEquipMelee(_itemName, _icon = spr_iconBlank, _amount = 1, _description = "", _sprite_index): Item(_itemName, _icon, _amount, _description = "")  constructor
+function ItemEquipMelee(_itemName, _icon = spr_iconBlank, _amount = 1, _description = "", _sprite_index = spr_equipEmpty): Item(_itemName, _icon, _amount, _description = "")  constructor
 {
+	static Step = function()
+	{
+		
+	}
 	
+	static Fire = function(_user)
+	{
+		
+	}
+	
+	static LeftButtonPressed = function(_user)
+	{
+		Fire(_user);
+	}
 }
 
 

@@ -403,7 +403,6 @@ function doll_input_dash(_dashDown, _rightPressed, _leftPressed)
 /// @param _mbRightReleased Was the right mouse button released this frame
 function doll_input_aim(_angle, _myHeld, _mbLeft, _mbRight, _mbLeftPressed, _mbRightPressed, _mbLeftReleased, _mbRightReleased)
 {
-	handAngle = _angle;
 	
 	if (_myHeld)
 	{
@@ -414,6 +413,17 @@ function doll_input_aim(_angle, _myHeld, _mbLeft, _mbRight, _mbLeftPressed, _mbR
 		if (_mbLeftReleased)	{_myHeld.LeftButtonReleased(self);}
 		if (_mbRightReleased)	{ _myHeld.RightButtonReleased(self);}
 	}
+	
+	//If melee handAngle may be controlled by the melee weapon's current arc. Otherwise just follow _angle like normal.
+	if (is_instanceof(_myHeld, ItemEquipMelee))
+	{
+		//Havent programmed this in yet...
+	}
+	else
+	{
+		handAngle = _angle;
+	}
+	
 }
 
 

@@ -1,19 +1,14 @@
 /// @description Inerhits, initiralizes variables, position at spawn.
-
 event_inherited();
+
 living_initialize(100);
 
 var _doll = global.playerDoll;
 var _appearance = [_doll.faceIndex, _doll.hairIndex, _doll.shirtIndex, _doll.pantsIndex, _doll.shoeIndex, _doll.skinColor, _doll.hairColor, _doll.shirtColor, _doll.pantsColor, _doll.shoeColor];
-doll_initialize(_appearance);
+doll_initialize_appearance(_appearance);
+doll_initialize_inventory(global.playerEquip)
 
 faction = FACTIONS.PLAYER;
-
-//Initialize inventory.
-inventory = global.playerEquip;
-equipIndex = 0;
-inventory[equipIndex].Equip(self);
-
 
 //The target for interaction.
 interact = undefined;

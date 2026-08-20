@@ -1,8 +1,8 @@
 // Inherit the parent event
 event_inherited();
 
-doll_initialize(doll_initialize_random_appearance());
-living_initialize(1000000000);
+doll_initialize_appearance(doll_initialize_random_appearance());
+doll_initialize_inventory([new ITEM_PISTOL]);
 
 var _conditionMethod1 = function()
 {
@@ -17,7 +17,7 @@ var _conditionMethod2 = function()
 }
 
 
-
+living_initialize(1000000000);
 npc_initialize("Marcus", ["Welcome to the Resistance Training Exercise.", "Use the arrow keys or WASD to move."], 
 [
 	new NPCCommandSpeak(),
@@ -53,9 +53,3 @@ npc_initialize("Marcus", ["Welcome to the Resistance Training Exercise.", "Use t
 	new NPCCommandSpeak(["Press CTRL to interact with objects when a '?' is over your head.", "Use CTRL to go through the door."]),
 	new NPCCommandMove(obj_player),
 ], , FACTIONS.PLAYER);
-
-//Initialize inventory.
-inventory = [new ITEM_PISTOL];
-equipIndex = 0;
-
-inventory[equipIndex].Equip(self);

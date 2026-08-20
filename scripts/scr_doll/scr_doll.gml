@@ -1,20 +1,3 @@
-//intializes everything all at once
-/*
-function npc_doll_initialize ()
-{
-	hitbox_initialize([HURTBOX]);
-	phys_initialize(0.2, 0.2);
-	living_initialize();
-	//doll_initialize(); //Make this take an array instead, maybe?
-	npc_initialize("NPC", "Hello!", [new NPCCommandIdle()]);
-	
-	//Initialize inventory.
-	inventory = choose([new ITEM_PISTOL], [new ITEM_SHOTGUN], [new ITEM_MACHINEGUN]);
-	equipIndex = 0;
-
-	inventory[equipIndex].Equip(self);
-}
-*/
 
 ///@function doll_initialize_appearance(_appearanceArray)
 ///@description Initializes the appearance of a doll.
@@ -99,11 +82,14 @@ function doll_initialize(_appearanceArray, _inventoryArray = [new ITEM_NONE], _d
 	doll_initialize_inventory(_inventoryArray, _drops);
 }
 
-///@function doll_initialize()
+///@function doll_initialize_default()
 ///@description Initializes variables all dolls have.
-/*
-function doll_initialize()
+function doll_initialize_default()
 {
+	//Hitbox and physics.
+	hitbox_initialize([HURTBOX]);
+	phys_initialize(0.2, 0.2);
+	
 	//Doll movement control things.
 	hDir = 0; //Horizontal movement direction.
 	facing = 1; //Direction facing. Should always be 1 or -1.
@@ -131,7 +117,7 @@ function doll_initialize()
 
 	myHeld = noone;
 }
-*/
+
 
 /// @function doll_initialize_inventory(_inventoryArray, _drops = _inventoryArray)
 /// @description Initializes the inventory of the given doll.
@@ -143,7 +129,7 @@ function doll_initialize_inventory(_inventoryArray = [new ITEM_NONE], _drops = _
 	equipIndex = 0;
 	inventory[equipIndex].Equip(self);
 	
-	drops = _inventoryArray;
+	drops = _drops;
 }
 
 ///@function doll_initialize_random_appearance()
@@ -177,7 +163,7 @@ function doll_struct(_appearance)
 	
 	with (_struct)
 	{
-		doll_initialize(_appearance);
+		doll_initialize_appearance(_appearance);
 	}
 	
 	return _struct;

@@ -138,9 +138,10 @@ switch (optionSelected)
 	case 5: //Exit
 		if (FACE_BUTTON_RELEASED)
 		{
-			audio_stop_sound(global.bgm);
-			global.playerDoll = doll_struct(faceIndex, hairIndex, shirtIndex, pantsIndex, shoeIndex, skinColor, hairColor, shirtColor, pantsColor, shoeColor);
+			var _appearance = [faceIndex, hairIndex, shirtIndex, pantsIndex, shoeIndex, skinColor, hairColor, shirtColor, pantsColor, shoeColor];
+			global.playerDoll = doll_struct(_appearance);
 			room_goto(ROOM_TITLE);
+			audio_stop_sound(global.bgm);
 		}
 	break;
 }

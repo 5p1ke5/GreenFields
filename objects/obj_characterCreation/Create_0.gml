@@ -1,9 +1,11 @@
 /// @description Initialize variables.
 
+doll_initialize_default();
+
 var _doll = global.playerDoll;
 var _appearance = [_doll.faceIndex, _doll.hairIndex, _doll.shirtIndex, _doll.pantsIndex, _doll.shoeIndex, _doll.skinColor, _doll.hairColor, _doll.shirtColor, _doll.pantsColor, _doll.shoeColor];
 
-doll_initialize(_appearance);
+doll_initialize_appearance(_appearance)
 
 var _array;
 _array[0] = "FACE: " + string(faceIndex);

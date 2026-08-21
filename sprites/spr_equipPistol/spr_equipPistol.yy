@@ -25,8 +25,8 @@
   "nineSlice":null,
   "origin":9,
   "parent":{
-    "name":"equip",
-    "path":"folders/Sprites/inventory/equip.yy",
+    "name":"firearms",
+    "path":"folders/Sprites/inventory/equip/firearms.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

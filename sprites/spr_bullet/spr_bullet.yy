@@ -26,7 +26,7 @@
   "origin":0,
   "parent":{
     "name":"bullets",
-    "path":"folders/Sprites/inventory/equip/bullets.yy",
+    "path":"folders/Sprites/inventory/equip/firearms/bullets.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

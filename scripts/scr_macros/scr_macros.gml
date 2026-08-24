@@ -18,6 +18,7 @@
 #macro ITEM_MACHINEGUN ItemEquipFirearmAuto("Machine Gun", spr_iconMachinegun, 60, "A powerful machine gun.", spr_equipMachinegun, game_get_speed(gamespeed_fps)/5, obj_bullet, 8, true)
 #macro ITEM_BAZOOKA ItemEquipFirearm("Bazooka", spr_iconBazooka, 4, "A bazooka that fires rockets.", spr_equipBazooka, game_get_speed(gamespeed_fps), obj_projectileMissile, noone, true)
 #macro ITEM_GRENADEGUN ItemEquipFirearm("Grenade Gun", spr_iconGrenadegun, 6, "A handgun the shoots explosive grenades.", spr_equipGrenadeGun, game_get_speed(gamespeed_fps)/2, obj_projectileGrenade, noone, true)
+#macro ITEM_BAT ItemEquipMelee("Bat", spr_iconBlank, 1, "A big wooden baseball bat.", spr_equipBat, 10, 90, 3)
 #endregion
 
 #region rooms

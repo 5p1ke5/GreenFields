@@ -41,6 +41,7 @@ function doll_initialize_appearance(_appearanceArray)
 }
 
 
+/*
 ///@function doll_initialize(_appearanceArray)
 ///@description Initializes variables for a doll. 
 ///@param _appearanceArray 10-element array with indexes for face, hair, shirt, pants, shoes, as well as skin color and then colors for face, hair, shirt, pants, shoes
@@ -81,6 +82,7 @@ function doll_initialize(_appearanceArray, _inventoryArray = [new ITEM_NONE], _d
 	doll_initialize_appearance(_appearanceArray);
 	doll_initialize_inventory(_inventoryArray, _drops);
 }
+*/
 
 ///@function doll_initialize_default()
 ///@description Initializes variables all dolls have.
@@ -403,6 +405,23 @@ function doll_input_dash(_dashDown, _rightPressed, _leftPressed)
 /// @param _mbRightReleased Was the right mouse button released this frame
 function doll_input_aim(_angle, _myHeld, _mbLeft, _mbRight, _mbLeftPressed, _mbRightPressed, _mbLeftReleased, _mbRightReleased)
 {
+	//If melee handAngle may be controlled by the melee weapon's current arc. Otherwise just follow _angle like normal.
+	//I may later need to make this more inclusive but for now there's really only the one case.
+	if (is_instanceof(_myHeld, ItemEquipMelee))
+	{
+		//If a hurtbox has been spawned, the doll is busy swinging the weapon and so can't aim.
+		if (_myHeld.hurtbox)
+		{
+			var _hurtBox = _myHeld.hurtbox;
+			handAngle = _hurtBox.angle;
+			
+			return;
+		}
+	}
+	else
+	{
+		handAngle = _angle;
+	}
 	
 	if (_myHeld)
 	{
@@ -414,15 +433,6 @@ function doll_input_aim(_angle, _myHeld, _mbLeft, _mbRight, _mbLeftPressed, _mbR
 		if (_mbRightReleased)	{ _myHeld.RightButtonReleased(self);}
 	}
 	
-	//If melee handAngle may be controlled by the melee weapon's current arc. Otherwise just follow _angle like normal.
-	if (is_instanceof(_myHeld, ItemEquipMelee))
-	{
-		//Havent programmed this in yet...
-	}
-	else
-	{
-		handAngle = _angle;
-	}
 	
 }
 

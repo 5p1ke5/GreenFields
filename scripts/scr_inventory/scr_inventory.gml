@@ -86,16 +86,60 @@ function ItemEquip(_itemName, _icon = spr_iconBlank, _amount = 1, _description =
 /// @param _amount  quantity of item in stack.
 /// @param description A description of the item.
 /// @param _sprite_index Sprite for the struct.
-function ItemEquipMelee(_itemName, _icon = spr_iconBlank, _amount = 1, _description = "", _sprite_index = spr_equipEmpty): Item(_itemName, _icon, _amount, _description = "")  constructor
+function ItemEquipMelee(_itemName, _icon = spr_iconBlank, _amount = 1, _description = "", _sprite_index = spr_equipEmpty, _damage = noone, _arcLength = 90, _swingSpeed = 1): ItemEquip(_itemName, _icon, _amount, _description = "", _sprite_index)  constructor
 {
+	hurtbox = noone; //This will contain the generated hurtbox for the item.
+	damage = _damage;
+	arcLength = _arcLength;
+	arc = 0;
+	swingSpeed = _swingSpeed;
+	
 	static Step = function()
 	{
-		
+		//If a hurtbox exists, increments its arc. 
+		if (hurtbox)
+		{
+			//Once the arc is complete deletes the hitbox and sets the variable to noone and resets arc.
+			if (arc < arcLength)
+			{
+				arc += swingSpeed;		
+			}
+			else
+			{
+				instance_destroy(hurtbox);
+				hurtbox = noone;
+				arc = 0;
+			}
+			
+			//Change the hurtbox's angle with the arc increment. 
+			var _arc = arc;
+			with (hurtbox)
+			{
+				angle = startAngle + _arc;
+			}
+		}
 	}
 	
 	static Fire = function(_user)
 	{
+		//Creates hurtbox at user x, y, depth and sets reference.
+		var _x = _user.x;
+		var _y = _user.y;
+		var _depth = _user.depth;
+		hurtbox = instance_create_depth(_x, _y, _depth, obj_meleeHurtbox);
 		
+		//Sets variables for that hurtbox.
+		var _sprite_index = sprite_index;
+		var _damage = damage;
+		var _angle = _user.handAngle
+		with (hurtbox)
+		{
+			sprite_index = _sprite_index;
+			damage = _damage;
+			startAngle = _angle;
+			angle = startAngle;
+			owner = _user;
+		}
 	}
 	
 	static LeftButtonPressed = function(_user)

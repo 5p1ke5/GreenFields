@@ -131,12 +131,12 @@ function ItemEquipMelee(_itemName, _icon = spr_iconBlank, _amount = 1, _descript
 		//Sets variables for that hurtbox.
 		var _sprite_index = sprite_index;
 		var _damage = damage;
-		var _angle = _user.handAngle
+		var _handAngle = _user.handAngle
 		with (hurtbox)
 		{
 			sprite_index = _sprite_index;
 			damage = _damage;
-			startAngle = _angle;
+			startAngle = _handAngle;
 			angle = startAngle;
 			owner = _user;
 		}

@@ -383,6 +383,7 @@
     {"id":{"name":"spr_equipFlamethrower","path":"sprites/spr_equipFlamethrower/spr_equipFlamethrower.yy",},},
     {"id":{"name":"spr_equipGrenadeGun","path":"sprites/spr_equipGrenadeGun/spr_equipGrenadeGun.yy",},},
     {"id":{"name":"spr_equipMachinegun","path":"sprites/spr_equipMachinegun/spr_equipMachinegun.yy",},},
+    {"id":{"name":"spr_equipMeleeMask","path":"sprites/spr_equipMeleeMask/spr_equipMeleeMask.yy",},},
     {"id":{"name":"spr_equipPistol","path":"sprites/spr_equipPistol/spr_equipPistol.yy",},},
     {"id":{"name":"spr_equipRaygun","path":"sprites/spr_equipRaygun/spr_equipRaygun.yy",},},
     {"id":{"name":"spr_equipShotgun","path":"sprites/spr_equipShotgun/spr_equipShotgun.yy",},},

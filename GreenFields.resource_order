@@ -308,6 +308,7 @@
     {"name":"spr_equipFlamethrower","order":6,"path":"sprites/spr_equipFlamethrower/spr_equipFlamethrower.yy",},
     {"name":"spr_equipGrenadeGun","order":7,"path":"sprites/spr_equipGrenadeGun/spr_equipGrenadeGun.yy",},
     {"name":"spr_equipMachinegun","order":8,"path":"sprites/spr_equipMachinegun/spr_equipMachinegun.yy",},
+    {"name":"spr_equipMeleeMask","order":1,"path":"sprites/spr_equipMeleeMask/spr_equipMeleeMask.yy",},
     {"name":"spr_equipPistol","order":9,"path":"sprites/spr_equipPistol/spr_equipPistol.yy",},
     {"name":"spr_equipRaygun","order":10,"path":"sprites/spr_equipRaygun/spr_equipRaygun.yy",},
     {"name":"spr_equipShotgun","order":11,"path":"sprites/spr_equipShotgun/spr_equipShotgun.yy",},

@@ -30,8 +30,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_equipBat",
-    "path":"sprites/spr_equipBat/spr_equipBat.yy",
+    "name":"spr_equipMeleeMask",
+    "path":"sprites/spr_equipMeleeMask/spr_equipMeleeMask.yy",
   },
   "spriteMaskId":null,
   "visible":true,

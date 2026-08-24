@@ -40,50 +40,6 @@ function doll_initialize_appearance(_appearanceArray)
 	armSpriteB = spr_armB;
 }
 
-
-/*
-///@function doll_initialize(_appearanceArray)
-///@description Initializes variables for a doll. 
-///@param _appearanceArray 10-element array with indexes for face, hair, shirt, pants, shoes, as well as skin color and then colors for face, hair, shirt, pants, shoes
-///@param _inventoryArray An array of inventory items.
-///@param _drops An array of items the NPC drops on death. Can be Items or objects to spawn
-function doll_initialize(_appearanceArray, _inventoryArray = [new ITEM_NONE], _drops = _inventoryArray)
-{
-	
-	//Doll movement control things.
-	hDir = 0; //Horizontal movement direction.
-	facing = 1; //Direction facing. Should always be 1 or -1.
-	maxSpeed = MAX_ACCEL; 
-	accel = PLAYER_ACCEL;
-
-	maxMultiJumps = 1;
-	multiJumps = maxMultiJumps;
-	jumpHeight = JUMP_HEIGHT;
-	jumpOffset = 0.1; //This is applied to gravity to let the player jump higher while holding the jump button.
-
-	//Various variables dolls use to animate.
-	animSpeed = 0.2; //How fast the player animates normally
-	animSpeedRun = 0.5; //How fast the player animates while running
-	image_speed = animSpeed;
-	drawAngle = 0;
-
-	//How fast the doll is spinning
-	spinSpeed = 0;
-
-	//Dash stuff.
-	dashCD = -1;
-
-	handAngle = DEFAULT_ANGLE;
-
-	myHeld = noone;
-	//Initialize appearance, inventory.
-	
-	//Maybe I should just have these be outside doll initialize and then I have 3 functions I can initialize at different stages.
-	doll_initialize_appearance(_appearanceArray);
-	doll_initialize_inventory(_inventoryArray, _drops);
-}
-*/
-
 ///@function doll_initialize_default()
 ///@description Initializes variables all dolls have.
 function doll_initialize_default()
@@ -407,16 +363,13 @@ function doll_input_aim(_angle, _myHeld, _mbLeft, _mbRight, _mbLeftPressed, _mbR
 {
 	//If melee handAngle may be controlled by the melee weapon's current arc. Otherwise just follow _angle like normal.
 	//I may later need to make this more inclusive but for now there's really only the one case.
-	if (is_instanceof(_myHeld, ItemEquipMelee))
+	if (is_instanceof(_myHeld, ItemEquipMelee)) && (_myHeld.hurtbox)
 	{
 		//If a hurtbox has been spawned, the doll is busy swinging the weapon and so can't aim.
-		if (_myHeld.hurtbox)
-		{
-			var _hurtBox = _myHeld.hurtbox;
-			handAngle = _hurtBox.angle;
+		var _hurtBox = _myHeld.hurtbox;
+		handAngle = _hurtBox.angle;
 			
-			return;
-		}
+		return;
 	}
 	else
 	{

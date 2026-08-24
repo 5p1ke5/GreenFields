@@ -8,3 +8,5 @@ else
 {
 	instance_destroy();	
 }
+
+image_angle = angle;

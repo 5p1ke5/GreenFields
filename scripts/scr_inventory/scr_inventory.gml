@@ -93,6 +93,7 @@ function ItemEquipMelee(_itemName, _icon = spr_iconBlank, _amount = 1, _descript
 	arcLength = _arcLength;
 	arc = 0;
 	swingSpeed = _swingSpeed;
+	swingDir = 1;
 	
 	static Step = function()
 	{
@@ -100,9 +101,9 @@ function ItemEquipMelee(_itemName, _icon = spr_iconBlank, _amount = 1, _descript
 		if (hurtbox)
 		{
 			//Once the arc is complete deletes the hitbox and sets the variable to noone and resets arc.
-			if (arc < arcLength)
+			if (abs(arc) < abs(arcLength))
 			{
-				arc += swingSpeed;		
+				arc += (swingSpeed * swingDir);		
 			}
 			else
 			{
@@ -131,14 +132,19 @@ function ItemEquipMelee(_itemName, _icon = spr_iconBlank, _amount = 1, _descript
 		//Sets variables for that hurtbox.
 		var _sprite_index = sprite_index;
 		var _damage = damage;
-		var _handAngle = _user.handAngle
+		var _handAngle = _user.handAngle;
+		var _facing = _user.facing;
+		var _arcLength = arcLength;
 		with (hurtbox)
 		{
-			sprite_index = _sprite_index;
+			//sprite_index = _sprite_index;
 			damage = _damage;
-			startAngle = _handAngle;
+			startAngle = _handAngle - (_arcLength/2);
+			
+			show_debug_message("{0}, {1}", startAngle, _arcLength)
 			angle = startAngle;
 			owner = _user;
+			swingDir = _facing;
 		}
 	}
 	

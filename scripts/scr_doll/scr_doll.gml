@@ -368,7 +368,7 @@ function doll_input_aim(_angle, _myHeld, _mbLeft, _mbRight, _mbLeftPressed, _mbR
 		//If a hurtbox has been spawned, the doll is busy swinging the weapon and so can't aim.
 		var _hurtBox = _myHeld.hurtbox;
 		handAngle = _hurtBox.angle;
-			
+		
 		return;
 	}
 	else
@@ -421,10 +421,6 @@ function doll_input_equipment(_incrementUp, _incrementDown)
 		inventory[equipIndex].Equip(self);
 	}
 }
-
-
-
-
 
 
 /// @function doll_input_interact(_upReleased)

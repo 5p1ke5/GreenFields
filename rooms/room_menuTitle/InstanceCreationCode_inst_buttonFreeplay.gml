@@ -1,7 +1,7 @@
 
 var _clickFunction = function()
 {
-	global.playerInventory = [new ITEM_PISTOL];
+	global.playerInventory = [new ITEM_PISTOL, new ITEM_BAT];
 	global.playerEquip = [global.playerInventory[0], new ITEM_NONE, new ITEM_NONE];
 	
 	global.clockSteps = 360 * SECOND;

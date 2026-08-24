@@ -11,7 +11,10 @@
     "name":"equip",
     "path":"folders/Objects/items/equip.yy",
   },
-  "parentObjectId":null,
+  "parentObjectId":{
+    "name":"abs_hurtbox",
+    "path":"objects/abs_hurtbox/abs_hurtbox.yy",
+  },
   "persistent":false,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,

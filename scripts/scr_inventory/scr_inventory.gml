@@ -79,6 +79,80 @@ function ItemEquip(_itemName, _icon = spr_iconBlank, _amount = 1, _description =
 	}
 }
 
+
+/// @function ItemEquipMelee(_itemName, _icon = spr_iconBlank, _amount = 1, _description = "", _sprite_index)
+/// @description Will have melee weapons in here for later. For now is just a placeholder.
+/// @param _itemName <String> item's name.
+/// @param _icon <sprite> Sprite representation of item.
+/// @param _amount  quantity of item in stack.
+/// @param description A description of the item.
+/// @param _sprite_index Sprite for the struct.
+function ItemEquipMelee(_itemName, _icon = spr_iconBlank, _amount = 1, _description = "", _sprite_index = spr_equipEmpty, _damage = noone, _arcLength = 90, _swingSpeed = 1): ItemEquip(_itemName, _icon, _amount, _description = "", _sprite_index)  constructor
+{
+	hurtbox = noone; //This will contain the generated hurtbox for the item.
+	damage = _damage;
+	arcLength = _arcLength;
+	arc = 0;
+	swingSpeed = _swingSpeed;
+	swingDir = 1;
+	
+	static Step = function()
+	{
+		//If a hurtbox exists, increments its arc. 
+		if (hurtbox)
+		{
+			//Once the arc is complete deletes the hitbox and sets the variable to noone and resets arc.
+			if (abs(arc) < abs(arcLength))
+			{
+				arc += (swingSpeed);		
+			}
+			else
+			{
+				instance_destroy(hurtbox);
+				hurtbox = noone;
+				arc = 0;
+			}
+			
+			//Change the hurtbox's angle with the arc increment. 
+			var _arc = arc;
+			with (hurtbox)
+			{
+				angle = startAngle + _arc;
+			}
+		}
+	}
+	
+	static Fire = function(_user)
+	{
+		
+		//Creates hurtbox at user x, y, depth and sets reference.
+		var _x = _user.x;
+		var _y = _user.y;
+		var _depth = _user.depth;
+		hurtbox = instance_create_depth(_x, _y, _depth, obj_meleeHurtbox);
+		
+		var _damage = damage;
+		var _handAngle = _user.handAngle;
+		var _arcLength = arcLength;
+		with (hurtbox)
+		{
+			damage = _damage;
+			startAngle = (_handAngle - (_arcLength/2));
+			
+			angle = startAngle;
+			owner = _user;
+		}
+	}
+	
+	static LeftButtonPressed = function(_user)
+	{
+		Fire(_user);
+	}
+}
+
+
+
+/* This one makes the melee weapon swing downwards but only works when facing left
 /// @function ItemEquipMelee(_itemName, _icon = spr_iconBlank, _amount = 1, _description = "", _sprite_index)
 /// @description Will have melee weapons in here for later. For now is just a placeholder.
 /// @param _itemName <String> item's name.
@@ -123,6 +197,7 @@ function ItemEquipMelee(_itemName, _icon = spr_iconBlank, _amount = 1, _descript
 	
 	static Fire = function(_user)
 	{
+		
 		//Creates hurtbox at user x, y, depth and sets reference.
 		var _x = _user.x;
 		var _y = _user.y;
@@ -130,21 +205,20 @@ function ItemEquipMelee(_itemName, _icon = spr_iconBlank, _amount = 1, _descript
 		hurtbox = instance_create_depth(_x, _y, _depth, obj_meleeHurtbox);
 		
 		//Sets variables for that hurtbox.
-		var _sprite_index = sprite_index;
+		swingDir = -_user.facing;
+		var _swingDir = swingDir;
 		var _damage = damage;
 		var _handAngle = _user.handAngle;
-		var _facing = _user.facing;
 		var _arcLength = arcLength;
 		with (hurtbox)
 		{
-			//sprite_index = _sprite_index;
 			damage = _damage;
-			startAngle = _handAngle - (_arcLength/2);
+			startAngle = _swingDir * (_handAngle - (_arcLength/2));
+			//startAngle = (sign(_swingDir + 1) * 360) + (_handAngle - (_arcLength/2));
+			//startAngle = (_handAngle - (_arcLength/2));
 			
-			show_debug_message("{0}, {1}", startAngle, _arcLength)
 			angle = startAngle;
 			owner = _user;
-			swingDir = _facing;
 		}
 	}
 	
@@ -153,7 +227,7 @@ function ItemEquipMelee(_itemName, _icon = spr_iconBlank, _amount = 1, _descript
 		Fire(_user);
 	}
 }
-
+*/
 
 /// @function ItemEquipFirearm(_itemName, _icon = spr_iconBlank, _amount = 1, _description = "", _sprite_index = spr_equipEmpty, _cooldown = game_get_speed(gamespeed_fps) / 4, _bullet = obj_bullet, _damage = noone)
 /// @description Constructor for an item struct that is used to fire the player's gun.
@@ -310,39 +384,3 @@ function inventory_add(_inventory, _Item)
 		}
 	}
 }
-
-
-/// @function inventory_meleeInstance_initialize(_name, _owner, _sprite, _damage, _knockback, _arc, _spd, _angle)
-/// @description Initializes variables for a melee object instance.
-/// @param _name Name of item this instance was spawned from.
-/// @param _owner Instance taht creaeted the obj_melee instance.
-/// @param _sprite Sprite for the object. Also serves as its collision mask.
-/// @param _arc Arc for the object to rotate along.
-/// @param _spd Speed at which to rotate along he arc.
-/// @param _angle angle for the instance to start  at.
-/*
-function inventory_meleeInstance_initialize(_name, _owner, _sprite, _damage, _knockback, _arc, _spd, _angle)
-{
-	name = _name;
-	owner = _owner;
-	hurtbox_initialize(_damage, _knockback, owner);
-	
-	sprite_index = _sprite;
-	mask_index = _sprite;
-	
-	damage = _damage;
-	
-	arc = _arc;
-	spd = _spd;
-	
-	angle = _angle - (arc/2);
-	startingOrientation = _angle;
-	
-	image_angle = _angle;
-	
-	dir = 1;
-	
-	//checks if attack is being parried as it's created.
-	parryCheck();
-}
-*/

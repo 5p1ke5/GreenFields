@@ -23,7 +23,34 @@ function globals_initialize()
 	
 	global.messageLog = [];
 	
-	global.missions = [];
+	global.missions = []
+	
+	var _createFunction = function()
+	{
+		show_debug_message("Created");
+	}
+	
+	var _stepFunction = function()
+	{
+		show_debug_message("Foo");
+		
+		var _player = instance_find(obj_player, 0);
+		if (_player)
+		{
+			if (_player.y < 1800)
+			{
+				return true;
+			}
+		}
+	}
+	
+
+	
+	var _mission1 = new Mission("Test Mision", "Basic test mission", [room_downtown], _createFunction, _stepFunction);
+	var _mission2 = new Mission("The Hunter", "A mutant super soldier is stalking you! Kill him before he kills you!", [room_downtown, room_suburbs], , , , );
+	
+	array_push(global.missions, _mission1);
+	
 	
 	//global.playerDoll = doll_struct(0, 0, 0,0, 0, c_white1, c_darkBrunette, c_red, c_aqua, c_red);
 	var _faceIndex = irandom(sprite_get_number(spr_dollFace));

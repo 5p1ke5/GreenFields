@@ -4,7 +4,7 @@
 // (guys like this might need their own object like "obj_npcQuestTarget" maybe and that checks for associated missions when they die)
 // COuld maybe also give it a step event that calls a passed script like _stepScript? But thats a lot but maybe not if I keep it simple like (if (instanceCount(target) < 0)
 
-function Mission(_name, _description, _activeRooms, _createFunction, _stepFunction, _completeFunction) constructor 
+function Mission(_name, _description, _activeRooms, _createFunction = noone, _stepFunction = noone, _completeFunction = noone) constructor 
 {
 	name = _name;
 	description = _description;
@@ -28,17 +28,23 @@ function Mission(_name, _description, _activeRooms, _createFunction, _stepFuncti
 	{
 		if (Active())
 		{
-			stepFunction();
+			if (stepFunction() == true)
+			{
+				Complete();	
+			}
 		}
 	}
 	
 	static Complete = function()
 	{
 		// Calls complete function and then removes self from missions array
-		completeFunction();
+		if (completeFunction)
+		{
+			completeFunction();
+		}
 		
 		var _index = array_get_index(missionLog, self)
-		array_delete(missionLog, index);
+		array_delete(missionLog, _index, 1);
 	}
 	
 	static Active = function()
@@ -46,3 +52,17 @@ function Mission(_name, _description, _activeRooms, _createFunction, _stepFuncti
 		return array_contains(activeRooms, room);	
 	}
 }
+
+
+function mission_complete()
+{
+	Complete();	
+}
+
+/*
+function mission_complete(_mission, _missionLog)
+{
+	var _index = array_get_index(_missionLog, _mission)
+	array_delete(_missionLog, _index, 1);
+}
+*/

@@ -1,4 +1,4 @@
-/// @description Inerhits, initiralizes variables, position at spawn.
+/// @description Inherits, initiralizes variables, position at spawn.
 event_inherited();
 
 living_initialize(100);
@@ -31,4 +31,14 @@ if (global.spawnHsp != undefined)
 if (global.spawnVsp != undefined)
 {
 	vsp = global.spawnVsp;	
+}
+
+missions = global.missions;
+for (var _i = 0; _i < array_length(missions); _i++)
+{
+	var _mission = missions[_i];
+	with (_mission)
+	{
+		Create();    
+	}
 }

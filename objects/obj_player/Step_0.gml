@@ -31,5 +31,17 @@ for (var _i = 0; _i < array_length(_collisions); _i++)
 	}
 }
 
+
+//Calls the step event for each active mission.
+for (var _i = 0; _i < array_length(missions); _i++)
+{
+	var _mission = missions[_i];
+	with (_mission)
+	{
+		Step();    
+	}
+}
+
+
 //Sets audio listener position to player position.
 audio_listener_position(x, y, 0)

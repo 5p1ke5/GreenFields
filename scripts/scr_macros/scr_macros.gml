@@ -67,6 +67,7 @@
 #macro TEXT_BALLOON_SPEED 5
 #macro TEXT_BALLOON_MAXW 150
 #macro INVENTORY_MAX 16
+#macro MISSIONLOG global.missions
 #endregion
 
 #region	Controls.

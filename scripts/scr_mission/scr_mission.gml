@@ -18,14 +18,25 @@ function Mission(_name, _description, _activeRooms, _createFunction = noone, _st
 	
 	static Create = function()
 	{
+		if (!createFunction)
+		{
+			return;
+		}
+		
 		if (Active())
 		{
 			createFunction();
 		}
 	}
 	
+	
 	static Step = function()
 	{
+		if (!stepFunction)
+		{
+			return;
+		}
+		
 		if (Active())
 		{
 			if (stepFunction() == true)
@@ -34,6 +45,7 @@ function Mission(_name, _description, _activeRooms, _createFunction = noone, _st
 			}
 		}
 	}
+	
 	
 	static Complete = function()
 	{
@@ -47,16 +59,11 @@ function Mission(_name, _description, _activeRooms, _createFunction = noone, _st
 		array_delete(missionLog, _index, 1);
 	}
 	
+	
 	static Active = function()
 	{
 		return array_contains(activeRooms, room);	
 	}
-}
-
-
-function mission_complete()
-{
-	Complete();	
 }
 
 /*

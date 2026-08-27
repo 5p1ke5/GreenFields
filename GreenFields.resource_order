@@ -148,6 +148,7 @@
     {"name":"obj_mpLoss","order":2,"path":"objects/obj_mpLoss/obj_mpLoss.yy",},
     {"name":"obj_mpVictory","order":1,"path":"objects/obj_mpVictory/obj_mpVictory.yy",},
     {"name":"obj_npc","order":5,"path":"objects/obj_npc/obj_npc.yy",},
+    {"name":"obj_npcBountyHunter","order":2,"path":"objects/obj_npcBountyHunter/obj_npcBountyHunter.yy",},
     {"name":"obj_npcCriminal","order":4,"path":"objects/obj_npcCriminal/obj_npcCriminal.yy",},
     {"name":"obj_npcEnemy","order":7,"path":"objects/obj_npcEnemy/obj_npcEnemy.yy",},
     {"name":"obj_npcHostile","order":6,"path":"objects/obj_npcHostile/obj_npcHostile.yy",},

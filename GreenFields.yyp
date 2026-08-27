@@ -196,6 +196,7 @@
     {"id":{"name":"obj_mpLoss","path":"objects/obj_mpLoss/obj_mpLoss.yy",},},
     {"id":{"name":"obj_mpVictory","path":"objects/obj_mpVictory/obj_mpVictory.yy",},},
     {"id":{"name":"obj_npc","path":"objects/obj_npc/obj_npc.yy",},},
+    {"id":{"name":"obj_npcBountyHunter","path":"objects/obj_npcBountyHunter/obj_npcBountyHunter.yy",},},
     {"id":{"name":"obj_npcCriminal","path":"objects/obj_npcCriminal/obj_npcCriminal.yy",},},
     {"id":{"name":"obj_npcEnemy","path":"objects/obj_npcEnemy/obj_npcEnemy.yy",},},
     {"id":{"name":"obj_npcHostile","path":"objects/obj_npcHostile/obj_npcHostile.yy",},},

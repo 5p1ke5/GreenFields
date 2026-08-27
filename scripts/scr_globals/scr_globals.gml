@@ -55,7 +55,7 @@ function globals_initialize()
 	
 	var _createFunctionBountyHunter = function()
 	{
-		var _hunter = instance_create_layer(4952, 2112, "NPCs", obj_npcBountyHunter);		
+		instance_create_layer(4952, 2112, "NPCs", obj_npcBountyHunter);		
 	}
 	
 	var _stepFunctionBountyHunter = function()
@@ -67,21 +67,14 @@ function globals_initialize()
 	{
 		show_debug_message("Bounty hunter defeated!");
 	}
-	
-	
-	
-	
-	
 
 	
-	var _mission1 = new Mission("Test Mision", "Basic test mission", [room_downtown], _createFunction, _stepFunction, _completeFunction);
-	var _mission2 = new Mission("Test Mision", "Basic test mission", [room_suburbs], _createFunction, _stepFunction, _completeFunction); 
-	var _mission3 = new Mission("Bounty Hunter", "A bouny hunter has been dispatched in the badlands to kill you.", [room_badlands], _createFunctionBountyHunter, _stepFunctionBountyHunter, _completeFunctionBountyHunter); 
-	//var _mission2 = new Mission("The Hunter", "A mutant super soldier is stalking you! Kill him before he kills you!", [room_downtown, room_suburbs], , , , );
+	var _mission1 = new Mission("Test Mision", "test mission", [room_downtown], _createFunction, _stepFunction, _completeFunction);
+	var _mission2 = new Mission("Bounty Hunter", "A bouny hunter has been dispatched in the badlands to kill you.", [room_badlands], _createFunctionBountyHunter, _stepFunctionBountyHunter, _completeFunctionBountyHunter); 
+
 	
 	array_push(global.missions, _mission1);
 	array_push(global.missions, _mission2);
-	array_push(global.missions, _mission3);
 	
 	
 	//global.playerDoll = doll_struct(0, 0, 0,0, 0, c_white1, c_darkBrunette, c_red, c_aqua, c_red);

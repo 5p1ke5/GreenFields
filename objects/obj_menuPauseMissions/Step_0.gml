@@ -3,3 +3,9 @@ if (START_BUTTON_RELEASED)
 {
 	room_goto(global.roomPausedFrom);
 }
+
+
+if (LEFT_BUTTON_RELEASED)
+{
+	room_goto(ROOM_PAUSE_EQUIP);
+}

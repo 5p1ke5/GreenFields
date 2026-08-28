@@ -31,7 +31,8 @@
 #macro ROOM_REMATCH room_menuRematch
 #macro ROOM_SERVER room_menuServer
 #macro ROOM_CLIENT room_menuClient
-#macro ROOM_PAUSE room_menuPause
+#macro ROOM_PAUSE_EQUIP room_menuPauseEquip
+#macro ROOM_PAUSE_MISSIONS room_menuPauseMissions
 #macro ROOM_CHARACTER_CREATOR room_menuCharacterCreation
 #endregion
 

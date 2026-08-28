@@ -1,6 +1,6 @@
 {
   "$GMObject":"",
-  "%Name":"obj_menuPause",
+  "%Name":"obj_menuPauseMissions",
   "eventList":[
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":64,"eventType":8,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
@@ -9,11 +9,11 @@
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":57,"eventType":6,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"obj_menuPause",
+  "name":"obj_menuPauseMissions",
   "overriddenProperties":[],
   "parent":{
-    "name":"menus",
-    "path":"folders/Objects/menus.yy",
+    "name":"pause",
+    "path":"folders/Objects/menus/pause.yy",
   },
   "parentObjectId":null,
   "persistent":false,

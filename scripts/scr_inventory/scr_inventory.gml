@@ -104,7 +104,7 @@ function ItemEquipMelee(_itemName, _icon = spr_iconBlank, _amount = 1, _descript
 			//Once the arc is complete deletes the hitbox and sets the variable to noone and resets arc.
 			if (abs(arc) < abs(arcLength))
 			{
-				arc += (swingSpeed);		
+				arc += (swingSpeed * swingDir);		
 			}
 			else
 			{
@@ -131,13 +131,16 @@ function ItemEquipMelee(_itemName, _icon = spr_iconBlank, _amount = 1, _descript
 		var _depth = _user.depth;
 		hurtbox = instance_create_depth(_x, _y, _depth, obj_meleeHurtbox);
 		
+		swingDir = -_user.facing;
+		
+		var _swingDir = swingDir;
 		var _damage = damage;
 		var _handAngle = _user.handAngle;
 		var _arcLength = arcLength;
 		with (hurtbox)
 		{
 			damage = _damage;
-			startAngle = (_handAngle - (_arcLength/2));
+			startAngle = (_handAngle - (_arcLength/(2 * _swingDir)));
 			
 			angle = startAngle;
 			owner = _user;

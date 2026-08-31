@@ -34,8 +34,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_iconBlank",
-    "path":"sprites/spr_iconBlank/spr_iconBlank.yy",
+    "name":"spr_uiButton",
+    "path":"sprites/spr_uiButton/spr_uiButton.yy",
   },
   "spriteMaskId":null,
   "visible":true,

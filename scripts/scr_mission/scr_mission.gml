@@ -4,9 +4,9 @@
 // (guys like this might need their own object like "obj_npcQuestTarget" maybe and that checks for associated missions when they die)
 // COuld maybe also give it a step event that calls a passed script like _stepScript? But thats a lot but maybe not if I keep it simple like (if (instanceCount(target) < 0)
 
-function Mission(_name, _description, _activeRooms, _createFunction = noone, _stepFunction = noone, _completeFunction = noone) constructor 
+function Mission(_title, _description, _activeRooms, _createFunction = noone, _stepFunction = noone, _completeFunction = noone) constructor 
 {
-	name = _name;
+	title = _title;
 	description = _description;
 	activeRooms = _activeRooms;
 	createFunction = _createFunction;

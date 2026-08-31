@@ -12,8 +12,8 @@
   "name":"obj_menuPauseEquip",
   "overriddenProperties":[],
   "parent":{
-    "name":"pause",
-    "path":"folders/Objects/menus/pause.yy",
+    "name":"inventory",
+    "path":"folders/Objects/menus/pause/inventory.yy",
   },
   "parentObjectId":null,
   "persistent":false,

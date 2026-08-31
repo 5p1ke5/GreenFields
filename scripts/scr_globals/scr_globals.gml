@@ -24,6 +24,9 @@ function globals_initialize()
 	global.messageLog = [];
 	
 	global.missions = []
+	global.trackedMission = noone;
+	
+	
 	
 	
 	//Test missions, delete later
@@ -69,12 +72,16 @@ function globals_initialize()
 	}
 
 	
-	var _mission1 = new Mission("Test Mision", "test mission", [room_downtown], _createFunction, _stepFunction, _completeFunction);
+	var _mission1 = new Mission("Test Mision", "test mission, complete by getting higher than 1800 y", [room_downtown], _createFunction, _stepFunction, _completeFunction);
 	var _mission2 = new Mission("Bounty Hunter", "A bouny hunter has been dispatched in the badlands to kill you.", [room_badlands], _createFunctionBountyHunter, _stepFunctionBountyHunter, _completeFunctionBountyHunter); 
 
 	
 	array_push(global.missions, _mission1);
 	array_push(global.missions, _mission2);
+	
+	
+	
+	
 	
 	
 	//global.playerDoll = doll_struct(0, 0, 0,0, 0, c_white1, c_darkBrunette, c_red, c_aqua, c_red);

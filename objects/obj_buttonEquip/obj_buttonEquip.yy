@@ -10,8 +10,8 @@
   "name":"obj_buttonEquip",
   "overriddenProperties":[],
   "parent":{
-    "name":"UI",
-    "path":"folders/Objects/UI.yy",
+    "name":"inventory",
+    "path":"folders/Objects/menus/pause/inventory.yy",
   },
   "parentObjectId":{
     "name":"abs_button",

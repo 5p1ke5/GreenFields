@@ -141,13 +141,18 @@ function ItemEquipMelee(_itemName, _icon = spr_iconBlank, _amount = 1, _descript
 		var _damage = damage;
 		var _handAngle = _user.handAngle;
 		var _arcLength = arcLength;
+		var _startAngle = (_handAngle - (_arcLength/(2 * _swingDir)));
+		
 		with (hurtbox)
 		{
+			hurtbox_melee_intialize(_damage, _user, , , _startAngle);
+			/*
 			damage = _damage;
 			startAngle = (_handAngle - (_arcLength/(2 * _swingDir)));
 			
 			angle = startAngle;
 			owner = _user;
+			*/
 		}
 	}
 	

@@ -11,3 +11,6 @@ function hurtbox_initialize(_damage, _owner = noone, _hKnockback = 0, _vKnockbac
 	hKnockback = _hKnockback;
 	vKnockback = _vKnockback;
 }
+
+
+

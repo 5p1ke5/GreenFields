@@ -308,6 +308,7 @@
     {"name":"spr_doorHouse","order":1,"path":"sprites/spr_doorHouse/spr_doorHouse.yy",},
     {"name":"spr_equipAssaultRifle","order":1,"path":"sprites/spr_equipAssaultRifle/spr_equipAssaultRifle.yy",},
     {"name":"spr_equipAutopistol","order":2,"path":"sprites/spr_equipAutopistol/spr_equipAutopistol.yy",},
+    {"name":"spr_equipBatAttack","order":2,"path":"sprites/spr_equipBatAttack/spr_equipBatAttack.yy",},
     {"name":"spr_equipBazooka","order":3,"path":"sprites/spr_equipBazooka/spr_equipBazooka.yy",},
     {"name":"spr_equipBigshotgun","order":4,"path":"sprites/spr_equipBigshotgun/spr_equipBigshotgun.yy",},
     {"name":"spr_equipEmpty","order":5,"path":"sprites/spr_equipEmpty/spr_equipEmpty.yy",},

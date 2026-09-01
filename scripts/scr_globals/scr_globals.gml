@@ -27,13 +27,6 @@ function globals_initialize()
 	global.trackedMission = noone;
 	
 	
-	
-	
-	
-	
-	
-	
-	//global.playerDoll = doll_struct(0, 0, 0,0, 0, c_white1, c_darkBrunette, c_red, c_aqua, c_red);
 	var _faceIndex = irandom(sprite_get_number(spr_dollFace));
 	var _hairIndex = irandom(sprite_get_number(spr_dollHair));
 	var _shirtIndex = irandom(sprite_get_number(spr_dollShirt));

@@ -240,9 +240,21 @@ function npc_input_fight(_target)
 		_equip = inventory[equipIndex];	
 	}
 	
+	//I miiiiiight be able to just use the same code for this. Maybe ake a function?
 	if (is_instanceof(_equip, ItemEquipMelee))
 	{
-		//I'll program in melee fight code later.
+		//melee fight code, wip
+		var _inRange = npc_input_moveto(_target, RANGE_MELEE);
+		
+		//If in range attempts to hit them.
+		if (_inRange)
+		{
+			mLeftButton = (irandom(combatLevel/2) == 0);
+			mLeftButtonPressed = (irandom(combatLevel/2) == 0);
+			mouseX = _target.xprevious + (mLeftButton || mLeftButtonPressed) * irandom_range(-combatLevel, combatLevel);
+			mouseY = _target.yprevious + (mLeftButton || mLeftButtonPressed) * irandom_range(-combatLevel, combatLevel);
+		}
+		
 		return true;
 	}
 	else //For now everything can use the same code for ranged weapons.

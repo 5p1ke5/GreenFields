@@ -386,6 +386,7 @@
     {"id":{"name":"spr_equipAssaultRifle","path":"sprites/spr_equipAssaultRifle/spr_equipAssaultRifle.yy",},},
     {"id":{"name":"spr_equipAutopistol","path":"sprites/spr_equipAutopistol/spr_equipAutopistol.yy",},},
     {"id":{"name":"spr_equipBat","path":"sprites/spr_equipBat/spr_equipBat.yy",},},
+    {"id":{"name":"spr_equipBatAttack","path":"sprites/spr_equipBatAttack/spr_equipBatAttack.yy",},},
     {"id":{"name":"spr_equipBazooka","path":"sprites/spr_equipBazooka/spr_equipBazooka.yy",},},
     {"id":{"name":"spr_equipBigshotgun","path":"sprites/spr_equipBigshotgun/spr_equipBigshotgun.yy",},},
     {"id":{"name":"spr_equipEmpty","path":"sprites/spr_equipEmpty/spr_equipEmpty.yy",},},

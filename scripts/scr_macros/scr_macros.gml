@@ -18,7 +18,8 @@
 #macro ITEM_MACHINEGUN ItemEquipFirearmAuto("Machine Gun", spr_iconMachinegun, 60, "A powerful machine gun.", spr_equipMachinegun, game_get_speed(gamespeed_fps)/5, obj_bullet, 8, true)
 #macro ITEM_BAZOOKA ItemEquipFirearm("Bazooka", spr_iconBazooka, 4, "A bazooka that fires rockets.", spr_equipBazooka, game_get_speed(gamespeed_fps), obj_projectileMissile, noone, true)
 #macro ITEM_GRENADEGUN ItemEquipFirearm("Grenade Gun", spr_iconGrenadegun, 6, "A handgun the shoots explosive grenades.", spr_equipGrenadeGun, game_get_speed(gamespeed_fps)/2, obj_projectileGrenade, noone, true)
-#macro ITEM_BAT ItemEquipMelee("Bat", spr_iconBat, 1, "A big wooden baseball bat.", spr_equipBat, 50, 180, 12)
+#macro ITEM_BAT ItemEquipMelee("Bat", spr_iconBat, 1, "A sturdy oak baseball bat.", spr_equipBatAttack, 50, 270, 10)
+//#macro ITEM_UNARMED ItemEquipMelee("Unarmed", spr_iconBlank, 1, "Good old fisticuffs.", spr_equipPistol, 10, 270, 30)
 #endregion
 
 #region rooms
@@ -43,7 +44,7 @@
 #endregion
 
 #region Ranges
-#macro RANGE_MELEE 16
+#macro RANGE_MELEE 32
 #macro RANGE_CLOSE 100
 #macro RANGE_MEDIUM 200
 #macro RANGE_CAMERA 320

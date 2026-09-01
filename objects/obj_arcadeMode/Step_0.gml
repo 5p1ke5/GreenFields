@@ -13,6 +13,7 @@ if (instance_number(obj_npcRandom) == 0)
 		npc_initialize("Enemy", "Prepare to die!", [new NPCCommandFight(obj_player)], max(1, _combatLevel));
 		living_initialize(20);
 		inventory = choose([new ITEM_PISTOL], [new ITEM_SHOTGUN], [new ITEM_ASSAULTRIFLE], [new ITEM_MACHINEGUN]);
+		
 		equipIndex = 0;
 
 		inventory[equipIndex].Equip(self);

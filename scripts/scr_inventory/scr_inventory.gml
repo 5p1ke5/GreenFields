@@ -48,6 +48,7 @@ function Item(_itemName, _icon = spr_iconBlank, _amount = 1, _description = "") 
 		}
 
 		
+		//TODO: Probably move this down to ItemEquip. I should also probably make an Unequip function.
 		/// @description Script that gets called when an item is equipped.
 		static Equip = function(_user)
 		{
@@ -80,13 +81,16 @@ function ItemEquip(_itemName, _icon = spr_iconBlank, _amount = 1, _description =
 }
 
 
-/// @function ItemEquipMelee(_itemName, _icon = spr_iconBlank, _amount = 1, _description = "", _sprite_index)
+/// @function ItemEquipMelee(_itemName, _icon = spr_iconBlank, _amount = 1, _description = "", _sprite_index, _damage, _arclength, _swingSpeed)
 /// @description Will have melee weapons in here for later. For now is just a placeholder.
 /// @param _itemName <String> item's name.
 /// @param _icon <sprite> Sprite representation of item.
 /// @param _amount  quantity of item in stack.
 /// @param description A description of the item.
 /// @param _sprite_index Sprite for the struct.
+/// @param _damage How much damage the weapon does.
+/// @param _arcLength How wide the swing arc is.
+/// @param _swingSpeed How fast the weapon gets swung.
 function ItemEquipMelee(_itemName, _icon = spr_iconBlank, _amount = 1, _description = "", _sprite_index = spr_equipEmpty, _damage = noone, _arcLength = 90, _swingSpeed = 1): ItemEquip(_itemName, _icon, _amount, _description = "", _sprite_index)  constructor
 {
 	hurtbox = noone; //This will contain the generated hurtbox for the item.
@@ -152,85 +156,6 @@ function ItemEquipMelee(_itemName, _icon = spr_iconBlank, _amount = 1, _descript
 		Fire(_user);
 	}
 }
-
-
-
-/* This one makes the melee weapon swing downwards but only works when facing left
-/// @function ItemEquipMelee(_itemName, _icon = spr_iconBlank, _amount = 1, _description = "", _sprite_index)
-/// @description Will have melee weapons in here for later. For now is just a placeholder.
-/// @param _itemName <String> item's name.
-/// @param _icon <sprite> Sprite representation of item.
-/// @param _amount  quantity of item in stack.
-/// @param description A description of the item.
-/// @param _sprite_index Sprite for the struct.
-function ItemEquipMelee(_itemName, _icon = spr_iconBlank, _amount = 1, _description = "", _sprite_index = spr_equipEmpty, _damage = noone, _arcLength = 90, _swingSpeed = 1): ItemEquip(_itemName, _icon, _amount, _description = "", _sprite_index)  constructor
-{
-	hurtbox = noone; //This will contain the generated hurtbox for the item.
-	damage = _damage;
-	arcLength = _arcLength;
-	arc = 0;
-	swingSpeed = _swingSpeed;
-	swingDir = 1;
-	
-	static Step = function()
-	{
-		//If a hurtbox exists, increments its arc. 
-		if (hurtbox)
-		{
-			//Once the arc is complete deletes the hitbox and sets the variable to noone and resets arc.
-			if (abs(arc) < abs(arcLength))
-			{
-				arc += (swingSpeed * swingDir);		
-			}
-			else
-			{
-				instance_destroy(hurtbox);
-				hurtbox = noone;
-				arc = 0;
-			}
-			
-			//Change the hurtbox's angle with the arc increment. 
-			var _arc = arc;
-			with (hurtbox)
-			{
-				angle = startAngle + _arc;
-			}
-		}
-	}
-	
-	static Fire = function(_user)
-	{
-		
-		//Creates hurtbox at user x, y, depth and sets reference.
-		var _x = _user.x;
-		var _y = _user.y;
-		var _depth = _user.depth;
-		hurtbox = instance_create_depth(_x, _y, _depth, obj_meleeHurtbox);
-		
-		//Sets variables for that hurtbox.
-		swingDir = -_user.facing;
-		var _swingDir = swingDir;
-		var _damage = damage;
-		var _handAngle = _user.handAngle;
-		var _arcLength = arcLength;
-		with (hurtbox)
-		{
-			damage = _damage;
-			startAngle = _swingDir * (_handAngle - (_arcLength/2));
-			//startAngle = (sign(_swingDir + 1) * 360) + (_handAngle - (_arcLength/2));
-			//startAngle = (_handAngle - (_arcLength/2));
-			
-			angle = startAngle;
-			owner = _user;
-		}
-	}
-	
-	static LeftButtonPressed = function(_user)
-	{
-		Fire(_user);
-	}
-}
-*/
 
 /// @function ItemEquipFirearm(_itemName, _icon = spr_iconBlank, _amount = 1, _description = "", _sprite_index = spr_equipEmpty, _cooldown = game_get_speed(gamespeed_fps) / 4, _bullet = obj_bullet, _damage = noone)
 /// @description Constructor for an item struct that is used to fire the player's gun.

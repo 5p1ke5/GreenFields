@@ -14,8 +14,8 @@
   "exportDir":"",
   "name":"sfx_explosion",
   "parent":{
-    "name":"sfx",
-    "path":"folders/Audio/sfx.yy",
+    "name":"get",
+    "path":"folders/Audio/sfx/get.yy",
   },
   "preload":false,
   "resourceType":"GMSound",

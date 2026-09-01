@@ -50,5 +50,7 @@ for (var _i = 0; _i < array_length(_collisions); _i++)
 		var _angle = point_direction(x, y, _x, _y);
 	
 		living_bleed(_angle, _damage * 2);
+		
+		audio_play_sound_pos(sfx_hitNPC, x, y);
 	}
 }

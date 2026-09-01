@@ -1,6 +1,6 @@
 {
   "$GMSound":"v2",
-  "%Name":"sfx_fireRaygun",
+  "%Name":"sfx_hitNPC",
   "audioGroupId":{
     "name":"audiogroup_default",
     "path":"audiogroups/audiogroup_default",
@@ -10,17 +10,17 @@
   "compression":0,
   "compressionQuality":4,
   "conversionMode":0,
-  "duration":0.14979592,
+  "duration":0.058299318,
   "exportDir":"",
-  "name":"sfx_fireRaygun",
+  "name":"sfx_hitNPC",
   "parent":{
-    "name":"fire",
-    "path":"folders/Audio/sfx/fire.yy",
+    "name":"hit",
+    "path":"folders/Audio/sfx/hit.yy",
   },
   "preload":false,
   "resourceType":"GMSound",
   "resourceVersion":"2.0",
   "sampleRate":44100,
-  "soundFile":"sfx_fireRaygun.wav",
-  "volume":1.0,
+  "soundFile":"sfx_hitNPC.wav",
+  "volume":0.25,
 }

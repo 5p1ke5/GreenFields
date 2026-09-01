@@ -14,8 +14,8 @@
   "exportDir":"",
   "name":"sfx_fireRocket",
   "parent":{
-    "name":"sfx",
-    "path":"folders/Audio/sfx.yy",
+    "name":"fire",
+    "path":"folders/Audio/sfx/fire.yy",
   },
   "preload":false,
   "resourceType":"GMSound",

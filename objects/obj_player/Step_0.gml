@@ -28,6 +28,8 @@ for (var _i = 0; _i < array_length(_collisions); _i++)
 		var _angle = point_direction(x, y, _x, _y);
 	
 		living_bleed(_angle, _damage * 4);
+		
+		audio_play_sound(sfx_hitPlayer, 0, false);
 	}
 }
 

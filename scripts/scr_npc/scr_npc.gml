@@ -240,7 +240,7 @@ function npc_input_fight(_target)
 		_equip = inventory[equipIndex];	
 	}
 	
-	//I miiiiiight be able to just use the same code for this. Maybe ake a function?
+	//I miiiiiight be able to just use the same code for this. Maybe ake a function? Might change as I refine melee weapons
 	if (is_instanceof(_equip, ItemEquipMelee))
 	{
 		//melee fight code, wip
@@ -257,7 +257,7 @@ function npc_input_fight(_target)
 		
 		return true;
 	}
-	else //For now everything can use the same code for ranged weapons.
+	else 
 	{
 		var _inRange = npc_input_moveto(_target, RANGE_LONG);
 		

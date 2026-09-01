@@ -14,3 +14,4 @@ function hurtbox_initialize(_damage, _owner = noone, _hKnockback = 0, _vKnockbac
 
 
 
+/// @function hurtbox_melee_intialize(_damage, _owner = noone, _hKnockback = 0, _vKnockback = 0, 

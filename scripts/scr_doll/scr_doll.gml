@@ -56,6 +56,9 @@ function doll_initialize_default()
 
 	maxMultiJumps = 1;
 	multiJumps = maxMultiJumps;
+	maxAirDashes = 1;
+	airDash = maxAirDashes;
+	
 	jumpHeight = JUMP_HEIGHT;
 	jumpOffset = 0.1; //This is applied to gravity to let the player jump higher while holding the jump button.
 
@@ -329,14 +332,28 @@ function doll_input_dash(_dashDown, _rightPressed, _leftPressed)
 		return;	
 	}
 	
+	if (grounded)
+	{
+		airDash = maxAirDashes;	
+	}
+	else if (airDash <= 0)
+	{
+		return;	
+	}
+	
 	//If DashCD < 0 and B_BUTTON is down...
 	var _dir = (_rightPressed - _leftPressed)
 	if (_dir != 0)
 	{
 		if (grounded)
 		{
-			multiJumps++;	
+			multiJumps++;
 		}
+		else
+		{
+			airDash--;	
+		}
+		
 		vsp = -1;
 		hsp = _dir * DASH_SPEED;
 		dashCD = DASH_COOLDOWN;

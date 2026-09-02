@@ -1,2 +1,2 @@
-/// @description Initializes variables, position at spawn.
+/// @description Initializes variables
 doll_initialize_default();

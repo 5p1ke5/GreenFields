@@ -5,7 +5,7 @@ draw_set_halign(fa_right)
 
 var _timeString = "Time: " + clock_time_string()
 var _offset = string_width(_timeString);
-draw_text_transformed(window_get_width() - _offset, 10, _timeString, 2, 2, 0);
+draw_text_transformed(display_get_gui_width() - _offset, 10, _timeString, 2, 2, 0);
 
 draw_set_halign(fa_left);
 

@@ -288,7 +288,7 @@ function npc_input_fight(_target)
 ///@returns The next command in the array or noone if at the end of the command array.
 function npc_exit_command()
 {
-	if (commandIndex < array_length(commands))
+	if (commandIndex < array_length(commands) - 1)
 	{
 		commandIndex++;
 		return commands[commandIndex];

@@ -26,6 +26,7 @@
 #region rooms
 #macro ROOM_TITLE room_menuTitle
 #macro ROOM_TEST room_downtownTutorial
+#macro ROOM_SETTINGS room_menuSettings
 #macro ROOM_SINGLEPLAYER room_downtown
 #macro ROOM_TRAINING room_trainingmode
 #macro ROOM_ARCADE room_arcademode

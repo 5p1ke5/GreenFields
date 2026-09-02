@@ -1,0 +1,1 @@
+label_initialize("Setings", , , 2, 2, 0, c_white, c_white, c_white, c_white, 1, fa_center, , fnt_default);

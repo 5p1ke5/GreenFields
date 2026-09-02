@@ -19,7 +19,7 @@
 #macro ITEM_BAZOOKA ItemEquipFirearm("Bazooka", spr_iconBazooka, 4, "A bazooka that fires rockets.", spr_equipBazooka, game_get_speed(gamespeed_fps), obj_projectileMissile, noone, true)
 #macro ITEM_GRENADEGUN ItemEquipFirearm("Grenade Gun", spr_iconGrenadegun, 6, "A handgun the shoots explosive grenades.", spr_equipGrenadeGun, game_get_speed(gamespeed_fps)/2, obj_projectileGrenade, noone, true)
 //#macro ITEM_BAT ItemEquipMelee("Bat", spr_iconBat, 1, "A sturdy oak baseball bat.", spr_equipBatAttack, 50, 0, 0, 270, 10)
-#macro ITEM_BAT ItemEquipMelee("Bat", spr_iconBat, 1, "A sturdy oak baseball bat.", spr_equipBatAttack, 50)
+#macro ITEM_BAT ItemEquipMelee("Bat", spr_iconBat, 1, "A sturdy oak baseball bat.", spr_equipBat, spr_equipBatAttack, 50)
 //#macro ITEM_UNARMED ItemEquipMelee("Unarmed", spr_iconBlank, 1, "Good old fisticuffs.", spr_equipPistol, 10, 270, 30)
 #endregion
 

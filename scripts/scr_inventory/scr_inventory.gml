@@ -81,21 +81,24 @@ function ItemEquip(_itemName, _icon = spr_iconBlank, _amount = 1, _description =
 }
 
 
-/// @function ItemEquipMelee(_itemName, _icon = spr_iconBlank, _amount = 1, _description = "", _sprite_index, _damage, _hKnockback, _vKnockback, _arclength, _swingSpeed)
+/// @function ItemEquipMelee(_itemName, _icon = spr_iconBlank, _amount = 1, _description = "", _sprite_index, _sprite_attack, _damage, _hKnockback, _vKnockback, _arclength, _swingSpeed)
 /// @description Will have melee weapons in here for later. For now is just a placeholder.
 /// @param _itemName <String> item's name.
 /// @param _icon <sprite> Sprite representation of item.
 /// @param _amount  quantity of item in stack.
 /// @param description A description of the item.
-/// @param _sprite_index Sprite for the struct.
+/// @param _sprite_index Default sprite for the struct.
+/// @param _sprite_attack Sprite to use when attacking.
 /// @param _damage How much damage the weapon does.
 /// @param _hKnockback How far the weapon knocks the target back horizontally.
 /// @param _vKnockback How far the weapon knocks the target back vertically.
 /// @param _arcLength How wide the swing arc is.
 /// @param _swingSpeed How fast the weapon gets swung.
-function ItemEquipMelee(_itemName, _icon = spr_iconBlank, _amount = 1, _description = "", _sprite_index = spr_equipEmpty, _damage = noone, _hKnockback = 0, _vKnockback = 0, _arcLength = 270, _swingSpeed = _arcLength/(SECOND/3)): ItemEquip(_itemName, _icon, _amount, _description = "", _sprite_index)  constructor
+function ItemEquipMelee(_itemName, _icon = spr_iconBlank, _amount = 1, _description = "", _sprite_index = spr_equipEmpty, _spriteAttack = spr_equipEmpty, _damage = noone, _hKnockback = 0, _vKnockback = 0, _arcLength = 270, _swingSpeed = _arcLength/(SECOND/3)): ItemEquip(_itemName, _icon, _amount, _description = "", _sprite_index)  constructor
 {
-	hurtbox = noone; //This will contain the generated hurtbox for the item.
+	//Sprite default is just the sprite index on init, sprite attack is the sprite that it will be set to for the attack.
+	spriteDefault = _sprite_index;
+	spriteAttack = _spriteAttack;
 	damage = _damage;
 	hKnockback = _hKnockback;
 	vKnockback = _vKnockback;
@@ -103,6 +106,8 @@ function ItemEquipMelee(_itemName, _icon = spr_iconBlank, _amount = 1, _descript
 	arc = 0;
 	swingSpeed = _swingSpeed;
 	swingDir = 1;
+	
+	hurtbox = noone; //This will contain the generated hurtbox for the item.
 	
 	static Step = function()
 	{
@@ -112,13 +117,14 @@ function ItemEquipMelee(_itemName, _icon = spr_iconBlank, _amount = 1, _descript
 			//Once the arc is complete deletes the hitbox and sets the variable to noone and resets arc.
 			if (abs(arc) < abs(arcLength))
 			{
-				arc += (swingSpeed * swingDir);		
+				arc += (swingSpeed * swingDir);	
 			}
 			else
 			{
 				instance_destroy(hurtbox);
 				hurtbox = noone;
 				arc = 0;
+				sprite_index = spriteDefault;
 			}
 			
 			//Change the hurtbox's angle with the arc increment. 
@@ -152,6 +158,9 @@ function ItemEquipMelee(_itemName, _icon = spr_iconBlank, _amount = 1, _descript
 		{
 			hurtbox_melee_intialize(_damage, _user, _hKnockback, _vKnockback, _startAngle);
 		}
+		
+		//Sets the sprite index to the attack sprite.
+		sprite_index = spriteAttack;
 	}
 	
 	static LeftButtonPressed = function(_user)

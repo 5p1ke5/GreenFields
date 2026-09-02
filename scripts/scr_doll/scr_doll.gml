@@ -321,35 +321,40 @@ function doll_input_move(_right, _left, _run)
 /// @param _leftReleased left button released
 function doll_input_dash(_dashDown, _rightPressed, _leftPressed)
 {
+	//If grounded refills airdashes. If not, exits.
+	if (grounded)
+	{
+		airDash = maxAirDashes;	
+	}
+	
+	//If dash is still on cooldown decrements it and then exits.
 	if (dashCD >= 0)
 	{
 		dashCD--;
-		return;	
+		return;
 	}
+	
+	if (airDash <= 0)
+	{
+		return;
+	}
+	
 	
 	if (!_dashDown)
 	{
 		return;	
 	}
 	
-	if (grounded)
-	{
-		airDash = maxAirDashes;	
-	}
-	else if (airDash <= 0)
-	{
-		return;	
-	}
-	
-	//If DashCD < 0 and B_BUTTON is down...
+	//If DashCD < 0 and B_BUTTON is down while left or right is pressed performs a dash.
 	var _dir = (_rightPressed - _leftPressed)
 	if (_dir != 0)
 	{
+		// If grounded refills multijumps to compensate for the short jump and allow for the side jump.
 		if (grounded)
 		{
 			multiJumps++;
 		}
-		else
+		else //If not grounded does an airdash and decrements the airDash counter.
 		{
 			airDash--;	
 		}

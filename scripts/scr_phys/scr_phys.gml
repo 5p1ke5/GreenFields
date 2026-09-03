@@ -72,23 +72,23 @@ function phys_floor_collision(_vsp)
 			return 0;
 		}
 
+		//Exits loop early if vsp is negative cause then it doesn't need to bother with one way platform things.
+		if (_vsp < 0)
+		{
+			break;
+		}
+		
 		
 		// Oneway platform collision.
-		if (_vsp >= 0)
+		var _collisions = instance_place_array(x, y + _i + 1, ONEWAY, true);
+		for (var _ii = 0; _ii < array_length(_collisions); _ii++) 
 		{
-			var _collisions = instance_place_array(x, y + _i + 1, ONEWAY, true);
-			for (var _ii = 0; _ii < array_length(_collisions); _ii++) 
+		    if (bbox_bottom - 1) <= (_collisions[_ii].bbox_top)
 			{
-			    if (bbox_bottom - 1) <= (_collisions[_ii].bbox_top)
-				{
-					y += _i;
-					grounded = true;
-					return 0;	
-				}
+				y += _i;
+				grounded = true;
+				return 0;	
 			}
-			
-			
-			//y += _i - sign((vsp + vspExt));
 		}
 	}
 

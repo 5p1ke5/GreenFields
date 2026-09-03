@@ -9,6 +9,7 @@
     {"name":"Objects","order":2,"path":"folders/Objects.yy",},
     {"name":"arcade mode","order":8,"path":"folders/Objects/arcade mode.yy",},
     {"name":"blocks","order":2,"path":"folders/Objects/blocks.yy",},
+    {"name":"moving","order":29,"path":"folders/Objects/blocks/moving.yy",},
     {"name":"blood","order":10,"path":"folders/Objects/blood.yy",},
     {"name":"camera","order":7,"path":"folders/Objects/camera.yy",},
     {"name":"clock","order":17,"path":"folders/Objects/clock.yy",},

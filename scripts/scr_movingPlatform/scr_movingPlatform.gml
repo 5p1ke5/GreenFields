@@ -34,7 +34,7 @@ function moving_platform_step()
 	y += round(vsp);
 	
 	//Gets an array of all physics objects on top of this one.
-	var _onTop = instance_place_array(x, y - 1, PHYSICS, true);
+	var _onTop = collision_line_array(bbox_left, bbox_top - 1, bbox_right, bbox_top - 1, PHYSICS, false, true, false);
 	
 	for (var _i = 0; _i < array_length(_onTop); _i++) 
 	{
@@ -43,8 +43,16 @@ function moving_platform_step()
 		with (_onTop[_i])
 		{
 			hspExt = _hsp;
-			//y += round(_vsp);
-			//grounded = true;
+			
+			//Going down
+			if (_vsp > 0)
+			{
+				vspExt = _vsp;
+			}
+			else //Going up or not moving vertically
+			{
+				y += _vsp;
+			}
 		}
 	}
 }

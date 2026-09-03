@@ -168,17 +168,21 @@ function phys_step()
 	hsp = phys_friction(hsp, frict, grounded);
 
 	var _hspTotal = hsp + hspExt;
+	var _vspTotal = vsp + vspExt;
 	
 	//Collision with walls. The object's position is changed after each collision function.
 	if (isSolid)
 	{
-	    vsp = phys_floor_collision(vsp);
+	    _vspTotal = phys_floor_collision(_vspTotal);
 	    _hspTotal = phys_wall_collision(_hspTotal);
 	}
 	
-	
+	//if (_vspTotal = 0)
+	//{
+	//	vsp = _vspTotal;	
+	//}
 
-	y += vsp;
+	y += _vspTotal;
 	x += _hspTotal;
 
 	y = round(y);

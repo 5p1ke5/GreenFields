@@ -46,6 +46,8 @@ function phys_force_add(_force, _accel, _max)
 	return _force * _sign;
 }
 
+
+/*
 /// @function phys_floor_collision(_vsp) 
 /// @description Stops the player if they would touch a block vertically. eg vsp = phys_floor_collison(vsp). Returns new vsp.
 /// @param _vsp object's vertical speed.
@@ -54,7 +56,7 @@ function phys_floor_collision(_vsp)
 	grounded = false;
 	
 	//Checks every pixel in the player's path for collision.
-	//for (var _i = 0; (abs(_i) < abs(_vsp)) || (place_meeting(x, y + _i, BLOCK)) || collision_point(x, bbox_bottom + 1 + _i, ONEWAY, true, true)/* || (grounded && _vsp > 0)*/; _i += sign(_vsp))
+	//for (var _i = 0; (abs(_i) < abs(_vsp)) || (place_meeting(x, y + _i, BLOCK)) || collision_point(x, bbox_bottom + 1 + _i, ONEWAY, true, true)// || (grounded && _vsp > 0); _i += sign(_vsp))
 	for (var _i = 0; (abs(_i) <= abs(_vsp)); _i += sign(_vsp))
 	{
 	    //If there is a collision, it will move the player as close to the object as possible and then stop. 
@@ -94,19 +96,72 @@ function phys_floor_collision(_vsp)
 
 	return _vsp;
 }
+*/
+
+/// @function phys_floor_collision() 
+/// @description Stops the player if they would touch a block vertically.
+function phys_floor_collision() 
+{
+	grounded = false;
+	
+	//Checks every pixel in the player's path for collision.
+	for (var _i = 0; (abs(_i) <= abs(vsp)); _i += sign(vsp))
+	{
+	    //If there is a collision, it will move the player as close to the object as possible and then stop. 
+		
+		// Block collision. 
+		var _collision = instance_place(x, y + _i + sign(vsp), BLOCK);
+		if (_collision)
+		{
+			y += _i;
+			
+			if (vsp >= 0)
+			{
+				grounded = true;	
+			}
+			
+			vsp = 0;
+			return;
+		}
+
+		//Exits loop early if vsp is negative cause then it doesn't need to bother with one way platform things.
+		if (vsp < 0)
+		{
+			break;
+		}
+		
+		
+		// Oneway platform collision.
+		var _collisions = instance_place_array(x, y + _i + 1, ONEWAY, true);
+		for (var _ii = 0; _ii < array_length(_collisions); _ii++) 
+		{
+		    if (bbox_bottom - 1) <= (_collisions[_ii].bbox_top)
+			{
+				y += _i;
+				grounded = true;
+				vsp = 0;
+				vspExt = 0;
+				return;
+			}
+		}
+	}
+}
 
 /// @function phys_wall_collision()
 /// @description Detects collision with walls. If a collision is detected then moves the calling instance as close to the wall as possible and stops them.
 function phys_wall_collision() 
 {
+	
+	var _hspTotal = hsp + hspExt
+	
 	//Checks every pixel in the object's path for collision.
-	for (var _i = 0; (abs(_i) < abs(hsp + hspExt)) || (place_meeting(x + _i, y, BLOCK)); _i += sign(hsp + hspExt))
+	for (var _i = 0; (abs(_i) < abs(_hspTotal)) || (place_meeting(x + _i, y, BLOCK)); _i += sign(_hspTotal))
 	{
 	    //If there is a collision, it will move the player as close to the object as possible and then stop. 
 		var _collision = instance_place(x + _i, y, BLOCK);
 		if (_collision)
 		{
-	        x += _i - sign(hsp + hspExt);
+	        x += _i - sign(_hspTotal);
 	        hsp = 0;
 			hspExt = 0;
 			return;
@@ -170,15 +225,15 @@ function phys_step()
 	//Friction will reduce horizontal speed. This is reduced while in the air.
 	hsp = phys_friction(hsp, frict, grounded);
 
-	var _vspTotal = vsp + vspExt;
 	
 	//Collision with walls. The object's position is changed after each collision function.
 	if (isSolid)
 	{
-	    _vspTotal = phys_floor_collision(_vspTotal);
+	    phys_floor_collision();
 	    phys_wall_collision();
 	}
 	
+	var _vspTotal = vsp + vspExt;
 	var _hspTotal = hsp + hspExt;
 	
 	

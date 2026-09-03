@@ -126,13 +126,6 @@ function phys_friction(_hsp, _frict, _grounded)
 {
 	//Friction will reduce horizontal speed. This is reduced while in the air.
 	  _hsp -= (_frict * sign(_hsp)) * (1 / (power(10, !_grounded)));
-	  
-	/*
-	if (_grounded)
-	{
-	    _hsp -= _frict * sign(_hsp);
-	}
-	*/
 
 	//If hsp is lower than the friction value, it just sets hsp to 0.
 	if (abs(_hsp) < _frict)
@@ -156,7 +149,13 @@ function phys_gravity(_vsp, _grav, _terminalVelocity)
 	return _vsp;
 }
 
-
+/// @function phys_begin_step()
+/// @desc Resets hspExt and vspExt at the beginning of each step.
+function phys_begin_step()
+{
+	hspExt = 0;
+	vspExt = 0;
+}
 
 /// @function phys_step()
 /// @description Place in the step event to activate physics.
@@ -168,15 +167,19 @@ function phys_step()
 	//Friction will reduce horizontal speed. This is reduced while in the air.
 	hsp = phys_friction(hsp, frict, grounded);
 
+	var _hspTotal = hsp + hspExt;
+	
 	//Collision with walls. The object's position is changed after each collision function.
 	if (isSolid)
 	{
 	    vsp = phys_floor_collision(vsp);
-	    hsp = phys_wall_collision(hsp);
+	    _hspTotal = phys_wall_collision(_hspTotal);
 	}
+	
+	
 
 	y += vsp;
-	x += hsp;
+	x += _hspTotal;
 
 	y = round(y);
 	x = round(x);

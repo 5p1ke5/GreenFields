@@ -1,4 +1,5 @@
 #region Object references
+#macro PHYSICS abs_physics
 #macro BLOCK obj_block
 #macro ONEWAY obj_oneWay
 #macro GROUND abs_ground

@@ -1,14 +1,9 @@
 
 var _clickFunction = function()
 {
-	global.playerInventory = [];
-	global.playerEquip = [ new ITEM_NONE, new ITEM_NONE, new ITEM_NONE];
-	
-	
-	global.clockSteps = 1320 * SECOND;
-	global.clockMinutes = global.clockSteps/SECOND;
-	global.clockHours = global.clockMinutes / 60;
+	global.playerInventory = [new ITEM_PISTOL, new ITEM_BAT, new ITEM_ASSAULTRIFLE, new ITEM_MACHINEGUN, new ITEM_BAZOOKA, new ITEM_RAYGUN, new ITEM_GRENADEGUN ];
+	global.playerEquip = [global.playerInventory[0], global.playerInventory[1], global.playerInventory[2]];
 	room_goto(ROOM_TEST);
 }
 
-uibutton_initialize("Tutorial", _clickFunction);
+uibutton_initialize("TEST", _clickFunction);

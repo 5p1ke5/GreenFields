@@ -1,5 +1,5 @@
 ///@function collision_circle_array(_x1, _y1, _rad, _obj, _prec, _notme, _ordered)
-///@description Copy of collision_circle_array but outputs an array instead.
+///@description Copy of collision_circle_list but outputs an array instead.
 ///@param _x1 x1 coordinate to check for collisions at, left side.
 ///@param _y1 y1 coordinate to check for collisions at, top side.
 ///@param _rad Radius of the circle.
@@ -26,6 +26,7 @@ function collision_circle_array(_x1, _y1, _rad, _obj, _prec, _notme, _ordered)
 }
 
 
+/*
 /// @function collision_validate(_target, _blacklist)
 /// @description Checks if an instance or array of instances have a valid collision. Returns true if so, false if not.
 /// @param _target The instance or array of instances to check if it can be collided with.
@@ -60,33 +61,4 @@ function collision_validate(_target, _blacklist = [])
 	
 	return (_target.collision);
 }
-
-////I thiiiiink this works but need to test?
-
-/// @function collision_validate_instance(_target, _blacklist = [])
-/// @description Checks if an instance or array of instances have a valid collision. Returns the first valid collision if so, undefined if not.
-/// @param _instance The instance to check if it can be collided with.
-/// @param _blacklist An array of blacklisted collision objects/ 
-//function collision_validate_instance(_target, _blacklist = [])
-//{
-//	//If it's an array returns true if any instance in the array is a valid collision.
-//	if (is_array(_target))
-//	{	
-//		for (var _i = 0; _i < array_length(_target); _i++) 
-//		{    
-//			if (collision_validate_instance(_target[_i], _blacklist))
-//			{
-//				return _target[_i];	
-//			}
-//		}
-		
-//		return undefined;
-//	}
-	
-//	if (_target.collision) && !(array_contains(_blacklist, _target.object_index))
-//	{
-//		return _target;	
-//	}
-	
-//	return undefined;
-//}
+*/

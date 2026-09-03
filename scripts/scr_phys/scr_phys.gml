@@ -95,26 +95,29 @@ function phys_floor_collision(_vsp)
 	return _vsp;
 }
 
-
-/// @function phys_wall_collision(hsp)
-/// @description If the object would end up inside the block object, it instead just moves them as close as possible. eg hsp = phys_wall_collision(hsp)
-/// @param hsp object's horizontal speed.
-function phys_wall_collision(_hsp) 
+/// @function phys_wall_collision()
+/// @description Detects collision with walls. If a collision is detected then moves the calling instance as close to the wall as possible and stops them.
+function phys_wall_collision() 
 {
 	//Checks every pixel in the object's path for collision.
-	for (var _i = 0; (abs(_i) < abs(_hsp)) || (place_meeting(x + _i, y, BLOCK)); _i += sign(_hsp))
+	for (var _i = 0; (abs(_i) < abs(hsp + hspExt)) || (place_meeting(x + _i, y, BLOCK)); _i += sign(hsp + hspExt))
 	{
 	    //If there is a collision, it will move the player as close to the object as possible and then stop. 
 		var _collision = instance_place(x + _i, y, BLOCK);
 		if (_collision)
 		{
-	        x += _i - sign(_hsp);
-	        return 0;
-		}
+	        x += _i - sign(hsp + hspExt);
+	        hsp = 0;
+			hspExt = 0;
+			return;
+		}	
 	}
-	
-	return _hsp;
 }
+
+
+
+
+
 
 
 /// @function phys_friction(hsp, friction, grounded)
@@ -167,21 +170,18 @@ function phys_step()
 	//Friction will reduce horizontal speed. This is reduced while in the air.
 	hsp = phys_friction(hsp, frict, grounded);
 
-	var _hspTotal = hsp + hspExt;
 	var _vspTotal = vsp + vspExt;
 	
 	//Collision with walls. The object's position is changed after each collision function.
 	if (isSolid)
 	{
 	    _vspTotal = phys_floor_collision(_vspTotal);
-	    _hspTotal = phys_wall_collision(_hspTotal);
+	    phys_wall_collision();
 	}
 	
-	//if (_vspTotal = 0)
-	//{
-	//	vsp = _vspTotal;	
-	//}
-
+	var _hspTotal = hsp + hspExt;
+	
+	
 	y += _vspTotal;
 	x += _hspTotal;
 

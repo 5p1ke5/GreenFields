@@ -45,8 +45,8 @@
   },
   "origin":0,
   "parent":{
-    "name":"block",
-    "path":"folders/Sprites/block.yy",
+    "name":"moving",
+    "path":"folders/Sprites/block/moving.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

@@ -1,1 +1,1 @@
-moving_platform_initialize(, 8, BLOCK)
+moving_platform_initialize(, 16, BLOCK)

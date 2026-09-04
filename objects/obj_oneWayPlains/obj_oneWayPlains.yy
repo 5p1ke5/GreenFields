@@ -6,8 +6,8 @@
   "name":"obj_oneWayPlains",
   "overriddenProperties":[],
   "parent":{
-    "name":"blocks",
-    "path":"folders/Objects/blocks.yy",
+    "name":"oneway",
+    "path":"folders/Objects/blocks/oneway.yy",
   },
   "parentObjectId":{
     "name":"obj_oneWay",

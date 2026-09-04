@@ -33,8 +33,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_onewayMovingArcade",
-    "path":"sprites/spr_onewayMovingArcade/spr_onewayMovingArcade.yy",
+    "name":"spr_oneWayMoving",
+    "path":"sprites/spr_oneWayMoving/spr_oneWayMoving.yy",
   },
   "spriteMaskId":null,
   "visible":true,

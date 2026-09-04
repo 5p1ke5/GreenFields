@@ -46,8 +46,8 @@
   },
   "origin":0,
   "parent":{
-    "name":"block",
-    "path":"folders/Sprites/block.yy",
+    "name":"oneway",
+    "path":"folders/Sprites/block/oneway.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

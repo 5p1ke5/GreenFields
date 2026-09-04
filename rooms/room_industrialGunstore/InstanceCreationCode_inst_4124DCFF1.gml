@@ -1,1 +1,1 @@
-transition_initialize(room_industrial, 2880, 2432);
+transition_initialize(room_industrial, 1888, 2512);

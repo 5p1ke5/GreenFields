@@ -9,7 +9,6 @@
     {"name":"inst_3FC939DD2_1_2_1_1_1_1_2_1_1","path":"rooms/room_industrialFactoryA/room_industrialFactoryA.yy",},
     {"name":"inst_2C2F45C9_2_1_1_1_1_2_1_1","path":"rooms/room_industrialFactoryA/room_industrialFactoryA.yy",},
     {"name":"inst_3B036457_1_1_1","path":"rooms/room_industrialFactoryA/room_industrialFactoryA.yy",},
-    {"name":"inst_507822E","path":"rooms/room_industrialFactoryA/room_industrialFactoryA.yy",},
     {"name":"inst_5EE6C6EE","path":"rooms/room_industrialFactoryA/room_industrialFactoryA.yy",},
     {"name":"inst_4C96FEE1","path":"rooms/room_industrialFactoryA/room_industrialFactoryA.yy",},
     {"name":"inst_1AB17C35","path":"rooms/room_industrialFactoryA/room_industrialFactoryA.yy",},
@@ -23,6 +22,7 @@
     {"name":"inst_15FD53A9","path":"rooms/room_industrialFactoryA/room_industrialFactoryA.yy",},
     {"name":"inst_71245F96","path":"rooms/room_industrialFactoryA/room_industrialFactoryA.yy",},
     {"name":"inst_15AA6B83","path":"rooms/room_industrialFactoryA/room_industrialFactoryA.yy",},
+    {"name":"inst_57D1E801","path":"rooms/room_industrialFactoryA/room_industrialFactoryA.yy",},
   ],
   "isDnd":false,
   "layers":[
@@ -34,7 +34,6 @@
       ],"layers":[],"name":"Player","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
     {"$GMRInstanceLayer":"","%Name":"NPC","depth":200,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[],"layers":[],"name":"NPC","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
     {"$GMRInstanceLayer":"","%Name":"Doors","depth":300,"effectEnabled":true,"effectType":null,"gridX":16,"gridY":16,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[
-        {"$GMRInstance":"v4","%Name":"inst_507822E","colour":4294967295,"frozen":false,"hasCreationCode":true,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_507822E","objectId":{"name":"obj_doorMarker","path":"objects/obj_doorMarker/obj_doorMarker.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.65,"scaleY":1.0,"x":704.0,"y":2256.0,},
         {"$GMRInstance":"v4","%Name":"inst_7A8EC994","colour":4294967295,"frozen":false,"hasCreationCode":true,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_7A8EC994","objectId":{"name":"obj_doorMarker","path":"objects/obj_doorMarker/obj_doorMarker.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.8,"scaleY":1.0,"x":4384.0,"y":2256.0,},
       ],"layers":[],"name":"Doors","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
     {"$GMRInstanceLayer":"","%Name":"Furniture","depth":400,"effectEnabled":true,"effectType":null,"gridX":16,"gridY":16,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[],"layers":[],"name":"Furniture","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
@@ -51,6 +50,7 @@
         {"$GMRInstance":"v4","%Name":"inst_15FD53A9","colour":4294967295,"frozen":false,"hasCreationCode":true,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_15FD53A9","objectId":{"name":"obj_oneWayMovingIndustrial","path":"objects/obj_oneWayMovingIndustrial/obj_oneWayMovingIndustrial.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":10.0,"scaleY":1.0,"x":3488.0,"y":2144.0,},
         {"$GMRInstance":"v4","%Name":"inst_71245F96","colour":4294967295,"frozen":false,"hasCreationCode":true,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_71245F96","objectId":{"name":"obj_oneWayMovingIndustrial","path":"objects/obj_oneWayMovingIndustrial/obj_oneWayMovingIndustrial.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":10.0,"scaleY":1.0,"x":3328.0,"y":2144.0,},
         {"$GMRInstance":"v4","%Name":"inst_15AA6B83","colour":4294967295,"frozen":false,"hasCreationCode":true,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_15AA6B83","objectId":{"name":"obj_oneWayMovingIndustrial","path":"objects/obj_oneWayMovingIndustrial/obj_oneWayMovingIndustrial.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":9.0,"scaleY":1.0,"x":3184.0,"y":2144.0,},
+        {"$GMRInstance":"v4","%Name":"inst_57D1E801","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_57D1E801","objectId":{"name":"obj_movingPlatformMarker","path":"objects/obj_movingPlatformMarker/obj_movingPlatformMarker.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":20.0,"scaleY":1.0,"x":3264.0,"y":1856.0,},
       ],"layers":[],"name":"Blocks","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
     {"$GMRTileLayer":"","%Name":"TilesB","depth":600,"effectEnabled":true,"effectType":null,"gridX":16,"gridY":16,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"name":"TilesB","properties":[],"resourceType":"GMRTileLayer","resourceVersion":"2.0","tiles":{"SerialiseHeight":160,"SerialiseWidth":320,"TileCompressedData":[
           -187,0,-133,-2147483648,-187,0,-133,-2147483648,-187,0,-133,-2147483648,-187,0,-133,-2147483648,-187,

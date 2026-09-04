@@ -2,8 +2,8 @@
 /// @desc Initializes variables for a moving platform.
 /// @param _hsp Horizontal speed of the platform.
 /// @param _vsp Vertical speed of the platform
-/// @param _block If the platform would collide with this object it instead reverses direction.
-function moving_platform_initialize(_hsp = 0, _vsp = 0, _block = BLOCK)
+/// @param _block If the platform would collide with this object or objects in this array it instead reverses direction.
+function moving_platform_initialize(_hsp = 0, _vsp = 0, _block = [BLOCK, obj_movingPlatformMarker])
 {
 	hsp = _hsp;
 	vsp = _vsp;

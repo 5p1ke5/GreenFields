@@ -1,0 +1,1 @@
+hurtbox_initialize(5);

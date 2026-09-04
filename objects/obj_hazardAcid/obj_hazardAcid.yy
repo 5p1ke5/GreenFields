@@ -1,15 +1,20 @@
 {
   "$GMObject":"",
-  "%Name":"obj_movingPlatformMarker",
-  "eventList":[],
+  "%Name":"obj_hazardAcid",
+  "eventList":[
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+  ],
   "managed":true,
-  "name":"obj_movingPlatformMarker",
+  "name":"obj_hazardAcid",
   "overriddenProperties":[],
   "parent":{
-    "name":"moving",
-    "path":"folders/Objects/blocks/moving.yy",
+    "name":"hazard",
+    "path":"folders/Objects/hazard.yy",
   },
-  "parentObjectId":null,
+  "parentObjectId":{
+    "name":"abs_hurtboxAny",
+    "path":"objects/abs_hurtboxAny/abs_hurtboxAny.yy",
+  },
   "persistent":false,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,
@@ -28,9 +33,9 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_movingPlatformMarker",
-    "path":"sprites/spr_movingPlatformMarker/spr_movingPlatformMarker.yy",
+    "name":"spr_hazardAcid",
+    "path":"sprites/spr_hazardAcid/spr_hazardAcid.yy",
   },
   "spriteMaskId":null,
-  "visible":false,
+  "visible":true,
 }

@@ -1,0 +1,1 @@
+transition_initialize(room_downtownSkyBuilding, 1232, 2240);

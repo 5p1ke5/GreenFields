@@ -5,7 +5,7 @@ var _missions = global.missions;
 //Creates a button for each mission and initializes variables.
 for (var _i = 0; _i < array_length(_missions); _i++) 
 {    
-	var _button = instance_create_depth(x, 64 + (_i * 16), depth, obj_buttonMission);
+	var _button = instance_create_depth(x, 64 + (_i * 16), depth, obj_labelMission);
 	var _menuPause = id;
 	
 	with (_button)

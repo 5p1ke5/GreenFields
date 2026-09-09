@@ -138,6 +138,7 @@
     {"name":"inst_359831C8","path":"rooms/room_downtown/room_downtown.yy",},
     {"name":"inst_BC578C0","path":"rooms/room_downtown/room_downtown.yy",},
     {"name":"inst_284661E3","path":"rooms/room_downtown/room_downtown.yy",},
+    {"name":"inst_22ACC87D","path":"rooms/room_downtown/room_downtown.yy",},
   ],
   "isDnd":false,
   "layers":[
@@ -287,6 +288,7 @@
     {"$GMRInstanceLayer":"","%Name":"Door","depth":700,"effectEnabled":true,"effectType":null,"gridX":16,"gridY":16,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[
         {"$GMRInstance":"v4","%Name":"inst_23FC9EB8","colour":4294967295,"frozen":false,"hasCreationCode":true,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_23FC9EB8","objectId":{"name":"obj_doorMarker","path":"objects/obj_doorMarker/obj_doorMarker.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.6,"scaleY":1.0,"x":4576.0,"y":2336.0,},
         {"$GMRInstance":"v4","%Name":"inst_BC578C0","colour":4294967295,"frozen":false,"hasCreationCode":true,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_BC578C0","objectId":{"name":"obj_doorMarker","path":"objects/obj_doorMarker/obj_doorMarker.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.6,"scaleY":1.0,"x":3888.0,"y":2272.0,},
+        {"$GMRInstance":"v4","%Name":"inst_22ACC87D","colour":4294967295,"frozen":false,"hasCreationCode":true,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_22ACC87D","objectId":{"name":"obj_doorMarker","path":"objects/obj_doorMarker/obj_doorMarker.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.6,"scaleY":1.0,"x":1280.0,"y":2272.0,},
       ],"layers":[],"name":"Door","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
     {"$GMRAssetLayer":"","%Name":"Buildings","assets":[
         {"$GMRSpriteGraphic":"v1","%Name":"graphic_4EF9CC69","animationSpeed":1.0,"colour":4294967295,"frozen":false,"headPosition":0.0,"ignore":false,"inheritedItemId":null,"inheritItemSettings":false,"name":"graphic_4EF9CC69","resourceType":"GMRSpriteGraphic","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"spriteId":{"name":"spr_building1","path":"sprites/spr_building1/spr_building1.yy",},"x":2800.0,"y":1376.0,},

@@ -1,2 +1,2 @@
-/// @desc If selected, sets this mission as tracked.
-global.trackedMission = mission;
+/// @desc If selected, adds this mission to the mission log and then deletes this button.
+array_push(global.missions, mission);

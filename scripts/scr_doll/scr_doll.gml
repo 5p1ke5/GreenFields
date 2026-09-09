@@ -456,7 +456,7 @@ function doll_input_interact(_upReleased)
 
 	if (interact)
 	{
-		alert += "?";
+		alert += "E";
 		
 		if (_upReleased)
 		{

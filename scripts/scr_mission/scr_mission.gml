@@ -1,10 +1,3 @@
-// If a mission is active it has a set of rooms it's active in
-// if its in a room its active in it calls it's 'active' script on room load
-// So like if you have a mission where you have to kill a dude the _active script activates when you go into his room
-// (guys like this might need their own object like "obj_npcQuestTarget" maybe and that checks for associated missions when they die)
-// COuld maybe also give it a step event that calls a passed script like _stepScript? But thats a lot but maybe not if I keep it simple like (if (instanceCount(target) < 0)
-
-
 /// @function Mission(_title, _description, _activeRooms, _createFunction = noone, _stepFunction = noone, _completeFunction = noone) 
 /// @description A mission to be completed.
 /// @param _title The mission's title.
@@ -81,6 +74,12 @@ function Mission(_title, _description, _activeRooms, _createFunction = noone, _s
 		return array_contains(activeRooms, room);	
 	}
 }
+
+
+
+
+
+
 
 /*
 function mission_complete(_mission, _missionLog)

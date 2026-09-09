@@ -28,6 +28,17 @@ function menu_step()
 	}
 }
 
+
+/// @function menu_transition(_menu)
+/// @description Logs the current room , sets it as persistent, then transitions to a menu room. 
+/// @param _menu The room to go to.
+function menu_transition(_menu)
+{
+	global.roomPausedFrom = room;
+	room_persistent = true;
+	room_goto(_menu);
+}
+
 /// @function menu_draw(x, y, array, color1, color2, height, select)
 /// @description Draws a menu from the given array.
 /// @param _x x coordinate to draw the menu at.

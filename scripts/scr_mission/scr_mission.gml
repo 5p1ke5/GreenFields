@@ -4,6 +4,15 @@
 // (guys like this might need their own object like "obj_npcQuestTarget" maybe and that checks for associated missions when they die)
 // COuld maybe also give it a step event that calls a passed script like _stepScript? But thats a lot but maybe not if I keep it simple like (if (instanceCount(target) < 0)
 
+
+/// @function Mission(_title, _description, _activeRooms, _createFunction = noone, _stepFunction = noone, _completeFunction = noone) 
+/// @description A mission to be completed.
+/// @param _title The mission's title.
+/// @param _description The description of the mission's tasks.
+/// @param _activeRooms Rooms the mission effect. _createFunction and _stepFunction are only called in these rooms.
+/// @param _createFunction This function is run in the create event of the function if in an active room.
+/// @param _stepFunction This function is run every step if in an active room and should return true or false. If returns true ends the quest and called _completeFunction.
+/// @param _completeFunction this function is called on completion of the quest.
 function Mission(_title, _description, _activeRooms, _createFunction = noone, _stepFunction = noone, _completeFunction = noone) constructor 
 {
 	title = _title;

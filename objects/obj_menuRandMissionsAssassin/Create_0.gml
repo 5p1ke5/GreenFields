@@ -28,12 +28,24 @@ for (var _i = 0; _i < _missionsNumber; _i++)
 				
 	var _createFunction = function()
 	{
-		//create target		
+		var _spawnPoint = instance_find(obj_targetSpawnPoint, irandom(instance_number(obj_targetSpawnPoint)))
+		if (!_spawnPoint)
+		{
+			return;	
+		}
+		
+		var _x = _spawnPoint.x;
+		var _y = _spawnPoint.y;
+		
+		target = instance_create_layer(_x, _y, "NPC", obj_npcMurderTarget);
+		
+		show_debug_message(title)
 	}
 				
 	var _stepFunction = function()
 	{
 		//check if target is dead.	
+		return !instance_exists(target);
 	}
 		
 		
@@ -54,5 +66,16 @@ for (var _i = 0; _i < _missionsNumber; _i++)
 	
 		
 		uibutton_initialize(_title, _clickFunction, , , _desc);	
+		
+		
+		/* Make some function that lets me neatly scale image to a given height/width in pixels eg image_xscale_to(300)
+		image_xscale = sprite_width / string_width(_title) * 2
+		image_yscale = sprite_height / string_height(_title) * 2
+		*/
+		
+		//For now im just going to do it like this
+		image_xscale = 4;
+		image_yscale = 1/2;
+		x -= sprite_width/2;
 	}
 }

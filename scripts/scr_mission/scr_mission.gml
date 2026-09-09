@@ -8,6 +8,13 @@ function Mission(_title, _description, _activeRooms, _createFunction = noone, _s
 {
 	title = _title;
 	description = _description;
+	
+	//If active rooms isn't an array turns it into a single element array.
+	if !(is_array(_activeRooms))
+	{
+		_activeRooms = [_activeRooms]
+	}
+	
 	activeRooms = _activeRooms;
 	createFunction = _createFunction;
 	stepFunction = _stepFunction;

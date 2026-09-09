@@ -1,19 +1,19 @@
 {
   "$GMObject":"",
-  "%Name":"obj_buttonMission",
+  "%Name":"obj_interactable",
   "eventList":[
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":10,"eventType":7,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"obj_buttonMission",
+  "name":"obj_interactable",
   "overriddenProperties":[],
   "parent":{
-    "name":"missions",
-    "path":"folders/Objects/menus/pause/missions.yy",
+    "name":"interactable",
+    "path":"folders/Objects/interactable.yy",
   },
   "parentObjectId":{
-    "name":"obj_buttonUI",
-    "path":"objects/obj_buttonUI/obj_buttonUI.yy",
+    "name":"abs_interactable",
+    "path":"objects/abs_interactable/abs_interactable.yy",
   },
   "persistent":false,
   "physicsAngularDamping":0.1,
@@ -33,8 +33,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_uiButton",
-    "path":"sprites/spr_uiButton/spr_uiButton.yy",
+    "name":"spr_interactable",
+    "path":"sprites/spr_interactable/spr_interactable.yy",
   },
   "spriteMaskId":null,
   "visible":true,

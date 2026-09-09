@@ -6,3 +6,8 @@ draw_set_halign(fa_center);
 draw_set_font(fnt_default);
 
 draw_text_colour(_x, y, text, fgColor, fgColor, fgColor, fgColor, 1);
+
+if (tooltipOn) && (tooltipDesc != noone)
+{
+	draw_text_transformed_colour(mouse_x, mouse_y, tooltipDesc, 1, 1, 0, fgColor, fgColor, fgColor, fgColor, 1);
+}

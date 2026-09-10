@@ -6,9 +6,9 @@ var _y = room_width / 10;
 //Creates buttons, 
 for (var _i = 0; _i < _missionsNumber; _i++) 
 {
+	
 	var _button = instance_create_depth(_x, _y + (_i * (room_width / 4)), depth, obj_buttonUI);
 	var _missionType = irandom(1);
-		
 	switch (_missionType) 
 	{    
 		case 0:
@@ -26,6 +26,7 @@ for (var _i = 0; _i < _missionsNumber; _i++)
 	}
 				
 				
+	/*
 	var _createFunction = function()
 	{
 		var _spawnPoint = instance_find(obj_targetSpawnPoint, irandom(instance_number(obj_targetSpawnPoint)))
@@ -53,10 +54,11 @@ for (var _i = 0; _i < _missionsNumber; _i++)
 	{
 		global.money += 500;	
 	}
+	*/
 	
 	with (_button)
 	{	
-		mission = new Mission(_title, _desc, _room, _createFunction, _stepFunction, _completeFunction);
+		mission = new MissionEliminate(_title, _desc, _room, 500, [obj_npcMurderTarget]);
 	
 		var _clickFunction = function()
 		{
@@ -68,10 +70,10 @@ for (var _i = 0; _i < _missionsNumber; _i++)
 		uibutton_initialize(_title, _clickFunction, , , _desc);	
 		
 		
-		/* Make some function that lets me neatly scale image to a given height/width in pixels eg image_xscale_to(300)
-		image_xscale = sprite_width / string_width(_title) * 2
-		image_yscale = sprite_height / string_height(_title) * 2
-		*/
+		//Make some function that lets me neatly scale image to a given height/width in pixels eg image_xscale_to(300)
+		//image_xscale = sprite_width / string_width(_title) * 2
+		//image_yscale = sprite_height / string_height(_title) * 2
+		
 		
 		//For now im just going to do it like this
 		image_xscale = 4;

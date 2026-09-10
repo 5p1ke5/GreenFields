@@ -39,6 +39,9 @@
     "name":"spr_doll",
     "path":"sprites/spr_doll/spr_doll.yy",
   },
-  "spriteMaskId":null,
+  "spriteMaskId":{
+    "name":"spr_doll",
+    "path":"sprites/spr_doll/spr_doll.yy",
+  },
   "visible":true,
 }

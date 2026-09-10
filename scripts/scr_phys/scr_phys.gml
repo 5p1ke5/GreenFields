@@ -55,18 +55,21 @@ function phys_floor_collision()
 	grounded = false;
 	var _vspTotal = vsp + vspExt;
 	
+	
+	
 	//Checks every pixel in the player's path for collision.
 	for (var _i = 0; (abs(_i) <= abs(_vspTotal)); _i += sign(_vspTotal))
 	{
 	    //If there is a collision, it will move the player as close to the object as possible and then stop. 
 		
 		// Block collision. 
-		var _collision = instance_place(x, y + _i + sign(_vspTotal), BLOCK);
+		//var _collision = instance_place(x, y + _i + sign(_vspTotal), BLOCK);
+		var _collision = instance_place(x, y + _i + (sign(_vspTotal) * 4), BLOCK); //Hacky solution to characters getting stuck in walls. Might workshop later.
 		if (_collision)
 		{
 			y += _i;
 			
-			if (_vspTotal >= 0)
+			if (vsp >= 0)
 			{
 				grounded = true;	
 			}

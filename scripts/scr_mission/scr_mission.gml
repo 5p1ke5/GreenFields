@@ -41,8 +41,17 @@ function Mission(_title, _description, _activeRooms, _reward) constructor
 	{
 		var _index = array_get_index(global.missions, self)
 		array_delete(global.missions, _index, 1);
-		
 		global.money += reward;
+		
+		var _fanfare = instance_create_layer(0, 0, "Player", obj_fanfare);
+		var _text = "Mission Complete!\n+" + string(reward) + " Money!"
+		
+		with (_fanfare)
+		{
+			fanfare_initialize(_text);
+		}
+		
+		audio_play_sound(sfx_missionComplete, 0, false);
 	}
 	
 	
@@ -79,7 +88,7 @@ function MissionEliminate(_title, _description, _activeRooms, _reward, _objects)
 			return;	
 		}
 		
-		var _spawnPoint = instance_find(obj_targetSpawnPoint, irandom(instance_number(obj_targetSpawnPoint)))
+		var _spawnPoint = instance_find(obj_targetSpawnPoint, irandom(instance_number(obj_targetSpawnPoint) - 1))
 		if (!_spawnPoint)
 		{
 			return;	
@@ -94,6 +103,8 @@ function MissionEliminate(_title, _description, _activeRooms, _reward, _objects)
 			var _target = instance_create_layer(_x, _y, "NPC", objects[_i]);
 			array_push(targets, _target);
 		}
+		
+		show_debug_message("Targets array on create: {0}", targets);
 	}
 	
 	

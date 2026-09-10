@@ -1,1 +1,1 @@
-transition_initialize(room_downtownSkyBuilding, 1280, 2272);
+transition_initialize(room_downtown, 1280, 2272);

@@ -141,7 +141,6 @@ function ItemEquipMelee(_itemName, _icon = spr_iconBlank, _amount = 1, _descript
 	
 	static Fire = function(_user)
 	{
-		
 		//Sets the sprite index to the attack sprite.
 		sprite_index = spriteAttack;
 		
@@ -169,10 +168,14 @@ function ItemEquipMelee(_itemName, _icon = spr_iconBlank, _amount = 1, _descript
 		var _vsp = vsp;
 		with (_user)
 		{
-			//hsp += _hsp * facing;
-			hsp = phys_force_add(hsp, _hsp * facing, abs(_hsp))
-			//vsp += _vsp;
+			hsp = phys_force_add(hsp, _hsp * facing, abs(_hsp) * 2);
 			vsp = phys_force_add(vsp, _vsp, abs(_vsp));
+			
+			//If grounded but moving upwards gives a bonus multijump
+			if (grounded) && (vsp < 0)
+			{
+				multiJumps++;
+			}
 		}
 	}
 	

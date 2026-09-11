@@ -29,7 +29,7 @@
 #macro ROOM_TEST room_test
 #macro ROOM_TUTORIAL room_downtownTutorial
 #macro ROOM_SETTINGS room_menuSettings
-#macro ROOM_SINGLEPLAYER room_downtown
+#macro ROOM_SINGLEPLAYER room_downtownMurderBuilding
 #macro ROOM_TRAINING room_trainingmode
 #macro ROOM_ARCADE room_arcademode
 #macro ROOM_MULTIPLAYER room_menuMultiplayer

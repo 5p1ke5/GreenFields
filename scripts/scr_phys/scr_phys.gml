@@ -58,18 +58,22 @@ function phys_floor_collision()
 	
 	
 	//Checks every pixel in the player's path for collision.
-	for (var _i = 0; (abs(_i) <= abs(_vspTotal)); _i += sign(_vspTotal))
+	for (var _i = 0; (abs(_i) < abs(_vspTotal)); _i += sign(_vspTotal))
 	{
 	    //If there is a collision, it will move the player as close to the object as possible and then stop. 
 		
 		// Block collision. 
-		//var _collision = instance_place(x, y + _i + sign(_vspTotal), BLOCK);
-		var _collision = instance_place(x, y + _i + (sign(_vspTotal) * 4), BLOCK); //Hacky solution to characters getting stuck in walls. Might workshop later.
+		var _collision = instance_place(x, y + _i + sign(_vspTotal), BLOCK); 
 		if (_collision)
 		{
 			y += _i;
 			
-			if (vsp >= 0)
+			//Makes character 'bonk' if they hit a ceiling (solution to sticking in ceilings problem thats hacky but i like how it looks)
+			if (vsp < 0)
+			{
+				y -= vsp;	
+			}
+			else //Otherwise the player is grounded.
 			{
 				grounded = true;	
 			}
@@ -161,13 +165,6 @@ function phys_gravity(_vsp, _grav, _terminalVelocity)
 	return _vsp;
 }
 
-/// @function phys_begin_step()
-/// @desc Resets hspExt and vspExt at the beginning of each step.
-function phys_begin_step()
-{
-	hspExt = 0;
-	vspExt = 0;
-}
 
 /// @function phys_step()
 /// @description Place in the step event to activate physics.

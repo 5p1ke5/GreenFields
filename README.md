@@ -8,21 +8,10 @@ If you want to play the game you should open it in game maker.
 
 TODO:
 (higher items = higher priority)
-* melee weapons
 * make npcs drop money on death
-* melee weapons
-* more interiors
 
 * consumables
 * short opening sequence where you land in Downtown and fight through the police
-
-
-ideas:
-randomly generated assasination missions
-* A guy hates his boss so much he hires you to go to his office and kill him
-* A boss hates his employees so much he hires you to go to his office and kill everyone
-* Go to a dudes apartment and kill him 
-
 
 
 

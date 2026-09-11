@@ -17,6 +17,7 @@ function Mission(_title, _description, _activeRooms, _reward) constructor
 	activeRooms = _activeRooms;
 	reward = _reward;
 	
+	
 	static Create = function()
 	{
 		if (!Active())
@@ -78,9 +79,10 @@ function MissionEliminate(_title, _description, _activeRooms, _reward, _objects)
 	}
 	
 	objects = _objects;
-	targets = []; //This will be filled with specific instance references.
+	targets = []; //This will be filled with specific instance references during the Create() method.
 	
-	//Creates the objects in the objects[] array at a random spawn.
+	
+	//Creates the objects in the objects[] array at a random spawn, adds them to the 'targets' array.
 	static Create = function()
 	{
 		if (!Active())
@@ -103,11 +105,10 @@ function MissionEliminate(_title, _description, _activeRooms, _reward, _objects)
 			var _target = instance_create_layer(_x, _y, "NPC", objects[_i]);
 			array_push(targets, _target);
 		}
-		
-		show_debug_message("Targets array on create: {0}", targets);
 	}
 	
 	
+	// Checks if all instances in the targets array have been killed.
 	static Step = function()
 	{
 		if (!Active())

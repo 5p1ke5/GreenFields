@@ -83,7 +83,7 @@ function phys_floor_collision()
 			return;
 		}
 
-		//Exits loop early if vsp is negative cause then it doesn't need to bother with one way platform things.
+		//Exits loop early if going downwards cause then it doesn't need to bother with one way platform things.
 		if (vsp < 0)
 		{
 			break;

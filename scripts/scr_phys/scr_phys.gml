@@ -22,14 +22,16 @@ function phys_initialize(_grav = 0, _frict = 0, _hsp = 0, _vsp = 0, _isSolid = t
 }
 
 /// @function phys_force_add(_force, _accel, _max)
-/// @description Accelerates a given force value up to a maximum number. Returns the new value.
+/// @description Accelerates a given force value up to a maximum number. If this would exceed the given max attempst to accelerate the speed up to the max unless already there. Returns the possibly modified value.
 /// @param _force the base value to be added to. Usually hsp or vsp.
 /// @param _accel the number to be added to the _force variable.
 /// @param _max the maximum value that _force can be set to.
 function phys_force_add(_force, _accel, _max)
 {
-	//if the input force is alraedy greater than the max just returns the _force
-	if (abs(_force) > abs(_max))
+	
+	/*
+	//if the input force is alraedy greater than the max just returns the _force unless the signs are different
+	if (abs(_force) >= abs(_max))
 	{
 		if (sign(_accel) != sign(_force))
 		{
@@ -44,6 +46,25 @@ function phys_force_add(_force, _accel, _max)
 	_force = min(abs(_force), _max);
 	
 	return _force * _sign;
+	*/
+	var _newForce = _force + _accel;
+	
+	if (_newForce >= 0)
+	{
+		if (_newForce > _max)
+		{
+			return _force;	
+		}
+		
+		return _newForce;
+	}
+	
+	if (_newForce < -_max)
+	{
+		return _force;	
+	}
+	
+	return _newForce;
 }
 
 

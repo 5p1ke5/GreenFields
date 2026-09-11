@@ -107,6 +107,9 @@ function ItemEquipMelee(_itemName, _icon = spr_iconBlank, _amount = 1, _descript
 	swingSpeed = _swingSpeed;
 	swingDir = 1;
 	
+	hsp = 4;
+	vsp = -1;
+	
 	hurtbox = noone; //This will contain the generated hurtbox for the item.
 	
 	static Step = function()
@@ -139,6 +142,9 @@ function ItemEquipMelee(_itemName, _icon = spr_iconBlank, _amount = 1, _descript
 	static Fire = function(_user)
 	{
 		
+		//Sets the sprite index to the attack sprite.
+		sprite_index = spriteAttack;
+		
 		//Creates hurtbox at user x, y, depth and sets reference.
 		var _x = _user.x;
 		var _y = _user.y;
@@ -159,8 +165,15 @@ function ItemEquipMelee(_itemName, _icon = spr_iconBlank, _amount = 1, _descript
 			hurtbox_melee_intialize(_damage, _user, _hKnockback, _vKnockback, _startAngle);
 		}
 		
-		//Sets the sprite index to the attack sprite.
-		sprite_index = spriteAttack;
+		var _hsp = hsp;
+		var _vsp = vsp;
+		with (_user)
+		{
+			//hsp += _hsp * facing;
+			hsp = phys_force_add(hsp, _hsp * facing, abs(_hsp))
+			//vsp += _vsp;
+			vsp = phys_force_add(vsp, _vsp, abs(_vsp));
+		}
 	}
 	
 	static LeftButtonPressed = function(_user)

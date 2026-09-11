@@ -14,7 +14,7 @@ function NPCCommand() constructor
 	{
 		with (_user)
 		{
-			mouseX = facing == -1 ? bbox_left : bbox_right;
+			mouseX = hDir == 1 ? bbox_left : bbox_right;
 			mouseY = bbox_bottom;
 		}
 	}
@@ -62,7 +62,7 @@ function NPCCommandIdle(): NPCCommand() constructor
 			leftButton = (_hDir > 0);
 		}
 		
-		IdleHands(_user);
+		//IdleHands(_user);
 	}
 }
 
@@ -128,7 +128,7 @@ function NPCCommandMove(_target, _duration = noone, _range = undefined): NPCComm
 		{
 			_atTarget = npc_input_moveto(_target, _range);
 		}
-		IdleHands(_user);
+		//IdleHands(_user);
 		
 		
 		//If no duration is set exits the function, skipping any duration code.

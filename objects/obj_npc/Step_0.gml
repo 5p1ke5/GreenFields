@@ -3,7 +3,17 @@
 npc_step();
 
 
-var _angle = point_direction(x, y, mouseX, mouseY);
+if (array_length(sensedEnemies) == 0)
+{
+	if (hDir != 0)
+	{
+		var _angle = hDir == 1 ? 300 : 210;
+	}
+}
+else
+{
+	var _angle = point_direction(x, y, mouseX, mouseY);
+}
 
 doll_input_aim(_angle, myHeld, mLeftButton, mRightButton, mLeftButtonPressed, mRightButtonPressed, mLeftButtonReleased, mRightButtonReleased);
 doll_input_jump(aButtonPressed, aButton);

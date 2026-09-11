@@ -309,7 +309,7 @@ function doll_input_move(_right, _left, _run)
 	if (hDir != 0)
 	{
 		hsp = phys_force_add(hsp, accel * hDir, maxSpeed + (0.5 * maxSpeed * _run));
-		facing = hDir;
+		//facing = hDir;
 	}
 }
 
@@ -383,6 +383,18 @@ function doll_input_dash(_dashDown, _rightPressed, _leftPressed)
 /// @param _mbRightReleased Was the right mouse button released this frame
 function doll_input_aim(_angle, _myHeld, _mbLeft, _mbRight, _mbLeftPressed, _mbRightPressed, _mbLeftReleased, _mbRightReleased)
 {
+	
+	//decides what way the doll is facing
+	if (_angle < 90) || (_angle > 270)
+	{
+		facing = 1;	
+	}
+	else 
+	{
+		facing = -1;	
+	}
+	
+	
 	//If melee handAngle may be controlled by the melee weapon's current arc. Otherwise just follow _angle like normal.
 	//I may later need to make this more inclusive but for now there's really only the one case.
 	if (is_instanceof(_myHeld, ItemEquipMelee)) && (_myHeld.hurtbox)

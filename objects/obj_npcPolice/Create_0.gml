@@ -6,6 +6,6 @@ shirtColor = c_blue;
 
 doll_initialize_inventory(choose([new ITEM_PISTOL], [new ITEM_SHOTGUN], [new ITEM_MACHINEGUN]));
 
-living_initialize(100);
+living_initialize(30);
 npc_initialize("Blue", "I'm blue for life!", [new NPCCommandIdle()], , FACTIONS.POLICE);
 

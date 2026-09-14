@@ -3,7 +3,7 @@ event_inherited();
 
 doll_initialize_appearance(doll_initialize_random_appearance());
 
-living_initialize(50);
+living_initialize(30);
 npc_initialize("Hostile", "I'll destroy everything!", [], , FACTIONS.HOSTILE);
 
 shirtColor = c_yellow;

@@ -256,7 +256,7 @@ function doll_input_jump(_jump, _jumpOffset)
 {
 	if (grounded)
 	{
-		//If grounded refills dash and jumps, resets spinspeed and drawangle
+		//If grounded refills jumps, resets spinspeed and drawangle
 		multiJumps = maxMultiJumps;
 		spinSpeed = 0;
 		drawAngle = 0;
@@ -321,25 +321,26 @@ function doll_input_move(_right, _left, _run)
 /// @param _leftReleased left button released
 function doll_input_dash(_dashDown, _rightPressed, _leftPressed)
 {
-	//If grounded refills airdashes. If not, exits.
+	//If grounded refills airdashes.
 	if (grounded)
 	{
 		airDash = maxAirDashes;	
 	}
 	
-	//If dash is still on cooldown decrements it and then exits.
+	//If dash is still on cooldown decrements it and then returns.
 	if (dashCD >= 0)
 	{
 		dashCD--;
 		return;
 	}
 	
+	//Also exits if the player is out of dashes (if its at 0 this also means they're not grounded with 0 airdashes so can return.)
 	if (airDash <= 0)
 	{
 		return;
 	}
 	
-	
+	//Exits if not pressing the dash button.
 	if (!_dashDown)
 	{
 		return;	

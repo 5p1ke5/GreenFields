@@ -6,5 +6,5 @@ shirtColor = c_red;
 
 doll_initialize_inventory(choose([new ITEM_PISTOL], [new ITEM_SHOTGUN], [new ITEM_MACHINEGUN]))
 
-living_initialize(100);
+living_initialize(30);
 npc_initialize("Reds", "Reds rise up!", [new NPCCommandIdle()], , FACTIONS.CRIMINAL);

@@ -2,12 +2,13 @@
 
 npc_step();
 
-
+//Might want to just change how handangle is set when idle
 if (array_length(sensedEnemies) == 0)
 {
+	var _angle = handAngle;
 	if (hDir != 0)
 	{
-		var _angle = hDir == 1 ? 300 : 210;
+		_angle = hDir == 1 ? 300 : 210;
 	}
 }
 else

@@ -42,6 +42,8 @@ for (var _i = 0; _i < array_length(_collisions); _i++)
 		var _damage = _collision.damage
 		living_take_damage(_damage);
 	
+		// what if I put this instead?
+		//if (owner == noone) {break;}
 		if (_owner != noone) 
 		{
 			var _ownerFaction = _owner.faction;
@@ -67,15 +69,15 @@ for (var _i = 0; _i < array_length(_collisions); _i++)
 				}
 			    break;
 			}
-		
-			//shoot blood out here.
-			var _x = _collision.x;
-			var _y = _collision.y;
-			var _angle = point_direction(x, y, _x, _y);
-	
-			living_bleed(_angle, _damage * 2);
-		
-			audio_play_sound_pos(sfx_hitNPC, x, y);
 		}
+		
+		//shoot blood out here.
+		var _x = _collision.x;
+		var _y = _collision.y;
+		var _angle = point_direction(x, y, _x, _y);
+	
+		living_bleed(_angle, _damage * 2);
+		
+		audio_play_sound_pos(sfx_hitNPC, x, y);
 	}
 }

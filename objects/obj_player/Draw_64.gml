@@ -23,3 +23,4 @@ if (array_length(inventory) > 0)
 	draw_text_transformed(16, 80, _string, 2, 2, 0);
 }
 draw_text_transformed(16, 150, "Money: " + string(global.money), 2, 2, 0);
+draw_text_transformed(16, 220, "Wanted Level: " + string(global.wanted), 2, 2, 0);

@@ -8,6 +8,7 @@ If you want to play the game you should open it in game maker.
 
 TODO:
 (higher items = higher priority)
+* wanted system
 * make npcs drop money on death
 
 * consumables
@@ -16,3 +17,17 @@ TODO:
 
 
 Missions where you need to deliver drugs to x random location/contract while police/gang members try to kill you
+
+
+
+wanted system:
+you get wanted points and they degrade over time
+
+stuff that gets you wanted points:
+attacking people
+killing people
+
+maybe stealing stuff?
+
+At 1 star police attack You
+at 2 stars police spawn in

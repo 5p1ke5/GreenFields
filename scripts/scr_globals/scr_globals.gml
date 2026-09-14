@@ -27,6 +27,9 @@ function globals_initialize()
 	global.trackedMission = noone;
 	
 	
+	global.wanted = 0;
+	
+	
 	var _faceIndex = irandom(sprite_get_number(spr_dollFace));
 	var _hairIndex = irandom(sprite_get_number(spr_dollHair));
 	var _shirtIndex = irandom(sprite_get_number(spr_dollShirt));

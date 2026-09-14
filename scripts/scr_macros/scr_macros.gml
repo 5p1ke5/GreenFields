@@ -24,6 +24,12 @@
 //#macro ITEM_UNARMED ItemEquipMelee("Unarmed", spr_iconBlank, 1, "Good old fisticuffs.", spr_equipPistol, 10, 270, 30)
 #endregion
 
+
+#region // Wanted levels
+#macro WANTEDPOINTS_ASSAULT 100
+#endregion
+
+
 #region rooms
 #macro ROOM_TITLE room_menuTitle
 #macro ROOM_TEST room_test

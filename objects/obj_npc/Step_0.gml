@@ -44,29 +44,38 @@ for (var _i = 0; _i < array_length(_collisions); _i++)
 	
 		if (_owner != noone) 
 		{
+			var _ownerFaction = _owner.faction;
+			
+			//if the attack was from the player and unprovoked counts it as an assault
+			if (_ownerFaction == FACTIONS.PLAYER) && (!array_contains(sensedEnemies, _owner))
+			{
+				global.wanted += WANTEDPOINTS_ASSAULT;
+			}
+			
+			//Handles some aspects of hurtbox collision based on npc faction.
 			switch (faction) 
 			{
-				//Some factions allow infighting.
-			    case FACTIONS.NONE:
+			//Some factions allow infighting bot most don't.
+			case FACTIONS.NONE:
+				npc_enemies_add(_owner);
+				break;
+			//Most only add you to the list if you're in a different faction.
+			default: 
+				if (faction != _ownerFaction)
+				{
 					npc_enemies_add(_owner);
-			        break;
-				//Most only add you to the list if you're in a different faction.
-			    default: 
-					if (faction != _owner.faction)
-					{
-						npc_enemies_add(_owner);
-					}
-			        break;
+				}
+			    break;
 			}
-		}
 		
-		//shoot blood out here.
-		var _x = _collision.x;
-		var _y = _collision.y;
-		var _angle = point_direction(x, y, _x, _y);
+			//shoot blood out here.
+			var _x = _collision.x;
+			var _y = _collision.y;
+			var _angle = point_direction(x, y, _x, _y);
 	
-		living_bleed(_angle, _damage * 2);
+			living_bleed(_angle, _damage * 2);
 		
-		audio_play_sound_pos(sfx_hitNPC, x, y);
+			audio_play_sound_pos(sfx_hitNPC, x, y);
+		}
 	}
 }

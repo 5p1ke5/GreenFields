@@ -1,10 +1,11 @@
 /// @function living_initialize(_hp = 1)
 /// @desc Initializes for living objects (has HP, can die)
 /// @param _hpMax How much HP the instance has.
-function living_initialize(_hpMax = 1)
+/// @param _hp How much hp the instance currently has.
+function living_initialize(_hpMax, _hp = _hpMax)
 {
 	hpMax = _hpMax;
-	hp = hpMax;
+	hp = _hp;
 }
 
 /// @function living_step()

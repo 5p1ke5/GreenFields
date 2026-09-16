@@ -23,6 +23,12 @@
 #endregion
 
 
+#region
+#macro CLOTHING_POLICESHIRT 17
+#macro CLOTHING_POLICEHAIR 17
+#endregion
+
+
 #region // Wanted levels
 #macro WANTEDPOINTS_ASSAULT 100
 #endregion
@@ -161,6 +167,7 @@
 #macro c_pink make_colour_rgb(255, 50, 255)
 #macro c_brown make_colour_rgb(190, 85, 0)
 #macro c_cream make_color_rgb(255, 255, 200)
+#macro c_dkblue make_color_rgb(0, 0, 200)
 
 #endregion
 

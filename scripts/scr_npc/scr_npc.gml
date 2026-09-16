@@ -133,12 +133,11 @@ function npc_update_sensed()
 					array_insert(sensedEnemies, 0, _sensed);
 				}
 				
-				/*
-				if (_sensed.faction == FACTIONS.PLAYER)
+				//Police attack a wanted player on sight.
+				if (global.wanted > 0) && (_sensed.faction == FACTIONS.PLAYER)
 				{
-					//Check wanted level here...	
+					array_insert(sensedEnemies, 0, _sensed);
 				}
-				*/
 			break;
 			
 			case FACTIONS.CRIMINAL: //if criminal adds all police to enemies.

@@ -8,8 +8,10 @@ doll_input_pause(START_BUTTON_RELEASED);
 doll_input_aim(point_direction(x, y, mouse_x, mouse_y), myHeld, MOUSE_LEFT_BUTTON, MOUSE_RIGHT_BUTTON, MOUSE_LEFT_BUTTON_PRESSED, MOUSE_RIGHT_BUTTON_PRESSED, MOUSE_LEFT_BUTTON_RELEASED, MOUSE_RIGHT_BUTTON_RELEASED);
 doll_input_interact(X_BUTTON_PRESSED);
 
+
 //Inherits physics and collision from doll.
 event_inherited();
+
 
 var _collisions = hitbox_step();
 
@@ -47,3 +49,10 @@ for (var _i = 0; _i < array_length(missions); _i++)
 
 //Sets audio listener position to player position.
 audio_listener_position(x, y, 0)
+
+
+//Decrements wanted level.
+if (global.wanted > 0)
+{
+	global.wanted -= 5/SECOND;
+}

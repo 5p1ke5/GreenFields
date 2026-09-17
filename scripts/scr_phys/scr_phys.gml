@@ -47,13 +47,14 @@ function phys_force_add(_force, _accel, _max)
 	
 	return _force * _sign;
 	*/
+	
 	var _newForce = _force + _accel;
 	
 	if (_newForce >= 0)
 	{
 		if (_newForce > _max)
 		{
-			return _force;	
+			return min(_force, _newForce);	
 		}
 		
 		return _newForce;
@@ -61,10 +62,11 @@ function phys_force_add(_force, _accel, _max)
 	
 	if (_newForce < -_max)
 	{
-		return _force;	
+		return max(_force, _newForce);	
 	}
 	
 	return _newForce;
+	
 }
 
 

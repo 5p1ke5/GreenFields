@@ -7,17 +7,6 @@ function NPCCommand() constructor
 	{
 		show_debug_message("Called!");
 	}
-	
-	
-	// Makes the user idly point their gun downwards if not fighting.
-	static IdleHands = function(_user)
-	{
-		with (_user)
-		{
-			mouseX = hDir == 1 ? bbox_left : bbox_right;
-			mouseY = bbox_bottom;
-		}
-	}
 }
 
 ///@function NPCCommandIdle(): NPCCommand() constructor

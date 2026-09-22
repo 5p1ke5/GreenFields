@@ -250,8 +250,8 @@ function npc_input_fight(_target)
 		{
 			mLeftButton = (irandom(combatLevel/2) == 0);
 			mLeftButtonPressed = (irandom(combatLevel/2) == 0);
-			mouseX = _target.xprevious + (mLeftButton || mLeftButtonPressed) * irandom_range(-combatLevel, combatLevel);
-			mouseY = _target.yprevious + (mLeftButton || mLeftButtonPressed) * irandom_range(-combatLevel, combatLevel);
+			mouseX = _target.xprevious; // + (mLeftButton || mLeftButtonPressed) * irandom_range(-combatLevel, combatLevel);
+			mouseY = _target.yprevious; // + (mLeftButton || mLeftButtonPressed) * irandom_range(-combatLevel, combatLevel);
 		}
 		
 		return true;

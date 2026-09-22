@@ -1,17 +1,19 @@
 {
   "$GMObject":"",
-  "%Name":"obj_block",
-  "eventList":[],
+  "%Name":"obj_hazardLava",
+  "eventList":[
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+  ],
   "managed":true,
-  "name":"obj_block",
+  "name":"obj_hazardLava",
   "overriddenProperties":[],
   "parent":{
-    "name":"blocks",
-    "path":"folders/Objects/blocks.yy",
+    "name":"hazard",
+    "path":"folders/Objects/hazard.yy",
   },
   "parentObjectId":{
-    "name":"abs_ground",
-    "path":"objects/abs_ground/abs_ground.yy",
+    "name":"abs_hurtboxAny",
+    "path":"objects/abs_hurtboxAny/abs_hurtboxAny.yy",
   },
   "persistent":false,
   "physicsAngularDamping":0.1,
@@ -31,8 +33,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_block",
-    "path":"sprites/spr_block/spr_block.yy",
+    "name":"spr_hazardLava",
+    "path":"sprites/spr_hazardLava/spr_hazardLava.yy",
   },
   "spriteMaskId":null,
   "visible":true,

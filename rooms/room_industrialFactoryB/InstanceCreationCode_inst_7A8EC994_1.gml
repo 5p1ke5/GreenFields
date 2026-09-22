@@ -1,0 +1,1 @@
+transition_initialize(room_industrial, 8448, 2528);

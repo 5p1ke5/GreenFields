@@ -398,7 +398,7 @@ function doll_input_aim(_angle, _myHeld, _mbLeft, _mbRight, _mbLeftPressed, _mbR
 	
 	//If melee handAngle may be controlled by the melee weapon's current arc. Otherwise just follow _angle like normal.
 	//I may later need to make this more inclusive but for now there's really only the one case.
-	if (is_instanceof(_myHeld, ItemEquipMelee)) && (_myHeld.hurtbox)
+	if (is_instanceof(_myHeld, ItemEquipMelee)) && (instance_exists(_myHeld.hurtbox))
 	{
 		//If a hurtbox has been spawned, the doll is busy swinging the weapon and so can't aim.
 		var _hurtBox = _myHeld.hurtbox;

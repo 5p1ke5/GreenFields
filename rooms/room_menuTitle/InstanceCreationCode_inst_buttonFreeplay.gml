@@ -1,7 +1,7 @@
 
 var _clickFunction = function()
 {
-	global.playerInventory = [new ITEM_PISTOL, new ITEM_LIGHTSABER];
+	global.playerInventory = [new ITEM_PISTOL, new ITEM_LIGHTSABER, new ITEM_AXE];
 	global.playerEquip = [global.playerInventory[0], new ITEM_NONE, new ITEM_NONE];
 	
 	

@@ -19,10 +19,11 @@
 #macro ITEM_MACHINEGUN ItemEquipFirearmAuto("Machine Gun", spr_iconMachinegun, 60, "A powerful machine gun.", spr_equipMachinegun, game_get_speed(gamespeed_fps)/5, obj_bullet, 8, true)
 #macro ITEM_BAZOOKA ItemEquipFirearm("Bazooka", spr_iconBazooka, 4, "A bazooka that fires rockets.", spr_equipBazooka, game_get_speed(gamespeed_fps), obj_projectileMissile, noone, true)
 #macro ITEM_GRENADEGUN ItemEquipFirearm("Grenade Gun", spr_iconGrenadegun, 6, "A handgun the shoots explosive grenades.", spr_equipGrenadeGun, game_get_speed(gamespeed_fps)/2, obj_projectileGrenade, noone, true)
-#macro ITEM_BAT ItemEquipMelee("Bat", spr_iconBat, 1, "A sturdy oak baseball bat.", spr_equipBat, spr_equipBatAttack, 50)
+#macro ITEM_BAT ItemEquipMelee("Bat", spr_iconBat, 1, "A sturdy oak baseball bat.", spr_equipBat, spr_equipBatAttack, 50, 4, -1, 270)
 #macro ITEM_KATANA ItemEquipMelee("Katana", spr_iconKatana, 1, "An well-crafted katana.", spr_equipKatana, spr_equipKatanaAttack, 30, 4, -1, 180, 20)
 #macro ITEM_AXE ItemEquipMelee("Axe", spr_iconAxe, 1, "A big axe.", spr_equipAxe, spr_equipAxeAttack, 50, 6, -1, 300, 10)
 #macro ITEM_LIGHTSABER ItemEquipMelee("Lightsaber", spr_iconLightsaber, 1, "An elegant weapon for a more civilized age.", spr_equipLightsaber, spr_equipLightsaberAttack, 30, 4, -1, 180, 20)
+#macro ITEM_UNARMED ItemEquipMelee("Unarmed", spr_iconUnarmed, 1, "Martial arts.", spr_equipUnarmed, spr_equipUnarmedAttack, 10, 4, -1, 180, 20)
 #endregion
 
 

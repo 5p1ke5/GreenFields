@@ -81,7 +81,7 @@ function ItemEquip(_itemName, _icon = spr_iconBlank, _amount = 1, _description =
 }
 
 
-/// @function ItemEquipMelee(_itemName, _icon = spr_iconBlank, _amount = 1, _description = "", _sprite_index, _sprite_attack, _damage, _hKnockback, _vKnockback, _arclength, _swingSpeed)
+/// @function ItemEquipMelee(_itemName, _icon = spr_iconBlank, _amount = 1, _description = "", _sprite_index, _sprite_attack, _damage, _hsp, _vsp, _arclength, _swingSpeed)
 /// @description Will have melee weapons in here for later. For now is just a placeholder.
 /// @param _itemName <String> item's name.
 /// @param _icon <sprite> Sprite representation of item.
@@ -90,25 +90,23 @@ function ItemEquip(_itemName, _icon = spr_iconBlank, _amount = 1, _description =
 /// @param _sprite_index Default sprite for the struct.
 /// @param _sprite_attack Sprite to use when attacking.
 /// @param _damage How much damage the weapon does.
-/// @param _hKnockback How far the weapon knocks the target back horizontally.
-/// @param _vKnockback How far the weapon knocks the target back vertically.
+/// @param _hsp How much the user moves horizontally when using the weapon.
+/// @param _vsp How much the user moves veryically when using the weapon.
 /// @param _arcLength How wide the swing arc is.
 /// @param _swingSpeed How fast the weapon gets swung.
-function ItemEquipMelee(_itemName, _icon = spr_iconBlank, _amount = 1, _description = "", _sprite_index = spr_equipEmpty, _spriteAttack = spr_equipEmpty, _damage = noone, _hKnockback = 0, _vKnockback = 0, _arcLength = 270, _swingSpeed = _arcLength/(SECOND/3)): ItemEquip(_itemName, _icon, _amount, _description = "", _sprite_index)  constructor
+function ItemEquipMelee(_itemName, _icon = spr_iconBlank, _amount = 1, _description = "", _sprite_index = spr_equipEmpty, _spriteAttack = spr_equipEmpty, _damage = noone, _hsp = 4, _vsp = -1, _arcLength = 270, _swingSpeed = _arcLength/(SECOND/3)): ItemEquip(_itemName, _icon, _amount, _description = "", _sprite_index)  constructor
 {
 	//Sprite default is just the sprite index on init, sprite attack is the sprite that it will be set to for the attack.
 	spriteDefault = _sprite_index;
 	spriteAttack = _spriteAttack;
 	damage = _damage;
-	hKnockback = _hKnockback;
-	vKnockback = _vKnockback;
+	hsp = _hsp;
+	vsp = _vsp;
 	arcLength = _arcLength;
 	arc = 0;
 	swingSpeed = _swingSpeed;
 	swingDir = 1;
 	
-	hsp = 4;
-	vsp = -1;
 	
 	hurtbox = noone; //This will contain the generated hurtbox for the item.
 	
@@ -153,23 +151,24 @@ function ItemEquipMelee(_itemName, _icon = spr_iconBlank, _amount = 1, _descript
 		swingDir = -_user.facing;
 		var _swingDir = swingDir;
 		var _damage = damage;
-		var _hKnockback = hKnockback;
-		var _vKnockback = vKnockback;
 		var _handAngle = _user.handAngle;
 		var _arcLength = arcLength;
 		var _startAngle = (_handAngle - (_arcLength/(2 * _swingDir)));
 		
 		with (hurtbox)
 		{
-			hurtbox_melee_intialize(_damage, _user, _hKnockback, _vKnockback, _startAngle);
+			hurtbox_melee_intialize(_damage, _user, , , _startAngle);
 		}
 		
 		var _hsp = hsp;
 		var _vsp = vsp;
 		with (_user)
 		{
+			if (grounded)
+			{
+				vsp = phys_force_add(vsp, _vsp, abs(_vsp));
+			}
 			hsp = phys_force_add(hsp, _hsp * facing, abs(_hsp) * 2);
-			vsp = phys_force_add(vsp, _vsp, abs(_vsp));
 			
 			//If grounded but moving upwards gives a bonus multijump
 			if (grounded) && (vsp < 0)

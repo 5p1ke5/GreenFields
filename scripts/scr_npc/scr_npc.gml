@@ -243,7 +243,7 @@ function npc_input_fight(_target)
 	if (is_instanceof(_equip, ItemEquipMelee))
 	{
 		//melee fight code, wip
-		var _inRange = npc_input_moveto(_target, RANGE_MELEE);
+		var _inRange = npc_input_moveto(_target, RANGE_CLOSE);
 		
 		//If in range attempts to hit them.
 		if (_inRange)

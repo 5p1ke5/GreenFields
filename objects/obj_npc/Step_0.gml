@@ -4,8 +4,8 @@ npc_step();
 
 //This is kinda hacky, might make a better solution later. Bring back IdleHands, maybe?? idk works for now
 //if (array_length(sensedEnemies) == 0) && (array_length(commands) > 0) && (!is_instanceof(commands[commandIndex], NPCCommandFight))
-if	(array_length(sensedEnemies) == 0) ||
-	((array_length(commands) > 0) && (!is_instanceof(commands[commandIndex], NPCCommandFight)))
+if (array_length(sensedEnemies) == 0) &&
+ ((array_length(commands) > 0) && (!is_instanceof(commands[commandIndex], NPCCommandFight)))
 {
 	if (hDir != 0)
 	{

@@ -17,6 +17,9 @@ function phys_initialize(_grav = 0, _frict = 0, _hsp = 0, _vsp = 0, _isSolid = t
 	vspExt = 0;
 	isSolid = _isSolid;
 	
+	//If the object is falling through one-way platforms.
+	fallThrough = false;
+	
 	//The object is considered grounded if they are directly above a block.
 	grounded = collision_rectangle(bbox_left, bbox_bottom, bbox_right, bbox_bottom + 1, GROUND, false, true);
 }

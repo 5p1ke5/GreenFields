@@ -177,6 +177,7 @@
     {"name":"obj_npcPolice","order":3,"path":"objects/obj_npcPolice/obj_npcPolice.yy",},
     {"name":"obj_npcRandom","order":2,"path":"objects/obj_npcRandom/obj_npcRandom.yy",},
     {"name":"obj_npcTest","order":1,"path":"objects/obj_npcTest/obj_npcTest.yy",},
+    {"name":"obj_npcZombie","order":4,"path":"objects/obj_npcZombie/obj_npcZombie.yy",},
     {"name":"obj_oneWayArcade","order":1,"path":"objects/obj_oneWayArcade/obj_oneWayArcade.yy",},
     {"name":"obj_oneWayBadlands","order":2,"path":"objects/obj_oneWayBadlands/obj_oneWayBadlands.yy",},
     {"name":"obj_oneWayCarpetBlue","order":3,"path":"objects/obj_oneWayCarpetBlue/obj_oneWayCarpetBlue.yy",},

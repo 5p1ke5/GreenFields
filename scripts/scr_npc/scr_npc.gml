@@ -239,6 +239,9 @@ function npc_input_fight(_target)
 	{
 		_equip = inventory[equipIndex];	
 	}
+			
+	mouseX = _target.xprevious; // + (mLeftButton || mLeftButtonPressed) * irandom_range(-combatLevel, combatLevel);
+	mouseY = _target.yprevious; // + (mLeftButton || mLeftButtonPressed) * irandom_range(-combatLevel, combatLevel);
 	
 	//I miiiiiight be able to just use the same code for this. Maybe ake a function? Might change as I refine melee weapons
 	if (is_instanceof(_equip, ItemEquipMelee))
@@ -251,8 +254,6 @@ function npc_input_fight(_target)
 		{
 			mLeftButton = (irandom(combatLevel/2) == 0);
 			mLeftButtonPressed = (irandom(combatLevel/2) == 0);
-			mouseX = _target.xprevious; // + (mLeftButton || mLeftButtonPressed) * irandom_range(-combatLevel, combatLevel);
-			mouseY = _target.yprevious; // + (mLeftButton || mLeftButtonPressed) * irandom_range(-combatLevel, combatLevel);
 		}
 		
 		return true;
@@ -272,8 +273,6 @@ function npc_input_fight(_target)
 		{
 			mLeftButton = (irandom(combatLevel/2) == 0);
 			mLeftButtonPressed = (irandom(combatLevel/2) == 0);
-			mouseX = _target.xprevious;// + (mLeftButton || mLeftButtonPressed) * irandom_range(-combatLevel, combatLevel);
-			mouseY = _target.yprevious;// + (mLeftButton || mLeftButtonPressed) * irandom_range(-combatLevel, combatLevel);
 			
 			return true
 		}

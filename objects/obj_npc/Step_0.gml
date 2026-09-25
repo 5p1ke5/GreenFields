@@ -26,6 +26,7 @@ doll_input_aim(_angle, myHeld, mLeftButton, mRightButton, mLeftButtonPressed, mR
 doll_input_jump(aButtonPressed, aButton);
 doll_input_move(rightButton, leftButton, runButton);
 doll_input_equipment(upButtonReleased, downButtonReleased);
+doll_input_fallthrough(downButton);
 
 
 //Inherits physics and collision from doll.

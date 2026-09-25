@@ -458,6 +458,15 @@ function doll_input_equipment(_incrementUp, _incrementDown)
 }
 
 
+/// @function doll_input_fallthrough(_down)
+/// @description Toggles the doll's fallthrough variable.
+/// @param _down Whether the down button is being pressed or not.
+function doll_input_fallthrough(_down)
+{
+	fallThrough = _down;	
+}
+
+
 /// @function doll_input_interact(_upReleased)
 /// @descr Checks if the doll is touching an interactable. If so, lets them interact with it.
 function doll_input_interact(_upReleased)

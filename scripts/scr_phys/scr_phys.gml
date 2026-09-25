@@ -109,10 +109,16 @@ function phys_floor_collision()
 			return;
 		}
 
-		//Exits loop early if going downwards cause then it doesn't need to bother with one way platform things.
+		//Exits loop early if going upwards cause then it doesn't need to bother with one way platform things.
 		if (vsp < 0)
 		{
-			break;
+			continue;
+		}
+		
+		//Also doesn't need to do oneWay things if fallThrough is true.
+		if (fallThrough)
+		{
+			continue;	
 		}
 		
 		

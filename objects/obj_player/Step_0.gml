@@ -7,6 +7,7 @@ doll_input_equipment(UP_BUTTON_RELEASED, DOWN_BUTTON_RELEASED);
 doll_input_pause(START_BUTTON_RELEASED);
 doll_input_aim(point_direction(x, y, mouse_x, mouse_y), myHeld, MOUSE_LEFT_BUTTON, MOUSE_RIGHT_BUTTON, MOUSE_LEFT_BUTTON_PRESSED, MOUSE_RIGHT_BUTTON_PRESSED, MOUSE_LEFT_BUTTON_RELEASED, MOUSE_RIGHT_BUTTON_RELEASED);
 doll_input_interact(X_BUTTON_PRESSED);
+doll_input_fallthrough(DOWN_BUTTON);
 
 
 //Inherits physics and collision from doll.

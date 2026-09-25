@@ -36,6 +36,7 @@ function npc_initialize(_name = "", _dialogue = "", _commands = [], _combatLevel
 	aButton = false;
 	rightButton = false;
 	leftButton = false;
+	downButton = false;
 	runButton = false;
 	mLeftButton = false;
 	mRightButton = false;

@@ -182,6 +182,7 @@ function npc_input_moveto(_target, _range = RANGE_CLOSE/2)
 	aButtonPressed = false;
 	rightButton = false;
 	leftButton = false;
+	downButton = false;
 	
 	//If the npc is at position we're done so it returns true.
 	if (distance_to_point(_target.x, _target.y) < _range)
@@ -190,12 +191,16 @@ function npc_input_moveto(_target, _range = RANGE_CLOSE/2)
 	}
 	
 	//Jumps up if target is horizontally close and vertically above calling instace
-	if (point_distance(x, y, _target.x, y) < _range)
+	if (abs(x) - abs(_target.x) < _range)
 	{
 		if (_target.y < y)
 		{
 			aButton = true;
 			aButtonPressed = (vsp == 0);
+		}
+		else if (_target.y > y)
+		{
+			downButton = true;	
 		}
 	}
 	
@@ -247,13 +252,13 @@ function npc_input_fight(_target)
 	if (is_instanceof(_equip, ItemEquipMelee))
 	{
 		//melee fight code, wip
-		var _inRange = npc_input_moveto(_target, RANGE_CLOSE);
+		var _inRange = npc_input_moveto(_target, RANGE_MELEE);
 		
 		//If in range attempts to hit them.
 		if (_inRange)
 		{
-			mLeftButton = (irandom(combatLevel/2) == 0);
-			mLeftButtonPressed = (irandom(combatLevel/2) == 0);
+			mLeftButton = (irandom(combatLevel/3) == 0);
+			mLeftButtonPressed = (irandom(combatLevel/3) == 0);
 		}
 		
 		return true;

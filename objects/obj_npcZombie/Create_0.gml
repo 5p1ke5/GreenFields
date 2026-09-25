@@ -1,5 +1,6 @@
 // Inherit the parent event
 event_inherited();
+maxSpeed = MAX_ACCEL * 3 / 4; 
 
 doll_initialize_appearance(doll_initialize_random_appearance());
 
